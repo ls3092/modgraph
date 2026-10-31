@@ -9,3 +9,6 @@ build/
 .idea/
 *.iml
 .vscode/
+candidates.jsonl
+summary.csv
+conflicts.csv
