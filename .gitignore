@@ -1,0 +1,11 @@
+/fixtures/
+candidates.jsonl
+summary.csv
+out/
+build/
+.gradle/
+*.class
+*.log
+.idea/
+*.iml
+.vscode/
