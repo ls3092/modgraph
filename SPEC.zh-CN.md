@@ -1,8 +1,8 @@
-# SPEC.zh-CN.md — M0：离线模组元数据归一化、依赖图与侵入深度评级
-
-<p align="center">
+<p align="right">
   <a href="./SPEC.md">English</a> · <b>简体中文</b>
 </p>
+
+# SPEC.zh-CN.md — M0：离线模组元数据归一化、依赖图与侵入深度评级
 
 版本：v0.7
 状态：草稿待人工确认
