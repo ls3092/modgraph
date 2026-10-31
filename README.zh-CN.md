@@ -1,4 +1,4 @@
-<p align="right">
+<p align="center">
   <a href="./README.md">English</a> · <b>简体中文</b>
 </p>
 
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue?style=for-the-badge" alt="license"/></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="license"/></a>
   <a href="https://openjdk.org/"><img src="https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
   <a href="https://gradle.org/"><img src="https://img.shields.io/badge/build-gradle-orange?style=for-the-badge&logo=gradle&logoColor=white" alt="build"/></a>
   <a href="./SPEC.zh-CN.md"><img src="https://img.shields.io/badge/status-M0%20completed-brightgreen?style=for-the-badge" alt="M0 completed"/></a>
@@ -326,7 +326,7 @@ M2（统一引导与 transform 编排）需要 JVM 底层能力：类加载机�
 
 ## 许可证
 
-本项目采用 [Apache License 2.0](./LICENSE)。
+本项目采用 [MIT License](./LICENSE)。
 
 请注意上下游项目的许可差异：Fabric Loader 为 Apache-2.0，Forge / NeoForge 为 LGPL-2.1，Sinytra Connector 为 LGPL-3.0，Kilt 为 LGPL-2.1。本项目的 M0 阶段不依赖其中任何一项。
 

@@ -1,8 +1,8 @@
-<p align="right">
+# SPEC.md — M0: Offline Mod Metadata Normalization, Dependency Graph and Invasiveness Rating
+
+<p align="center">
   <b>English</b> · <a href="./SPEC.zh-CN.md">简体中文</a>
 </p>
-
-# SPEC.md — M0: Offline Mod Metadata Normalization, Dependency Graph and Invasiveness Rating
 
 Version: v0.7
 Status: draft pending human confirmation
