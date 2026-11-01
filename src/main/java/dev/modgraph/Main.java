@@ -20,7 +20,10 @@ import dev.modgraph.model.Status;
 import dev.modgraph.model.SupportPolicy;
 import dev.modgraph.parse.FabricMetadataParser;
 import dev.modgraph.parse.NeoForgeMetadataParser;
+import dev.modgraph.report.DuplicateIdReport;
+import dev.modgraph.report.ReportSummary;
 import dev.modgraph.report.ReportWriter;
+import dev.modgraph.report.UnsatisfiedRequired;
 import dev.modgraph.resolve.DepKind;
 import dev.modgraph.resolve.DependencyOutcome;
 import dev.modgraph.resolve.DependencyReport;
@@ -49,6 +52,7 @@ public final class Main {
     private static final Path CONFLICTS_PATH = Path.of("conflicts.csv");
     private static final Path DEPENDENCIES_PATH = Path.of("dependencies.csv");
     private static final Path CYCLES_PATH = Path.of("cycles.csv");
+    private static final Path DUPLICATES_PATH = Path.of("duplicates.csv");
 
     private Main() {
     }
@@ -153,6 +157,10 @@ public final class Main {
         LOG.info("依赖环：{} 组", cycleReport.cycleGroupCount());
         logCycleGroups(cycleReport.cycleGroups());
 
+        final ReportSummary summary = ReportSummary.of(all, dependencyReport);
+        reportWriter.writeDuplicates(DUPLICATES_PATH, summary.duplicateIds());
+        logReportSummary(summary);
+
         LOG.info("本结果为准入检查，不构成运行稳定性保证");
     }
 
@@ -161,6 +169,29 @@ public final class Main {
         for (CycleGroup group : cycleGroups) {
             LOG.error("依赖环 {}：{}", group.universe(), group.logMembers());
         }
+    }
+
+    /** SPEC §3.7.4 的三行；未计入的类别必须带计数与理由一起打印。 */
+    static void logReportSummary(final ReportSummary summary) {
+        final UnsatisfiedRequired unsatisfied = summary.unsatisfiedRequired();
+        LOG.info("不满足的硬依赖：{}（硬 MISSING_ID {} + 硬 VERSION_MISMATCH {}）",
+                unsatisfied.count(),
+                unsatisfied.requiredMissingId(),
+                unsatisfied.requiredVersionMismatch());
+        LOG.info("未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS {}（工具无法判定，非模组缺陷）"
+                        + "| BREAKS_VIOLATED {}（冲突命中，非依赖不满足）"
+                        + "| 软 MISSING_ID {} | 软 VERSION_MISMATCH {} | UNPARSEABLE {}（实现缺陷）",
+                unsatisfied.ambiguousAlias(),
+                unsatisfied.breaksViolated(),
+                unsatisfied.softMissingId(),
+                unsatisfied.softVersionMismatch(),
+                unsatisfied.unparseable());
+        final DuplicateIdReport duplicates = summary.duplicateIds();
+        LOG.info("重复 modId：{} 组 / {} 对 | 版本相同 {} 对 | 版本不同 {} 对",
+                duplicates.groupCount(),
+                duplicates.pairCount(),
+                duplicates.sameVersionPairs(),
+                duplicates.differentVersionPairs());
     }
 
     private static String noEdgeSummary(final DependencyGraph graph) {

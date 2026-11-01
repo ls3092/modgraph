@@ -1,10 +1,10 @@
-# SPEC.zh-CN.md — M0–M1：离线模组元数据归一化、侵入深度评级、依赖可满足性判定与环检测
+# SPEC.zh-CN.md — M0–M1.5：离线模组元数据归一化、侵入深度评级、依赖可满足性判定、环检测与报告聚合字段
 
 <p align="center">
   <a href="./SPEC.md">English</a> · <b>简体中文</b>
 </p>
 
-版本：v1.0
+版本：v1.1
 状态：草稿待人工确认
 上游启发：Forbric v0.3.0（Ray-T-r/Minecraft-Forbric-mod-loader，Apache-2.0）
 
@@ -17,6 +17,9 @@ M0 **不启动 Minecraft、不加载类、不处理 Mixin、不改写字节码**
 
 M1（§3.6）在这些记录之上构建依赖图并检测环。它同样不启动 Minecraft、不加载类、不读 class 文件，
 **不输出安装顺序**（§3.6.5）。
+
+M1.5（§3.7）在已有记录之上补两个聚合报告字段——`unsatisfiedRequired` 与 `duplicateIds`。它同样不加载任何东西，
+不选版本、不做兼容、不做修复，并让 M0 / M0.5 / M1 的每个产物保持逐字节不变。
 
 ### 定位（必须准确理解）
 
@@ -350,16 +353,18 @@ M0 第二阶段输入全部 `ModCandidate`，输出：
 
 - `nodes`：全部 `status=OK` 的 `modId`
 - `edges`：`depends` / `recommends` / `breaks` 三类有向边
-- `report.unsatisfiedRequired`：目标 ID 在全部节点中不存在的硬依赖
+- `report.unsatisfiedRequired`：本次运行能够证明不满足的**硬依赖**声明——**构成与排除项由 §3.7.2（M1.5）定死**，
+  M0、M0.5、M1 都不产出
 - `report.cycles`：环（硬依赖构成）——**M0 与 M0.5 都不产出，由 M1 规定，见 §3.6**
-- `report.duplicateIds`：同一 `modId` 出现多个不同 `version`
+- `report.duplicateIds`：单个宇宙内同一 `modId` 有多于一条 `status=OK` 记录，按版本相同 / 版本不同分开计数——
+  **定义见 §3.7.3（M1.5）**，M0、M0.5、M1 都不产出
 
 **M0 不求解版本区间，不做拓扑排序。**
 
 > 本节是内存契约：这些字段一个都不写入文件。M1（§3.6）只覆盖 `nodes`、`edges` 与 `report.cycles`，
 > 且它的环图只使用硬依赖——`recommends` 与 `breaks` 在这里登记，在那边永远不成为边。
-> `report.unsatisfiedRequired` 与 `report.duplicateIds` **不属于** M1，保持未实现状态；
-> M1 不得实现它们，也不得"顺手加上"。
+> `report.unsatisfiedRequired` 与 `report.duplicateIds` **不属于** M1，在 M1 里保持未实现状态；
+> M1 不得实现它们，也不得"顺手加上"。唯一产出它们的是 M1.5（§3.7），且是运行级聚合字段。
 > M1 同样不求解版本区间，排序只用于判定是否有环，且永不输出顺序（§3.6.5）。
 
 ---
@@ -726,6 +731,109 @@ stdout（INFO），位置在 §3.5.6 的三行之后、§6.6 那行固定结语�
 
 ---
 
+## 3.7 报告字段：`unsatisfiedRequired` 与 `duplicateIds`（M1.5）
+
+M1.5 只给 §3 的报告对象补两个**聚合**字段。两者都不是"每条 `ModCandidate` 一条"的字段：每次运行各一个值，
+只从记录与 `dependencies.csv` 的行推导。M1.5 不改任何图，也不改任何已有产物。
+
+### 3.7.1 范围边界（不得越界）
+
+M1.5 **不做**：
+
+- 给 `ModCandidate` 或任何逐记录产物（`candidates.jsonl`、`summary.csv`）加字段；
+- 改动 `dependencies.csv`、`conflicts.csv`、§3.6 的图或 `cycles.csv`；
+- 在重复项之间仲裁、选版本、删记录、推荐保留哪一份（§0）；
+- 把"工具无法判定"写成"模组有问题"，反过来也不行。
+
+M1.5 **做**：
+
+- 每次运行计算一次 `report.unsatisfiedRequired`（§3.7.2）与 `report.duplicateIds`（§3.7.3）；
+- 写出 `duplicates.csv`（§6.7）并打印三行 stdout（§3.7.4）。
+
+### 3.7.2 `unsatisfiedRequired`：构成
+
+`unsatisfiedRequired` 数的是本次运行**能够证明不满足的硬依赖声明**。它只由 `dependencies.csv` 每一行的
+`(depKind, outcome)` 推导，不重新求值任何东西。
+
+| 行 | 计入 | 理由 |
+| --- | :---: | --- |
+| `required` + `MISSING_ID` | **算** | 目标 ID 在整个集合里不存在，硬依赖缺失 |
+| `required` + `VERSION_MISMATCH` | **算** | 目标存在，但现有版本没有满足声明区间 |
+| `required` + `AMBIGUOUS_ALIAS` | 不算，单独列出 | 我们拒绝在多个别名拥有者之间替模组选一个。这是**工具的限制，不是模组的缺陷**，绝不能折进"不满足" |
+| `breaks` + `BREAKS_VIOLATED` | 不算 | 冲突命中不是依赖不满足；算进去等于同一行用两个名字报两次 |
+| `recommends` + `MISSING_ID` | 不算 | §3.5.2：软依赖缺失是正常配置 |
+| `recommends` + `VERSION_MISMATCH` | 不算 | 软声明没有准入效力。它会被单独打印，所以不是隐藏 |
+| 任何 `UNPARSEABLE` | 不算 | §3.5.7：区间解析失败是本项目的实现缺陷，永远不能算到模组头上 |
+
+定义：
+
+```
+unsatisfiedRequired = required/MISSING_ID + required/VERSION_MISMATCH
+```
+
+当前数据集上是 `50 + 6 = 56`。两个相邻的数字不得与它混淆：
+
+- **57** = `50 + 7`，把按种类过滤的 `50` 与未过滤的 `7` 相加。第 7 条 `VERSION_MISMATCH` 是
+  `recommends sound_physics_remastered -> voicechat`，既是软依赖，又是 §3.5.4 已知的连字符复合版本误报，
+  既不 required、也不是真失配。上面的定义按 `depKind` 过滤，所以它进不来。
+- **7 + 18 + 7**（全部"坏"结果）也不是本字段：它把冲突、工具限制与实现缺陷混在一起。
+
+未计入的类别永远和数字一起打印、各自带计数，这样"没算"就不会被读成"没测"（§3.7.4）。
+
+### 3.7.3 `duplicateIds`：定义
+
+**重复组** = 单个宇宙内同一 `modId` 有**两条及以上 `status=OK` 记录**。
+
+- **只在宇宙内判定。** 同一 `modId` 同时出现在 `FABRIC` 与 `NEOFORGE` **不算重复**：§3.6.2 已把它们当作两个
+  永不同时存在的节点。当前数据集有 71 个这样的双变体 `modId`，全部排除；测试会断言它们一个都不出现在
+  `duplicates.csv` 里。
+- **宇宙按 §2.1 判定，不看文件名。** 数据集里有 10 个 jar **同时**带 `fabric.mod.json` 与
+  `META-INF/neoforge.mods.toml`，按 §2.1 一律判 `FABRIC`。所以一个文件名带 `neoforge` 的 jar 可以合法地落进
+  `FABRIC` 的重复组，这在现行规则下是正确结果。这是数据集里混合 jar 的已知属性，不是仲裁，也不改变 §2.1。
+- **版本关系。** 每个组二选一：
+  - `SAME_VERSION`：组内所有记录的 `version` 原串完全相同；
+  - `DIFFERENT_VERSION`：至少两个不同的原串。
+  比较是**原串精确相等**，不是 §3.5.4 的比较规则：§3.5.4 为了区间匹配忽略 `+` 之后的构建元数据，但
+  `3.0.0+1.21` 与 `3.0.0+1.21.neoforge` 是两个不同的构建，必须按"版本不同"报告。
+- **对数。** 一个组有 `n` 条记录就有 `n * (n - 1) / 2` 对；本次运行的总对数是各组之和。组数、对数、
+  版本相同的对数、版本不同的对数分别计数。
+- **只报告。** 不仲裁、不选版本、不删除、不推荐保留哪一份（§0）。
+- **图不动。** M1 的图本来就把这些记录合并成一个节点（§3.6.3）。`duplicateIds` 不增加节点、不增加边：
+  本次运行仍然是 187 节点、88 边、环组 0，`FABRIC` 98 / `FORGE` 0 / `NEOFORGE` 89 原样不变。
+
+### 3.7.4 输出
+
+`duplicates.csv`（§6.7）每次运行都写，含表头；没有重复组时只有表头。行先按宇宙名、再按 `modId` 排序，
+都是 ASCII 升序，因此同一份输入的两次运行逐字节相同。
+
+三行 stdout 位于 §3.6.6 的三行之后、固定结语之前：
+
+```
+[INFO]  不满足的硬依赖：56（硬 MISSING_ID 50 + 硬 VERSION_MISMATCH 6）
+[INFO]  未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS 18（工具无法判定，非模组缺陷）| BREAKS_VIOLATED 7（冲突命中，非依赖不满足）| 软 MISSING_ID 22 | 软 VERSION_MISMATCH 1 | UNPARSEABLE 0（实现缺陷）
+[INFO]  重复 modId：4 组 / 4 对 | 版本相同 2 对 | 版本不同 2 对
+```
+
+数字随数据集变化；标签、未计入项的顺序与括号里的理由不得变化。
+
+### 3.7.5 M1.5 验收标准
+
+以下七条只约束 **M1.5**。它们独立于 §7、§3.5.7 与 §3.6.7；四组不得混用。
+
+1. **聚合字段而非逐记录字段**：不给 `ModCandidate` 加字段，不给任何已有产物加列；每个值每次运行只算一次。
+2. **构成**：真实数据集上的运行值等于 §3.7.2 的定义，且每个未计入类别都由构造行覆盖（仅有别名、breaks、
+   软缺失、软失配、不可解析）。
+3. **重复项**：构造数据覆盖版本相同组与版本不同组；跨宇宙的一对（`FABRIC` X + `NEOFORGE` X）**不得**被报告；
+   真实数据集上测试断言每个被报告的组都在单个宇宙内，且没有任何双变体 `modId` 出现。
+4. **不仲裁**：`duplicates.csv` 没有推荐列、没有"保留"列、没有被选中的版本。
+5. **图未变**：187 节点 / 88 边 / 环组 0，以及 `FABRIC` 98 / `FORGE` 0 / `NEOFORGE` 89，不因 M1.5 改变。
+6. **四个产物未变**：`candidates.jsonl`、`summary.csv`、`conflicts.csv`、`dependencies.csv` 的 SHA-256 与
+   `PROGRESS.md` 记录的基线完全相同。
+7. **可复现**：同一份输入连续跑两次产出逐字节相同的 `duplicates.csv`；`gradle clean test` 通过、**跳过 0**、
+   不使用 `assumeTrue` / `assumeFalse`。
+
+---
+
 ## 4. 失败分类（`failureCode`）
 
 | code | 含义 | 处理 |
@@ -812,6 +920,9 @@ stdout（INFO），位置在 §3.5.6 的三行之后、§6.6 那行固定结语�
 [INFO]  依赖图：FABRIC 节点 N，边 N | FORGE 节点 N，边 N | NEOFORGE 节点 N，边 N | 未归入宇宙的 OK 记录 N
 [INFO]  未进图的硬依赖：环境提供 N | 跨加载器宇宙 N | 仅别名 N | 目标不存在 N
 [INFO]  依赖环：N 组
+[INFO]  不满足的硬依赖：N（硬 MISSING_ID N + 硬 VERSION_MISMATCH N）
+[INFO]  未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS N（工具无法判定，非模组缺陷）| BREAKS_VIOLATED N（冲突命中，非依赖不满足）| 软 MISSING_ID N | 软 VERSION_MISMATCH N | UNPARSEABLE N（实现缺陷）
+[INFO]  重复 modId：N 组 / N 对 | 版本相同 N 对 | 版本不同 N 对
 ```
 
 最后必须输出一行固定提示：
@@ -823,11 +934,27 @@ stdout（INFO），位置在 §3.5.6 的三行之后、§6.6 那行固定结语�
 **验收不变量（必须显式断言）**：`成功数 + 失败数 == 输入数`。
 此断言失败即视为构建失败。
 
+### 6.7 `duplicates.csv`（M1.5）
+
+表头：`universe,modId,recordCount,pairCount,relation,versions`；规则见 §3.7.3。
+
+```
+universe,modId,recordCount,pairCount,relation,versions
+FABRIC,continuity,2,1,DIFFERENT_VERSION,3.0.0+1.21;3.0.0+1.21.neoforge
+FABRIC,puzzle,2,1,SAME_VERSION,2.3.0
+NEOFORGE,create,2,1,SAME_VERSION,6.0.10
+NEOFORGE,jei,2,1,DIFFERENT_VERSION,19.64.0.455;19.70.0.467
+```
+
+每个重复组一行；`versions` 是去重后的版本原串，按 ASCII 升序、用 `;` 连接；转义规则与 `conflicts.csv` 相同；
+没有重复组时只有表头。上面这段就是当前数据集的真实输出。没有"被选中的版本"列、没有推荐列、没有"保留"列，
+也不许加（§3.7.3）。
+
 ---
 
 ## 7. 验收标准（仅 M0）
 
-以下十条只约束 **M0**。M0.5 有自己的验收线，见 §3.5.7；M1 的验收线见 §3.6.7。三组不得混用，通过其中一组永不意味着通过另一组。
+以下十条只约束 **M0**。M0.5 有自己的验收线，见 §3.5.7；M1 的验收线见 §3.6.7；M1.5 的验收线见 §3.7.5。四组不得混用，通过其中一组永不意味着通过另一组。
 
 1. `fixtures/jars/` 下**全部**真实 jar 均产出记录，无遗漏。**数量必须由文件系统真实列举得出，本文件不得写死任何数字**（历史上曾误写"200 个"，实际数据集为 195 个）。
 2. 人工抽取 10 个 jar 解包核对，`modId` / `version` / `depends` 三项与原始元数据一致率 100%。

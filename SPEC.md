@@ -1,10 +1,10 @@
-# SPEC.md — M0–M1: Offline Mod Metadata Normalization, Invasiveness Rating, Dependency Satisfiability and Cycle Detection
+# SPEC.md — M0–M1.5: Offline Mod Metadata Normalization, Invasiveness Rating, Dependency Satisfiability, Cycle Detection and Report Aggregates
 
 <p align="center">
   <b>English</b> · <a href="./SPEC.zh-CN.md">简体中文</a>
 </p>
 
-Version: v1.0
+Version: v1.1
 Status: draft pending human confirmation
 Upstream inspiration: Forbric v0.3.0 (Ray-T-r/Minecraft-Forbric-mod-loader, Apache-2.0)
 
@@ -18,6 +18,10 @@ one structured `ModCandidate` record.
 
 M1 (§3.6) builds a dependency graph on top of those records and detects cycles. It does not start Minecraft
 either, does not load classes, does not read class files, and **does not output an install order** (§3.6.5).
+
+M1.5 (§3.7) adds two aggregate report fields — `unsatisfiedRequired` and `duplicateIds` — on top of the existing
+records. It does not load anything either, does not pick a version, does not repair or reconcile anything, and it
+leaves every M0 / M0.5 / M1 artifact byte-identical.
 
 ### Scope (must be understood precisely)
 
@@ -377,16 +381,19 @@ M0's second phase takes all `ModCandidate`s as input and outputs:
 
 - `nodes`: all `modId`s with `status=OK`
 - `edges`: directed edges of the three kinds `depends` / `recommends` / `breaks`
-- `report.unsatisfiedRequired`: hard dependencies whose target ID does not exist among all nodes
+- `report.unsatisfiedRequired`: required dependency declarations this run can show to be unsatisfied — **composition
+  and exclusions fixed in §3.7.2 (M1.5)**, not produced by M0, M0.5 or M1
 - `report.cycles`: cycles (formed by hard dependencies) — **not produced by M0 or M0.5; specified in §3.6 (M1)**
-- `report.duplicateIds`: the same `modId` appearing with multiple different `version`s
+- `report.duplicateIds`: the same `modId` appearing in one universe with more than one `status=OK` record, split by
+  same-version and different-version — **defined in §3.7.3 (M1.5)**, not produced by M0, M0.5 or M1
 
 **M0 does not solve version ranges and does not perform topological sorting.**
 
 > This subsection is an in-memory contract: none of these fields is written to a file. M1 (§3.6) covers `nodes`,
 > `edges` and `report.cycles` only, and its cycle graph uses hard dependencies alone — `recommends` and `breaks` are
 > registered here but never become edges there. `report.unsatisfiedRequired` and `report.duplicateIds` are **not**
-> part of M1 and stay unimplemented; M1 must not implement them, nor "add them in passing".
+> part of M1 and stay unimplemented there; M1 must not implement them, nor "add them in passing". M1.5 (§3.7) is the
+> only place that produces them, as two run-level aggregates.
 > M1 does not solve version ranges either, sorts only to decide acyclicity, and never outputs an order (§3.6.5).
 
 ---
@@ -778,6 +785,118 @@ sets must not be mixed, and passing one never implies passing another.
 
 ---
 
+## 3.7 Report fields: `unsatisfiedRequired` and `duplicateIds` (M1.5)
+
+M1.5 adds exactly two aggregate fields to the report object of §3. Neither is a per-record field: each is one value
+per run, derived from records and from `dependencies.csv` rows. M1.5 changes no graph and no existing artifact.
+
+### 3.7.1 Scope boundary (must not be crossed)
+
+M1.5 **does not**:
+
+- add a field to `ModCandidate` or to any per-record output (`candidates.jsonl`, `summary.csv`);
+- change `dependencies.csv`, `conflicts.csv`, the graph of §3.6 or `cycles.csv`;
+- arbitrate between duplicates, pick a version, delete a record or recommend which copy to keep (§0);
+- turn "the tool could not decide" into "the mod is broken", or the reverse.
+
+M1.5 **does**:
+
+- compute `report.unsatisfiedRequired` (§3.7.2) and `report.duplicateIds` (§3.7.3) once per run;
+- write `duplicates.csv` (§6.7) and three stdout lines (§3.7.4).
+
+### 3.7.2 `unsatisfiedRequired`: composition
+
+`unsatisfiedRequired` counts **required** dependency declarations that this run can show to be unsatisfied. It is
+derived only from the `(depKind, outcome)` pairs of the `dependencies.csv` rows; nothing is re-evaluated.
+
+| rows | counted | reason |
+| --- | :---: | --- |
+| `required` + `MISSING_ID` | **yes** | the target ID exists nowhere in the set; a required dependency is missing |
+| `required` + `VERSION_MISMATCH` | **yes** | the target exists, but no present version satisfies the declared range |
+| `required` + `AMBIGUOUS_ALIAS` | no, printed separately | the tool refuses to choose among several alias owners. That is a **tool limitation, not a mod defect**; it must never be folded into "unsatisfied" |
+| `breaks` + `BREAKS_VIOLATED` | no | a conflict hit is not an unsatisfied dependency; counting it would report one row under two names |
+| `recommends` + `MISSING_ID` | no | §3.5.2: a missing soft dependency is a normal configuration |
+| `recommends` + `VERSION_MISMATCH` | no | a soft declaration has no admission power. It is printed separately so that nothing is hidden |
+| any `UNPARSEABLE` | no | §3.5.7: an unparseable range is this project's implementation defect, never the mod's |
+
+Definition:
+
+```
+unsatisfiedRequired = required/MISSING_ID + required/VERSION_MISMATCH
+```
+
+On the current dataset that is `50 + 6 = 56`. Two nearby numbers must not be confused with it:
+
+- **57** = `50 + 7` mixes a kind-filtered count (`50`) with an unfiltered one (`7`). The seventh `VERSION_MISMATCH`
+  row is `recommends sound_physics_remastered -> voicechat`; it is soft **and** the known hyphen-composite false
+  positive of §3.5.4, so it is neither required nor a real mismatch. The definition above filters by `depKind`, so it
+  cannot enter the field.
+- **7 + 18 + 7** (all "bad" outcomes) is not this field either: it mixes conflicts, tool limitations and mod defects.
+
+Excluded categories are always printed next to the number with their counts, so that "not counted" never looks like
+"not measured" (§3.7.4).
+
+### 3.7.3 `duplicateIds`: definition
+
+A duplicate group is a `(universe, modId)` pair with **two or more `status=OK` records in that universe**.
+
+- **Universe-scoped.** The same `modId` present in both `FABRIC` and `NEOFORGE` is **not** a duplicate: §3.6.2 already
+  treats those as two nodes that never coexist. The current dataset has 71 such dual-variant `modId`s; all 71 are
+  excluded, and a test asserts that none of them appears in `duplicates.csv`.
+- **Universe follows §2.1, not the file name.** Ten jars in the dataset carry **both** `fabric.mod.json` and
+  `META-INF/neoforge.mods.toml`; §2.1 classifies all of them as `FABRIC`. A jar whose file name says `neoforge` can
+  therefore land in a `FABRIC` duplicate group, and that is the correct result under the current rules. This is a
+  property of the dataset's hybrid jars, not an arbitration and not a change to §2.1.
+- **Version relation.** For each group:
+  - `SAME_VERSION`: every record carries an identical raw `version` string;
+  - `DIFFERENT_VERSION`: at least two distinct raw strings.
+  Comparison is exact string equality, **not** §3.5.4 ordering: §3.5.4 ignores `+` build metadata for range matching,
+  but `3.0.0+1.21` and `3.0.0+1.21.neoforge` are two different builds and are reported as different.
+- **Pairs.** A group of `n` records contains `n * (n - 1) / 2` pairs; the run total is the sum over groups. Groups,
+  pairs, same-version pairs and different-version pairs are counted separately.
+- **Report only.** No arbitration, no version selection, no deletion, no "keep this one" (§0).
+- **The graph does not move.** The M1 graph already merges these records into one node (§3.6.3). `duplicateIds` adds
+  no node and no edge: the run still reports 187 nodes, 88 edges and 0 cycle groups, and `FABRIC` 98 / `FORGE` 0 /
+  `NEOFORGE` 89 stay exactly as they are.
+
+### 3.7.4 Output
+
+`duplicates.csv` (§6.7) is written on every run, header included; when there is no duplicate group the file contains
+the header only. Rows are sorted by universe name and then by `modId`, both ASCII ascending, so the file is
+byte-identical across runs on the same input.
+
+Three stdout lines follow §3.6.6's three lines and precede the fixed closing line:
+
+```
+[INFO]  不满足的硬依赖：56（硬 MISSING_ID 50 + 硬 VERSION_MISMATCH 6）
+[INFO]  未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS 18（工具无法判定，非模组缺陷）| BREAKS_VIOLATED 7（冲突命中，非依赖不满足）| 软 MISSING_ID 22 | 软 VERSION_MISMATCH 1 | UNPARSEABLE 0（实现缺陷）
+[INFO]  重复 modId：4 组 / 4 对 | 版本相同 2 对 | 版本不同 2 对
+```
+
+The numbers vary with the dataset; the labels, the order of the excluded categories and the parenthesised reasons
+must not.
+
+### 3.7.5 M1.5 acceptance criteria
+
+These seven items gate **M1.5** only. They are independent of §7, §3.5.7 and §3.6.7; the four sets must not be mixed.
+
+1. **Aggregates, not per-record fields**: no `ModCandidate` field and no new column in any existing artifact; each
+   value is computed once per run.
+2. **Composition**: the runtime value equals the definition of §3.7.2 on the real dataset, and every excluded
+   category is exercised by constructed rows (alias-only, breaks, soft missing, soft mismatch, unparseable).
+3. **Duplicates**: constructed sets cover a same-version group and a different-version group; a cross-universe pair
+   (`FABRIC` X + `NEOFORGE` X) is **not** reported; on the real dataset a test asserts that every reported group is
+   universe-scoped and that no dual-variant `modId` appears.
+4. **No arbitration**: `duplicates.csv` has no recommendation, no "keep" column and no chosen version.
+5. **Graph untouched**: 187 nodes / 88 edges / 0 cycle groups, and `FABRIC` 98 / `FORGE` 0 / `NEOFORGE` 89, are
+   unchanged by M1.5.
+6. **Four artifacts untouched**: the SHA-256 of `candidates.jsonl`, `summary.csv`, `conflicts.csv` and
+   `dependencies.csv` is identical to the baselines recorded in `PROGRESS.md`.
+7. **Reproducibility**: two consecutive runs produce a byte-identical `duplicates.csv`; `gradle clean test` passes
+   with **0 skipped** and without `assumeTrue` / `assumeFalse`.
+
+---
+
 ## 4. Failure classification (`failureCode`)
 
 | code | Meaning | Handling |
@@ -871,6 +990,9 @@ One row per cycle group, header only when there is none.
 [INFO]  依赖图：FABRIC 节点 N，边 N | FORGE 节点 N，边 N | NEOFORGE 节点 N，边 N | 未归入宇宙的 OK 记录 N
 [INFO]  未进图的硬依赖：环境提供 N | 跨加载器宇宙 N | 仅别名 N | 目标不存在 N
 [INFO]  依赖环：N 组
+[INFO]  不满足的硬依赖：N（硬 MISSING_ID N + 硬 VERSION_MISMATCH N）
+[INFO]  未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS N（工具无法判定，非模组缺陷）| BREAKS_VIOLATED N（冲突命中，非依赖不满足）| 软 MISSING_ID N | 软 VERSION_MISMATCH N | UNPARSEABLE N（实现缺陷）
+[INFO]  重复 modId：N 组 / N 对 | 版本相同 N 对 | 版本不同 N 对
 ```
 
 > Every number must come from an actual run; the file must not hard-code any quantity.
@@ -884,12 +1006,28 @@ Finally, one fixed line must be emitted:
 **Acceptance invariant (must be asserted explicitly)**: `success count + failure count == input count`.
 If this assertion fails, the build is a failure.
 
+### 6.7 `duplicates.csv` (M1.5)
+
+Header: `universe,modId,recordCount,pairCount,relation,versions`; rules in §3.7.3.
+
+```
+universe,modId,recordCount,pairCount,relation,versions
+FABRIC,continuity,2,1,DIFFERENT_VERSION,3.0.0+1.21;3.0.0+1.21.neoforge
+FABRIC,puzzle,2,1,SAME_VERSION,2.3.0
+NEOFORGE,create,2,1,SAME_VERSION,6.0.10
+NEOFORGE,jei,2,1,DIFFERENT_VERSION,19.64.0.455;19.70.0.467
+```
+
+One row per group; `versions` = distinct raw version strings in ASCII ascending order joined with `;`; same escaping
+convention as `conflicts.csv`; header only when there is no group. The block above is the real output on the current
+dataset. There is no column for a chosen version, a recommendation or a "keep" flag — none may be added (§3.7.3).
+
 ---
 
 ## 7. Acceptance criteria (M0 only)
 
-These ten items gate **M0**. M0.5 has its own gate in §3.5.7 and M1 its own in §3.6.7; the three sets must not be
-mixed, and passing one never implies passing another.
+These ten items gate **M0**. M0.5 has its own gate in §3.5.7, M1 in §3.6.7 and M1.5 in §3.7.5; the four sets must not
+be mixed, and passing one never implies passing another.
 
 1. **All** real jars under `fixtures/jars/` produce records, none omitted. **The count must be obtained by
    actually enumerating the filesystem; this file must not hard-code any number** (a previous version wrongly

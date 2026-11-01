@@ -14,10 +14,12 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * 写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv、cycles.csv。
+ * 写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv、cycles.csv、duplicates.csv。
  *
  * <p>{@code cycles.csv} 一行只写一个环组的成员集合（按 ASCII 升序、用 {@code ;} 连接），
  * 不写路径、不写起点、不写方向——它既不表达也不暗示任何安装顺序或加载顺序（SPEC §3.6.5）。</p>
+ *
+ * <p>{@code duplicates.csv} 一行一个重复组，只陈述事实：没有推荐列、没有"保留哪一份"列（SPEC §3.7.3）。</p>
  */
 public final class ReportWriter {
 
@@ -97,6 +99,23 @@ public final class ReportWriter {
                         csv(group.universe().name()),
                         Integer.toString(group.memberCount()),
                         csv(group.csvMembers())));
+                writer.newLine();
+            }
+        }
+    }
+
+    public void writeDuplicates(final Path path, final DuplicateIdReport report) throws IOException {
+        try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            writer.write("universe,modId,recordCount,pairCount,relation,versions");
+            writer.newLine();
+            for (DuplicateIdGroup group : report.groups()) {
+                writer.write(String.join(",",
+                        csv(group.universe().name()),
+                        csv(group.modId()),
+                        Integer.toString(group.recordCount()),
+                        Integer.toString(group.pairCount()),
+                        group.relation().name(),
+                        csv(group.csvVersions())));
                 writer.newLine();
             }
         }

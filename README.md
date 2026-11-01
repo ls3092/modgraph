@@ -25,7 +25,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-125%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-148%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
   <img src="https://img.shields.io/badge/dependencies-716%20evaluated-blueviolet?style=flat-square" alt="dependencies"/>
 </p>
@@ -137,6 +137,7 @@ engineering rule** — see [Engineering discipline](#engineering-discipline).
 | **M0** | Parse mod jar metadata offline, emit unified `ModCandidate` records and dependency declarations | ✅ Completed (2026-10-31, 195 real jars) |
 | **M0.5** | Evaluate the version ranges M0 only registered; one satisfiability outcome per declared dependency (no sorting, no solving) | ✅ Completed (2026-11-01, 195 real jars, 716 dependency declarations) |
 | **M1** | Build one dependency graph per loader universe, decide acyclicity by topological sort, report cycle groups as strongly-connected member sets — **never an install order** | ✅ Completed (2026-11-01, 98 FABRIC nodes / 68 edges, 89 NEOFORGE nodes / 20 edges, 0 cycle groups) |
+| **M1.5** | Two run-level report fields: `unsatisfiedRequired` (hard missing + hard version mismatch only) and `duplicateIds` (same-universe only, same/different version counted apart, report only) | ✅ Completed (2026-11-01, 56 unsatisfied = 50 + 6; 4 duplicate groups / 4 pairs, 2 same-version + 2 different-version) |
 | M2 | Unified bootstrap and transform orchestration | ⚠️ Requires deep JVM knowledge; author does not know Java |
 | M3 | Stably load 20 + 20 real mods on a single version | Not started |
 
@@ -144,6 +145,13 @@ engineering rule** — see [Engineering discipline](#engineering-discipline).
 > triggered by real data**: `OTHER_UNIVERSE = 0`, and `QUILT` / `FORGE` hold 0 records. It is covered only by
 > constructed records in the tests, never by the dataset. Do not read the "0 cycle groups" above as "the cross-loader
 > rule was proven to work" — the dataset cannot tell the separated graph apart from a merged one.
+
+> `unsatisfiedRequired` counts `required` rows only. The M0.5 line prints **7** `VERSION_MISMATCH`, but one of them is
+> a `recommends` row (and the known hyphen-composite false positive), so it is printed separately and never added in:
+> `50 + 6 = 56`, not `57`. `AMBIGUOUS_ALIAS`, `BREAKS_VIOLATED`, soft missing and `UNPARSEABLE` are likewise printed
+> next to the number and excluded — see §3.7.2.
+> `duplicateIds` follows the loader family of §2.1, not file names: ten jars ship **both** descriptors and are
+> classified `FABRIC`, so a `.neoforge`-named jar can legitimately appear in a `FABRIC` duplicate group.
 
 **No version before M3 should ever be used in an actual game.**
 
@@ -187,8 +195,8 @@ gradle run
 ```
 
 The scan roots are fixed (`fixtures/jars/fabric` and `fixtures/jars/neoforge`); the program takes no arguments.
-It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv`, `dependencies.csv` and `cycles.csv` into the working
-directory.
+It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv`, `dependencies.csv`, `cycles.csv` and `duplicates.csv`
+into the working directory.
 
 ---
 
@@ -201,6 +209,7 @@ directory.
 | `conflicts.csv` | Header: `modA,modB,level,sharedTargets` — pre-launch conflict prediction, all pairs included (including `NONE`) |
 | `dependencies.csv` | Header: `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome` — one row per declared dependency, no deduplication |
 | `cycles.csv` | Header: `universe,memberCount,members` — one row per cycle group, members joined with `;`; header only when there is no cycle |
+| `duplicates.csv` | Header: `universe,modId,recordCount,pairCount,relation,versions` — one row per same-modId group inside a single loader universe, `SAME_VERSION` / `DIFFERENT_VERSION`; report only, no recommendation column |
 | stdout | INFO-level summary |
 
 Below is a **real run** against the current dataset (195 jars). The numbers are not constants
@@ -224,6 +233,9 @@ Below is a **real run** against the current dataset (195 jars). The numbers are 
 [INFO] 依赖图：FABRIC 节点 98，边 68 | FORGE 节点 0，边 0 | NEOFORGE 节点 89，边 20 | 未归入宇宙的 OK 记录 0
 [INFO] 未进图的硬依赖：环境提供 374 | 跨加载器宇宙 0 | 仅别名 18 | 目标不存在 50
 [INFO] 依赖环：0 组
+[INFO] 不满足的硬依赖：56（硬 MISSING_ID 50 + 硬 VERSION_MISMATCH 6）
+[INFO] 未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS 18（工具无法判定，非模组缺陷）| BREAKS_VIOLATED 7（冲突命中，非依赖不满足）| 软 MISSING_ID 22 | 软 VERSION_MISMATCH 1 | UNPARSEABLE 0（实现缺陷）
+[INFO] 重复 modId：4 组 / 4 对 | 版本相同 2 对 | 版本不同 2 对
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
 
@@ -295,7 +307,7 @@ so there is no authoritative owner to prefer.
 
 > `fabric-api` itself is **not** ambiguous: it is a real `modId`, and 40 dependencies resolve through it even
 > though `fabric_api` also lists `fabric-api` in its `provides`. Scoping the remaining `fabric` collision by loader
-> family would remove it, but that is a separate rule and is not part of v1.0.
+> family would remove it, but that is a separate rule and is not part of v1.1.
 
 ---
 
@@ -436,22 +448,25 @@ judgements**. The spec, the dataset and the verification system are already in p
   before and after (checked by SHA-256, not by "tests are green")
 - M1 complete: one dependency graph per loader universe, acyclicity by topological sort, cycle groups as SCC member
   sets; 0 cycle groups on the real dataset and `cycles.csv` is byte-identical across two consecutive runs
+- M1.5 complete: `unsatisfiedRequired` = 56 (hard missing 50 + hard version mismatch 6, with every excluded category
+  printed and never summed in); `duplicateIds` = 4 same-universe groups / 4 pairs (2 same-version, 2 different-version),
+  report only; the four earlier artifacts stay byte-identical
 - Manual metadata sampling: `modId` / `version` / `depends` — **10/10 consistent**, 0 mismatches across 47
   dependency declarations; 10-dependency spot check against raw metadata — **10/10 consistent**
-- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v1.0) met, the eight M0.5 criteria of §3.5.7, and
-  the ten M1 criteria of §3.6.7
-- 125 tests, 0 failures, 0 errors, **0 skipped**
+- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v1.1) met, the eight M0.5 criteria of §3.5.7, the
+  ten M1 criteria of §3.6.7 and the seven M1.5 criteria of §3.7.5
+- 148 tests, 0 failures, 0 errors, **0 skipped**
 - Pre-launch conflict warning: 331 HIGH pairs (4.96%)
 
 **What I bring**
 
-- A complete spec: [`SPEC.md`](./SPEC.md) v1.0 — fields, decision signals, tiering rules, version-range syntax,
+- A complete spec: [`SPEC.md`](./SPEC.md) v1.1 — fields, decision signals, tiering rules, version-range syntax,
   output formats and acceptance criteria are all written down, not agreed verbally
 - A real dataset collection pipeline: generate a list from the public Modrinth API, download, auto-sort by
   in-jar metadata, verify one by one — fully scripted
 - A set of enforced engineering rules: no empty catch, no `assumeTrue`, no demoting failures to warnings,
   skipped count must be 0
-- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 110 work entries + 69 documented pitfalls, every
+- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 111 work entries + 70 documented pitfalls, every
   number change and every mistaken judgement on the record
 
 **What I need**

@@ -23,4 +23,11 @@ public record DependencyReport(List<DependencyResult> results) {
     public long count(final DependencyOutcome outcome) {
         return results.stream().filter(result -> result.outcome() == outcome).count();
     }
+
+    /** 按（种类, 结果）联合计数，供 M1.5 的 {@code unsatisfiedRequired} 使用。 */
+    public long count(final DepKind kind, final DependencyOutcome outcome) {
+        return results.stream()
+                .filter(result -> result.depKind() == kind && result.outcome() == outcome)
+                .count();
+    }
 }

@@ -25,7 +25,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-125%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-148%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
   <img src="https://img.shields.io/badge/dependencies-716%20evaluated-blueviolet?style=flat-square" alt="dependencies"/>
 </p>
@@ -125,12 +125,19 @@ Forbric 的代码几乎完全由 AI 生成，且缺少充分的人工审查—�
 | **M0** | 离线解析模组 jar 元数据，产出统一 `ModCandidate` 与依赖声明 | ✅ 已完成（2026-10-31，195 个真实 jar） |
 | **M0.5** | 对 M0 只登记不求值的版本区间做求值，为每条依赖声明给出一个可满足性结论（不排序、不求解） | ✅ 已完成（2026-11-01，195 个真实 jar，716 条依赖声明） |
 | **M1** | 按加载器宇宙各建一张依赖图，用拓扑排序判定是否有环，用强连通分量给出环组成员集合——**永不输出安装顺序** | ✅ 已完成（2026-11-01，FABRIC 98 节点 / 68 边，NEOFORGE 89 节点 / 20 边，环组 0） |
+| **M1.5** | 两个运行级报告字段：`unsatisfiedRequired`（只含硬 MISSING_ID + 硬 VERSION_MISMATCH）与 `duplicateIds`（只在宇宙内、版本相同/不同分开计数、只报告） | ✅ 已完成（2026-11-01，不满足 56 = 50 + 6；重复 4 组 / 4 对，版本相同 2 对 + 版本不同 2 对） |
 | M2 | 统一引导与 transform 编排 | ⚠️ 需要 JVM 底层能力，作者不会 Java |
 | M3 | 单版本上稳定加载 20 + 20 个真实模组 | 未开始 |
 
 > M1 的跨加载器分流规则（`FABRIC` + `QUILT` 同宇宙，`FORGE` 与 `NEOFORGE` 各自独立）**没有被真实数据触发**：
 > `OTHER_UNIVERSE = 0`，`QUILT` / `FORGE` 也都是 0 条记录。这条规则只由测试里的构造记录覆盖，真实数据集从未覆盖。
 > 不要把上面的"环组 0"读成"跨加载器规则被证明有效"——这份数据集分不出"分开建图"和"混成一张图"。
+
+> `unsatisfiedRequired` 只数 `required` 行。M0.5 那行打印的 **7** 条 `VERSION_MISMATCH` 里有 1 条是 `recommends`
+> （而且正是连字符复合版本的已知误报），所以它被单独打印、永不加进来：`50 + 6 = 56`，不是 `57`。
+> `AMBIGUOUS_ALIAS`、`BREAKS_VIOLATED`、软依赖缺失与 `UNPARSEABLE` 同样只打印在数字旁边、不计入——见 §3.7.2。
+> `duplicateIds` 按 §2.1 的加载器家族判定、不看文件名：数据集里有 10 个 jar **同时**带两种元数据、一律判
+> `FABRIC`，所以文件名带 `neoforge` 的 jar 也可以合法地出现在 `FABRIC` 的重复组里。
 
 **在 M3 之前的任何版本都不应用于实际游戏。**
 
@@ -172,7 +179,7 @@ gradle run
 ```
 
 扫描根目录是固定的（`fixtures/jars/fabric` 与 `fixtures/jars/neoforge`），程序不接收参数。
-它会在工作目录写出 `candidates.jsonl`、`summary.csv`、`conflicts.csv`、`dependencies.csv`、`cycles.csv`。
+它会在工作目录写出 `candidates.jsonl`、`summary.csv`、`conflicts.csv`、`dependencies.csv`、`cycles.csv`、`duplicates.csv`。
 
 ---
 
@@ -185,6 +192,7 @@ gradle run
 | `conflicts.csv` | 表头 `modA,modB,level,sharedTargets`，启动前冲突预测，含全部模组对（含 `NONE`） |
 | `dependencies.csv` | 表头 `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome`，每条依赖声明一行，不去重 |
 | `cycles.csv` | 表头 `universe,memberCount,members`，每个环组一行，成员用 `;` 连接；没有环时只有表头 |
+| `duplicates.csv` | 表头 `universe,modId,recordCount,pairCount,relation,versions`，单个宇宙内同 `modId` 一组一行，`SAME_VERSION` / `DIFFERENT_VERSION`；只报告，没有推荐列 |
 | stdout | INFO 级摘要 |
 
 以下是当前数据集（195 个 jar）的一次**实际运行**输出，数字不是常量：
@@ -207,6 +215,9 @@ gradle run
 [INFO] 依赖图：FABRIC 节点 98，边 68 | FORGE 节点 0，边 0 | NEOFORGE 节点 89，边 20 | 未归入宇宙的 OK 记录 0
 [INFO] 未进图的硬依赖：环境提供 374 | 跨加载器宇宙 0 | 仅别名 18 | 目标不存在 50
 [INFO] 依赖环：0 组
+[INFO] 不满足的硬依赖：56（硬 MISSING_ID 50 + 硬 VERSION_MISMATCH 6）
+[INFO] 未计入 unsatisfiedRequired：AMBIGUOUS_ALIAS 18（工具无法判定，非模组缺陷）| BREAKS_VIOLATED 7（冲突命中，非依赖不满足）| 软 MISSING_ID 22 | 软 VERSION_MISMATCH 1 | UNPARSEABLE 0（实现缺陷）
+[INFO] 重复 modId：4 组 / 4 对 | 版本相同 2 对 | 版本不同 2 对
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
 
@@ -257,7 +268,7 @@ M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：
 
 **当前数字**（本次运行，195 个 jar）：硬依赖 531 条、软依赖 46 条、冲突声明 139 条，合计 716 行写进 `dependencies.csv`。判定结果：`SATISFIED` 612、`MISSING_ID` 72、`VERSION_MISMATCH` 7、`BREAKS_VIOLATED` 7、`AMBIGUOUS_ALIAS` 18、`UNPARSEABLE` 0。72 条 `MISSING_ID` 里 50 条是硬依赖、22 条是软依赖，没有任何一条是环境 ID。18 条 `AMBIGUOUS_ALIAS` 全部是 `fabric` 这个别名：`fabric-api`（Fabric）与 `fabric_api`（Sinytra 的 forgified NeoForge 移植）都声明了它，而 `fabric` 本身不是真实 `modId`，没有权威拥有者可以优先。
 
-> `fabric-api` 本身**不是**歧义：它是真实 `modId`，即使 `fabric_api` 也把 `fabric-api` 写进了 `provides`，那 40 条依赖照样按真实 modId 解析。剩下这 18 条 `fabric` 若要消掉，需要按加载器家族分流，但那是另一条规则，不属于 v1.0。
+> `fabric-api` 本身**不是**歧义：它是真实 `modId`，即使 `fabric_api` 也把 `fabric-api` 写进了 `provides`，那 40 条依赖照样按真实 modId 解析。剩下这 18 条 `fabric` 若要消掉，需要按加载器家族分流，但那是另一条规则，不属于 v1.1。
 
 ---
 
@@ -376,18 +387,20 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 - M0.5 完成：716 条依赖声明逐条求值、一条一行；M0 的三个输出文件在改动前后逐字节相同（用 SHA-256 核对，不是“测试绿了”）
 - M1 完成：每个加载器宇宙一张依赖图，拓扑排序判定是否有环，环组写成强连通分量的成员集合；
   真实数据集环组 0，`cycles.csv` 连续两次运行逐字节相同
+- M1.5 完成：`unsatisfiedRequired` = 56（硬 MISSING_ID 50 + 硬 VERSION_MISMATCH 6，所有未计入类别都打印且永不加总）；
+  `duplicateIds` = 4 个同宇宙重复组 / 4 对（版本相同 2 对、版本不同 2 对），只报告；四个已有产物逐字节不变
 - 元数据人工抽检：`modId` / `version` / `depends` 三项 **10/10 一致**，47 条依赖声明 0 条不一致；
   依赖人工抽检 10 条对照原始元数据，**10/10 一致**
-- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.0 §7 的 M0 十条验收、§3.5.7 的 M0.5 八条验收、§3.6.7 的 M1 十条验收全部达成
-- 125 个测试，失败 0、错误 0、**跳过 0**
+- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.1 §7 的 M0 十条验收、§3.5.7 的 M0.5 八条验收、§3.6.7 的 M1 十条验收、§3.7.5 的 M1.5 七条验收全部达成
+- 148 个测试，失败 0、错误 0、**跳过 0**
 - 启动前冲突预警：HIGH 331 组（4.96%）
 
 **我能提供什么**
 
-- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.0——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
+- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.1——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
 - 真实数据集采集流程：从 Modrinth 公开 API 生成清单、手动下载、按 jar 内元数据自动归位、逐个校验，全程脚本化
 - 一套强制的工程纪律：禁止空 catch、禁止 `assumeTrue`、禁止把失败降级为警告、测试跳过数必须为 0
-- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，110 条工作记录 + 69 条踩过的坑，每一次数字变化与判断失误都在册
+- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，111 条工作记录 + 70 条踩过的坑，每一次数字变化与判断失误都在册
 
 **我需要什么**
 
