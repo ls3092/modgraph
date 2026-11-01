@@ -14,6 +14,11 @@ import dev.modgraph.model.SupportPolicy;
 import dev.modgraph.parse.FabricMetadataParser;
 import dev.modgraph.parse.NeoForgeMetadataParser;
 import dev.modgraph.report.ReportWriter;
+import dev.modgraph.resolve.DepKind;
+import dev.modgraph.resolve.DependencyOutcome;
+import dev.modgraph.resolve.DependencyReport;
+import dev.modgraph.resolve.DependencyResolver;
+import dev.modgraph.resolve.EnvironmentFacts;
 import dev.modgraph.scan.JarScanner;
 import dev.modgraph.scan.ScannedJar;
 import java.io.IOException;
@@ -35,11 +40,15 @@ public final class Main {
     private static final Path CANDIDATES_PATH = Path.of("candidates.jsonl");
     private static final Path SUMMARY_PATH = Path.of("summary.csv");
     private static final Path CONFLICTS_PATH = Path.of("conflicts.csv");
+    private static final Path DEPENDENCIES_PATH = Path.of("dependencies.csv");
 
     private Main() {
     }
 
     public static void main(final String[] args) throws IOException {
+        final EnvironmentFacts environment = EnvironmentFacts.declared();
+        LOG.info("环境事实：{}", environment.describe());
+
         final InvasivenessAnalyzer analyzer = new InvasivenessAnalyzer();
         final List<ModCandidate> fabric = parseFabric(analyzer);
         final List<ModCandidate> neoforge = parseNeoForge(analyzer);
@@ -104,6 +113,19 @@ public final class Main {
                 levels.getOrDefault(ConflictLevel.HIGH, 0L),
                 levels.getOrDefault(ConflictLevel.MEDIUM, 0L),
                 levels.getOrDefault(ConflictLevel.LOW, 0L));
+
+        final DependencyReport dependencyReport = new DependencyResolver().resolve(all, environment);
+        reportWriter.writeDependencies(DEPENDENCIES_PATH, dependencyReport.results());
+        LOG.info("依赖总数：硬依赖 {} | 软依赖 {} | 冲突声明 {}",
+                dependencyReport.count(DepKind.REQUIRED),
+                dependencyReport.count(DepKind.RECOMMENDS),
+                dependencyReport.count(DepKind.BREAKS));
+        LOG.info("不可满足：MISSING_ID {} | VERSION_MISMATCH {} | BREAKS_VIOLATED {}",
+                dependencyReport.count(DependencyOutcome.MISSING_ID),
+                dependencyReport.count(DependencyOutcome.VERSION_MISMATCH),
+                dependencyReport.count(DependencyOutcome.BREAKS_VIOLATED));
+        LOG.info("无法解析的版本区间：{}（实现缺陷，不是模组问题）",
+                dependencyReport.count(DependencyOutcome.UNPARSEABLE));
 
         LOG.info("本结果为准入检查，不构成运行稳定性保证");
     }

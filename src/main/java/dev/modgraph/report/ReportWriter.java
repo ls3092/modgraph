@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dev.modgraph.analysis.ModConflict;
 import dev.modgraph.model.ModCandidate;
+import dev.modgraph.resolve.DependencyResult;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -12,7 +13,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * 写出 candidates.jsonl、summary.csv、conflicts.csv。
+ * 写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv。
  */
 public final class ReportWriter {
 
@@ -59,6 +60,25 @@ public final class ReportWriter {
                         csv(conflict.modB()),
                         csv(conflict.level().name()),
                         csv(String.join(";", conflict.sharedTargets()))));
+                writer.newLine();
+            }
+        }
+    }
+
+    public void writeDependencies(final Path path, final List<DependencyResult> results)
+            throws IOException {
+        try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            writer.write("modId,version,depId,depKind,declaredRange,resolvedVersion,outcome");
+            writer.newLine();
+            for (DependencyResult result : results) {
+                writer.write(String.join(",",
+                        csv(result.modId()),
+                        csv(result.version()),
+                        csv(result.depId()),
+                        csv(result.depKind().csvName()),
+                        csv(result.declaredRange()),
+                        csv(result.resolvedVersion()),
+                        csv(result.outcome().name())));
                 writer.newLine();
             }
         }

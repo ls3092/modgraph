@@ -12,3 +12,5 @@ build/
 candidates.jsonl
 summary.csv
 conflicts.csv
+dependencies.csv
+

@@ -23,7 +23,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-42%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-88%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
 </p>
 
@@ -44,6 +44,7 @@
 - [Outputs](#outputs)
 - [Architecture](#architecture)
 - [Engineering discipline](#engineering-discipline)
+- [Known limitations](#known-limitations)
 - [Dataset compliance](#dataset-compliance)
 - [Seeking collaborator](#seeking-collaborator)
 - [Contributing](#contributing)
@@ -74,7 +75,7 @@ bytecode level, or are pure API consumers — and warns about conflict risk *bef
 
 `modgraph` produces an **"admission check for whether a mod set can start"**, not **"a guarantee that it will run stably"**.
 
-- Can predict: missing dependencies, disjoint version ranges, dependency cycles, explicit incompatibility declarations
+- Can predict: missing dependencies, disjoint version ranges, explicit incompatibility declarations
 - Cannot predict: two mixins targeting the same method, two mods replacing the same render stage
 
 Behavioural conflicts only surface at runtime. This project makes no promise of "automatic compatibility" or
@@ -126,12 +127,12 @@ engineering rule** — see [Engineering discipline](#engineering-discipline).
 
 ## Current status
 
-> ⚠️ **M0: offline metadata parser. It cannot load any mod and cannot start Minecraft.**
+> ⚠️ **M0 / M0.5: offline static analysis. It cannot load any mod and cannot start Minecraft.**
 
 | Stage | Scope | Status |
 | --- | :---: | :---: |
 | **M0** | Parse mod jar metadata offline, emit unified `ModCandidate` records and dependency declarations | ✅ Completed (2026-10-31, 195 real jars) |
-| M0.5 | Version-range evaluation and semver rule alignment | Not started |
+| **M0.5** | Evaluate the version ranges M0 only registered; one satisfiability outcome per declared dependency (no sorting, no solving) | ✅ Completed (2026-11-01, 195 real jars, 716 dependency declarations) |
 | M1 | Cross-loader dependency resolution and conflict arbiter | Not started |
 | M2 | Unified bootstrap and transform orchestration | ⚠️ Requires deep JVM knowledge; author does not know Java |
 | M3 | Stably load 20 + 20 real mods on a single version | Not started |
@@ -153,7 +154,7 @@ engineering rule** — see [Engineering discipline](#engineering-discipline).
 This project **does not use synthetic data**. Test input is real mod jars downloaded from the public
 [Modrinth](https://modrinth.com) API.
 
-Collection is three steps; all scripts live in the repository root:
+Collection is four steps; all scripts live in the repository root:
 
 ```bash
 python build_download_list.py                        # generate the download list (download_list.txt)
@@ -174,8 +175,11 @@ gradle build
 ### 3. Run the parser
 
 ```bash
-gradle run --args="fixtures/jars"
+gradle run
 ```
+
+The scan roots are fixed (`fixtures/jars/fabric` and `fixtures/jars/neoforge`); the program takes no arguments.
+It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv` and `dependencies.csv` into the working directory.
 
 ---
 
@@ -186,12 +190,14 @@ gradle run --args="fixtures/jars"
 | `candidates.jsonl` | One JSON object per line, one per input jar, in input order |
 | `summary.csv` | Header: `sourceFile,sha256,loaderFamily,status,modId,version,modType,invasiveness,supportPolicy,failureCode` |
 | `conflicts.csv` | Header: `modA,modB,level,sharedTargets` — pre-launch conflict prediction, all pairs included (including `NONE`) |
+| `dependencies.csv` | Header: `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome` — one row per declared dependency, no deduplication |
 | stdout | INFO-level summary |
 
 Below is a **real run** against the current dataset (195 jars). The numbers are not constants
 (log messages are emitted in Chinese; the figures are what matter):
 
 ```
+[INFO] 环境事实：minecraft=1.21.1 | fabricloader=0.20.1 | quilt_loader=0.27.0 | neoforge=21.1.262 | forge=52.0.0 | java=21
 [INFO] FABRIC: OK=100 FAILED=0
 [INFO] NEOFORGE: OK=91 FAILED=4
 [INFO] 输入 jar：195 | OK：191 | FAILED：4
@@ -200,12 +206,17 @@ Below is a **real run** against the current dataset (195 jars). The numbers are 
 [INFO] 支持策略：SUPPORTED 175 | DEGRADED 0 | EXCLUDED 16
 [INFO] 高频目标类：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13
 [INFO] ubiquitous 阈值：12（模组总数 116 × 10%，向上取整）
+[INFO] ubiquitous 目标类（14 个）：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13 | ItemStack 12 | MinecraftServer 12 | Player 12 | ServerLevel 12
 [INFO] 冲突预测：HIGH 331 组 | MEDIUM 1170 组 | LOW 725 组（静态推断，非运行结论）
+[INFO] 依赖总数：硬依赖 531 | 软依赖 46 | 冲突声明 139
+[INFO] 不可满足：MISSING_ID 90 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7
+[INFO] 无法解析的版本区间：0（实现缺陷，不是模组问题）
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
 
-> M0 performs no version-range evaluation and no dependency solving, so there are no figures for
-> "hard dependency count", "unsatisfiable" or "cycles" — those belong to M0.5 / M1.
+> M0.5 evaluates version ranges but still does not solve dependencies: it never produces an install order,
+> never picks a version and never downloads anything. The "cycles" figure belongs to dependency solving in M1
+> and is not part of M0.5 either.
 
 ### Core invariant
 
@@ -217,11 +228,51 @@ OK count + FAILED count == number of input files
 There is never a case of "N inputs, fewer than N outputs" without explanation — failures must be counted,
 classified and presented.
 
+### Dependency satisfiability (M0.5)
+
+M0 records version-range strings verbatim and never evaluates them. M0.5 evaluates them: for every declared
+dependency it answers exactly one question — **"does a mod in this set satisfy what this declaration asks for?"**
+— and writes the answer to `dependencies.csv`. It does not sort, does not solve, does not choose a version and
+does not download. M0's own numbers are untouched (the three M0 output files are byte-identical after M0.5 was
+added; `dependencies.csv` is a separate file).
+
+**Environment facts.** Loader and platform IDs are not mods in the dataset; they are supplied by the runtime
+environment and are never reported as `MISSING_ID`. The values below are declared in one place, printed once at
+startup (the first INFO line above), and can therefore be audited:
+
+| ID | Declared version |
+| --- | --- |
+| `minecraft` | 1.21.1 |
+| `fabricloader` | 0.20.1 |
+| `quilt_loader` | 0.27.0 |
+| `neoforge` | 21.1.262 |
+| `forge` | 52.0.0 |
+| `java` | 21 |
+
+`fabricloader` and `neoforge` are the **highest lower bounds required anywhere in this dataset**;
+`quilt_loader` and `forge` are currently referenced by no dependency at all and are declared only so that the
+IDs from `SPEC.md` §3.5.2 can never fall through to `MISSING_ID`.
+
+**Five outcomes** (`SPEC.md` §3.5.5, exactly one per dependency):
+
+| Outcome | Meaning |
+| --- | --- |
+| `SATISFIED` | target present (or environment-provided) and version in range. A `breaks` declaration is reported satisfied when its target is absent or out of range, i.e. there is no conflict |
+| `MISSING_ID` | ID is neither present in the dataset nor environment-provided |
+| `VERSION_MISMATCH` | target present, but no found version satisfies the range |
+| `BREAKS_VIOLATED` | a `breaks` declaration whose target is present and whose version is in range |
+| `UNPARSEABLE` | the range string cannot be parsed; counted and logged at WARN with the offending string, never treated as satisfied |
+
+**Current figures** (this run, 195 jars): 531 hard dependencies, 46 soft dependencies, 139 conflict declarations —
+716 rows in `dependencies.csv`. Outcomes: `SATISFIED` 612, `MISSING_ID` 90, `VERSION_MISMATCH` 7,
+`BREAKS_VIOLATED` 7, `UNPARSEABLE` 0. The 90 `MISSING_ID` rows split into 68 hard and 22 soft; no
+environment-provided ID is among them.
+
 ---
 
 ## Architecture
 
-The pipeline is only four steps, deliberately kept simple:
+The pipeline is only five steps, deliberately kept simple:
 
 ```
 JarScanner           walk the directory, compute SHA-256, produce exactly one record per input
@@ -237,7 +288,10 @@ InvasivenessAnalyzer invasiveness rating + mixin target inference (descriptor le
 ConflictPredictor    merge loader variants by modId, compare targets pairwise, rank HIGH/MEDIUM/LOW/NONE
    │
    ▼
-ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / INFO summary
+DependencyResolver   evaluate each declared version range against the mods present (M0.5, no solving)
+   │
+   ▼
+ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / dependencies.csv / INFO summary
 ```
 
 The unified data contract is `ModCandidate` — see [`SPEC.md`](./SPEC.md) §1.
@@ -297,6 +351,32 @@ Log-level rules are in [`SPEC.md`](./SPEC.md) §5.
 
 ---
 
+## Known limitations
+
+**M0**
+
+- Mixin target inference follows naming conventions; it does not read the `@Mixin` annotation, so it both misses
+  targets and produces false ones — `mixinTargets` is a static hint, not a fact
+- Infix names (`PlayerMixinFabric`) and the `AccessXxx` prefix style (5 classes in controlling) are not stripped
+- `RENDER` / `CORE` mods are always `EXCLUDED`, with no compatibility promise
+- jar-in-jar packaging is reported as `NO_METADATA` (connector, Essential, kotlinforforge ×2)
+- The `FORGE` branch has no real sample and `HACK_CLIENT` is 0 — neither path is verified against real data
+- The `INTERNAL_ERROR` fixture proves the fallback path exists; it is not proof that bad data should map there
+
+**M0.5**
+
+- A large part of the 90 `MISSING_ID` rows exists because the dataset holds only 195 jars: many dependency
+  targets are simply not in it. "Missing" does not mean "cannot be installed" — this number changes with the
+  dataset and is **not a constant**
+- `provides` is not resolved: only dataset `modId`s and environment facts count as present, so 18 `fabric`
+  dependencies are reported as `MISSING_ID` even though the `fabric-api` jar in the dataset declares
+  `provides: ["fabric"]` (changing that means changing `SPEC.md` §3.5.5)
+- One false `VERSION_MISMATCH` and one false `BREAKS_VIOLATED` come from voicechat's hyphen-composite version
+  (`1.21.1-2.6.27` compared against `[1.21-2.4.11,)`). This is a known false positive caused by the literal
+  split rule in `SPEC.md` §3.5.4 and is deliberately **not** papered over
+
+---
+
 ## Dataset compliance
 
 The test dataset is downloaded via the public Modrinth API and used **only for offline testing and
@@ -321,21 +401,23 @@ judgements**. The spec, the dataset and the verification system are already in p
 **What has been achieved**
 
 - M0 complete: 195 real jars parsed in full, record count always equals input count (`OK 191 + FAILED 4 = 195`)
+- M0.5 complete: 716 declared dependencies evaluated, one row each; M0's three output files are byte-identical
+  before and after (checked by SHA-256, not by "tests are green")
 - Manual metadata sampling: `modId` / `version` / `depends` — **10/10 consistent**, 0 mismatches across 47
-  dependency declarations
-- All ten acceptance criteria of [`SPEC.md`](./SPEC.md) v0.7 met
-- 42 tests, 0 failures, 0 errors, **0 skipped**
+  dependency declarations; 10-dependency spot check against raw metadata — **10/10 consistent**
+- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v0.8) met, and the six M0.5 criteria of §3.5.7
+- 88 tests, 0 failures, 0 errors, **0 skipped**
 - Pre-launch conflict warning: 331 HIGH pairs (4.96%)
 
 **What I bring**
 
-- A complete spec: [`SPEC.md`](./SPEC.md) v0.7 — fields, decision signals, tiering rules, output formats and
-  acceptance criteria are all written down, not agreed verbally
+- A complete spec: [`SPEC.md`](./SPEC.md) v0.8 — fields, decision signals, tiering rules, version-range syntax,
+  output formats and acceptance criteria are all written down, not agreed verbally
 - A real dataset collection pipeline: generate a list from the public Modrinth API, download, auto-sort by
   in-jar metadata, verify one by one — fully scripted
 - A set of enforced engineering rules: no empty catch, no `assumeTrue`, no demoting failures to warnings,
   skipped count must be 0
-- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 92 work entries + 54 documented pitfalls, every
+- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 104 work entries + 62 documented pitfalls, every
   number change and every mistaken judgement on the record
 
 **What I need**

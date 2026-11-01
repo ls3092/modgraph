@@ -4,7 +4,7 @@
   <b>English</b> · <a href="./SPEC.zh-CN.md">简体中文</a>
 </p>
 
-Version: v0.7
+Version: v0.8
 Status: draft pending human confirmation
 Upstream inspiration: Forbric v0.3.0 (Ray-T-r/Minecraft-Forbric-mod-loader, Apache-2.0)
 
@@ -20,8 +20,9 @@ one structured `ModCandidate` record.
 
 M0's output is an **"admission check for whether a mod set can start"**, not **"a guarantee that it will run stably"**.
 
-- M0 **can** predict declarative conflicts: missing dependencies, disjoint version ranges, dependency cycles,
+- M0 **can** predict declarative conflicts: missing dependencies, disjoint version ranges,
   explicit incompatibility declarations
+  (cycle detection is **not** part of M0 or M0.5 — it belongs to M1)
 - M0 **cannot** predict behavioural conflicts: two mixins targeting the same method, two mods replacing the same
   render stage, NPEs caused by registry lifecycle ordering
 
@@ -373,10 +374,136 @@ M0's second phase takes all `ModCandidate`s as input and outputs:
 - `nodes`: all `modId`s with `status=OK`
 - `edges`: directed edges of the three kinds `depends` / `recommends` / `breaks`
 - `report.unsatisfiedRequired`: hard dependencies whose target ID does not exist among all nodes
-- `report.cycles`: cycles (formed by hard dependencies)
+- `report.cycles`: cycles (formed by hard dependencies) — **not produced by M0 or M0.5; belongs to M1**
 - `report.duplicateIds`: the same `modId` appearing with multiple different `version`s
 
 **M0 does not solve version ranges and does not perform topological sorting.**
+
+---
+
+## 3.5 Version range evaluation and satisfiability (M0.5)
+
+M0.5 evaluates the version ranges that M0 only registered. It answers exactly one question per dependency:
+**"does a mod in this set satisfy what this declaration asks for?"**
+
+### 3.5.1 Scope boundary (must not be crossed)
+
+M0.5 **does**:
+
+- parse and evaluate version range strings from both loader families
+- resolve each declared dependency against the mods actually present
+- report explicit `breaks` declarations that are matched
+
+M0.5 **does not**:
+
+- perform topological sorting or produce an install/load order
+- build or "solve" a dependency graph (no version backtracking, no candidate selection)
+- download anything, or suggest a version to install
+- merge its results into `conflicts.csv` (M0's numbers must stay reproducible; M0.5 writes a separate file)
+
+### 3.5.2 Environment-provided IDs (must be handled, or nearly every mod reports MISSING)
+
+Loader and platform IDs are **not mods in the dataset**. They are supplied by the runtime environment and must be
+resolved against declared environment facts, **never** reported as `MISSING_ID`.
+
+| ID | Meaning | Resolution |
+|---|---|---|
+| `minecraft` / `minecraft_version` | game version | environment fact declared for the run |
+| `fabricloader` / `fabric-loader` | Fabric Loader version | environment fact |
+| `quilt_loader` / `quilt-loader` | Quilt Loader version | environment fact |
+| `neoforge` / `forge` | loader version | environment fact |
+| `java` | JDK version | environment fact |
+
+Rules:
+
+- these IDs are resolved against the declared environment versions; absence from the dataset is normal
+- any other ID that is absent from the dataset **is** `MISSING_ID`
+- environment facts must be printed once at startup (INFO) so the numbers are auditable
+- `recommends` on an absent ID is a WARN, never a failure (unchanged from M0)
+
+---
+
+### 3.5.3 Version range syntax (two incompatible families — must be parsed separately)
+
+**Fabric / Quilt** (`fabric.mod.json` constraint strings):
+
+| Form | Meaning |
+|---|---|
+| `*` | any version |
+| `>=1.2.3` / `>1.2.3` / `<=1.2.3` / `<1.2.3` / `==1.2.3` | comparison |
+| `~1.2` | tilde: `>=1.2, <1.3` |
+| `1.21.x` | the `x` (or `X` / `*`) segment wildcard-matches |
+| `>=1.2 <1.5` | space-separated constraints, **all** must hold (AND) |
+
+**NeoForge / Forge** (`mods.toml` `versionRange`, Maven range syntax):
+
+| Form | Meaning |
+|---|---|
+| `[21.1.219,)` | `>= 21.1.219` |
+| `(21.1.219,)` | `> 21.1.219` |
+| `[1.21,1.22)` | `>= 1.21` and `< 1.22` |
+| `(,1.22]` | `<= 1.22` |
+| `[1.21.1]` | exactly `1.21.1` |
+| `21.1.219` (unbracketed) | minimum-inclusive `>= 21.1.219` (Maven soft-requirement convention) |
+
+An unbracketed NeoForge value must log which convention rule was applied (DEBUG), because this is the one form
+where the two families disagree.
+
+### 3.5.4 Version comparison rules
+
+- split on `.` and `-` into segments; compare segment by segment
+- numeric segments compare numerically; non-numeric segments compare lexicographically
+- a missing trailing segment counts as `0` (`1.21` == `1.21.0` for comparison purposes)
+- a pre-release segment (`-beta`, `-rc1`) sorts **lower** than the same version without it
+- a wildcard segment matches any value in that position
+- comparison is **string-based and deterministic**: no "semver library", no external dependency
+
+### 3.5.5 Outcome per dependency (exactly one each)
+
+| Outcome | Condition |
+|---|---|
+| `SATISFIED` | target present (or environment-provided) and version in range |
+| `MISSING_ID` | ID is neither present in the dataset nor environment-provided |
+| `VERSION_MISMATCH` | target present, but its version does not satisfy the range |
+| `BREAKS_VIOLATED` | a `breaks` declaration whose target is present and version in range |
+| `UNPARSEABLE` | the range string cannot be parsed |
+
+**`UNPARSEABLE` must never be silently treated as satisfied and never be silently dropped.** It must be counted,
+logged at WARN with the offending string, and reported in the summary. An unparseable range is a defect of this
+tool, not of the mod.
+
+---
+
+### 3.5.6 Output
+
+New file **`dependencies.csv`** (one row per declared dependency, header included):
+
+```
+modId,version,depId,depKind,declaredRange,resolvedVersion,outcome
+```
+
+- `depKind`: `required` / `recommends` / `breaks`
+- `resolvedVersion`: the version actually found, or `null` when absent
+- every declared dependency appears **exactly once** — never deduplicated, never omitted
+
+stdout (INFO) must print:
+
+```
+依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
+不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+无法解析的版本区间：N（实现缺陷，不是模组问题）
+```
+
+### 3.5.7 M0.5 acceptance criteria
+
+1. every declared dependency of every `status=OK` record appears exactly once in `dependencies.csv`
+2. `UNPARSEABLE` count is printed explicitly and is **not** folded into `SATISFIED`
+3. no environment-provided ID (§3.5.2) is ever reported as `MISSING_ID`
+4. manual spot-check of 10 dependencies against the raw metadata files: `modId` / `version` / `declaredRange`
+   / `outcome` must match, 100%
+5. `gradle clean test` passes with **0 skipped**; tests must not use `assumeTrue`
+6. M0's own numbers (HIGH 331 / 6670, coverage gap 10/191) must remain unchanged — M0.5 adds a file, it does
+   not rewrite M0's results
 
 ---
 
@@ -443,7 +570,15 @@ Header: `sourceFile,sha256,loaderFamily,status,modId,version,modType,invasivenes
 
 Header: `modA,modB,level,sharedTargets`; rules in §2.4.
 
-### 6.4 stdout (INFO level)
+### 6.4 `dependencies.csv` (M0.5)
+
+Header: `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome`; rules in §3.5.
+One row per declared dependency, no deduplication.
+
+### 6.5 stdout (INFO level)
+
+> The block below is a **format template**, not real figures; the real figures are in the README's actual run
+> output.
 
 ```
 [INFO]  输入 jar：200
@@ -454,12 +589,12 @@ Header: `modA,modB,level,sharedTargets`; rules in §2.4.
 [INFO]  侵入深度：API 41 | MIXIN 131 | CORE 12 | RENDER 16
 [INFO]  支持策略：SUPPORTED 172 | DEGRADED 28 | EXCLUDED 0
 [INFO]  冲突预测：HIGH 3 组 | MEDIUM 7 组 | LOW 12 组（静态推断，非运行结论）
-[INFO]  硬依赖总数：412，不可满足：23
-[INFO]  环：1
+[INFO]  依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
+[INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+[INFO]  无法解析的版本区间：N（实现缺陷，不是模组问题）
 ```
 
-> The block above is a **format template**, not real figures. Every number must come from an actual run;
-> the file must not hard-code any quantity.
+> Every number must come from an actual run; the file must not hard-code any quantity.
 
 Finally, one fixed line must be emitted:
 
@@ -472,7 +607,9 @@ If this assertion fails, the build is a failure.
 
 ---
 
-## 7. Acceptance criteria
+## 7. Acceptance criteria (M0 only)
+
+These ten items gate **M0**. M0.5 has its own gate in §3.5.7; the two must not be mixed.
 
 1. **All** real jars under `fixtures/jars/` produce records, none omitted. **The count must be obtained by
    actually enumerating the filesystem; this file must not hard-code any number** (a previous version wrongly

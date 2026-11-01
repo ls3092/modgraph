@@ -23,7 +23,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-42%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-88%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
 </p>
 
@@ -44,6 +44,7 @@
 - [输出产物](#输出产物)
 - [架构](#架构)
 - [工程纪律](#工程纪律)
+- [已知边界](#已知边界)
 - [数据集合规](#数据集合规)
 - [Seeking collaborator](#seeking-collaborator)
 - [贡献](#贡献)
@@ -69,7 +70,7 @@ Minecraft Java 版有两大互不兼容的模组生态：**Fabric** 与 **NeoFor
 
 `modgraph` 的输出是**「能否启动的准入检查」，不是「能否稳定运行的保证」**。
 
-- 能预测：依赖缺失、版本区间不相交、循环依赖、显式不兼容声明
+- 能预测：依赖缺失、版本区间不相交、显式不兼容声明
 - 不能预测：两个 Mixin 撞同一方法、两个模组替换同一渲染阶段
 
 行为性冲突只能在运行时暴露。本项目不做"自动兼容"或"自动修复"的承诺。
@@ -114,12 +115,12 @@ Forbric 的代码几乎完全由 AI 生成，且缺少充分的人工审查—�
 
 ## 当前状态
 
-> ⚠️ **M0：离线元数据解析器。不能加载任何模组，不能启动 Minecraft。**
+> ⚠️ **M0 / M0.5：离线静态分析。不能加载任何模组，不能启动 Minecraft。**
 
 | 阶段 | 内容 | 状态 |
 | --- | :---: | :---: |
 | **M0** | 离线解析模组 jar 元数据，产出统一 `ModCandidate` 与依赖声明 | ✅ 已完成（2026-10-31，195 个真实 jar） |
-| M0.5 | 版本区间求值与语义化版本规则对齐 | 未开始 |
+| **M0.5** | 对 M0 只登记不求值的版本区间做求值，为每条依赖声明给出一个可满足性结论（不排序、不求解） | ✅ 已完成（2026-11-01，195 个真实 jar，716 条依赖声明） |
 | M1 | 跨加载器依赖求解与冲突仲裁器 | 未开始 |
 | M2 | 统一引导与 transform 编排 | ⚠️ 需要 JVM 底层能力，作者不会 Java |
 | M3 | 单版本上稳定加载 20 + 20 个真实模组 | 未开始 |
@@ -140,7 +141,7 @@ Forbric 的代码几乎完全由 AI 生成，且缺少充分的人工审查—�
 
 本项目**不使用合成数据**。测试输入是从 [Modrinth](https://modrinth.com) 公开 API 下载的真实模组 jar。
 
-采集分三步，脚本都在仓库根目录：
+采集分四步，脚本都在仓库根目录：
 
 ```bash
 python build_download_list.py                        # 生成待下载清单（download_list.txt）
@@ -160,8 +161,11 @@ gradle build
 ### 3. 运行解析器
 
 ```bash
-gradle run --args="fixtures/jars"
+gradle run
 ```
+
+扫描根目录是固定的（`fixtures/jars/fabric` 与 `fixtures/jars/neoforge`），程序不接收参数。
+它会在工作目录写出 `candidates.jsonl`、`summary.csv`、`conflicts.csv`、`dependencies.csv`。
 
 ---
 
@@ -172,11 +176,13 @@ gradle run --args="fixtures/jars"
 | `candidates.jsonl` | 每行一个 JSON 对象，对应一个输入 jar，顺序与输入一致 |
 | `summary.csv` | 表头 `sourceFile,sha256,loaderFamily,status,modId,version,modType,invasiveness,supportPolicy,failureCode` |
 | `conflicts.csv` | 表头 `modA,modB,level,sharedTargets`，启动前冲突预测，含全部模组对（含 `NONE`） |
+| `dependencies.csv` | 表头 `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome`，每条依赖声明一行，不去重 |
 | stdout | INFO 级摘要 |
 
 以下是当前数据集（195 个 jar）的一次**实际运行**输出，数字不是常量：
 
 ```
+[INFO] 环境事实：minecraft=1.21.1 | fabricloader=0.20.1 | quilt_loader=0.27.0 | neoforge=21.1.262 | forge=52.0.0 | java=21
 [INFO] FABRIC: OK=100 FAILED=0
 [INFO] NEOFORGE: OK=91 FAILED=4
 [INFO] 输入 jar：195 | OK：191 | FAILED：4
@@ -185,11 +191,16 @@ gradle run --args="fixtures/jars"
 [INFO] 支持策略：SUPPORTED 175 | DEGRADED 0 | EXCLUDED 16
 [INFO] 高频目标类：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13
 [INFO] ubiquitous 阈值：12（模组总数 116 × 10%，向上取整）
+[INFO] ubiquitous 目标类（14 个）：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13 | ItemStack 12 | MinecraftServer 12 | Player 12 | ServerLevel 12
 [INFO] 冲突预测：HIGH 331 组 | MEDIUM 1170 组 | LOW 725 组（静态推断，非运行结论）
+[INFO] 依赖总数：硬依赖 531 | 软依赖 46 | 冲突声明 139
+[INFO] 不可满足：MISSING_ID 90 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7
+[INFO] 无法解析的版本区间：0（实现缺陷，不是模组问题）
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
 
-> M0 不做版本区间求值与依赖求解，因此没有「硬依赖总数」「不可满足」「环」这些数字——它们属于 M0.5 / M1。
+> M0.5 做版本区间求值，但仍然不做依赖求解：不产出安装顺序、不选版本、不下载任何东西。
+> 「环」属于 M1 的依赖求解，M0.5 同样不出这个数字。
 
 ### 核心不变量
 
@@ -200,11 +211,40 @@ OK 数 + FAILED 数 == 输入文件数
 **恒等**。此断言失败即构建失败。
 任何情况下都不会出现「输入 N、输出少于 N」而无解释的情况——失败必须被计数、被分类、被呈现。
 
+### 依赖可满足性判定（M0.5）
+
+M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：对每一条依赖声明只回答一个问题——**「本集合里有没有满足这条声明的模组」**——并把答案写进 `dependencies.csv`。它不排序、不求解、不选版本、不下载。M0 自己的数字完全没变（M0 的三个输出文件在加上 M0.5 前后逐字节相同，`dependencies.csv` 是独立文件）。
+
+**环境事实。** 加载器与平台 ID 不是数据集里的模组，它们由运行环境提供，**永远不会**被判成 `MISSING_ID`。下面的值只在一处声明、启动时打印一行（就是上面第一行 INFO），因此可审计：
+
+| ID | 声明版本 |
+| --- | --- |
+| `minecraft` | 1.21.1 |
+| `fabricloader` | 0.20.1 |
+| `quilt_loader` | 0.27.0 |
+| `neoforge` | 21.1.262 |
+| `forge` | 52.0.0 |
+| `java` | 21 |
+
+`fabricloader` 与 `neoforge` 取的是**本数据集内所有依赖要求的最高下界**；`quilt_loader` 与 `forge` 当前没有任何依赖引用，声明它们只是为了不让 `SPEC.md` §3.5.2 里的 ID 掉进 `MISSING_ID`。
+
+**五种 outcome**（`SPEC.md` §3.5.5，每条依赖恰好一个）：
+
+| Outcome | 含义 |
+| --- | --- |
+| `SATISFIED` | 目标存在（或由环境提供）且版本落在区间内。`breaks` 声明的目标不存在或不在区间内时也记这一档，即没有冲突 |
+| `MISSING_ID` | ID 既不在数据集里，也不由环境提供 |
+| `VERSION_MISMATCH` | 目标存在，但找到的版本都不满足区间 |
+| `BREAKS_VIOLATED` | `breaks` 声明的目标存在且版本落在区间内 |
+| `UNPARSEABLE` | 区间字符串无法解析；计数并以 WARN 打出原串，绝不当成满足 |
+
+**当前数字**（本次运行，195 个 jar）：硬依赖 531 条、软依赖 46 条、冲突声明 139 条，合计 716 行写进 `dependencies.csv`。判定结果：`SATISFIED` 612、`MISSING_ID` 90、`VERSION_MISMATCH` 7、`BREAKS_VIOLATED` 7、`UNPARSEABLE` 0。90 条 `MISSING_ID` 里 68 条是硬依赖、22 条是软依赖，没有任何一条是环境 ID。
+
 ---
 
 ## 架构
 
-处理链路只有四步，刻意保持简单：
+处理链路只有五步，刻意保持简单：
 
 ```
 JarScanner           遍历目录，计算 SHA-256，每个输入恰好产出一条记录
@@ -220,7 +260,10 @@ InvasivenessAnalyzer 侵入深度评级 + Mixin 目标推断（仅描述符级�
 ConflictPredictor    按 modId 合并加载器变体，两两比对目标，分 HIGH/MEDIUM/LOW/NONE
    │
    ▼
-ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / INFO 摘要
+DependencyResolver   对每条版本区间按集合实际存在的模组求值（M0.5，不求解）
+   │
+   ▼
+ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / dependencies.csv / INFO 摘要
 ```
 
 统一数据契约是 `ModCandidate`，见 [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) §1。
@@ -266,6 +309,28 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 
 ---
 
+## 已知边界
+
+**M0**
+
+- Mixin 目标推断只按命名约定，不读 `@Mixin` 注解，既会漏报也会误报，`mixinTargets` 只能当静态线索
+- 中缀式（`PlayerMixinFabric`）与 `AccessXxx` 前缀（controlling 的 5 个类）没有剥除
+- `RENDER` / `CORE` 模组一律 `EXCLUDED`，不做兼容性承诺
+- jar-in-jar 嵌套打包判 `NO_METADATA`（connector、Essential、kotlinforforge ×2）
+- `FORGE` 分支没有真实样本，`HACK_CLIENT` 为 0，这两条逻辑没经过真实数据验证
+- `INTERNAL_ERROR` 的 fixture 只证明兜底路径存在，不等于“坏数据应当归到这一档”
+
+**M0.5**
+
+- 90 条 `MISSING_ID` 里有相当一部分，是因为数据集只有 195 个 jar，很多依赖目标根本不在里面。
+  **「缺失」不等于「装不上」**；这个数字随数据集变化，**不是常量**
+- `provides` 不参与解析：只有数据集里的 `modId` 与环境事实算“存在”，因此 18 条 `fabric` 依赖被判
+  `MISSING_ID`，尽管数据集里的 `fabric-api` 声明了 `provides: ["fabric"]`（要改得先改 `SPEC.md` §3.5.5）
+- voicechat 的连字符复合版本（`1.21.1-2.6.27` 对 `[1.21-2.4.11,)`）造成 1 条假 `VERSION_MISMATCH`
+  与 1 条假 `BREAKS_VIOLATED`。这是 `SPEC.md` §3.5.4 字面切分规则导致的已知误报，**没有掩盖**
+
+---
+
 ## 数据集合规
 
 测试数据集通过 Modrinth 公开 API 下载，仅用于**离线测试与兼容性研究**：
@@ -286,17 +351,19 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 **已经做到哪一步**
 
 - M0 完成：195 个真实 jar 全量解析，记录数恒等于输入数（`OK 191 + FAILED 4 = 195`）
-- 元数据人工抽检：`modId` / `version` / `depends` 三项 **10/10 一致**，47 条依赖声明 0 条不一致
-- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.7 十条验收全部达成
-- 42 个测试，失败 0、错误 0、**跳过 0**
+- M0.5 完成：716 条依赖声明逐条求值、一条一行；M0 的三个输出文件在改动前后逐字节相同（用 SHA-256 核对，不是“测试绿了”）
+- 元数据人工抽检：`modId` / `version` / `depends` 三项 **10/10 一致**，47 条依赖声明 0 条不一致；
+  依赖人工抽检 10 条对照原始元数据，**10/10 一致**
+- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.8 §7 的 M0 十条验收、§3.5.7 的 M0.5 六条验收全部达成
+- 88 个测试，失败 0、错误 0、**跳过 0**
 - 启动前冲突预警：HIGH 331 组（4.96%）
 
 **我能提供什么**
 
-- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.7——字段、判定信号、分级规则、输出格式、验收标准都写死了，不靠口头约定
+- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.8——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
 - 真实数据集采集流程：从 Modrinth 公开 API 生成清单、手动下载、按 jar 内元数据自动归位、逐个校验，全程脚本化
 - 一套强制的工程纪律：禁止空 catch、禁止 `assumeTrue`、禁止把失败降级为警告、测试跳过数必须为 0
-- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，92 条工作记录 + 54 条踩过的坑，每一次数字变化与判断失误都在册
+- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，104 条工作记录 + 62 条踩过的坑，每一次数字变化与判断失误都在册
 
 **我需要什么**
 

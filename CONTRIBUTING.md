@@ -40,13 +40,14 @@ OK 数 + FAILED 数 == 输入文件数
 ### 3. 不得使用 `assumeTrue` / `assumeFalse`
 
 条件不满足时，测试必须 **FAIL**，不能 **SKIP**。
-测试资源缺失时，构建必须失败，不得跳过。
+`fixtures/jars` 缺失或为空时，测试回退到 `src/test/resources/fixtures/` 的内置样本（`DatasetRoot`），
+只有内置样本也缺失才允许构建失败；两种模式下都不允许出现 SKIP。
 
 > 这是本项目存在的核心理由之一。一个会把自己关掉的测试，比没有测试更危险——它给了虚假的安全感。
 
 ### 4. 不得 mock 掉真实文件读取
 
-全部六种失败分类必须由**真实构造的损坏 jar** 触发，放在 `src/test/resources/fixtures/` 下。
+全部七种失败分类必须由**真实构造的损坏 jar** 触发，放在 `src/test/resources/fixtures/` 下。
 
 ### 5. 不得使用 `System.out.println` / `printStackTrace`
 
@@ -112,7 +113,7 @@ OK 数 + FAILED 数 == 输入文件数
 
 提交前逐条确认：
 
-- [ ] `./gradlew build` 通过
+- [ ] `gradle build` 通过
 - [ ] 测试跳过数为 **0**
 - [ ] 新增功能已在 `SPEC.md` 中定义
 - [ ] 未引入 Minecraft / Fabric / Forge / NeoForge / Mixin / ASM 相关依赖
