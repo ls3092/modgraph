@@ -1,10 +1,10 @@
-# SPEC.md — M0: Offline Mod Metadata Normalization, Dependency Graph and Invasiveness Rating
+# SPEC.md — M0–M1: Offline Mod Metadata Normalization, Invasiveness Rating, Dependency Satisfiability and Cycle Detection
 
 <p align="center">
   <b>English</b> · <a href="./SPEC.zh-CN.md">简体中文</a>
 </p>
 
-Version: v0.10
+Version: v1.0
 Status: draft pending human confirmation
 Upstream inspiration: Forbric v0.3.0 (Ray-T-r/Minecraft-Forbric-mod-loader, Apache-2.0)
 
@@ -16,13 +16,16 @@ M0 **does not start Minecraft, does not load classes, does not process mixins, d
 It does exactly one thing: given a mod jar file, read its metadata and structural characteristics and produce
 one structured `ModCandidate` record.
 
+M1 (§3.6) builds a dependency graph on top of those records and detects cycles. It does not start Minecraft
+either, does not load classes, does not read class files, and **does not output an install order** (§3.6.5).
+
 ### Scope (must be understood precisely)
 
 M0's output is an **"admission check for whether a mod set can start"**, not **"a guarantee that it will run stably"**.
 
 - M0 **can** predict declarative conflicts: missing dependencies, disjoint version ranges,
   explicit incompatibility declarations
-  (cycle detection is **not** part of M0 or M0.5 — it belongs to M1)
+  (cycle detection is **not** part of M0 or M0.5 — it is specified in M1, §3.6)
 - M0 **cannot** predict behavioural conflicts: two mixins targeting the same method, two mods replacing the same
   render stage, NPEs caused by registry lifecycle ordering
 
@@ -35,6 +38,7 @@ Explicitly out of scope (the AI must not implement these early, nor "add them in
 - Any cross-loader interop (event bridges, item/fluid/energy)
 - Any GUI, config file or installer
 - Any "automatic compatibility" or "automatic repair" capability
+- Any install order, load order or topological order as output — forbidden by §3.6.5
 
 ---
 
@@ -374,10 +378,16 @@ M0's second phase takes all `ModCandidate`s as input and outputs:
 - `nodes`: all `modId`s with `status=OK`
 - `edges`: directed edges of the three kinds `depends` / `recommends` / `breaks`
 - `report.unsatisfiedRequired`: hard dependencies whose target ID does not exist among all nodes
-- `report.cycles`: cycles (formed by hard dependencies) — **not produced by M0 or M0.5; belongs to M1**
+- `report.cycles`: cycles (formed by hard dependencies) — **not produced by M0 or M0.5; specified in §3.6 (M1)**
 - `report.duplicateIds`: the same `modId` appearing with multiple different `version`s
 
 **M0 does not solve version ranges and does not perform topological sorting.**
+
+> This subsection is an in-memory contract: none of these fields is written to a file. M1 (§3.6) covers `nodes`,
+> `edges` and `report.cycles` only, and its cycle graph uses hard dependencies alone — `recommends` and `breaks` are
+> registered here but never become edges there. `report.unsatisfiedRequired` and `report.duplicateIds` are **not**
+> part of M1 and stay unimplemented; M1 must not implement them, nor "add them in passing".
+> M1 does not solve version ranges either, sorts only to decide acyclicity, and never outputs an order (§3.6.5).
 
 ---
 
@@ -541,6 +551,233 @@ stdout (INFO) must print:
 
 ---
 
+## 3.6 Dependency graph, topological sort and cycle detection (M1)
+
+M1 builds the graph that M0 only registered and M0.5 only evaluated one declaration at a time. It answers exactly one
+question: **"does the hard-dependency set of this collection contain a cycle, and if so, which mods are in it?"**
+
+### 3.6.1 Scope boundary (must not be crossed)
+
+M1 **does**:
+
+- build one directed graph per loader universe (§3.6.2), from `status=OK` records only
+- classify every hard-dependency declaration into exactly one bucket (§3.6.3)
+- decide acyclicity by topological sort and locate cycle groups by strongly connected components (§3.6.4)
+- write `cycles.csv` and the three INFO lines of §3.6.6
+
+M1 **does not**:
+
+- start Minecraft, load classes, read class files, process mixins or bytecode, download anything
+- re-evaluate version ranges, re-resolve IDs, or re-judge any of the six outcomes of §3.5.5
+- rewrite `candidates.jsonl`, `summary.csv`, `conflicts.csv` or `dependencies.csv`
+- produce an install order, a load order or any topological order — hard prohibition in §3.6.5
+- implement §3's `unsatisfiedRequired` or `duplicateIds`; both stay unimplemented and are not part of M1
+
+> `dependencies.csv` is M0.5's artifact and keeps its content byte for byte. M1 does not read it as the source of
+> edges: a row carries `modId` + `version` + `declaredRange` but **not** the `loaderFamily` of the declaring record,
+> so a row cannot be attributed to a universe. M1 derives its edges from the `ModCandidate` records, which do carry
+> `loaderFamily`.
+
+### 3.6.2 Loader universes (the reason this section exists)
+
+The dataset keeps Fabric and NeoForge jars in one directory, but one machine runs one loader family. A single mixed
+graph invents cycles that no machine can have. The real dataset makes this concrete: 191 `status=OK` records collapse
+to 116 unique `modId`s, and **71 of those 116 have both a Fabric and a NeoForge variant**. Merging them by `modId`
+would union two declaration sets that never coexist.
+
+Rule: **one graph per loader universe. An edge never crosses universes.**
+
+| Universe | Records it contains | Rule |
+|---|---|---|
+| `FABRIC` | `loaderFamily = FABRIC` or `QUILT` | `QUILT` is folded in because §2.1 assigns it only when `fabric.mod.json` is also present, i.e. the jar carries Fabric-readable metadata |
+| `FORGE` | `loaderFamily = FORGE` | deliberately **not** folded into `NEOFORGE`: that would be a compatibility claim, and §0 forbids cross-loader claims |
+| `NEOFORGE` | `loaderFamily = NEOFORGE` | — |
+| — (excluded) | `loaderFamily = UNKNOWN` | never a node; excluded from graph construction and counted (§3.6.6) |
+
+Consequences, all intentional:
+
+- the same `modId` in two universes is **two different nodes**, each carrying only its own family's declarations
+- a dependency whose target is a node only in another universe creates **no edge**, and is counted as `OTHER_UNIVERSE`
+- a cycle that exists only when Fabric and NeoForge variants are mixed is therefore **structurally impossible**,
+  not filtered out afterwards
+
+> **Factual statement about the current dataset, not a claim of validation.** `QUILT` has 0 records (all are folded
+> into `FABRIC`), `FORGE` has 0 records, and the `OTHER_UNIVERSE` bucket is 0 as well — no hard dependency in the
+> dataset targets a `modId` that exists only in another universe. Only two universes are non-empty, and the
+> cross-loader routing rule of this section is **not exercised by real data at all**: it is covered by the
+> constructed records of §3.6.7 items 1 and 2 and by nothing else. This must never be written as
+> "the cross-loader rule was verified to work"; the only verified statement is that FABRIC and NEOFORGE were
+> separated on a dataset where the separation had no visible effect.
+
+### 3.6.3 Nodes and edges (what enters the graph, and what does not)
+
+**Node**: one per `(universe, modId)`. All `status=OK` records with that `modId` in that universe collapse into one
+node, and their edge sets are unioned. M1 does not choose a version — the real dataset has 4 `modId`s with two records
+inside the same family.
+
+**Edge**: `A → B` exists if and only if a record of `A` in the universe declares a **hard dependency** whose
+`targetId` is exactly the `modId` of node `B` in the same universe.
+
+A hard dependency is a `Constraint` **read from `depends`**. The `required` flag must not be used as the
+discriminator: §2.1 and §2.2 set `required=true` for `breaks` as well.
+
+| Declaration | Enters the graph? | Why |
+|---|---|---|
+| `depends` | yes, when the target is a node of the same universe | the only declaration that asserts "this must be present" |
+| `recommends` | **never** | a missing soft dependency is normal (§3.5.2); two mods recommending each other is not a defect, and an edge would manufacture a cycle |
+| `breaks` | **never** | `breaks` means "must not coexist", the opposite of a dependency; turning it into an edge fabricates a reversed edge and invents cycles |
+| `ordering` (`BEFORE` / `AFTER`) | not used | M1 emits no order (§3.6.5); an ordering hint must not be smuggled into an edge |
+
+**Identity is exactly §3.5.5 rule 1, scoped to the universe: a real `modId` is authoritative.** Rules 2–5 never
+produce an edge:
+
+| Bucket (exactly one per hard declaration) | Condition | Edge |
+|---|---|---|
+| `EDGE` | `targetId` is a node of the same universe | yes |
+| `ENVIRONMENT` | `targetId` is an environment-provided ID (§3.5.2) | no — environment IDs are not mods and never become nodes |
+| `OTHER_UNIVERSE` | `targetId` is a node, but only in another universe | no |
+| `ALIAS_ONLY` | `targetId` is not a node but is declared in some `provides` of this universe | no — an alias is a fallback identity, never an edge; this also covers every `AMBIGUOUS_ALIAS` declaration, and M1 must not pick an owner either |
+| `ABSENT` | none of the above | no |
+
+`EDGE + ENVIRONMENT + OTHER_UNIVERSE + ALIAS_ONLY + ABSENT == number of hard declarations` must be asserted at
+runtime, in the same spirit as `OK + FAILED == input count`. A declaration that fits no bucket is a program defect
+and must fail the run, never be skipped, never be counted as an edge.
+
+**`EDGE` counts declarations; the graph counts distinct edges.** A node with several records (or one record declaring
+the same target twice) can produce the same `(source node, target node)` pair more than once. The bucket equation
+works on declarations; the edge count of §3.6.6 works on distinct pairs. Both are needed, they answer different
+questions, and **neither may ever exceed the number of `EDGE` declarations**.
+
+> Current dataset, measured by `verify_m1_counts.py` from `candidates.jsonl` alone: 98 `FABRIC` nodes, 89 `NEOFORGE`
+> nodes, 0 `FORGE` nodes; 531 hard declarations split into `EDGE` 89 (`FABRIC` 69, `NEOFORGE` 20),
+> `ENVIRONMENT` 374, `OTHER_UNIVERSE` 0, `ALIAS_ONLY` 18, `ABSENT` 50, sum 531. The `FABRIC` node `continuity`
+> holds two records that both declare `fabric-api`, so its 69 `EDGE` declarations collapse to 68 distinct edges and
+> the graph carries 68 + 20 = 88 edges. The step-17 preview figure of 85 `FABRIC` edges was 68 distinct edges plus
+> 17 alias-to-owner pairs, i.e. it turned `ALIAS_ONLY` declarations into edges — the bucket table above forbids
+> exactly that.
+
+> **Known consequence, stated rather than hidden**: an alias-only dependency (`fabric`, owned by `fabric-api`) is not
+> modelled. The error direction is under-reporting — a cycle reachable only through an alias would be missed, never
+> invented. §3.5.5 already refuses to treat an alias as an authoritative identity, and M1 keeps that refusal.
+
+### 3.6.4 Cycle detection and canonical representation
+
+**Acyclicity** is decided by topological sort (Kahn): repeatedly remove nodes with in-degree 0; the graph is acyclic
+if and only if every node is removed. **The removal sequence is never output or logged** (§3.6.5).
+
+**Cycle groups** are the strongly connected components: an SCC with 2 or more nodes, or a single node with an edge to
+itself, is one cycle group. Every member of a cycle group lies on at least one directed cycle.
+
+**Consistency invariant**: the topological sort completes ⇔ the number of cycle groups is 0. If the two disagree,
+that is a program defect and must fail the run.
+
+**Canonical representation** — the same input must produce a byte-identical `cycles.csv` on every run:
+
+- a cycle group is written as its **member set**, never as a path
+- `members` are sorted **ascending by ASCII code point** of the `modId`, so the first member is always the
+  lexicographically smallest one — there is no start point and no direction left to normalise
+- rows are sorted by `universe` (ASCII ascending: `FABRIC` < `FORGE` < `NEOFORGE`), then by the `members` string
+  (ASCII ascending)
+- no other column may be added to a row
+
+> **Why a member set instead of a cycle path.** "Start at the smallest member and walk forward" is only canonical when
+> the group holds exactly one elementary cycle. An SCC may hold many, and picking one needs an extra arbitrary rule —
+> exactly the run-to-run incomparability this section exists to prevent. Enumerating every elementary cycle is
+> exponential and its ordering is not canonical either. The member set is the only invariant representation, and it
+> answers the question being asked: *which mods are in a cycle*.
+>
+> One row therefore does **not** claim that a single cycle contains all of its members. It claims that every member
+> lies on some cycle.
+
+### 3.6.5 Hard prohibition: no install order, no load order, no topological order
+
+M1 computes a topological sort for exactly one purpose: to decide whether the graph is acyclic. Its result must never
+leave the computation.
+
+Forbidden everywhere — in `cycles.csv`, in stdout, at any log level including `DEBUG` and `TRACE`, in any field of any
+report object, and in any documentation generated from a run:
+
+- a sequence of modIds presented as an install, load, resolve or "do it in this order" order
+- a topological order, a partial topological order, or a prefix of one
+- a "nodes with in-degree 0 first" list, a layering, or a dependency depth
+- any wording suggesting mods should be installed or loaded in a particular sequence
+
+**A violation invalidates the delivery.**
+
+> Rationale: the moment an order is published, the tool implicitly promises "install it in this order and it will
+> work" — a guarantee this project cannot make (§0). A cycle report says only "these mods cannot all be satisfied in
+> this collection"; it says nothing about sequencing. If a user asks for an install order, the answer is no, and the
+> reason is this section.
+
+### 3.6.6 Output
+
+New file **`cycles.csv`**, header included, no placeholder rows (the current dataset has 0 cycle groups, so the
+produced file contains the header only — that is a real measurement, not a placeholder):
+
+```
+universe,memberCount,members
+FABRIC,2,"sodium;someaddon"
+```
+
+- one row per cycle group; `members` is joined with `;`, the same convention as `conflicts.csv`
+- with no cycle group the file contains the header only
+- it repeats no data from `dependencies.csv`, and `dependencies.csv` keeps its M0.5 content byte for byte
+- `dependencies.csv` and `cycles.csv` answer different questions with different scopes and must never be
+  cross-summed: `AMBIGUOUS_ALIAS` is decided over the whole dataset (§3.5.5), while `ALIAS_ONLY` is decided inside one
+  universe. Both can be true of the same declaration at the same time, and neither contradicts the other.
+
+stdout (INFO), placed after §3.5.6's three lines and before the fixed closing line of §6.6:
+
+```
+[INFO]  依赖图：FABRIC 节点 N，边 N | FORGE 节点 N，边 N | NEOFORGE 节点 N，边 N | 未归入宇宙的 OK 记录 N
+[INFO]  未进图的硬依赖：环境提供 N | 跨加载器宇宙 N | 仅别名 N | 目标不存在 N
+[INFO]  依赖环：N 组
+```
+
+All three universes are always printed, including when empty, so that "0" can never be confused with "not evaluated".
+`边` is the number of distinct `(source node, target node)` pairs in that universe (§3.6.3), **not** the `EDGE`
+bucket count; the two differ whenever a node's records declare the same target more than once.
+The bucket counts are sums over all universes; the per-universe equation of §3.6.3 must still be asserted.
+
+One **ERROR** per cycle group, format `依赖环 {}：{}` — the universe, then the members joined by ` | `. Zero cycle
+groups produces no ERROR line.
+
+> The block above is a **format template**, not real figures, exactly as stated in §6.6.
+
+### 3.6.7 M1 acceptance criteria
+
+These ten items gate **M1** only. They are independent of §7 (M0, ten items) and §3.5.7 (M0.5, eight items); the three
+sets must not be mixed, and passing one never implies passing another.
+
+1. **Loader universes**: a constructed pair where `A` (`FABRIC`) depends on `B` and `B` (`NEOFORGE`) depends on `A`
+   produces **0** cycle groups and two nodes, one per universe. This is the primary regression guard against
+   cross-loader fake cycles.
+2. **Node identity**: two `status=OK` records with the same `modId` in the same universe produce **one** node with
+   their edges unioned; the same `modId` in two universes produces **two** nodes.
+3. **Declaration kinds**: `recommends` and `breaks` never create an edge. A constructed set where `A` recommends `B`
+   and `B` depends on `A` has 0 cycle groups; the same holds when `A` breaks `B`.
+4. **No silent drop**: for every universe, `EDGE + ENVIRONMENT + OTHER_UNIVERSE + ALIAS_ONLY + ABSENT == hard
+   declarations`, asserted at runtime and again in a test; the four no-edge buckets are printed, never folded into a
+   single number.
+5. **Cycle detection**: constructed sets for a 2-cycle, a 3-cycle, a self-loop (`A` depends on `A`) and a DAG are each
+   classified correctly; none of them may be skipped.
+6. **Consistency**: "the topological sort completes" and "0 cycle groups" always agree, in both directions, asserted
+   on the real dataset and on the constructed sets.
+7. **Canonical output**: `members` is exactly the ASCII-ascending join of the group, rows are sorted as §3.6.4
+   requires, and two consecutive runs on the same input produce a byte-identical `cycles.csv`.
+8. **No ordering anywhere**: the report exposes no ordered node sequence; `cycles.csv` has exactly the three columns of
+   §3.6.6; no stdout or log line contains an install, load or topological order. Reviewing the produced files and the
+   log is part of acceptance, not a formality.
+9. **M0 and M0.5 untouched**: the SHA-256 of `candidates.jsonl`, `summary.csv`, `conflicts.csv` and `dependencies.csv`
+   must be identical before and after M1, and the baselines of §7 and §3.5.7 (195 / 191 / 4, HIGH 331, 6670 pairs,
+   coverage gap 10/191, and the six outcome counts 612 / 72 / 7 / 7 / 18 / 0) must be unchanged. Both are recorded in
+   `PROGRESS.md`.
+10. **Build and logging**: `gradle clean test` passes with **0 skipped** and without `assumeTrue` / `assumeFalse`;
+    every cycle group emits exactly one ERROR in the format of §3.6.6 and zero groups emit none; every number in the
+    summary comes from the run and no jar count is hard-coded.
+
+---
+
 ## 4. Failure classification (`failureCode`)
 
 | code | Meaning | Handling |
@@ -609,7 +846,12 @@ Header: `modA,modB,level,sharedTargets`; rules in §2.4.
 Header: `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome`; rules in §3.5.
 One row per declared dependency, no deduplication.
 
-### 6.5 stdout (INFO level)
+### 6.5 `cycles.csv` (M1)
+
+Header: `universe,memberCount,members`; rules in §3.6.
+One row per cycle group, header only when there is none.
+
+### 6.6 stdout (INFO level)
 
 > The block below is a **format template**, not real figures; the real figures are in the README's actual run
 > output.
@@ -626,6 +868,9 @@ One row per declared dependency, no deduplication.
 [INFO]  依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
 [INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N | AMBIGUOUS_ALIAS N
 [INFO]  无法解析的版本区间：N（实现缺陷，不是模组问题）
+[INFO]  依赖图：FABRIC 节点 N，边 N | FORGE 节点 N，边 N | NEOFORGE 节点 N，边 N | 未归入宇宙的 OK 记录 N
+[INFO]  未进图的硬依赖：环境提供 N | 跨加载器宇宙 N | 仅别名 N | 目标不存在 N
+[INFO]  依赖环：N 组
 ```
 
 > Every number must come from an actual run; the file must not hard-code any quantity.
@@ -643,7 +888,8 @@ If this assertion fails, the build is a failure.
 
 ## 7. Acceptance criteria (M0 only)
 
-These ten items gate **M0**. M0.5 has its own gate in §3.5.7; the two must not be mixed.
+These ten items gate **M0**. M0.5 has its own gate in §3.5.7 and M1 its own in §3.6.7; the three sets must not be
+mixed, and passing one never implies passing another.
 
 1. **All** real jars under `fixtures/jars/` produce records, none omitted. **The count must be obtained by
    actually enumerating the filesystem; this file must not hard-code any number** (a previous version wrongly

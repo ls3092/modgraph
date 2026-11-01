@@ -3,6 +3,7 @@ package dev.modgraph.report;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dev.modgraph.analysis.ModConflict;
+import dev.modgraph.graph.CycleGroup;
 import dev.modgraph.model.ModCandidate;
 import dev.modgraph.resolve.DependencyResult;
 import java.io.BufferedWriter;
@@ -13,7 +14,10 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * 写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv。
+ * 写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv、cycles.csv。
+ *
+ * <p>{@code cycles.csv} 一行只写一个环组的成员集合（按 ASCII 升序、用 {@code ;} 连接），
+ * 不写路径、不写起点、不写方向——它既不表达也不暗示任何安装顺序或加载顺序（SPEC §3.6.5）。</p>
  */
 public final class ReportWriter {
 
@@ -79,6 +83,20 @@ public final class ReportWriter {
                         csv(result.declaredRange()),
                         csv(result.resolvedVersion()),
                         csv(result.outcome().name())));
+                writer.newLine();
+            }
+        }
+    }
+
+    public void writeCycles(final Path path, final List<CycleGroup> cycleGroups) throws IOException {
+        try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            writer.write("universe,memberCount,members");
+            writer.newLine();
+            for (CycleGroup group : cycleGroups) {
+                writer.write(String.join(",",
+                        csv(group.universe().name()),
+                        Integer.toString(group.memberCount()),
+                        csv(group.csvMembers())));
                 writer.newLine();
             }
         }

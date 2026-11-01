@@ -18,14 +18,14 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="license"/></a>
   <a href="https://openjdk.org/"><img src="https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
   <a href="https://gradle.org/"><img src="https://img.shields.io/badge/build-gradle-orange?style=for-the-badge&logo=gradle&logoColor=white" alt="build"/></a>
-  <a href="./SPEC.md"><img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 completed"/></a>
+  <a href="./SPEC.md"><img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20%2F%20M1%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 / M1 completed"/></a>
   <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft-1.21.1-52a447?style=for-the-badge" alt="Minecraft"/></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-96%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-125%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
   <img src="https://img.shields.io/badge/dependencies-716%20evaluated-blueviolet?style=flat-square" alt="dependencies"/>
 </p>
@@ -136,9 +136,14 @@ engineering rule** — see [Engineering discipline](#engineering-discipline).
 | --- | :---: | :---: |
 | **M0** | Parse mod jar metadata offline, emit unified `ModCandidate` records and dependency declarations | ✅ Completed (2026-10-31, 195 real jars) |
 | **M0.5** | Evaluate the version ranges M0 only registered; one satisfiability outcome per declared dependency (no sorting, no solving) | ✅ Completed (2026-11-01, 195 real jars, 716 dependency declarations) |
-| M1 | Cross-loader dependency resolution and conflict arbiter | Not started |
+| **M1** | Build one dependency graph per loader universe, decide acyclicity by topological sort, report cycle groups as strongly-connected member sets — **never an install order** | ✅ Completed (2026-11-01, 98 FABRIC nodes / 68 edges, 89 NEOFORGE nodes / 20 edges, 0 cycle groups) |
 | M2 | Unified bootstrap and transform orchestration | ⚠️ Requires deep JVM knowledge; author does not know Java |
 | M3 | Stably load 20 + 20 real mods on a single version | Not started |
+
+> M1's cross-loader routing rule (`FABRIC` + `QUILT` share a universe, `FORGE` and `NEOFORGE` stay apart) is **not
+> triggered by real data**: `OTHER_UNIVERSE = 0`, and `QUILT` / `FORGE` hold 0 records. It is covered only by
+> constructed records in the tests, never by the dataset. Do not read the "0 cycle groups" above as "the cross-loader
+> rule was proven to work" — the dataset cannot tell the separated graph apart from a merged one.
 
 **No version before M3 should ever be used in an actual game.**
 
@@ -182,7 +187,8 @@ gradle run
 ```
 
 The scan roots are fixed (`fixtures/jars/fabric` and `fixtures/jars/neoforge`); the program takes no arguments.
-It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv` and `dependencies.csv` into the working directory.
+It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv`, `dependencies.csv` and `cycles.csv` into the working
+directory.
 
 ---
 
@@ -194,6 +200,7 @@ It writes `candidates.jsonl`, `summary.csv`, `conflicts.csv` and `dependencies.c
 | `summary.csv` | Header: `sourceFile,sha256,loaderFamily,status,modId,version,modType,invasiveness,supportPolicy,failureCode` |
 | `conflicts.csv` | Header: `modA,modB,level,sharedTargets` — pre-launch conflict prediction, all pairs included (including `NONE`) |
 | `dependencies.csv` | Header: `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome` — one row per declared dependency, no deduplication |
+| `cycles.csv` | Header: `universe,memberCount,members` — one row per cycle group, members joined with `;`; header only when there is no cycle |
 | stdout | INFO-level summary |
 
 Below is a **real run** against the current dataset (195 jars). The numbers are not constants
@@ -214,12 +221,18 @@ Below is a **real run** against the current dataset (195 jars). The numbers are 
 [INFO] 依赖总数：硬依赖 531 | 软依赖 46 | 冲突声明 139
 [INFO] 不可满足：MISSING_ID 72 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7 | AMBIGUOUS_ALIAS 18
 [INFO] 无法解析的版本区间：0（实现缺陷，不是模组问题）
+[INFO] 依赖图：FABRIC 节点 98，边 68 | FORGE 节点 0，边 0 | NEOFORGE 节点 89，边 20 | 未归入宇宙的 OK 记录 0
+[INFO] 未进图的硬依赖：环境提供 374 | 跨加载器宇宙 0 | 仅别名 18 | 目标不存在 50
+[INFO] 依赖环：0 组
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
 
 > M0.5 evaluates version ranges but still does not solve dependencies: it never produces an install order,
-> never picks a version and never downloads anything. The "cycles" figure belongs to dependency solving in M1
-> and is not part of M0.5 either.
+> never picks a version and never downloads anything. M1 (§3.6) builds the dependency graph and reports cycle
+> groups; its topological sort exists only to decide whether the graph is acyclic, and its result never leaves
+> the computation (§3.6.5). "Edges" in the graph line are distinct `(source node, target node)` pairs, while the
+> `EDGE` bucket counts declarations — 68 + 20 edges versus 69 + 20 declarations here, because one Fabric node
+> declares the same target twice.
 
 ### Core invariant
 
@@ -282,7 +295,7 @@ so there is no authoritative owner to prefer.
 
 > `fabric-api` itself is **not** ambiguous: it is a real `modId`, and 40 dependencies resolve through it even
 > though `fabric_api` also lists `fabric-api` in its `provides`. Scoping the remaining `fabric` collision by loader
-> family would remove it, but that is a separate rule and is not part of v0.10.
+> family would remove it, but that is a separate rule and is not part of v1.0.
 
 ---
 
@@ -421,21 +434,24 @@ judgements**. The spec, the dataset and the verification system are already in p
 - M0 complete: 195 real jars parsed in full, record count always equals input count (`OK 191 + FAILED 4 = 195`)
 - M0.5 complete: 716 declared dependencies evaluated, one row each; M0's three output files are byte-identical
   before and after (checked by SHA-256, not by "tests are green")
+- M1 complete: one dependency graph per loader universe, acyclicity by topological sort, cycle groups as SCC member
+  sets; 0 cycle groups on the real dataset and `cycles.csv` is byte-identical across two consecutive runs
 - Manual metadata sampling: `modId` / `version` / `depends` — **10/10 consistent**, 0 mismatches across 47
   dependency declarations; 10-dependency spot check against raw metadata — **10/10 consistent**
-- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v0.10) met, and the eight M0.5 criteria of §3.5.7
-- 96 tests, 0 failures, 0 errors, **0 skipped**
+- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v1.0) met, the eight M0.5 criteria of §3.5.7, and
+  the ten M1 criteria of §3.6.7
+- 125 tests, 0 failures, 0 errors, **0 skipped**
 - Pre-launch conflict warning: 331 HIGH pairs (4.96%)
 
 **What I bring**
 
-- A complete spec: [`SPEC.md`](./SPEC.md) v0.10 — fields, decision signals, tiering rules, version-range syntax,
+- A complete spec: [`SPEC.md`](./SPEC.md) v1.0 — fields, decision signals, tiering rules, version-range syntax,
   output formats and acceptance criteria are all written down, not agreed verbally
 - A real dataset collection pipeline: generate a list from the public Modrinth API, download, auto-sort by
   in-jar metadata, verify one by one — fully scripted
 - A set of enforced engineering rules: no empty catch, no `assumeTrue`, no demoting failures to warnings,
   skipped count must be 0
-- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 108 work entries + 65 documented pitfalls, every
+- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 110 work entries + 69 documented pitfalls, every
   number change and every mistaken judgement on the record
 
 **What I need**

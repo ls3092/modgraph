@@ -6,6 +6,13 @@ import dev.modgraph.analysis.ConflictReport;
 import dev.modgraph.analysis.InvasivenessAnalyzer;
 import dev.modgraph.analysis.ModConflict;
 import dev.modgraph.analysis.TargetFrequency;
+import dev.modgraph.graph.CycleDetector;
+import dev.modgraph.graph.CycleGroup;
+import dev.modgraph.graph.CycleReport;
+import dev.modgraph.graph.DependencyGraph;
+import dev.modgraph.graph.GraphBucket;
+import dev.modgraph.graph.GraphBuilder;
+import dev.modgraph.graph.LoaderUniverse;
 import dev.modgraph.model.FailureCode;
 import dev.modgraph.model.Invasiveness;
 import dev.modgraph.model.ModCandidate;
@@ -41,6 +48,7 @@ public final class Main {
     private static final Path SUMMARY_PATH = Path.of("summary.csv");
     private static final Path CONFLICTS_PATH = Path.of("conflicts.csv");
     private static final Path DEPENDENCIES_PATH = Path.of("dependencies.csv");
+    private static final Path CYCLES_PATH = Path.of("cycles.csv");
 
     private Main() {
     }
@@ -128,7 +136,38 @@ public final class Main {
         LOG.info("无法解析的版本区间：{}（实现缺陷，不是模组问题）",
                 dependencyReport.count(DependencyOutcome.UNPARSEABLE));
 
+        final DependencyGraph graph = new GraphBuilder().build(all);
+        final CycleReport cycleReport = new CycleDetector().detect(graph);
+        reportWriter.writeCycles(CYCLES_PATH, cycleReport.cycleGroups());
+
+        LOG.info("依赖图：FABRIC 节点 {}，边 {} | FORGE 节点 {}，边 {} | NEOFORGE 节点 {}，边 {}"
+                        + " | 未归入宇宙的 OK 记录 {}",
+                graph.universe(LoaderUniverse.FABRIC).nodeCount(),
+                graph.universe(LoaderUniverse.FABRIC).edgeCount(),
+                graph.universe(LoaderUniverse.FORGE).nodeCount(),
+                graph.universe(LoaderUniverse.FORGE).edgeCount(),
+                graph.universe(LoaderUniverse.NEOFORGE).nodeCount(),
+                graph.universe(LoaderUniverse.NEOFORGE).edgeCount(),
+                graph.excludedRecords());
+        LOG.info("未进图的硬依赖：{}", noEdgeSummary(graph));
+        LOG.info("依赖环：{} 组", cycleReport.cycleGroupCount());
+        logCycleGroups(cycleReport.cycleGroups());
+
         LOG.info("本结果为准入检查，不构成运行稳定性保证");
+    }
+
+    /** 每个环组恰好一条 ERROR（SPEC §3.6.6）；环组为 0 时一条都不打。 */
+    static void logCycleGroups(final List<CycleGroup> cycleGroups) {
+        for (CycleGroup group : cycleGroups) {
+            LOG.error("依赖环 {}：{}", group.universe(), group.logMembers());
+        }
+    }
+
+    private static String noEdgeSummary(final DependencyGraph graph) {
+        return Arrays.stream(GraphBucket.values())
+                .filter(bucket -> bucket != GraphBucket.EDGE)
+                .map(bucket -> bucket.label() + " " + graph.totalBucket(bucket))
+                .collect(Collectors.joining(" | "));
     }
 
     private static List<ModCandidate> parseFabric(final InvasivenessAnalyzer analyzer)

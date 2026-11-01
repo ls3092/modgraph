@@ -1,6 +1,30 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-01（第十六步：修正 `provides` 优先级，SPEC 升到 v0.10，真实 modId 优先于别名；AMBIGUOUS_ALIAS 58→18，SATISFIED 572→612，MISSING_ID 72 不变；两份 README 的测试徽章改成 96；测试 96 个、失败 0、跳过 0）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-01（第十八步：先落盘 M1 核对脚本 `verify_m1_counts.py` 并查清 FABRIC 边数 85 的真实成因，再按 SPEC v1.0 §3.6 实现 M1——按加载器宇宙分图、五桶归桶、强连通分量给出环组、拓扑序只用于判环且永不输出；真实数据集环组 0，`cycles.csv` 只有表头，M0 与 M0.5 的四个产物 SHA-256 一个字节没变，测试 96 → 125、失败 0、跳过 0）。
+
+第十八步分三段完成，第一段是修正数字，第二段是实现，第三段是文档同步。
+
+**任务零（先做，已完成）**：把上一轮"通过标准输入执行、没落盘"的核对脚本写成仓库根目录的 `verify_m1_counts.py`，只读 `candidates.jsonl`、只用标准库、不写任何文件、断言失败时退出码非 0，任何人都能自己重跑一遍。它查清了 85 这条边数的来源：**68 条去重后的 `depends` 边 + 17 条"别名指向拥有者"的边 = 85**。前者本身没错（`EDGE` 声明 69 条，去重后 68 条，差的那 1 条是 `continuity` 的两条记录都声明了 `fabric-api`），错的是后者：上一轮把 `ALIAS_ONLY` 声明当成边加进了图，而 §3.6.3 的桶表明确规定别名永不成为边。所以 85 不是"FABRIC 的真实边数"，它既混了声明数和去重数，又混了别名的两种口径。
+
+**实测归桶（531 条硬依赖，`verify_m1_counts.py` 只读 `candidates.jsonl`）**：`FABRIC` 98 节点 / 339 条硬依赖（`EDGE` 69、`ENVIRONMENT` 217、`OTHER_UNIVERSE` 0、`ALIAS_ONLY` 18、`ABSENT` 35，合计 339，去重边 68）；`FORGE` 0 节点 / 0 条；`NEOFORGE` 89 节点 / 192 条硬依赖（`EDGE` 20、`ENVIRONMENT` 157、`OTHER_UNIVERSE` 0、`ALIAS_ONLY` 0、`ABSENT` 15，合计 192，去重边 20）。五桶合计 `EDGE` 89 + 环境 374 + 跨宇宙 0 + 仅别名 18 + 目标不存在 50 = **531**，与硬依赖声明数一致；`EDGE` 的 89 条声明去重后是 88 条边。另核实：191 条 OK 记录聚合成 116 个唯一 `modId`，其中 71 个同时有 Fabric 与 NeoForge 变体；同一家族内有两条记录的 `modId` 恰好 4 个（`continuity`、`create`、`jei`、`puzzle`）。
+
+**任务零的文档修正**：两份 SPEC 的 §3.6.3 补上"`EDGE` 数声明、图数去重边"的区分与上面这组实测数字，§3.6.2 补上事实声明（当前数据集 `OTHER_UNIVERSE`、`QUILT`、`FORGE` 全为 0，跨加载器分流规则**没有被真实数据触发过**，只由 §3.6.7 第 1、2 条的构造记录覆盖，不许写成"已验证有效"），§3.6.6 补上"边 ≠ `EDGE` 桶"的口径与"当前 0 环组、文件只有表头是实测不是占位"的说明。两版逐项同步。
+
+**任务一（M1 实现）**：新增 `dev.modgraph.graph` 包八个类：`LoaderUniverse`（`QUILT` 并入 `FABRIC`、`FORGE` 与 `NEOFORGE` 独立、`UNKNOWN` 排除）、`GraphBucket`（五桶）、`UniverseGraph`、`DependencyGraph`、`GraphBuilder`、`CycleGroup`、`CycleReport`、`CycleDetector`。硬依赖判据是"从 `depends` 读出的 `Constraint`"，不用 `required` 标志（构造测试里 `depends` / `recommends` / `breaks` 三种约束的 `required` 全部为 `true`，`breaks` 若被当判据会立刻红）；`recommends`、`breaks`、`ordering` 一律不建边。每条硬依赖恰好归入一个桶，按宇宙断言 `EDGE + ENVIRONMENT + OTHER_UNIVERSE + ALIAS_ONLY + ABSENT == 硬依赖声明数`，违反即抛异常。环检测用 Kahn 判无环、Kosaraju 求强连通分量，2 节点以上的分量或带自环的单节点算一个环组，成员按 ASCII 升序、行按宇宙名再按成员串排序。拓扑排序的移除顺序只存在于方法局部变量里，不返回、不记录、不打日志。`cycles.csv` 表头 `universe,memberCount,members`，成员用 `;` 连接（沿用了 `conflicts.csv` 的转义规则：字段本身不含逗号/引号/换行时不加引号；SPEC 示例里的引号只是示意，真实数据集 0 环组时文件只有表头，两种写法都看不出差别，这点在报告里已写明）。
+
+**实测结果**：`gradle run` 打出 `依赖图：FABRIC 节点 98，边 68 | FORGE 节点 0，边 0 | NEOFORGE 节点 89，边 20 | 未归入宇宙的 OK 记录 0`、`未进图的硬依赖：环境提供 374 | 跨加载器宇宙 0 | 仅别名 18 | 目标不存在 50`、`依赖环：0 组`，三条都在 §3.5.6 三行之后、固定结语之前；环组 0，所以没有任何 `依赖环 {}：{}` 的 ERROR。`cycles.csv` 只有表头，连续两次运行逐字节相同（SHA-256 `94E01400…9415`）。
+
+**四个产物 SHA-256（M1 前后逐一比对，全部相同）**：`candidates.jsonl` `85905594FE8CB59A5F7CCD760135153FE4375669E9CCA9CE372CC10C941EC0A0`、`summary.csv` `318E418A93FE3B926AEB595F40C1CA5CA482D1A8C797760662B36BC9DA68E453`、`conflicts.csv` `E83E23269334250BA29BC102E33C5D3E42BF64C5980CB9487C5382E36BB9E8D7`、`dependencies.csv` `5D8E59BD0A96F62CFB296AAC42A62F985747E34510E82ED80C2B42CF547422E9`。M0 的 HIGH 331 / MEDIUM 1170 / LOW 725、6670 对、覆盖率缺口 10/191，以及 M0.5 的 531 / 46 / 139 与 612 / 72 / 7 / 7 / 18 / 0 全部未变。
+
+**测试**：`gradle clean test` 125 个测试、失败 0、错误 0、**跳过 0**（原 96 + 新增 29：`CycleDetectionTest` 16、`CycleCsvTest` 5、`RealDatasetCycleTest` 6、`MainCycleLogTest` 2）。把 `fixtures/jars` 临时改名后，内置样本模式下同样 125 / 0 / 0 / 0，没有 assume、没有 `@Disabled`。构造数据覆盖了 2 环、3 环、自环、无环 DAG、跨加载器假环（`FABRIC` A 依赖 `NEOFORGE` B、B 又依赖 A，环组 0、两宇宙各 1 节点）、`recommends` / `breaks` 不建边、同宇宙同 `modId` 合并节点并取边并集、同 `modId` 跨宇宙两个节点、五桶各 1 且合计等于声明数、`QUILT` 并入 `FABRIC`、`UNKNOWN` 不计节点、行序与成员序规范化、`cycles.csv` 两次写入逐字节相同、每个环组恰好一条 ERROR 且格式固定。
+
+**任务二（README 同步）**：两份 README 的规格版本引用 v0.10 → v1.0（`README.md` 第 426、432 行、`README.zh-CN.md` 第 369、375 行），"v0.10 修正了优先级"那两处历史陈述按用户要求保持不动；M1 状态行从 Not started 改成已完成（2026-11-01，98 / 68、89 / 20、环组 0 全部是实测值，没有照抄预演的 85）；产物表与"写出了哪些文件"补上 `cycles.csv`；实跑输出块补上 M1 三行；补了跨加载器规则未被真实数据触发的披露。M0 与 M0.5 的数字一个没动，徽章与 MIT 许可证没动（徽章仍是 `tests-96`，与正文 125 不一致是用户本轮明确要求"徽章不要动"的结果，已写在交接报告里）。测试数 96 → 125、工作记录 109 → 110、坑 67 → 69 一并同步。
+
+第十七步只写规范，`src/` 下零改动，也没有跑 `gradle test`（本轮没有任何代码改动，测试数仍是第十六步的 96 个、失败 0、错误 0、跳过 0）。两份 SPEC 同时升到 v1.0，新增 §3.6「依赖图、拓扑排序与环检测（M1）」，含 3.6.1–3.6.7 七个小节。除版本头与标题（改为 M0–M1）之外的衔接改动只有四处：§0 补一句 M1 遵守同一条边界、并在 out of scope 里加一条"任何以安装顺序/加载顺序/拓扑序为形式的输出"；§3 注明 `unsatisfiedRequired` 与 `duplicateIds` 不属于 M1、保持未实现；§6 新增 6.5 `cycles.csv`、把 stdout 顺延为 6.6 并在模板里补三行；§7 声明 M0 / M0.5 / M1 三组验收不得混用。两份 SPEC 逐项核对过：47 个小节一一对应、35 个编号完全相同、21 张表格的行数与列数完全一致、每个小节内的编号条目数与项目符号数完全一致。
+
+§3.6 把用户点名的六件事逐条定死。**跨加载器假环**：每个加载器宇宙各建一张图，`FABRIC` 宇宙收 `FABRIC` 与 `QUILT`，`FORGE` 与 `NEOFORGE` 各自独立，`UNKNOWN` 不进图；边永不跨宇宙，同一 `modId` 在两个宇宙里是两个节点。判据是真实数据：191 条 OK 记录聚合成 116 个唯一 `modId`，其中 **71 个同时有 Fabric 与 NeoForge 变体**，按 `modId` 混成一张图必然把它们从不相干的两套声明合并成一套。**进图范围**：只有 `depends` 建边，`recommends` 与 `breaks` 永不建边（`breaks` 是"不得共存"，建成边等于制造反向边），`ordering` 不使用；身份只用 §3.5.5 第 1 条（真实 `modId` 才是权威），环境 ID、跨宇宙、仅别名、目标不存在四种情况一律不建边，且各自单独计数，五桶之和必须恒等于硬依赖声明数。**环的表示**：强连通分量的成员集合，按 ASCII 升序，不写路径、不写起点、不写方向——路径只有在环组恰好含一个基本环时才规范，而强连通分量里可能有多个。**输出**：新增 `cycles.csv`（表头 `universe,memberCount,members`），`dependencies.csv` 与 M0 三个文件逐字节不改，两者口径不同、不得互相加总。**硬禁令**：拓扑排序只用于判定是否有环，任何输出文件、任何日志级别、任何字段都不得出现安装顺序、加载顺序或拓扑序。
+
+本轮用一个只读 `candidates.jsonl`、通过标准输入直接执行的临时脚本（heredoc，未落盘）按 §3.6 的规则预演了一遍，作为"这批规则可实现、且不会把真实数据判成满屏假环"的自检，**不是实现产物**：FABRIC 节点 98、`EDGE` 声明 69、去重边 68，NEOFORGE 节点 89、`EDGE` 声明 20、去重边 20，环组 0。531 条硬依赖全部归桶：`EDGE` 89（FABRIC 69 + NEOFORGE 20）、环境提供 374、仅别名 18、跨加载器宇宙 0、目标不存在 50，合计正好 531。**（第十八步核对修正：这里原写"FABRIC 边 85"，85 实际是 68 条去重边加 17 条"别名指向拥有者"的边，等于把 `ALIAS_ONLY` 错当成了边；正确数字见 `verify_m1_counts.py` 与第十八步记录。总边数不可能大于进图声明数：去重边 88 ≤ `EDGE` 声明 89。）**。18 条仅别名全部是 `fabric` → `fabric-api`，与 M0.5 那 18 条 `AMBIGUOUS_ALIAS` 是同一批声明，只是口径不同（数据集全局 vs 单个宇宙），§3.6.6 已写明不得互相加总。环组为 0 说明真实数据里没有环的正样本，因此 §3.6.7 第 1、3、5、6 条要求用构造记录覆盖 2 环 / 3 环 / 自环 / 无环图 / 跨加载器假环，不能靠真实数据"跑绿"就算通过。
 
 第十六步修正第十五步那条写错的规则：把“别名与真实 modId 重名”也算歧义，等于把 depId 精确命中真实 modId 和只能靠别名命中混为一谈，导致 40 条本来正确的 SATISFIED（depId = `fabric-api`）被打成 AMBIGUOUS_ALIAS。SPEC 两版升到 v0.10，§3.5.5 改成五级优先级、命中即停：真实 modId → 环境 ID → 唯一别名拥有者 → 多拥有者判歧义 → MISSING_ID；真实 modId 是权威身份，别的模组把同一字符串写进 `provides` 也不构成歧义，唯一保留的冲突是别名占用环境 ID。代码只改 `DependencyResolver.targetsOf` 的候选收集顺序。实际跑：SATISFIED 612、MISSING_ID 72、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、AMBIGUOUS_ALIAS 18、UNPARSEABLE 0，逐行 diff 只有 `AMBIGUOUS_ALIAS → SATISFIED` 一种迁移（40 行，全部 `fabric-api`），M0 三个输出文件哈希未变。
 
@@ -28,7 +52,7 @@ M0.5 的真实结果：195 个输入、OK 191、FAILED 4 不变；共 716 条依
 
 ## 一、当前阶段与目标
 
-当前处于 **M0.5** 阶段（版本区间求值与可满足性判定），规范是 `SPEC.md` v0.8 §3.5。M0.5 只回答一个问题：**“集合里是否存在满足这条声明的目标”**。它不做拓扑排序、不产出安装顺序、不做版本回溯与候选选择、不下载、不建议装哪个版本，也不把结果合并进 `conflicts.csv`。
+当前处于 **M1 已实现完成、等用户验收** 的状态，规范是 `SPEC.md` v1.0：§7 管 M0、§3.5 管 M0.5、§3.6 管 M1，三组验收互不替代。M0、M0.5 与 M1 都已实现完成。M0.5 只回答一个问题：**“集合里是否存在满足这条声明的目标”**。M1 只回答另一个问题：**“这套硬依赖里有没有环、环里是哪些模组”**。两者都不输出顺序、不做版本回溯与候选选择、不下载、不建议装哪个版本；M1 的拓扑排序只用于判定是否有环，结果永不离开计算过程（§3.6.5）。M1 的当前实测是 `FABRIC` 98 节点 / 68 边、`FORGE` 0 节点 / 0 边、`NEOFORGE` 89 节点 / 20 边、`EDGE` 声明 89、去重边 88、环组 0；`EDGE` 声明数与图边数不是同一个数，区别写在 §3.6.3。
 
 M0.5 的两套版本语法必须分开实现，因为同名写法在两边的含义相反：Fabric 的裸版本串 `1.21.1` 是**精确匹配**，NeoForge 的无括号 `21.1.219` 是**最低版本**（Maven 软要求）。实现分在 `version/FabricVersionRange` 与 `version/NeoForgeVersionRange` 两个类里，比较规则在 `version/Version`；无括号形式在解析后用 DEBUG 打出采用了哪条约定。
 
@@ -37,13 +61,14 @@ M0.5 的两套版本语法必须分开实现，因为同名写法在两边的含
 当前真实数字（`gradle run` 实跑，不是估算）：
 
 - 依赖声明 716 条：硬依赖 531、软依赖 46、冲突声明 139；`dependencies.csv` 716 行数据加表头。
-- 结果：SATISFIED 612、MISSING_ID 90（硬 68 + 软 22）、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、UNPARSEABLE 0。
+- 结果：SATISFIED 612、MISSING_ID 72（硬 50 + 软 22）、VERSION_MISMATCH 7（硬 6 + 软 1）、BREAKS_VIOLATED 7、AMBIGUOUS_ALIAS 18、UNPARSEABLE 0，合计 716。
 - 环境事实：`minecraft=1.21.1 | fabricloader=0.20.1 | quilt_loader=0.27.0 | neoforge=21.1.262 | forge=52.0.0 | java=21`，启动时 INFO 打印一行，任何数字都能据此复现。
 - 环境 ID 行共 374 条（minecraft 174、fabricloader 80、neoforge 77、java 43），MISSING_ID 0 条。
+- M1 依赖图：`FABRIC` 98 节点 / 68 边、`FORGE` 0 节点 / 0 边、`NEOFORGE` 89 节点 / 20 边、未归入宇宙的 OK 记录 0；`EDGE` 声明 89（FABRIC 69 + NEOFORGE 20）、环境提供 374、跨加载器宇宙 0、仅别名 18、目标不存在 50，五桶合计 531；环组 0，`cycles.csv` 只有表头。
 
 七个需要用户裁决或至少知情的口径（都写在代码注释里，不藏在数字后面）：
 
-1. `provides` **不参与**解析。SPEC §3.5.5 只承认“数据集里的 modId”和“环境 ID”两种来源，扩展它等于改规格。代价是 18 条 `fabric` 硬依赖被判 MISSING_ID——数据集里的 `fabric-api` 的 `provides` 正是 `["fabric"]`，运行时能提供，但静态口径不认。
+1. `provides` 的规则以 SPEC §3.5.5 为准（v0.10 起五级优先级、命中即停）：真实 `modId` 是权威身份，唯一别名解析到拥有者的版本，多拥有者判 `AMBIGUOUS_ALIAS`。当前 18 条 `fabric` 硬依赖记 `AMBIGUOUS_ALIAS`，原因是 `fabric-api`（Fabric）与 `fabric_api`（Sinytra 移植）都声明了 `fabric` 这个别名；没有一条被记成 `MISSING_ID`。M1 已经按 §3.6.2 分宇宙建图，但 §3.6.3 规定别名永不建边，所以这 18 条在 M1 里记 `ALIAS_ONLY`、不进图，M0.5 的结果也不被改写；两个口径不得互相加总。
 2. 同一 `modId` 的 Fabric / NeoForge 两个变体版本不同时（数据集里有 20 个 modId 如此，例如 creativecore 2.13.48 / 2.13.52），按“**任一存在的版本满足区间即 SATISFIED**”判定，`resolvedVersion` 优先写实际匹配的那个版本。理由是 M0 的冲突预测本来就把同 modId 的变体合并处理。
 3. `Constraint.versionRanges` 有多条原串时按“任一满足”处理（Fabric 真实写法 `["1.21","1.21.1"]` 是“支持其中任一版本”），`declaredRange` 用 `;` 连接原串，例：`1.21;1.21.1`。
 4. `breaks` 的目标不在集合里记 **SATISFIED**，不记 MISSING_ID：没有目标就谈不上冲突。这一条把“不可满足”里的噪声从 190 降到 90，理由写在第 55 条坑里。
@@ -133,6 +158,15 @@ src/
 │   │           │   ├── InvasivenessAnalyzer.java
 │   │           │   ├── ModConflict.java
 │   │           │   └── TargetFrequency.java
+│   │           ├── graph/
+│   │           │   ├── CycleDetector.java
+│   │           │   ├── CycleGroup.java
+│   │           │   ├── CycleReport.java
+│   │           │   ├── DependencyGraph.java
+│   │           │   ├── GraphBucket.java
+│   │           │   ├── GraphBuilder.java
+│   │           │   ├── LoaderUniverse.java
+│   │           │   └── UniverseGraph.java
 │   │           ├── model/
 │   │           │   ├── Constraint.java
 │   │           │   ├── FailureCode.java
@@ -171,9 +205,15 @@ src/
     ├── java/
     │   └── dev/
     │       └── modgraph/
+    │           ├── MainCycleLogTest.java
     │           ├── StandardStreamPolicyTest.java
     │           ├── analysis/
     │           │   └── DescriptorAnalysisTest.java
+    │           ├── graph/
+    │           │   ├── CycleCsvTest.java
+    │           │   ├── CycleDetectionTest.java
+    │           │   ├── GraphFixtures.java
+    │           │   └── RealDatasetCycleTest.java
     │           ├── parse/
     │           │   ├── FabricMetadataParserTest.java
     │           │   ├── MetadataBomTest.java
@@ -208,7 +248,7 @@ src/
             └── neoforge-invalid-side.jar
 ```
 
-- src/main/java/dev/modgraph/Main.java：程序入口。现在统一扫描 fixtures/jars 下的两个目录，把每个 jar 解析成 ModCandidate，再调用侵入深度分析；最后写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv，并在 INFO 摘要里打印 FABRIC/NEOFORGE 的成功失败数、总输入数、失败码分布（第七步新增，格式如 `NO_METADATA: 4`，没有失败时打印“无”）、四档侵入深度分布、支持策略分布、冲突预测摘要、M0.5 的三行依赖统计和“本结果为准入检查，不构成运行稳定性保证”。它还会断言 OK+FAILED 等于输入数，不满足就记 ERROR 并抛出异常，避免偷偷丢记录。第十二步起，第一行 INFO 是环境事实（`环境事实：minecraft=1.21.1 | ...`），M0.5 的三行位于冲突预测之后、最后一行声明之前。
+- src/main/java/dev/modgraph/Main.java：程序入口。现在统一扫描 fixtures/jars 下的两个目录，把每个 jar 解析成 ModCandidate，再调用侵入深度分析；最后写出 candidates.jsonl、summary.csv、conflicts.csv、dependencies.csv、cycles.csv，并在 INFO 摘要里打印 FABRIC/NEOFORGE 的成功失败数、总输入数、失败码分布（第七步新增，格式如 `NO_METADATA: 4`，没有失败时打印“无”）、四档侵入深度分布、支持策略分布、冲突预测摘要、M0.5 的三行依赖统计和“本结果为准入检查，不构成运行稳定性保证”。它还会断言 OK+FAILED 等于输入数，不满足就记 ERROR 并抛出异常，避免偷偷丢记录。第十二步起，第一行 INFO 是环境事实（`环境事实：minecraft=1.21.1 | ...`），M0.5 的三行位于冲突预测之后、最后一行声明之前。第十八步起，M0.5 三行之后是 M1 的三行（`依赖图：...`、`未进图的硬依赖：...`、`依赖环：N 组`），每个环组再打一条 `依赖环 {}：{}` 的 ERROR；环组为 0 时一条 ERROR 都没有。这三行只含计数，不含任何节点序列。
 - src/main/java/dev/modgraph/version/Version.java：版本号与比较规则（SPEC §3.5.4）。按 `.` 和 `-` 切段，数字段按数值比较（先比去零后的长度再比字典序，不转成整数，避免溢出），非数字段按字典序，缺失段补 `0`，数字段恒大于非数字段（因此 `-beta` 低于正式版）。`+` 之后的构建元数据被剥离（如 `0.8.13+mc1.21.1` 等价于 `0.8.13`），`source()` 仍返回原串。含 `${` 或 `#` 的构建期占位符直接判不可解析。通配段 `*` / `x` / `X` 由 `matchesWildcard` 处理，模式以通配段结尾时后续段不再限制。
 - src/main/java/dev/modgraph/version/VersionParseException.java：解析失败的运行时异常，带原串（`offending()`），供调用方打 WARN 并归类 UNPARSEABLE。
 - src/main/java/dev/modgraph/version/VersionRange.java：已解析区间的接口，只有 `matches(Version)`。
@@ -226,6 +266,14 @@ src/
 - src/main/java/dev/modgraph/analysis/ConflictPredictor.java：静态冲突预测器。只取 status=OK 的记录，按 modId 合并同一模组的多个加载器变体；先统计每个目标被多少唯一模组命中，10% 及以上为 ubiquitous（当前 116 个唯一模组，阈值 12），再两两比较目标简单名，分 HIGH / MEDIUM / LOW / NONE。按用户 m01468 的裁决采用 all-rare：共享目标全部不是 ubiquitous 才是 HIGH，只要混入一个 ubiquitous 就降 MEDIUM；SPEC v0.6 §2.4 已按此收紧。代码注释、PROGRESS 和交接报告一致，不再待确认。HIGH 逐条打 WARN。它返回 `ConflictReport`（包含全部 pair 包括 NONE、目标频率、模组数、总对数、阈值）。
 - src/main/java/dev/modgraph/analysis/ConflictReport.java：冲突预测的汇总结果，保存全部模组对、目标频率列表、唯一模组数、总对数和 ubiquitous 阈值；列表在创建时做不可变复制，数字不能为负。
 - src/main/java/dev/modgraph/analysis/TargetFrequency.java：一个目标类及其“被多少个唯一模组命中”的计数，用于 Top 10 输出和 ubiquitous 判定；目标名不能为空，计数必须为正。
+- src/main/java/dev/modgraph/graph/LoaderUniverse.java：加载器宇宙枚举，只有 FABRIC、FORGE、NEOFORGE 三个值；`of(LoaderFamily)` 把 FABRIC 与 QUILT 映射到 FABRIC、FORGE 与 NEOFORGE 各自独立、UNKNOWN 返回空（不进图）。
+- src/main/java/dev/modgraph/graph/GraphBucket.java：硬依赖的五个桶，取值 EDGE、ENVIRONMENT、OTHER_UNIVERSE、ALIAS_ONLY、ABSENT，各带一个中文标签供摘要打印；只有 EDGE 建边。
+- src/main/java/dev/modgraph/graph/UniverseGraph.java：单个宇宙的有向图。节点按 modId 去重，邻接表预先为每个节点建空集合（没有出边的节点也是节点），边集去重；邻接表按 ASCII 升序存放只为遍历顺序稳定，这个顺序不是拓扑序。
+- src/main/java/dev/modgraph/graph/DependencyGraph.java：全部宇宙的图与五桶计数的只读视图，提供按宇宙/合计的桶计数、硬依赖声明数、被排除的 UNKNOWN 记录数；不暴露任何有序节点序列。
+- src/main/java/dev/modgraph/graph/GraphBuilder.java：建图器。只取 status=OK 的记录；先收集每个宇宙的节点与 provides，再逐条处理 `depends` 并把每条硬依赖归入恰好一个桶（判定顺序 EDGE → ENVIRONMENT → OTHER_UNIVERSE → ALIAS_ONLY → ABSENT）。硬依赖判据是 depends 读出的 Constraint，不用 required 标志。按宇宙断言五桶之和等于硬依赖声明数、断言边数不超过 EDGE 声明数，违反即抛 IllegalStateException。
+- src/main/java/dev/modgraph/graph/CycleGroup.java：一个环组，成员集合在创建时按 ASCII 升序复制，永远不写成路径；提供 `csvMembers()`（`;` 连接）与 `logMembers()`（` | ` 连接）两种写法。
+- src/main/java/dev/modgraph/graph/CycleReport.java：环检测结果，保存全部环组（先按宇宙名、再按成员串 ASCII 升序）与有无环的布尔值；不保存拓扑排序的任何中间结果。
+- src/main/java/dev/modgraph/graph/CycleDetector.java：Kahn 拓扑排序只返回“是否所有节点都被移除”，移除顺序是方法局部变量、不返回不打日志；Kosaraju 迭代实现求强连通分量，节点数 ≥ 2 或带自环的单节点算一个环组；每个宇宙都断言“拓扑排序可完成 ⇔ 环组数为 0”，不一致即抛异常。
 - src/main/java/dev/modgraph/model/ModCandidate.java：每个 jar 对应的一条统一记录，24 个字段的名称、顺序、类型严格按 SPEC.md v0.3 第一节；四个必填字段在创建时检查不能为空，可选字段允许留空。第六步之后，成功记录的 mixinTargets 已填入推断出的简单类名，mixinTargetsInferred 为 true；失败记录仍为空/false。
 - src/main/java/dev/modgraph/model/Constraint.java：依赖、推荐、破坏、加载顺序这类约束的通用结构，记录目标模组 ID、版本区间列表、是否必需、排序方式和适用侧。按用户确认，它是独立类，不嵌套进 ModCandidate。
 - src/main/java/dev/modgraph/model/LoaderFamily.java：加载器家族枚举，取值为 FABRIC、NEOFORGE、FORGE、QUILT、UNKNOWN。
@@ -238,13 +286,19 @@ src/
 - src/main/java/dev/modgraph/model/FailureCode.java：七种失败原因的枚举，覆盖不是 zip、没有元数据、JSON 损坏、TOML 损坏、缺少必填字段、读写错误，以及 INTERNAL_ERROR（程序内部异常，用来和“数据有问题”区分开）。
 - src/main/java/dev/modgraph/parse/FabricMetadataParser.java：Fabric 元数据解析器。读取 jar 根目录的 fabric.mod.json，先剥离 UTF-8 BOM，再按 SPEC.md §2.1 映射统一字段；识别 quilt.mod.json；把 SPEC 未定义的顶层字段记入 unknownFields 并 WARN；mixinConfigs 只记录 mixins 里的配置路径，不读配置内容（配置内容由第六步的分析器读）；找不到 fabric.mod.json 时在 failureMessage 里提示可能是 jar-in-jar 嵌套；单个 jar 解析失败时填 failureCode、打一条 ERROR、标记 FAILED 并继续。第七步之后它还会检查扫描阶段是否已经把该 jar 判成 FAILED，是就直接原样返回，避免把 NOT_A_ZIP 改写成 NO_METADATA；读条目内容时如果 zip 抛 ZipException（条目数据损坏），归 IO_ERROR，因为文件本身仍是有效 zip；未分类的 RuntimeException 由原来的 MALFORMED_JSON 改为 INTERNAL_ERROR，不再把程序 bug 伪装成数据问题。
 - src/main/java/dev/modgraph/parse/NeoForgeMetadataParser.java：NeoForge / Forge 元数据解析器。读取 META-INF/neoforge.mods.toml；找不到时回退 META-INF/mods.toml；有前者记 NEOFORGE，只有后者记 FORGE；先剥离 UTF-8 BOM，再用 night-config 的 TOML 解析器解析；取第一条 [[mods]]；多条目只取第一条并 WARN；依赖按 type、required、mandatory 的先后顺序判定；versionRange 原样保留；mixinConfigs 从顶层 [[mixins]] 的 config 读路径；找不到元数据时记 NO_METADATA 并在消息里提示嵌套；依赖 ordering / side 只认已知值，遇到不认识的字符串记 MALFORMED_TOML 并在 ERROR 里写明字段和值；RuntimeException 兜底归 INTERNAL_ERROR，消息注明“这是程序异常不是数据问题”并带异常类名；失败只打一条 ERROR 并继续。第七步之后它同样先检查扫描阶段的 FAILED 并原样返回，读条目内容时的 ZipException 归 IO_ERROR。
-- src/main/java/dev/modgraph/report/ReportWriter.java：输出写入器。用 Gson 的 serializeNulls 写 candidates.jsonl；按 SPEC 表头写 summary.csv；按 modA,modB,level,sharedTargets 写 conflicts.csv；第十二步新增 `writeDependencies`，按 `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome` 写 dependencies.csv，缺失版本写空单元格，含逗号的 Maven 区间按 CSV 规则加引号；CSV 字段做转义；summary.csv 包含全部记录，包括 EXCLUDED 和 FAILED，不做剔除。
+- src/main/java/dev/modgraph/report/ReportWriter.java：输出写入器。用 Gson 的 serializeNulls 写 candidates.jsonl；按 SPEC 表头写 summary.csv；按 modA,modB,level,sharedTargets 写 conflicts.csv；第十二步新增 `writeDependencies`，按 `modId,version,depId,depKind,declaredRange,resolvedVersion,outcome` 写 dependencies.csv，缺失版本写空单元格，含逗号的 Maven 区间按 CSV 规则加引号；CSV 字段做转义；summary.csv 包含全部记录，包括 EXCLUDED 和 FAILED，不做剔除。第十八步新增 `writeCycles`，按 `universe,memberCount,members` 写 cycles.csv，没有环组时只写表头；成员串本身不含逗号/引号/换行时沿用与 conflicts.csv 相同的规则不加引号。
 - src/main/java/dev/modgraph/scan/ScannedJar.java：扫描结果的临时包装，包含 jar 的文件路径、对应的 ModCandidate，以及这个 jar 内全部条目（entry）的名字；条目名放在 ModCandidate 之外，供侵入深度和 Mixin 目标索引使用。
 - src/main/java/dev/modgraph/scan/JarScanner.java：扫描器。递归找出所有 .jar，按路径排序，逐个算 SHA-256，并从 zip 的中央目录读出全部条目名；只读名字，不打开条目内容。第七步之后它对单个文件的失败不再向外抛：读文件算 SHA-256 失败记 IO_ERROR，`new ZipFile` 抛 ZipException 记 NOT_A_ZIP，其他 IOException 记 IO_ERROR，RuntimeException 记 INTERNAL_ERROR；失败文件一样产出一条 FAILED 记录（条目名列表为空），并打一条 ERROR，然后继续下一个文件。只有“目录本身无法遍历”这种没有对应输入文件的情况才会抛 IOException。
 - src/main/resources/log4j2.xml：日志配置文件。默认等级 INFO；启动时加 -Dlog.level=debug 可以把等级调到 DEBUG。日志格式包含时间、线程、级别、类名和消息。
+- verify_m1_counts.py（仓库根目录）：第十八步落盘的 M1 核对脚本，独立于 Java 实现，只读 `candidates.jsonl`、只用标准库、不写任何文件。它按 §3.6.2 重建宇宙、按 §3.6.3 把 531 条硬依赖归入五桶、打印每个宇宙的节点数/声明数/去重边数，并复现第十七步那个错误的 85（68 条去重边 + 17 条别名指向拥有者的边）。任一等式不成立就以非 0 退出码结束。用法：`python verify_m1_counts.py`（可带 candidates.jsonl 路径）。
 - src/test/java/dev/modgraph/testsupport/DatasetRoot.java：第十一步新增的测试数据源选择器。`fixtures/jars` 存在且至少有一个 jar 时用完整数据集，否则回退到 `src/test/resources/fixtures`；`logMode` 每次都会打一行 INFO 说明当前用的是完整数据集还是内置样本，并把根目录和 jar 数写出来。它不会让测试 SKIP，缺数据只切换数据源。
 - src/test/java/dev/modgraph/StandardStreamPolicyTest.java：构建时强制执行的静态检查。它用 ArchUnit 扫描 dev.modgraph 包，禁止生产代码出现 System.out、System.err 和 printStackTrace()；一旦出现，gradle build 会失败。
 - src/test/java/dev/modgraph/analysis/DescriptorAnalysisTest.java：第六步的 9 个测试，第九步增加到 10 个（新增 `nestedMixinClassNamesAreStrippedSegmentBySegment`，对两个 sodium 记录断言嵌套类被逐段剥除、目标集合里不残留 `Mixin`）。第十一步起支持两种数据源：完整数据集下跑原来的全部分布、冲突和样本断言；内置样本下改为断言该样本的已知构成（只有两个 API 级 BOM 模组、无 mixin 目标、唯一一对冲突落 NONE），不去假装四档都出现过。验证每个 jar 恰好一条记录；OK 记录的分析字段齐全、失败记录为空；四档覆盖全部 OK 且每档非空；RENDER/CORE 全部 EXCLUDED 且有信号；mixinTargets 都是无点简单名且 inferred=true，并用真实的 sodium-neoforge 和 carryon 样本验证嵌套读取和带注释配置；前缀式 `MixinBloodFluid` 会被推断为 `BloodFluid`，且没有 target 以 `Mixin` 开头；mixinConfigs 非空但目标为空的记录不超过 OK 总数 10%；冲突对数等于唯一 modId 的两两组合数、四档都非空，且 HIGH 的共享目标必须全部不是 ubiquitous、MEDIUM 的共享目标必须全是 ubiquitous；HIGH 占比不超过 5%；高频目标 Top 10 按命中数降序，阈值等于 `(modCount + 9) / 10`，且至少有一个 ubiquitous；把三个输出文件写到临时目录，检查行数、表头、EXCLUDED 是否保留、HIGH 行数、JSON 的 inferred 值。无 assume、无 mock。
+- src/test/java/dev/modgraph/graph/CycleDetectionTest.java：第十八步新增的 16 个构造数据测试，覆盖跨加载器假环、同 modId 跨宇宙两个节点、同宇宙两条记录合并节点并取边并集、重复声明同一目标只留一条边、recommends 不建边、breaks 即使 required=true 也不建边、2 环、3 环、自环、无环 DAG、五桶各 1 且合计等于声明数、QUILT 并入 FABRIC、UNKNOWN 不计节点、成员按 ASCII 升序、行按宇宙再按成员排序、FAILED 记录不成节点、“拓扑排序可完成 ⇔ 环组数为 0”两个方向。没有 assume、没有 mock 文件读取。
+- src/test/java/dev/modgraph/graph/GraphFixtures.java：测试用构造记录工厂。depends / recommends / breaks 三种约束的 `required` 全部为 true，与真实解析器一致，这样“拿 required 当判据”的实现会立刻把 breaks 误建成边并让测试红掉。不是 mock，也不依赖真实 jar。
+- src/test/java/dev/modgraph/graph/CycleCsvTest.java：5 个测试，验证没有环组时只有表头、每个环组一行且成员用 `;` 连接、行序为宇宙名再成员串、每行恰好三列且 memberCount 与成员数一致、同一份输入连续两次运行（含覆盖写同一文件）产出逐字节相同的文件。
+- src/test/java/dev/modgraph/graph/RealDatasetCycleTest.java：6 个测试，在真实数据集（或内置样本）上验证每条输入恰好一条记录、五桶等式与独立重算的硬依赖数一致、节点数等于该宇宙唯一 modId 数、拓扑排序与环组数双向一致且环组成员都是该宇宙节点（单成员必须是自环）、边数不超过 EDGE 声明数、cycles.csv 行数等于环组数加表头。两种数据源都跑，不跳过。
+- src/test/java/dev/modgraph/MainCycleLogTest.java：2 个测试，用 Log4j 收集器验证环组为 0 时不打 ERROR、每个环组恰好一条 `依赖环 {}：{}` 格式的 ERROR。
 - src/test/java/dev/modgraph/parse/FabricMetadataParserTest.java：Fabric 解析器的五个测试，分别验证“OK 数加 FAILED 数等于文件系统里 fabric 目录真实 .jar 数”“成功的记录都有 modId、version 和加载器家族”“如果有失败记录，失败记录必须有 failureCode 和 failureMessage”“一个真实的无 fabric.mod.json、但带内层 jar 的样本会得到 NO_METADATA 并在消息里提示嵌套”“mixinTargets 仍为空、mixinTargetsInferred 仍为 false”。
 - src/test/java/dev/modgraph/parse/NeoForgeMetadataParserTest.java：NeoForge 解析器的六个测试，分别验证“OK 数加 FAILED 数等于文件系统里 neoforge 目录真实 .jar 数”“成功的记录有 modId、version，加载器家族是 NEOFORGE 或 FORGE”“失败记录是 NO_METADATA、消息里有嵌套提示、modId 为空”“${file.jarVersion} 原样保留”“mixinConfigs 只包含 .json 路径”“mixinTargets 仍为空、mixinTargetsInferred 仍为 false”。
 - src/test/java/dev/modgraph/parse/NeoForgeInvalidEnumTest.java：两个测试，分别用真实 fixture 验证非法的 ordering 值和非法的 side 值会让该 jar 变成 FAILED + MALFORMED_TOML；两个测试都挂了一个 Log4j 收集器，断言确实打出了 ERROR，而且消息里包含出错的字段名和值，证明不是静默降级。
@@ -432,6 +486,10 @@ src/
 
 108. 第十六步修正 provides 优先级（用户承认第十五步写的规则有误）。SPEC 两版升到 v0.10：§3.5.5 改成五级优先级（真实 modId → 环境 ID → 唯一别名拥有者 → 多拥有者判歧义 → MISSING_ID），并写明“真实 modId 是权威身份，别的模组把同一字符串写进 provides 也不构成歧义”；唯一保留的冲突是别名占用环境 ID。§3.5.7 加第 8 条验收（真实 modId 不得被判歧义）。代码只改 `DependencyResolver.targetsOf`：真实 modId 命中即返回、别名与环境不再并列入候选；环境 ID 与别名重名时仍把两者都交给上层判歧义。测试把 `aliasCollidingWithARealModIdIsAmbiguous` 改成 `realModIdWinsOverAnAliasWithTheSameName`，另加一条“多个模组抢同一个真实 modId 也照样优先取真实 modId”。实际跑：SATISFIED 612、MISSING_ID 72、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、AMBIGUOUS_ALIAS 18、UNPARSEABLE 0，合计 716；逐行 diff 只有 `AMBIGUOUS_ALIAS → SATISFIED` 一种迁移，40 行，全部是 `fabric-api`，它们的 `resolvedVersion` 也从空恢复成 `0.116.17+1.21.1`。M0 三个输出文件 SHA-256 与基线一致。两份 README 的徽章 88→96（按用户本轮指令），M0.5 数字同步，voicechat 那条改成“保守方向、只高估冲突、影响面 2/716”。
 
+109. 第十七步只写规范，`src/` 零改动、没有跑 `gradle test`。两份 SPEC 升到 v1.0，新增 §3.6（M1：依赖图、拓扑排序与环检测），并把 §6 补上 6.5 `cycles.csv`、stdout 顺延为 6.6、模板补三行，§7 声明三组验收不得混用。§3.6 定死六件事：按加载器宇宙分图（`FABRIC` 含 `QUILT`、`FORGE` 与 `NEOFORGE` 各自独立、`UNKNOWN` 不进图）；只有 `depends` 建边，`recommends` / `breaks` / `ordering` 一律不建边；身份只用 §3.5.5 第 1 条，四种无边的硬依赖各自计数且五桶之和恒等于硬依赖总数；环写成强连通分量的成员集合（ASCII 升序），不写路径与起点；新增 `cycles.csv`，M0 三个文件与 `dependencies.csv` 逐字节不改；拓扑序只用于判无环，任何输出与任何日志级别都不得出现顺序。本轮同时修掉 `PROGRESS.md` 第一节两处过期数字：`MISSING_ID 90（硬 68 + 软 22）` 改为 `72（硬 50 + 软 22）`，第 1 条“`provides` 不参与解析”按 v0.9 / v0.10 的现行规则重写。**编号沿革**：v1.0 起 §6 的 stdout 小节由 §6.5 顺延为 §6.6（§6.5 现在是 `cycles.csv`），本文件第十四、十五步的历史记录里提到的 §6.5 指的是旧编号，内容没有变。预演脚本通过标准输入直接执行（heredoc），没有在仓库内外留下任何文件。
+
+110. 第十八步做三件事。**任务零**：新增仓库根目录的 `verify_m1_counts.py`（只读 `candidates.jsonl`、只用标准库、不写文件、失败退出码非 0），查清第十七步的 85 = 68 条去重 `depends` 边 + 17 条"别名指向拥有者"的边，即把 `ALIAS_ONLY` 错当成边；实测五桶 `EDGE` 89（FABRIC 69 + NEOFORGE 20）、`ENVIRONMENT` 374、`OTHER_UNIVERSE` 0、`ALIAS_ONLY` 18、`ABSENT` 50，合计 531，去重边 88（FABRIC 68 + NEOFORGE 20）。两份 SPEC §3.6.2 / §3.6.3 / §3.6.6 同步补上实测数字、"`EDGE` 数声明 / 图数去重边"的区分，以及"跨加载器规则未被真实数据触发、只由构造数据覆盖"的事实声明。**任务一**：新增 `graph/` 八个类并接到 Main，产出 `cycles.csv` 与三行 INFO；真实数据 `FABRIC` 98/68、`FORGE` 0/0、`NEOFORGE` 89/20、环组 0，`cycles.csv` 只有表头、两次运行 SHA-256 相同（`94E01400…9415`）。**任务二**：两份 README 的 v0.10 → v1.0、M1 状态行、产物表、实跑输出与披露同步；M0 / M0.5 数字未动，徽章未动。测试 96 → 125（新增 `CycleDetectionTest` 16、`CycleCsvTest` 5、`RealDatasetCycleTest` 6、`MainCycleLogTest` 2），失败 0、错误 0、跳过 0；内置样本模式同样 125 / 0 / 0 / 0。四个产物 SHA-256 与改动前逐字节相同。没有执行 git commit。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -527,18 +585,37 @@ src/
 
 65. **“谁拥有这个 ID”必须定义优先级，不能只定义成“拥有者集合”。** 第十五步的规则把“别名与真实 modId 重名”也算歧义，等于把 depId 精确命中真实 modId 和只能靠别名命中当成同一件事；真实语义里前者是权威身份、后者是替补，结果 40 条本来正确的 SATISFIED（depId = `fabric-api`）被打成 AMBIGUOUS_ALIAS。第十六步改成五级优先级、命中即停，这 40 条全部恢复。教训有两条：一是**来源之间只要有主次，规则就必须写出次序**，否则实现只能靠猜；二是**“不许任选”只应约束同一优先级里的并列候选**，把不同优先级也塞进同一个集合，等于用“防错”制造新错。当时逐行 diff 已经把 40 条的迁移摊开写进报告了（+58 歧义里 40 条来自真实 modId 冲突），只是规则本身错了，数据层面的证据是对的——所以“数字变化必须逐条解释”这条纪律值得一直保留。
 
+66. **“混成一张图”的假环不是过滤问题，是建模问题。** 数据集把 Fabric 与 NeoForge 的 jar 放在同一个目录，116 个唯一 `modId` 里有 71 个两个变体都有。如果按 `modId` 建一张全局图，两个从不同时安装的变体会被合成一个节点，两套互不相干的声明被并成一套，环就凭空出现了——而且这种假环**事后没法过滤**：你无法从一条边看出它来自哪个加载器变体。唯一可行的做法是在建图之前就分流，让"跨加载器的环"结构上不可能存在，而不是造出来再筛掉。这条同样适用于别名：`fabric` 在数据集全局有两个拥有者（Fabric API 本体与 Sinytra 移植），这正是第十五步那 18 条 `AMBIGUOUS_ALIAS` 的根因；分宇宙之后每个宇宙里只剩一个拥有者。M1 因此没有采用别名建边——它只认真实 `modId`，代价是漏报而不是误报，并在 §3.6.3 写明。
+
+67. **环的“规范化表示”不能顺手选一条路径。** 直觉写法是"从字典序最小的成员出发、沿边往前走、走回起点"，看起来完全确定，实际上只有在环组恰好含一个基本环时才成立：一个强连通分量里可能有多个基本环，"最小后继"这条贪心规则甚至会走进死路（走到某个节点时它的后继全都访问过、却没有回到起点）。所以 §3.6.4 把环写成**成员集合**，按 ASCII 升序——没有起点、没有方向，两次运行逐字节可比；同时明说一行**不**代表"存在一个包含全部成员的环"，只代表每个成员都在某个环上。要枚举全部基本环则是指数级的，顺序也不规范，属于本阶段不该做的事。
+
+68. **一个数字里混了两个口径，比单纯算错更难发现。** 第十七步的"FABRIC 边 85"不是随便写错的，它是 68 条去重后的 `depends` 边加 17 条"别名指向拥有者"的边：前者用了"去重后的边"，后者用了"别名也算边"，而 §3.6.3 的桶表明确规定别名永不成为边。它同时踩了两个坑：把声明数（69）和去重边数（68）混在一起，又把 `ALIAS_ONLY` 当成 `EDGE`。所以核对时不能只问"这个数字对不对"，要问"这个数字数的是什么、按哪条规则数的"——这也是为什么第十八步的 `verify_m1_counts.py` 会把 `EDGE` 声明数、去重边数、五桶、以及"别名当成边"的复现放在同一份输出里。另一个教训是：**预演脚本不落盘，就无法复现，也就无法发现这种混合口径**；这次把脚本写进仓库根目录并加了非 0 退出码。
+
+69. **没有出边的节点会从邻接表里消失。** 第一版 `GraphBuilder` 只在某条边产生时才 `computeIfAbsent` 建邻接项，结果没有出边的节点根本不在 `adjacency` 里：`nodeCount()` 偏小、Kosaraju 的反向图对这类节点取到 null、构造测试直接 NPE。真实数据上这个 bug 会让 `FABRIC` 的节点数从 98 掉到只剩"有出边的那些"，而环组仍然是 0，光看"环组 0"永远发现不了。修法是建图时先把该宇宙的全部节点占位成空集合。教训：**"节点"和"边的源点"不是同一个集合**，任何图实现都要显式回答"孤立节点算不算节点"。
+
 ## 五、下一步建议
 
-M0 已按 SPEC v0.7 定稿（v0.8 / v0.9 / v0.10 都没有改动 M0 的十条），M0.5 已按 SPEC v0.10 §3.5 完成，中英文 SPEC 现在都是 v0.10。完整数据集（195 个 jar）下 `gradle clean test` 是 96 个测试、失败 0、错误 0、跳过 0；`gradle clean build` 退出码 0；`gradle run` 产出四个文件，依赖判定 716 行。把 `fixtures` 临时移走后（内置 11 个样本）测试依然全部通过、跳过仍为 0，两种模式在日志里明确打印当前数据源。
+M0 已按 SPEC v0.7 定稿（v0.8–v1.0 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现。中英文 SPEC 现在都是 v1.0。完整数据集（195 个 jar）下 `gradle clean test` 是 125 个测试、失败 0、错误 0、跳过 0——这是第十八步的实跑结果。`gradle run` 产出五个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 125 个、跳过 0，两种模式在日志里明确打印当前数据源。
 
-本步结束后仍待用户裁决或确认的两件事：
+本步结束后等用户确认的事（**都不许由 AI 自行决定**）：
 
-1. 是否按加载器家族分流解析。当前 18 条 `AMBIGUOUS_ALIAS` 全部来自 `fabric` 这一个别名，根因是数据集同时包含 Fabric API 本体与 Sinytra 的 forgified 移植（两个 modId 都声明 `fabric`）。按家族分流能消掉这 18 条，但那是新规则，需要先写进 SPEC。
-2. 连字符复合版本（`1.21.1-2.6.27`）的判定规则。当前按 §3.5.4 字面切段，产生 1 条假 VERSION_MISMATCH 与 1 条假 BREAKS_VIOLATED；要修就得在 SPEC 里给这类版本单独定义规则。这属于保守方向的误报（只高估冲突、不会漏报真问题），影响面 2/716。
+1. **M1 的分宇宙规则**（§3.6.2）已按规范实现：`FABRIC` 宇宙收 `FABRIC` + `QUILT`、`FORGE` 与 `NEOFORGE` 各自独立、`UNKNOWN` 不进图。`QUILT` 并入 `FABRIC` 的依据是 §2.1（只有同时存在 `fabric.mod.json` 才判 `QUILT`），`FORGE` 不并入 `NEOFORGE` 的理由是那会变成兼容性断言。真实数据里 `QUILT` 与 `FORGE` 都是 0 条、`OTHER_UNIVERSE` 也是 0，这条规则仍然没有真实样本验证过（只有构造测试）；如果用户希望改成"所有家族各建一张图、不并任何一家"，仍然是一处干净的替换。
+2. **M1 不采用别名建边**（§3.6.3）已实现。代价是 18 条 `fabric` → `fabric-api` 的边不进图（记 `ALIAS_ONLY`），误差方向是漏报。如果用户希望"跨加载器分流的代价由 M1 承担、别名也解析"，那就与 M0.5 的口径进一步分叉，需要先确认再改。
+3. 连字符复合版本（`1.21.1-2.6.27`）的判定规则。当前按 §3.5.4 字面切段，产生 1 条假 VERSION_MISMATCH 与 1 条假 BREAKS_VIOLATED；要修就得在 SPEC 里给这类版本单独定义规则。这属于保守方向的误报（只高估冲突、不会漏报真问题），影响面 2/716。
 
 环境事实的取值不是待裁决项，只是提醒：当前 fabricloader=0.20.1、neoforge=21.1.262 取的是数据集内下界最大值；如果换成更旧的实际环境版本，VERSION_MISMATCH 会如实增加，这不是 bug。
 
-M0.5 之后（M1）才适合做：依赖图与拓扑排序、循环依赖检测、重复 modId 的警告与仲裁。这些 SPEC 尚未要求，现在不要提前实现，也不要预留接口。
+M1 实现时已落实、现在由测试守着的三件事：环检测的构造记录覆盖 2 环 / 3 环 / 自环 / 无环 / 跨加载器假环（真实数据环组为 0，不能靠它证明检测器可用）；`cycles.csv` 逐字节可复现（`CycleCsvTest` 两次独立构建后比对字节）；拓扑序只用于判定无环，任何输出与任何日志级别都不出现顺序（`CycleReport` 不含有序节点序列，M1 不打任何 DEBUG 日志，`cycles.csv` 只有三列）。
+
+M1 自身的已知边界：
+
+- 跨加载器分流规则（`FABRIC` + `QUILT` 同宇宙、`FORGE` 与 `NEOFORGE` 独立）在当前数据集上**没有被触发**：`OTHER_UNIVERSE = 0`，`QUILT` 与 `FORGE` 都是 0 条记录，只有构造数据覆盖
+- 别名永不建边（§3.6.3），18 条 `fabric` → `fabric-api` 记 `ALIAS_ONLY`；误差方向是漏报，经过别名才可达的环不会被发现
+- `EDGE` 桶 89 条声明与图 88 条边不是同一个数（`continuity` 的两条记录都声明 `fabric-api`）；报告里两个数都给，且永不互相加总
+- 真实数据集环组 0，`依赖环 {}：{}` 的 ERROR 只由 `MainCycleLogTest` 的构造环组验证，没有真实数据样本
+- `cycles.csv` 的成员串沿用 `conflicts.csv` 的转义规则（不需转义时不加引号）；SPEC 示例里的引号是示意写法
+
+重复 modId 的警告与仲裁（§3 的 `report.duplicateIds`）**仍然不在 M1 范围内**，SPEC 已明写保持未实现。现在不要提前实现，也不要预留接口。
 
 M0 的 §7 十条最终状态：第 1、2、3、4、6、7、8、9、10 条达成；第 5 条标注 1 处语义争议——sodium 的 `modType` 判成 `LIBRARY`（因为它声明了 `provides: ["indium"]`，按 SPEC 表格行序先判 LIBRARY），按规则是对的，但按模组实际身份更像 `OPTIMIZER`。是否调整判定顺序由用户决定，本步没有改。
 
