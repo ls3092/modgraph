@@ -120,10 +120,11 @@ public final class Main {
                 dependencyReport.count(DepKind.REQUIRED),
                 dependencyReport.count(DepKind.RECOMMENDS),
                 dependencyReport.count(DepKind.BREAKS));
-        LOG.info("不可满足：MISSING_ID {} | VERSION_MISMATCH {} | BREAKS_VIOLATED {}",
+        LOG.info("不可满足：MISSING_ID {} | VERSION_MISMATCH {} | BREAKS_VIOLATED {} | AMBIGUOUS_ALIAS {}",
                 dependencyReport.count(DependencyOutcome.MISSING_ID),
                 dependencyReport.count(DependencyOutcome.VERSION_MISMATCH),
-                dependencyReport.count(DependencyOutcome.BREAKS_VIOLATED));
+                dependencyReport.count(DependencyOutcome.BREAKS_VIOLATED),
+                dependencyReport.count(DependencyOutcome.AMBIGUOUS_ALIAS));
         LOG.info("无法解析的版本区间：{}（实现缺陷，不是模组问题）",
                 dependencyReport.count(DependencyOutcome.UNPARSEABLE));
 

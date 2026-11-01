@@ -1,6 +1,12 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-01（第十四步收尾：两份 README 的测试徽章 42→88，两份 SPEC 的 §6.5 stdout 模板删掉「硬依赖总数」与「环」两行、换成 §3.5.6 的三行格式并补模板说明；只改文档，`src/` 零改动，测试仍是 88 个、失败 0、跳过 0）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-01（第十六步：修正 `provides` 优先级，SPEC 升到 v0.10，真实 modId 优先于别名；AMBIGUOUS_ALIAS 58→18，SATISFIED 572→612，MISSING_ID 72 不变；两份 README 的测试徽章改成 96；测试 96 个、失败 0、跳过 0）。
+
+第十六步修正第十五步那条写错的规则：把“别名与真实 modId 重名”也算歧义，等于把 depId 精确命中真实 modId 和只能靠别名命中混为一谈，导致 40 条本来正确的 SATISFIED（depId = `fabric-api`）被打成 AMBIGUOUS_ALIAS。SPEC 两版升到 v0.10，§3.5.5 改成五级优先级、命中即停：真实 modId → 环境 ID → 唯一别名拥有者 → 多拥有者判歧义 → MISSING_ID；真实 modId 是权威身份，别的模组把同一字符串写进 `provides` 也不构成歧义，唯一保留的冲突是别名占用环境 ID。代码只改 `DependencyResolver.targetsOf` 的候选收集顺序。实际跑：SATISFIED 612、MISSING_ID 72、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、AMBIGUOUS_ALIAS 18、UNPARSEABLE 0，逐行 diff 只有 `AMBIGUOUS_ALIAS → SATISFIED` 一种迁移（40 行，全部 `fabric-api`），M0 三个输出文件哈希未变。
+
+第十五步修掉 `provides` 这个语义 bug：Fabric Loader 会把 `provides` 里的 ID 当作“存在的模组”，M0.5 之前只认数据集 modId 与环境 ID，导致 18 条 `fabric` 依赖被判 MISSING_ID，而实际运行时会解析到 `fabric-api`。SPEC.md 与 SPEC.zh-CN.md 同步升到 v0.9：§3.5.5 的存在性改为「数据集 modId ∪ 环境 ID ∪ 任意模组的 provides 别名」，别名解析到拥有者的版本；一个 ID 有多个拥有者时（多个 modId 声明同一别名，或别名与真实 modId / 环境 ID 重名）不挑任何一个，新增第六种 outcome `AMBIGUOUS_ALIAS`，`resolvedVersion` 为空，WARN 列出全部候选。§3.5.6 与 §6.5 的 stdout 格式同步加上 `| AMBIGUOUS_ALIAS N`，§3.5.7 增加第 7 条验收。
+
+真实数据（195 个 jar、716 条依赖）修前 → 修后：MISSING_ID 90 → 72（正好少 18，全部是 `fabric`），AMBIGUOUS_ALIAS 0 → 58，SATISFIED 612 → 572，VERSION_MISMATCH 7 → 7，BREAKS_VIOLATED 7 → 7，UNPARSEABLE 0 → 0。58 条歧义只来自两个 ID：`fabric` 18 条（`fabric-api` 与 `fabric_api` 都声明该别名），`fabric-api` 40 条（`fabric_api` 声明 `provides: ["fabric","fabric-api"]`，与真实 modId `fabric-api` 重名）。因此 SATISFIED 不是 +18 而是 −40：那 40 条本来走真实 modId，现在因为多了一个拥有者被判歧义。这是按用户规则“不许静默、不许任选一个”的直接结果，不是新 bug；如果以后要按加载器家族分流，需要另写规则。
 
 第十四步只改文档，补上第十三步留下的两处收尾。两份 README 第 26 行的测试徽章从 `tests-42 passing` 改为 `tests-88 passing`，MIT 许可徽章没有动。`SPEC.md` 与 `SPEC.zh-CN.md` 的 §6.5 stdout 模板里，`[INFO]  硬依赖总数：412，不可满足：23` 和 `[INFO]  环：1` 两行被删掉——它们既不匹配程序实际输出，也与 §3.5.6 定义的三行格式冲突——替换成 `依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N`、`不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N`、`无法解析的版本区间：N（实现缺陷，不是模组问题）`，字段名与 §3.5.6 逐字相同；模板上方补了一句「这是格式模板，不是真实数字，真实数字见 README 的实跑输出」，原来模板下方那句只保留「每个数字必须来自实际运行、本文件不得写死任何数量」的要求。中英文两版同步修改，改完 `gradle clean test` 仍是 88 个测试、失败 0、错误 0、跳过 0。
 
@@ -418,6 +424,14 @@ src/
 
 104. 第十四步只改文档，`src/` 零改动。补上第十三步留下的两处收尾：两份 README 第 26 行的测试徽章从 `tests-42 passing` 改为 `tests-88 passing`（MIT 许可徽章未动）；`SPEC.md` 与 `SPEC.zh-CN.md` 的 §6.5 stdout 模板删掉 `硬依赖总数：412，不可满足：23` 和 `环：1` 两行，替换成 §3.5.6 定义的三行（`依赖总数` / `不可满足` / `无法解析的版本区间`，字段名逐字一致），并在模板上方写明「这是格式模板，不是真实数字，真实数字见 README 的实跑输出」，原来模板下方那句只保留「每个数字必须来自实际运行、不得写死数量」的要求。改完 `gradle clean test` 仍是 88 个测试、失败 0、错误 0、跳过 0。没有执行 git commit。
 
+105. 第十五步修 `provides` 语义 bug（生产代码 + 文档）。SPEC 两版升到 v0.9：§3.5.5 存在性改为「数据集 `modId` ∪ 环境 ID ∪ 任意 OK 记录的 `provides` 别名」，别名解析到拥有者的版本；新增第六种 outcome `AMBIGUOUS_ALIAS`，覆盖两类歧义（同一别名被两个及以上 modId 声明；别名与真实 modId 或环境 ID 重名），`resolvedVersion` 为空，WARN 打出全部候选并注明来源（`modId` / `provides` / `environment`）。§3.5.2 的 MISSING 定义、§3.5.6 与 §6.5 的 stdout、§3.5.7 都同步改；新增验收第 7 条。代码侧改 `DependencyOutcome`（加枚举值）、`DependencyResolver`（`indexProviders` 建别名索引、`targetsOf` 收集拥有者、多拥有者走 AMBIGUOUS 分支）、`Main`（摘要行加字段）。
+
+106. 第十五步测试：新增 8 个用例（别名解析到拥有者版本、按拥有者版本判 VERSION_MISMATCH、两个 modId 声明同一别名即便有一个满足也判歧义、别名与真实 modId 重名、别名与环境 ID 重名、自己 provide 自己不算第二个拥有者、breaks 命中别名、真实数据里别名行不得为 MISSING_ID），`DependencyCsvTest` 增加一行 AMBIGUOUS_ALIAS 的 CSV 断言，`breaksOnAbsentTargetIsSatisfiedNotMissing` 改成区分“目标不存在的 SATISFIED”和“歧义的 null 版本”。`gradle clean test` 96 个测试、失败 0、错误 0、跳过 0；把 `fixtures` 临时移走后内置样本模式同样 96/0/0/0。真实数据跑出 MISSING_ID 72、AMBIGUOUS_ALIAS 58、SATISFIED 572、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、UNPARSEABLE 0；M0 三个输出文件 SHA-256 与基线一致（HIGH 331 / MEDIUM 1170 / LOW 725 未变）。逐行对比 716 行，迁移只有两种：18 条 `fabric` MISSING_ID→AMBIGUOUS_ALIAS，40 条 `fabric-api` SATISFIED→AMBIGUOUS_ALIAS，其余 658 行完全没动。
+
+107. 第十五步文档同步：两份 README 的 M0.5 小节改成六种 outcome、更新全部数字（572 / 72 / 7 / 7 / 58 / 0）、输出示例加 `AMBIGUOUS_ALIAS` 字段、Known limitations 里 `provides` 那条改成“已支持，歧义时记 AMBIGUOUS_ALIAS”、SPEC 版本引用 v0.8→v0.9、测试数 88→96、工作记录条数 104→105。徽章按用户本轮指令未改动，因此 shields 里的 `tests-88` 与正文 96 暂时不一致，已在交接报告中列出待裁决。M0 的 195 / 191 / 4 / HIGH 331 / 6670 / 缺口 10/191 一个都没动，许可证仍是 MIT。没有执行 git commit。
+
+108. 第十六步修正 provides 优先级（用户承认第十五步写的规则有误）。SPEC 两版升到 v0.10：§3.5.5 改成五级优先级（真实 modId → 环境 ID → 唯一别名拥有者 → 多拥有者判歧义 → MISSING_ID），并写明“真实 modId 是权威身份，别的模组把同一字符串写进 provides 也不构成歧义”；唯一保留的冲突是别名占用环境 ID。§3.5.7 加第 8 条验收（真实 modId 不得被判歧义）。代码只改 `DependencyResolver.targetsOf`：真实 modId 命中即返回、别名与环境不再并列入候选；环境 ID 与别名重名时仍把两者都交给上层判歧义。测试把 `aliasCollidingWithARealModIdIsAmbiguous` 改成 `realModIdWinsOverAnAliasWithTheSameName`，另加一条“多个模组抢同一个真实 modId 也照样优先取真实 modId”。实际跑：SATISFIED 612、MISSING_ID 72、VERSION_MISMATCH 7、BREAKS_VIOLATED 7、AMBIGUOUS_ALIAS 18、UNPARSEABLE 0，合计 716；逐行 diff 只有 `AMBIGUOUS_ALIAS → SATISFIED` 一种迁移，40 行，全部是 `fabric-api`，它们的 `resolvedVersion` 也从空恢复成 `0.116.17+1.21.1`。M0 三个输出文件 SHA-256 与基线一致。两份 README 的徽章 88→96（按用户本轮指令），M0.5 数字同步，voicechat 那条改成“保守方向、只高估冲突、影响面 2/716”。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -507,14 +521,20 @@ src/
 
 62. **“M0 数字没变”不能靠测试全绿来证明。** 测试只断言结构不变量，数字漂移照样全绿。本步的做法是改动前先跑一次 `gradle run`，把 candidates.jsonl / summary.csv / conflicts.csv 复制到仓库外并记录 SHA-256；改完再跑，三个哈希逐一比对相同，才敢写“M0 未被改动”。同理，716 行与 candidates.jsonl 的逐行比对也是独立脚本做的，不是“相信 CSV 写对了”。
 
+63. **支持 `provides` 之后，受影响的不只有那 18 条“假缺失”。** 修前预计 MISSING_ID 90→72，实际正是 72；但 SATISFIED 不是 +18 而是 612→572，少了 40。原因是数据集里 `forgified-fabric-api`（NeoForge 版，modId 为 `fabric_api`，版本是 `${file.jarVersion}`）声明了 `provides: ["fabric","fabric-api"]`，于是 `fabric-api` 这个 ID 同时有真实 modId 和一个别名拥有者，按“不许任选一个”的规则整批 40 行被判 `AMBIGUOUS_ALIAS`。这暴露了一个更一般的问题：**一个规则改动的影响面必须靠逐行 diff 才能看清，不能只算预期的那一类**。同样值得记住的是，这两条歧义行的两个拥有者其实是同一个上游项目（Fabric API 本体 + Sinytra 移植），冲突来自数据集把两个加载器混在一起；要消除它需要“按加载器家族分流”这条新规则，不能靠调阈值。
+
+64. **新 outcome 一旦进入枚举，所有 switch 和“缺失才为 null”的断言都要重新审一遍。** 加 `AMBIGUOUS_ALIAS` 后，`everyOutcomeRespectsItsDefinition` 的 switch 少了分支（编译不报错，因为语句 switch 不要求穷尽），`breaksOnAbsentTargetIsSatisfiedNotMissing` 直接红了——它把“`resolvedVersion` 为 null 的 breaks 行”等同于“目标不存在”。修法是改成显式区分两种情况：目标不存在 → SATISFIED；多拥有者 → AMBIGUOUS_ALIAS 且版本为空。教训是：**“null 版本”不再唯一对应“目标不存在”**，任何拿 null 当判据的断言都必须重新表达。
+
+65. **“谁拥有这个 ID”必须定义优先级，不能只定义成“拥有者集合”。** 第十五步的规则把“别名与真实 modId 重名”也算歧义，等于把 depId 精确命中真实 modId 和只能靠别名命中当成同一件事；真实语义里前者是权威身份、后者是替补，结果 40 条本来正确的 SATISFIED（depId = `fabric-api`）被打成 AMBIGUOUS_ALIAS。第十六步改成五级优先级、命中即停，这 40 条全部恢复。教训有两条：一是**来源之间只要有主次，规则就必须写出次序**，否则实现只能靠猜；二是**“不许任选”只应约束同一优先级里的并列候选**，把不同优先级也塞进同一个集合，等于用“防错”制造新错。当时逐行 diff 已经把 40 条的迁移摊开写进报告了（+58 歧义里 40 条来自真实 modId 冲突），只是规则本身错了，数据层面的证据是对的——所以“数字变化必须逐条解释”这条纪律值得一直保留。
+
 ## 五、下一步建议
 
-M0 已按 SPEC v0.7 定稿（v0.8 未改动 M0 的十条），M0.5 已按 SPEC v0.8 §3.5 完成，中英文 SPEC 现在都是 v0.8。完整数据集（195 个 jar）下 `gradle clean test` 是 88 个测试、失败 0、错误 0、跳过 0；`gradle clean build` 退出码 0；`gradle run` 产出四个文件，依赖判定 716 行。把 `fixtures` 临时移走后（内置 11 个样本）测试依然全部通过、跳过仍为 0，两种模式在日志里明确打印当前数据源。
+M0 已按 SPEC v0.7 定稿（v0.8 / v0.9 / v0.10 都没有改动 M0 的十条），M0.5 已按 SPEC v0.10 §3.5 完成，中英文 SPEC 现在都是 v0.10。完整数据集（195 个 jar）下 `gradle clean test` 是 96 个测试、失败 0、错误 0、跳过 0；`gradle clean build` 退出码 0；`gradle run` 产出四个文件，依赖判定 716 行。把 `fixtures` 临时移走后（内置 11 个样本）测试依然全部通过、跳过仍为 0，两种模式在日志里明确打印当前数据源。
 
 本步结束后仍待用户裁决或确认的两件事：
 
-1. `provides` 是否参与依赖解析。当前按 §3.5.5 字面实现，18 条 `fabric` 硬依赖被判 MISSING_ID；如果要把能力 ID 纳入，需要先改 SPEC §3.5.5。
-2. 连字符复合版本（`1.21.1-2.6.27`）的判定规则。当前按 §3.5.4 字面切段，产生 1 条假 VERSION_MISMATCH 与 1 条假 BREAKS_VIOLATED；要修就得在 SPEC 里给这类版本单独定义规则。
+1. 是否按加载器家族分流解析。当前 18 条 `AMBIGUOUS_ALIAS` 全部来自 `fabric` 这一个别名，根因是数据集同时包含 Fabric API 本体与 Sinytra 的 forgified 移植（两个 modId 都声明 `fabric`）。按家族分流能消掉这 18 条，但那是新规则，需要先写进 SPEC。
+2. 连字符复合版本（`1.21.1-2.6.27`）的判定规则。当前按 §3.5.4 字面切段，产生 1 条假 VERSION_MISMATCH 与 1 条假 BREAKS_VIOLATED；要修就得在 SPEC 里给这类版本单独定义规则。这属于保守方向的误报（只高估冲突、不会漏报真问题），影响面 2/716。
 
 环境事实的取值不是待裁决项，只是提醒：当前 fabricloader=0.20.1、neoforge=21.1.262 取的是数据集内下界最大值；如果换成更旧的实际环境版本，VERSION_MISMATCH 会如实增加，这不是 bug。
 
@@ -533,7 +553,8 @@ M0 的已知边界（同时写进 README 的 Known limitations）：
 
 M0.5 自身的已知边界：
 
-- `provides` 不参与解析，18 条 `fabric` 硬依赖因此判 MISSING_ID
+- `provides` 已支持（v0.9 引入、v0.10 修正优先级），真实 modId 优先；只有一个 ID 被两个及以上模组声明时才是 `AMBIGUOUS_ALIAS`，当前 18 条，全部是 `fabric`（Fabric API 本体与 Sinytra 移植都声明了它）
+- 连字符复合版本的 2 条误报方向保守：只高估冲突，不会漏报真问题
 - 连字符复合版本（`1.21.1-2.6.27`）按字面切段，产生 1 条假 VERSION_MISMATCH 与 1 条假 BREAKS_VIOLATED
 - UNPARSEABLE 在真实数据上为 0，`#compatible_neoforge#` 只出现在被注释掉的 TOML 行里；该分支由单元测试覆盖
 - 同一 modId 的多个版本按“任一满足”判定，这是 M0 冲突预测合并变体的延续，不是版本选择

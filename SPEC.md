@@ -4,7 +4,7 @@
   <b>English</b> · <a href="./SPEC.zh-CN.md">简体中文</a>
 </p>
 
-Version: v0.8
+Version: v0.10
 Status: draft pending human confirmation
 Upstream inspiration: Forbric v0.3.0 (Ray-T-r/Minecraft-Forbric-mod-loader, Apache-2.0)
 
@@ -417,7 +417,8 @@ resolved against declared environment facts, **never** reported as `MISSING_ID`.
 Rules:
 
 - these IDs are resolved against the declared environment versions; absence from the dataset is normal
-- any other ID that is absent from the dataset **is** `MISSING_ID`
+- any other ID that is absent from the dataset, from the environment facts **and** from every `provides` list
+  (see §3.5.5) **is** `MISSING_ID`
 - environment facts must be printed once at startup (INFO) so the numbers are auditable
 - `recommends` on an absent ID is a WARN, never a failure (unchanged from M0)
 
@@ -458,15 +459,44 @@ where the two families disagree.
 - a wildcard segment matches any value in that position
 - comparison is **string-based and deterministic**: no "semver library", no external dependency
 
-### 3.5.5 Outcome per dependency (exactly one each)
+### 3.5.5 Existence and outcome per dependency (exactly one each)
+
+An ID is resolved against, **in this order, stopping at the first hit**:
+
+| # | Condition | Resolution |
+|---|---|---|
+| 1 | the ID is the `modId` of a `status=OK` record | use that mod's actual version; `provides` aliases are **not** consulted |
+| 2 | the ID is an environment-provided ID (§3.5.2) | use the declared environment fact |
+| 3 | the ID is declared in `provides` by exactly one `modId` | use the owning mod's actual version |
+| 4 | the ID is declared in `provides` by two or more `modId`s | `AMBIGUOUS_ALIAS`; no owner is chosen |
+| 5 | none of the above | `MISSING_ID` |
+
+**Rule 1 has the highest priority: a real `modId` is authoritative and is never made ambiguous by another mod
+declaring the same string in `provides`.** An alias is only a fallback for IDs that do not exist as mods;
+`fabric-api` the mod always wins over `fabric-api` used as an alias.
+
+One case stays a conflict: an alias that **collides with an environment-provided ID**. If a mod declares
+`provides: ["minecraft"]` (or `java`, `fabricloader`, `neoforge`, …), a dependency on that environment ID is
+`AMBIGUOUS_ALIAS`, and both the environment fact and the declaring mod are printed at WARN. The environment is not
+given priority over a mod that claims the same ID, because the collision itself is a loading error.
+
+A `provides` entry is an alias of the mod that declares it, and Fabric Loader treats it as a mod that exists
+(`fabric.mod.json` documentation). The owner set is deduplicated by `modId`: a mod that lists its own `modId` in
+`provides` is still a single owner.
 
 | Outcome | Condition |
 |---|---|
-| `SATISFIED` | target present (or environment-provided) and version in range |
-| `MISSING_ID` | ID is neither present in the dataset nor environment-provided |
-| `VERSION_MISMATCH` | target present, but its version does not satisfy the range |
-| `BREAKS_VIOLATED` | a `breaks` declaration whose target is present and version in range |
+| `SATISFIED` | the ID resolves through rule 1, 2 or 3 and the resolved version is in range. For a `breaks` declaration: the target is absent (rule 5) or resolves and the version is **not** in range (i.e. no conflict) |
+| `MISSING_ID` | the ID falls through to rule 5 |
+| `VERSION_MISMATCH` | the ID resolves through rule 1, 2 or 3, but the resolved version does not satisfy the range |
+| `BREAKS_VIOLATED` | a `breaks` declaration that resolves (rules 1–3) with a version in range |
+| `AMBIGUOUS_ALIAS` | the ID hits rule 4, or is an environment ID that a mod also declares in `provides`; no owner is chosen and `resolvedVersion` is `null`. Every candidate is printed at WARN with its version and how it was found (`modId` / `provides` / environment) |
 | `UNPARSEABLE` | the range string cannot be parsed |
+
+**Why `AMBIGUOUS_ALIAS` is a sixth outcome instead of reusing one of the five**: `MISSING_ID` would be factually
+wrong (the ID does exist), `SATISFIED` would silently pick one candidate — exactly what this stage must not do —
+and `VERSION_MISMATCH` / `UNPARSEABLE` describe version strings, not identity. Since an ambiguous ID blocks an
+admission decision in the same way as the other three, its count is printed on the same `不可满足` summary line.
 
 **`UNPARSEABLE` must never be silently treated as satisfied and never be silently dropped.** It must be counted,
 logged at WARN with the offending string, and reported in the summary. An unparseable range is a defect of this
@@ -483,14 +513,14 @@ modId,version,depId,depKind,declaredRange,resolvedVersion,outcome
 ```
 
 - `depKind`: `required` / `recommends` / `breaks`
-- `resolvedVersion`: the version actually found, or `null` when absent
+- `resolvedVersion`: the version actually found, or `null` when absent or ambiguous
 - every declared dependency appears **exactly once** — never deduplicated, never omitted
 
 stdout (INFO) must print:
 
 ```
 依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
-不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N | AMBIGUOUS_ALIAS N
 无法解析的版本区间：N（实现缺陷，不是模组问题）
 ```
 
@@ -504,6 +534,10 @@ stdout (INFO) must print:
 5. `gradle clean test` passes with **0 skipped**; tests must not use `assumeTrue`
 6. M0's own numbers (HIGH 331 / 6670, coverage gap 10/191) must remain unchanged — M0.5 adds a file, it does
    not rewrite M0's results
+7. `provides` aliases resolve to the version of their owner; when an ID is declared by two or more mods the row
+   is `AMBIGUOUS_ALIAS`, the count is printed, and a WARN lists every candidate
+8. a dependency whose ID is a real `modId` resolves through rule 1 even when another mod declares the same string
+   in `provides`; it is never reported as `AMBIGUOUS_ALIAS` (regression guard for the priority rule)
 
 ---
 
@@ -590,7 +624,7 @@ One row per declared dependency, no deduplication.
 [INFO]  支持策略：SUPPORTED 172 | DEGRADED 28 | EXCLUDED 0
 [INFO]  冲突预测：HIGH 3 组 | MEDIUM 7 组 | LOW 12 组（静态推断，非运行结论）
 [INFO]  依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
-[INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+[INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N | AMBIGUOUS_ALIAS N
 [INFO]  无法解析的版本区间：N（实现缺陷，不是模组问题）
 ```
 

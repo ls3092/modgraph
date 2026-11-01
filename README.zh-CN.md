@@ -23,7 +23,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-88%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-96%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
 </p>
 
@@ -194,7 +194,7 @@ gradle run
 [INFO] ubiquitous 目标类（14 个）：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13 | ItemStack 12 | MinecraftServer 12 | Player 12 | ServerLevel 12
 [INFO] 冲突预测：HIGH 331 组 | MEDIUM 1170 组 | LOW 725 组（静态推断，非运行结论）
 [INFO] 依赖总数：硬依赖 531 | 软依赖 46 | 冲突声明 139
-[INFO] 不可满足：MISSING_ID 90 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7
+[INFO] 不可满足：MISSING_ID 72 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7 | AMBIGUOUS_ALIAS 18
 [INFO] 无法解析的版本区间：0（实现缺陷，不是模组问题）
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
@@ -213,7 +213,7 @@ OK 数 + FAILED 数 == 输入文件数
 
 ### 依赖可满足性判定（M0.5）
 
-M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：对每一条依赖声明只回答一个问题——**「本集合里有没有满足这条声明的模组」**——并把答案写进 `dependencies.csv`。它不排序、不求解、不选版本、不下载。M0 自己的数字完全没变（M0 的三个输出文件在加上 M0.5 前后逐字节相同，`dependencies.csv` 是独立文件）。
+M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：对每一条依赖声明只回答一个问题——**「本集合里有没有满足这条声明的模组」**——并把答案写进 `dependencies.csv`。一个 ID 只要满足以下任一条就算存在：数据集里的 `modId`、环境事实、或某个模组 `provides` 里声明的别名；别名解析到**声明它的那个模组**的版本（`SPEC.md` §3.5.5）。它不排序、不求解、不选版本、不下载。M0 自己的数字完全没变（M0 的三个输出文件在加上 M0.5 前后逐字节相同，`dependencies.csv` 是独立文件）。
 
 **环境事实。** 加载器与平台 ID 不是数据集里的模组，它们由运行环境提供，**永远不会**被判成 `MISSING_ID`。下面的值只在一处声明、启动时打印一行（就是上面第一行 INFO），因此可审计：
 
@@ -228,17 +228,23 @@ M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：
 
 `fabricloader` 与 `neoforge` 取的是**本数据集内所有依赖要求的最高下界**；`quilt_loader` 与 `forge` 当前没有任何依赖引用，声明它们只是为了不让 `SPEC.md` §3.5.2 里的 ID 掉进 `MISSING_ID`。
 
-**五种 outcome**（`SPEC.md` §3.5.5，每条依赖恰好一个）：
+**解析优先级**（`SPEC.md` §3.5.5）：真实 `modId` 优先，环境事实其次，`provides` 别名只是替补。
+**真实 `modId` 不会被别的模组把同一字符串写成别名而变成歧义。** 唯一仍算冲突的，是别名占用了环境 ID。
+
+**六种 outcome**（`SPEC.md` §3.5.5，每条依赖恰好一个）：
 
 | Outcome | 含义 |
 | --- | --- |
-| `SATISFIED` | 目标存在（或由环境提供）且版本落在区间内。`breaks` 声明的目标不存在或不在区间内时也记这一档，即没有冲突 |
-| `MISSING_ID` | ID 既不在数据集里，也不由环境提供 |
-| `VERSION_MISMATCH` | 目标存在，但找到的版本都不满足区间 |
-| `BREAKS_VIOLATED` | `breaks` 声明的目标存在且版本落在区间内 |
+| `SATISFIED` | ID 解析成功（真实 `modId` → 环境事实 → 唯一别名拥有者）且版本落在区间内。`breaks` 声明的目标不存在、或解析成功但版本不在区间内时也记这一档，即没有冲突 |
+| `MISSING_ID` | ID 既不是数据集里的 `modId`，也不由环境提供，也没有出现在任何 `provides` 里 |
+| `VERSION_MISMATCH` | ID 解析成功，但解析到的版本不满足区间 |
+| `BREAKS_VIOLATED` | `breaks` 声明，解析成功且版本落在区间内 |
+| `AMBIGUOUS_ALIAS` | ID 被两个及以上 `modId` 声明在 `provides` 里，或有模组占用了环境 ID；不挑任何一个，`resolvedVersion` 为空，所有候选以 WARN 打出 |
 | `UNPARSEABLE` | 区间字符串无法解析；计数并以 WARN 打出原串，绝不当成满足 |
 
-**当前数字**（本次运行，195 个 jar）：硬依赖 531 条、软依赖 46 条、冲突声明 139 条，合计 716 行写进 `dependencies.csv`。判定结果：`SATISFIED` 612、`MISSING_ID` 90、`VERSION_MISMATCH` 7、`BREAKS_VIOLATED` 7、`UNPARSEABLE` 0。90 条 `MISSING_ID` 里 68 条是硬依赖、22 条是软依赖，没有任何一条是环境 ID。
+**当前数字**（本次运行，195 个 jar）：硬依赖 531 条、软依赖 46 条、冲突声明 139 条，合计 716 行写进 `dependencies.csv`。判定结果：`SATISFIED` 612、`MISSING_ID` 72、`VERSION_MISMATCH` 7、`BREAKS_VIOLATED` 7、`AMBIGUOUS_ALIAS` 18、`UNPARSEABLE` 0。72 条 `MISSING_ID` 里 50 条是硬依赖、22 条是软依赖，没有任何一条是环境 ID。18 条 `AMBIGUOUS_ALIAS` 全部是 `fabric` 这个别名：`fabric-api`（Fabric）与 `fabric_api`（Sinytra 的 forgified NeoForge 移植）都声明了它，而 `fabric` 本身不是真实 `modId`，没有权威拥有者可以优先。
+
+> `fabric-api` 本身**不是**歧义：它是真实 `modId`，即使 `fabric_api` 也把 `fabric-api` 写进了 `provides`，那 40 条依赖照样按真实 modId 解析。剩下这 18 条 `fabric` 若要消掉，需要按加载器家族分流，但那是另一条规则，不属于 v0.10。
 
 ---
 
@@ -322,12 +328,15 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 
 **M0.5**
 
-- 90 条 `MISSING_ID` 里有相当一部分，是因为数据集只有 195 个 jar，很多依赖目标根本不在里面。
+- 72 条 `MISSING_ID` 里有相当一部分，是因为数据集只有 195 个 jar，很多依赖目标根本不在里面。
   **「缺失」不等于「装不上」**；这个数字随数据集变化，**不是常量**
-- `provides` 不参与解析：只有数据集里的 `modId` 与环境事实算“存在”，因此 18 条 `fabric` 依赖被判
-  `MISSING_ID`，尽管数据集里的 `fabric-api` 声明了 `provides: ["fabric"]`（要改得先改 `SPEC.md` §3.5.5）
+- `provides` 从 v0.9 起支持（v0.10 修正了优先级）：真实 `modId` 优先，别名只是替补；一个 ID 被两个及以上
+  模组声明时**不静默解析**——记成 `AMBIGUOUS_ALIAS`，计数写进摘要，并以 WARN 列出全部候选。当前数据集里
+  只有 18 行属于这种情况，全部是 `fabric` 别名，因为 `fabric` 不是真实 `modId`，而 `fabric-api` 与
+  Sinytra 的 forgified `fabric_api` 都声明了它
 - voicechat 的连字符复合版本（`1.21.1-2.6.27` 对 `[1.21-2.4.11,)`）造成 1 条假 `VERSION_MISMATCH`
-  与 1 条假 `BREAKS_VIOLATED`。这是 `SPEC.md` §3.5.4 字面切分规则导致的已知误报，**没有掩盖**
+  与 1 条假 `BREAKS_VIOLATED`。这是 `SPEC.md` §3.5.4 字面切分规则导致的已知误报：**方向保守，只会高估冲突、
+  不会漏报真问题**，影响面是 **2/716 行**，**没有掩盖**
 
 ---
 
@@ -354,16 +363,16 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 - M0.5 完成：716 条依赖声明逐条求值、一条一行；M0 的三个输出文件在改动前后逐字节相同（用 SHA-256 核对，不是“测试绿了”）
 - 元数据人工抽检：`modId` / `version` / `depends` 三项 **10/10 一致**，47 条依赖声明 0 条不一致；
   依赖人工抽检 10 条对照原始元数据，**10/10 一致**
-- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.8 §7 的 M0 十条验收、§3.5.7 的 M0.5 六条验收全部达成
-- 88 个测试，失败 0、错误 0、**跳过 0**
+- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.10 §7 的 M0 十条验收、§3.5.7 的 M0.5 八条验收全部达成
+- 96 个测试，失败 0、错误 0、**跳过 0**
 - 启动前冲突预警：HIGH 331 组（4.96%）
 
 **我能提供什么**
 
-- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.8——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
+- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v0.10——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
 - 真实数据集采集流程：从 Modrinth 公开 API 生成清单、手动下载、按 jar 内元数据自动归位、逐个校验，全程脚本化
 - 一套强制的工程纪律：禁止空 catch、禁止 `assumeTrue`、禁止把失败降级为警告、测试跳过数必须为 0
-- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，104 条工作记录 + 62 条踩过的坑，每一次数字变化与判断失误都在册
+- 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，108 条工作记录 + 65 条踩过的坑，每一次数字变化与判断失误都在册
 
 **我需要什么**
 

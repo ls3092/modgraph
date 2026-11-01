@@ -111,6 +111,10 @@ class DependencyResolverTest {
                     }
                     assertThat(result.resolvedVersion()).isNotNull();
                 }
+                case AMBIGUOUS_ALIAS -> {
+                    // 不挑候选，因此没有 resolvedVersion。
+                    assertThat(result.resolvedVersion()).isNull();
+                }
                 case UNPARSEABLE -> assertThat(result.depKind()).isNotNull();
             }
         }
@@ -118,19 +122,32 @@ class DependencyResolverTest {
 
     @Test
     void breaksOnAbsentTargetIsSatisfiedNotMissing() {
-        final List<DependencyResult> absentBreaks = report.results().stream()
+        if (!FULL_DATASET) {
+            assertThat(report.results()).isEmpty();
+            return;
+        }
+        final List<DependencyResult> breakRows = report.results().stream()
                 .filter(result -> result.depKind() == DepKind.BREAKS)
-                .filter(result -> result.resolvedVersion() == null)
                 .toList();
-        assertThat(absentBreaks).allSatisfy(result -> {
-            assertThat(result.outcome()).isEqualTo(DependencyOutcome.SATISFIED);
-            assertThat(result.outcome()).isNotEqualTo(DependencyOutcome.MISSING_ID);
-        });
-        assertThat(report.results().stream()
-                .filter(result -> result.depKind() == DepKind.BREAKS)
-                .filter(result -> result.resolvedVersion() != null))
+        assertThat(breakRows).isNotEmpty();
+
+        // 目标不存在 → SATISFIED（没有冲突）；breaks 永远不该记 MISSING_ID。
+        final List<DependencyResult> absentBreaks = breakRows.stream()
+                .filter(result -> result.resolvedVersion() == null)
+                .filter(result -> result.outcome() == DependencyOutcome.SATISFIED)
+                .toList();
+        assertThat(absentBreaks).isNotEmpty();
+        assertThat(breakRows).allSatisfy(result -> assertThat(result.outcome())
+                .isNotEqualTo(DependencyOutcome.MISSING_ID));
+
+        // 有目标、有版本的 breaks 只可能是“不冲突”或“命中冲突”；
+        // 存在多个拥有者的 breaks 记 AMBIGUOUS_ALIAS 且不选版本。
+        assertThat(breakRows.stream().filter(result -> result.resolvedVersion() != null))
                 .allSatisfy(result -> assertThat(result.outcome())
                         .isIn(DependencyOutcome.SATISFIED, DependencyOutcome.BREAKS_VIOLATED));
+        assertThat(breakRows.stream()
+                .filter(result -> result.outcome() == DependencyOutcome.AMBIGUOUS_ALIAS))
+                .allSatisfy(result -> assertThat(result.resolvedVersion()).isNull());
     }
 
     @Test
@@ -187,6 +204,135 @@ class DependencyResolverTest {
     }
 
     @Test
+    void providesAliasResolvesToTheOwnerVersion() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("capability_x", ">=1.0")), List.of(), List.of());
+        final ModCandidate provider = syntheticProvider("provider", "2.5", "capability_x");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, provider), EnvironmentFacts.declared());
+
+        final DependencyResult row = synthetic.results().getFirst();
+        assertThat(row.outcome()).isEqualTo(DependencyOutcome.SATISFIED);
+        assertThat(row.resolvedVersion()).isEqualTo("2.5");
+    }
+
+    @Test
+    void aliasIsJudgedByTheOwnerVersionNotIgnored() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("capability_x", ">=3.0")), List.of(), List.of());
+        final ModCandidate provider = syntheticProvider("provider", "2.5", "capability_x");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, provider), EnvironmentFacts.declared());
+
+        assertThat(synthetic.results().getFirst().outcome())
+                .isEqualTo(DependencyOutcome.VERSION_MISMATCH);
+        assertThat(synthetic.results().getFirst().resolvedVersion()).isEqualTo("2.5");
+    }
+
+    @Test
+    void aliasDeclaredByTwoModsIsAmbiguousEvenIfOneWouldMatch() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("capability_x", ">=1.0")), List.of(), List.of());
+        final ModCandidate first = syntheticProvider("provider_a", "1.5", "capability_x");
+        final ModCandidate second = syntheticProvider("provider_b", "9.9", "capability_x");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, first, second), EnvironmentFacts.declared());
+
+        final DependencyResult row = synthetic.results().getFirst();
+        assertThat(row.outcome()).isEqualTo(DependencyOutcome.AMBIGUOUS_ALIAS);
+        assertThat(row.resolvedVersion()).isNull();
+    }
+
+    @Test
+    void realModIdWinsOverAliasesWithTheSameName() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("sodium", ">=0.8")), List.of(), List.of());
+        final ModCandidate realMod = syntheticCandidate("sodium", "0.8.13", LoaderFamily.FABRIC,
+                List.of(), List.of(), List.of());
+        // 两个模组都把 sodium 声明为别名：真实 modId 优先级最高，仍然不构成歧义。
+        final ModCandidate first = syntheticProvider("impostor_a", "1.0", "sodium");
+        final ModCandidate second = syntheticProvider("impostor_b", "9.9", "sodium");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, realMod, first, second), EnvironmentFacts.declared());
+
+        final DependencyResult row = synthetic.results().getFirst();
+        assertThat(row.outcome()).isEqualTo(DependencyOutcome.SATISFIED);
+        assertThat(row.resolvedVersion()).as("真实 modId 的版本，不是任何别名的拥有者版本")
+                .isEqualTo("0.8.13");
+    }
+
+    @Test
+    void aliasCollidingWithAnEnvironmentIdIsAmbiguous() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("minecraft", "*")), List.of(), List.of());
+        final ModCandidate squatter = syntheticProvider("impostor", "1.0", "minecraft");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, squatter), EnvironmentFacts.declared());
+
+        assertThat(synthetic.results().getFirst().outcome())
+                .isEqualTo(DependencyOutcome.AMBIGUOUS_ALIAS);
+        assertThat(synthetic.results().getFirst().resolvedVersion()).isNull();
+    }
+
+    @Test
+    void modProvidingItsOwnIdIsStillASingleOwner() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(constraint("self_aliased", ">=1.0")), List.of(), List.of());
+        final ModCandidate provider = syntheticProvider("self_aliased", "1.2", "self_aliased");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, provider), EnvironmentFacts.declared());
+
+        assertThat(synthetic.results().getFirst().outcome())
+                .isEqualTo(DependencyOutcome.SATISFIED);
+        assertThat(synthetic.results().getFirst().resolvedVersion()).isEqualTo("1.2");
+    }
+
+    @Test
+    void breaksOnAnAliasTargetUsesTheOwnerVersion() {
+        final ModCandidate consumer = syntheticCandidate("consumer", "1.0.0", LoaderFamily.FABRIC,
+                List.of(), List.of(),
+                List.of(new Constraint("capability_x", List.of("*"), true, Ordering.NONE,
+                        Side.UNKNOWN)));
+        final ModCandidate provider = syntheticProvider("provider", "2.5", "capability_x");
+
+        final DependencyReport synthetic = new DependencyResolver()
+                .resolve(List.of(consumer, provider), EnvironmentFacts.declared());
+
+        assertThat(synthetic.results().getFirst().outcome())
+                .isEqualTo(DependencyOutcome.BREAKS_VIOLATED);
+        assertThat(synthetic.results().getFirst().resolvedVersion()).isEqualTo("2.5");
+    }
+
+    @Test
+    void aliasesAreNeverReportedAsMissingInTheRealDataset() {
+        final Set<String> aliases = new java.util.HashSet<>();
+        for (ModCandidate candidate : candidates) {
+            if (candidate.status() == Status.OK) {
+                aliases.addAll(candidate.provides());
+            }
+        }
+        final List<DependencyResult> aliasRows = report.results().stream()
+                .filter(result -> aliases.contains(result.depId()))
+                .toList();
+        assertThat(aliasRows).allSatisfy(result -> assertThat(result.outcome())
+                .isNotEqualTo(DependencyOutcome.MISSING_ID));
+
+        if (FULL_DATASET) {
+            assertThat(aliasRows).isNotEmpty();
+            assertThat(aliasRows).anySatisfy(result ->
+                    assertThat(result.depId()).isEqualTo("fabric"));
+        } else {
+            assertThat(aliasRows).isEmpty();
+        }
+    }
+
+    @Test
     void resolutionIsDeterministic() {
         final DependencyReport second = new DependencyResolver()
                 .resolve(candidates, EnvironmentFacts.declared());
@@ -216,6 +362,15 @@ class DependencyResolverTest {
         assertThat(find("biomesoplenty", "terrablender", DepKind.REQUIRED).outcome())
                 .as("目标版本是 ${file.jarVersion}，但同一 modId 的另一个变体有真实版本")
                 .isEqualTo(DependencyOutcome.SATISFIED);
+        // 优先级规则 1：fabric-api 是真实 modId，另一个模组声明同名字符串也不构成歧义。
+        assertThat(report.results().stream()
+                .filter(result -> "fabric-api".equals(result.depId())))
+                .isNotEmpty()
+                .allSatisfy(result -> assertThat(result.outcome())
+                        .isNotEqualTo(DependencyOutcome.AMBIGUOUS_ALIAS));
+        // 优先级规则 4：fabric 不是真实 modId，被两个模组声明为别名 → 歧义。
+        assertThat(find("biomesoplenty", "fabric", DepKind.REQUIRED).outcome())
+                .isEqualTo(DependencyOutcome.AMBIGUOUS_ALIAS);
 
         final List<DependencyResult> sodiumMinecraft = report.results().stream()
                 .filter(result -> "sodium".equals(result.modId()))
@@ -250,9 +405,23 @@ class DependencyResolverTest {
         return new Constraint(targetId, List.of(range), true, Ordering.NONE, Side.UNKNOWN);
     }
 
+    private static ModCandidate syntheticProvider(final String modId, final String version,
+            final String alias) {
+        return syntheticCandidate(modId, version, LoaderFamily.FABRIC, List.of(), List.of(),
+                List.of(), List.of(alias));
+    }
+
     private static ModCandidate syntheticCandidate(final String modId, final String version,
             final LoaderFamily family, final List<Constraint> depends,
             final List<Constraint> recommends, final List<Constraint> breaks) {
+        return syntheticCandidate(modId, version, family, depends, recommends, breaks,
+                List.of());
+    }
+
+    private static ModCandidate syntheticCandidate(final String modId, final String version,
+            final LoaderFamily family, final List<Constraint> depends,
+            final List<Constraint> recommends, final List<Constraint> breaks,
+            final List<String> provides) {
         return new ModCandidate(
                 modId + ".jar",
                 "0".repeat(64),
@@ -265,7 +434,7 @@ class DependencyResolverTest {
                 depends,
                 recommends,
                 breaks,
-                List.of(),
+                provides,
                 List.of(),
                 List.of(),
                 List.of(),

@@ -23,7 +23,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/real%20jars-195-blue?style=flat-square" alt="jars"/>
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
-  <img src="https://img.shields.io/badge/tests-88%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
+  <img src="https://img.shields.io/badge/tests-96%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
 </p>
 
@@ -209,7 +209,7 @@ Below is a **real run** against the current dataset (195 jars). The numbers are 
 [INFO] ubiquitous 目标类（14 个）：Minecraft 28 | GameRenderer 25 | Entity 19 | LevelRenderer 18 | MinecraftClient 18 | ClientPacketListener 17 | Gui 16 | LivingEntity 16 | Screen 15 | ClientLevel 13 | ItemStack 12 | MinecraftServer 12 | Player 12 | ServerLevel 12
 [INFO] 冲突预测：HIGH 331 组 | MEDIUM 1170 组 | LOW 725 组（静态推断，非运行结论）
 [INFO] 依赖总数：硬依赖 531 | 软依赖 46 | 冲突声明 139
-[INFO] 不可满足：MISSING_ID 90 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7
+[INFO] 不可满足：MISSING_ID 72 | VERSION_MISMATCH 7 | BREAKS_VIOLATED 7 | AMBIGUOUS_ALIAS 18
 [INFO] 无法解析的版本区间：0（实现缺陷，不是模组问题）
 [INFO] 本结果为准入检查，不构成运行稳定性保证
 ```
@@ -232,9 +232,11 @@ classified and presented.
 
 M0 records version-range strings verbatim and never evaluates them. M0.5 evaluates them: for every declared
 dependency it answers exactly one question — **"does a mod in this set satisfy what this declaration asks for?"**
-— and writes the answer to `dependencies.csv`. It does not sort, does not solve, does not choose a version and
-does not download. M0's own numbers are untouched (the three M0 output files are byte-identical after M0.5 was
-added; `dependencies.csv` is a separate file).
+— and writes the answer to `dependencies.csv`. An ID counts as present if it is a dataset `modId`, an environment
+fact, or an alias declared in some mod's `provides`; an alias resolves to the version of the mod that declares it
+(`SPEC.md` §3.5.5). M0.5 does not sort, does not solve, does not choose a version and does not download. M0's own
+numbers are untouched (the three M0 output files are byte-identical after M0.5 was added; `dependencies.csv` is a
+separate file).
 
 **Environment facts.** Loader and platform IDs are not mods in the dataset; they are supplied by the runtime
 environment and are never reported as `MISSING_ID`. The values below are declared in one place, printed once at
@@ -253,20 +255,31 @@ startup (the first INFO line above), and can therefore be audited:
 `quilt_loader` and `forge` are currently referenced by no dependency at all and are declared only so that the
 IDs from `SPEC.md` §3.5.2 can never fall through to `MISSING_ID`.
 
-**Five outcomes** (`SPEC.md` §3.5.5, exactly one per dependency):
+**Resolution order** (`SPEC.md` §3.5.5): a real `modId` wins, an environment fact comes next, and a `provides`
+alias is only a fallback. **A real `modId` is never made ambiguous by another mod declaring the same string as an
+alias.** The only collision that stays a conflict is an alias squatting on an environment ID.
+
+**Six outcomes** (`SPEC.md` §3.5.5, exactly one per dependency):
 
 | Outcome | Meaning |
 | --- | --- |
-| `SATISFIED` | target present (or environment-provided) and version in range. A `breaks` declaration is reported satisfied when its target is absent or out of range, i.e. there is no conflict |
-| `MISSING_ID` | ID is neither present in the dataset nor environment-provided |
-| `VERSION_MISMATCH` | target present, but no found version satisfies the range |
-| `BREAKS_VIOLATED` | a `breaks` declaration whose target is present and whose version is in range |
+| `SATISFIED` | the ID resolves (real `modId` → environment fact → single alias owner) and the version is in range. A `breaks` declaration is reported satisfied when its target is absent or out of range, i.e. there is no conflict |
+| `MISSING_ID` | the ID is not a dataset `modId`, not environment-provided, and not declared in any `provides` |
+| `VERSION_MISMATCH` | the ID resolves, but the resolved version does not satisfy the range |
+| `BREAKS_VIOLATED` | a `breaks` declaration that resolves with a version in range |
+| `AMBIGUOUS_ALIAS` | the ID is declared in `provides` by two or more `modId`s, or a mod claims an environment ID; nothing is picked, `resolvedVersion` is empty, and every candidate is printed at WARN |
 | `UNPARSEABLE` | the range string cannot be parsed; counted and logged at WARN with the offending string, never treated as satisfied |
 
 **Current figures** (this run, 195 jars): 531 hard dependencies, 46 soft dependencies, 139 conflict declarations —
-716 rows in `dependencies.csv`. Outcomes: `SATISFIED` 612, `MISSING_ID` 90, `VERSION_MISMATCH` 7,
-`BREAKS_VIOLATED` 7, `UNPARSEABLE` 0. The 90 `MISSING_ID` rows split into 68 hard and 22 soft; no
-environment-provided ID is among them.
+716 rows in `dependencies.csv`. Outcomes: `SATISFIED` 612, `MISSING_ID` 72, `VERSION_MISMATCH` 7,
+`BREAKS_VIOLATED` 7, `AMBIGUOUS_ALIAS` 18, `UNPARSEABLE` 0. The 72 `MISSING_ID` rows split into 50 hard and 22
+soft; no environment-provided ID is among them. All 18 `AMBIGUOUS_ALIAS` rows are the `fabric` alias: `fabric-api`
+(Fabric) and `fabric_api` (Sinytra's forgified NeoForge port) both declare it, and `fabric` is not a real `modId`,
+so there is no authoritative owner to prefer.
+
+> `fabric-api` itself is **not** ambiguous: it is a real `modId`, and 40 dependencies resolve through it even
+> though `fabric_api` also lists `fabric-api` in its `provides`. Scoping the remaining `fabric` collision by loader
+> family would remove it, but that is a separate rule and is not part of v0.10.
 
 ---
 
@@ -365,15 +378,17 @@ Log-level rules are in [`SPEC.md`](./SPEC.md) §5.
 
 **M0.5**
 
-- A large part of the 90 `MISSING_ID` rows exists because the dataset holds only 195 jars: many dependency
+- A large part of the 72 `MISSING_ID` rows exists because the dataset holds only 195 jars: many dependency
   targets are simply not in it. "Missing" does not mean "cannot be installed" — this number changes with the
   dataset and is **not a constant**
-- `provides` is not resolved: only dataset `modId`s and environment facts count as present, so 18 `fabric`
-  dependencies are reported as `MISSING_ID` even though the `fabric-api` jar in the dataset declares
-  `provides: ["fabric"]` (changing that means changing `SPEC.md` §3.5.5)
-- One false `VERSION_MISMATCH` and one false `BREAKS_VIOLATED` come from voicechat's hyphen-composite version
-  (`1.21.1-2.6.27` compared against `[1.21-2.4.11,)`). This is a known false positive caused by the literal
-  split rule in `SPEC.md` §3.5.4 and is deliberately **not** papered over
+- `provides` is supported since v0.9 (priority corrected in v0.10): a real `modId` wins, an alias is only a
+  fallback, and an ID declared by two or more mods is **not** resolved silently — it becomes `AMBIGUOUS_ALIAS`,
+  counted in the summary and logged at WARN with every candidate. In the current dataset exactly 18 rows are
+  ambiguous, all of them the `fabric` alias, because `fabric` is not a real `modId` while `fabric-api` and
+  Sinytra's forgified `fabric_api` both claim it
+- The hyphen-composite version of voicechat (`1.21.1-2.6.27` compared against `[1.21-2.4.11,)`) produces one false
+  `VERSION_MISMATCH` and one false `BREAKS_VIOLATED`. The error is **conservative: it only overstates conflicts, it
+  never hides a real problem** — the affected surface is **2 of 716 rows**, and it is deliberately not papered over
 
 ---
 
@@ -405,19 +420,19 @@ judgements**. The spec, the dataset and the verification system are already in p
   before and after (checked by SHA-256, not by "tests are green")
 - Manual metadata sampling: `modId` / `version` / `depends` — **10/10 consistent**, 0 mismatches across 47
   dependency declarations; 10-dependency spot check against raw metadata — **10/10 consistent**
-- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v0.8) met, and the six M0.5 criteria of §3.5.7
-- 88 tests, 0 failures, 0 errors, **0 skipped**
+- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v0.10) met, and the eight M0.5 criteria of §3.5.7
+- 96 tests, 0 failures, 0 errors, **0 skipped**
 - Pre-launch conflict warning: 331 HIGH pairs (4.96%)
 
 **What I bring**
 
-- A complete spec: [`SPEC.md`](./SPEC.md) v0.8 — fields, decision signals, tiering rules, version-range syntax,
+- A complete spec: [`SPEC.md`](./SPEC.md) v0.10 — fields, decision signals, tiering rules, version-range syntax,
   output formats and acceptance criteria are all written down, not agreed verbally
 - A real dataset collection pipeline: generate a list from the public Modrinth API, download, auto-sort by
   in-jar metadata, verify one by one — fully scripted
 - A set of enforced engineering rules: no empty catch, no `assumeTrue`, no demoting failures to warnings,
   skipped count must be 0
-- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 104 work entries + 62 documented pitfalls, every
+- The full decision record: [`PROGRESS.md`](./PROGRESS.md), 108 work entries + 65 documented pitfalls, every
   number change and every mistaken judgement on the record
 
 **What I need**

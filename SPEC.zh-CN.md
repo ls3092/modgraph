@@ -4,7 +4,7 @@
   <a href="./SPEC.md">English</a> · <b>简体中文</b>
 </p>
 
-版本：v0.8
+版本：v0.10
 状态：草稿待人工确认
 上游启发：Forbric v0.3.0（Ray-T-r/Minecraft-Forbric-mod-loader，Apache-2.0）
 
@@ -389,7 +389,8 @@ M0.5 **不做**：
 规则：
 
 - 这些 ID 按声明的环境版本解析；数据集里没有它们是正常情况
-- 其余任何不在数据集里的 ID **就是** `MISSING_ID`
+- 其余任何既不在数据集里、也不由环境提供、也没有出现在任何 `provides` 列表里的 ID（见 §3.5.5）
+  **就是** `MISSING_ID`
 - 环境事实必须在启动时以 INFO 打印一次，使数字可审计
 - `recommends` 指向不存在的 ID 记 WARN，永不记失败（与 M0 一致）
 
@@ -429,15 +430,40 @@ M0.5 **不做**：
 - 通配段匹配该位置的任意值
 - 比较基于字符串、确定且可复现：**不使用任何"semver 库"，不引入外部依赖**
 
-### 3.5.5 每条依赖的 outcome（每条恰好一个）
+### 3.5.5 存在性判定与每条依赖的 outcome（每条恰好一个）
+
+一个 ID 按**以下顺序解析，命中即停**：
+
+| # | 条件 | 解析方式 |
+|---|---|---|
+| 1 | 该 ID 是某条 `status=OK` 记录的 `modId` | 用该模组的实际版本；`provides` 别名**不参与** |
+| 2 | 该 ID 是环境提供的 ID（§3.5.2） | 用声明的环境事实 |
+| 3 | 该 ID 只被一个 `modId` 声明在 `provides` 里 | 用该拥有者的实际版本 |
+| 4 | 该 ID 被两个及以上 `modId` 声明在 `provides` 里 | `AMBIGUOUS_ALIAS`，不选任何一个拥有者 |
+| 5 | 以上都不是 | `MISSING_ID` |
+
+**第 1 条优先级最高：真实 `modId` 是权威身份，别的模组把它写进 `provides` 也不构成歧义。** 别名只是
+“这个 ID 不是任何模组”时的替补；`fabric-api` 这个模组永远优先于被当作别名的 `fabric-api`。
+
+只有一种情况仍然算冲突：别名与**环境提供的 ID** 重名。如果某个模组声明了 `provides: ["minecraft"]`
+（或 `java`、`fabricloader`、`neoforge` 等），那么对该环境 ID 的依赖判 `AMBIGUOUS_ALIAS`，环境事实与声明
+该别名的模组都写进 WARN。环境不优先于声明了同一 ID 的模组，因为这种重名本身就是加载错误。
+
+`provides` 里的条目是声明它的模组的别名，Fabric Loader 会把这些 ID 当作存在的模组（见 `fabric.mod.json`
+文档）。拥有者按 `modId` 去重：模组在自己的 `provides` 里写上自己的 `modId` 仍只算一个拥有者。
 
 | Outcome | 条件 |
 |---|---|
-| `SATISFIED` | 目标存在（或由环境提供）且版本在区间内 |
-| `MISSING_ID` | ID 既不在数据集里，也不由环境提供 |
-| `VERSION_MISMATCH` | 目标存在，但其版本不满足区间 |
-| `BREAKS_VIOLATED` | `breaks` 声明的目标存在且版本在区间内 |
+| `SATISFIED` | 该 ID 经第 1、2 或 3 条解析成功，且解析到的版本在区间内。对 `breaks` 声明：目标不存在（第 5 条），或解析成功且版本**不在**区间内（即没有冲突） |
+| `MISSING_ID` | 该 ID 落到第 5 条 |
+| `VERSION_MISMATCH` | 该 ID 经第 1、2 或 3 条解析成功，但版本不满足区间 |
+| `BREAKS_VIOLATED` | `breaks` 声明，经第 1–3 条解析成功且版本在区间内 |
+| `AMBIGUOUS_ALIAS` | 该 ID 命中第 4 条，或是被模组同时声明为 `provides` 别名的环境 ID；不选任何一个，`resolvedVersion` 为 `null`；所有候选按 WARN 打出，并注明各自是怎么被找到的（`modId` / `provides` / 环境） |
 | `UNPARSEABLE` | 区间字符串无法解析 |
+
+**为什么 `AMBIGUOUS_ALIAS` 要新增第六种 outcome，而不是复用现有五种**：记 `MISSING_ID` 与事实不符（ID 确实存在）；
+记 `SATISFIED` 等于静默挑了其中一个候选，正是本阶段禁止的行为；`VERSION_MISMATCH` / `UNPARSEABLE` 描述的是
+版本字符串，不是身份。歧义 ID 与其他三种一样会阻断准入判断，所以它的计数与它们打印在同一行 `不可满足` 上。
 
 **`UNPARSEABLE` 绝不能被静默当成满足，也绝不能被静默丢弃。** 它必须被计数、以 WARN 打出原串、
 并出现在摘要里。无法解析的区间是本工具的缺陷，不是模组的缺陷。
@@ -453,14 +479,14 @@ modId,version,depId,depKind,declaredRange,resolvedVersion,outcome
 ```
 
 - `depKind`：`required` / `recommends` / `breaks`
-- `resolvedVersion`：实际找到的版本，不存在时为 `null`
+- `resolvedVersion`：实际找到的版本，不存在或存在歧义时为 `null`
 - 每条依赖声明**恰好出现一次**——不去重、不省略
 
 stdout（INFO 级）必须打印：
 
 ```
 依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
-不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N | AMBIGUOUS_ALIAS N
 无法解析的版本区间：N（实现缺陷，不是模组问题）
 ```
 
@@ -474,6 +500,10 @@ stdout（INFO 级）必须打印：
 5. `gradle clean test` 通过，**跳过数 0**；测试不得使用 `assumeTrue`
 6. M0 自己的数字（HIGH 331 / 6670、覆盖率缺口 10/191）必须保持不变——M0.5 只新增一个文件，
    不改写 M0 的结果
+7. `provides` 别名解析到拥有者的版本；一个 ID 被两个及以上模组声明时记 `AMBIGUOUS_ALIAS`，
+   计数被打印，并以 WARN 列出全部候选
+8. 依赖的 ID 本身是真实 `modId` 时，即使别的模组把同一字符串声明为 `provides`，也必须按第 1 条解析，
+   永远不得判成 `AMBIGUOUS_ALIAS`（优先级规则的回归保护）
 
 ---
 
@@ -553,7 +583,7 @@ stdout（INFO 级）必须打印：
 [INFO]  支持策略：SUPPORTED 172 | DEGRADED 28 | EXCLUDED 0
 [INFO]  冲突预测：HIGH 3 组 | MEDIUM 7 组 | LOW 12 组（静态推断，非运行结论）
 [INFO]  依赖总数：硬依赖 N | 软依赖 N | 冲突声明 N
-[INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N
+[INFO]  不可满足：MISSING_ID N | VERSION_MISMATCH N | BREAKS_VIOLATED N | AMBIGUOUS_ALIAS N
 [INFO]  无法解析的版本区间：N（实现缺陷，不是模组问题）
 ```
 
