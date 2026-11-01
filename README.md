@@ -1,6 +1,8 @@
-<p align="center">
+<div align="right">
+<p align="right">
   <b>English</b> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
+</div>
 
 <div align="center">
 
@@ -16,7 +18,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="license"/></a>
   <a href="https://openjdk.org/"><img src="https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
   <a href="https://gradle.org/"><img src="https://img.shields.io/badge/build-gradle-orange?style=for-the-badge&logo=gradle&logoColor=white" alt="build"/></a>
-  <a href="./SPEC.md"><img src="https://img.shields.io/badge/status-M0%20completed-brightgreen?style=for-the-badge" alt="M0 completed"/></a>
+  <a href="./SPEC.md"><img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 completed"/></a>
   <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft-1.21.1-52a447?style=for-the-badge" alt="Minecraft"/></a>
 </p>
 
@@ -25,6 +27,7 @@
   <img src="https://img.shields.io/badge/metadata%20accuracy-100%25-brightgreen?style=flat-square" alt="accuracy"/>
   <img src="https://img.shields.io/badge/tests-96%20passing%20%C2%B7%200%20skipped-brightgreen?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/HIGH%20conflicts-331%20%C2%B7%204.96%25-orange?style=flat-square" alt="conflicts"/>
+  <img src="https://img.shields.io/badge/dependencies-716%20evaluated-blueviolet?style=flat-square" alt="dependencies"/>
 </p>
 
 > ⚠️ **The next stage of this project requires deep JVM knowledge, and the author does not know Java.**
