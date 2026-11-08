@@ -1,8 +1,12 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十五步：长程任务第 1 段——MC 26.2 可采性核验，三路只读子智能体 + 主智能体汇总；零 git 写、`src/` 零改动、未下载任何 jar、未跑 `gradle test`）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十六步：长程段 2——26.2 首批 30 个 jar 采集并跑通 M0；`src/` 零改动、旧六个产物未触、未跑 `gradle test`、未 commit）。
 
-第二十五步做长程任务第 1 段（MC 26.2 可采性核验），零 git 写、`src/` 零改动、未跑 `gradle test`、未下载任何 jar。三路只读子智能体：A 读本地 `forbric-comparison/MOD_TEST_FAILURES.md`（30327 字节，SHA-256 `96AE0BC7E3DFBAED6F76ABCDDC104FBF79F1DB973048E479490C9BEDEC0E3CFB` 由主智能体实测，与记录一致；子环境无 shell，哈希不取自子任务）抽出 35 行 / 32 个唯一 id 与 12 行 / 12 个唯一 id，其中 24 行提到 26.2；B 核验 Modrinth（`26.2` 是真实 release，2026-06-16）；C 核验 CurseForge（官方 API `403 Forbidden: API Key missing or invalid`，网页是 Cloudflare challenge，`api.cfwidget.com` 只有按项目的 `200`、没有 browse/total）。三路各写自己的 `sources-A.json` / `-B.json` / `-C.json`，互不覆盖；主智能体汇总写 `collectability-262.json` 与人读的 `collectability-262.md`，脚本 `verify_collectability_262.py` 可重跑。
+第二十六步做长程段 2（26.2 首批采集 + M0），`src/` 零改动、仓库根六个既有产物未被触碰（`mtime` 仍为 2026-11-01 18:51:36）、未跑 `gradle test`、未 commit。**先验后下载**：从 `collectability-262.json` 的 81 个 `in 1.21.1 dataset = YES` 逐个调 `/v2/project/{id}/version`，桶 `HAS_262 81 / NO_262 0 / HTTP_ERROR 0`，和 = 81，断言 B1 成立。按 slug 排序取前 30 个下载（`dataset-262/jars/`，随后**移动**到 `dataset-262/fixtures/jars/<loader>/`，全程未复制到仓库外、未分发），B2/B3/B4 全成立，**下载失败 0**，loader 探测 fabric 19 / neoforge 11。
+
+M0 用 `java -cp build/install/modgraph/lib/*` 在 `CWD=dataset-262` 跑（Main 的扫描根是硬编码相对路径，因此不碰仓库根 `fixtures/jars`，也不覆盖根目录六个产物）。实测：输入 30 / OK 30 / FAILED 0；侵入深度 API 6 / MIXIN 23 / CORE 1 / RENDER 0；支持策略 SUPPORTED 29 / DEGRADED 0 / EXCLUDED 1；`loaderFamily` FABRIC 19 / NEOFORGE 10 / FORGE 1；`mixinTargets` 为空 7 条，其中 `mixinConfigs` 非空的覆盖率缺口 1 条（1/30 = 3.33%），空配置非缺口 6 条，`1 + 6 = 7`。CSV 行数：`summary.csv` 30、`conflicts.csv` 435、`dependencies.csv` 104、`cycles.csv` 0、`duplicates.csv` 0。断言 C1–C5 全成立（输入 = OK + FAILED、四桶和 = OK、缺口 + 空配置 = 空目标数、输入 = summary 行数、新旧不是同一文件）。与旧基线只读对照：195 / 191 / 4、RENDER 9 / CORE 7 / MIXIN 152 / API 23、缺口 10。
+
+产物全部在 `dataset-262/`：`availability-262.json`（81 桶）、`download-manifest.json`（30 条：slug / 版本 / URL / SPDX / 字节 / SHA-256 / 落位路径）、`candidates.jsonl` 等五份 CSV、`m0-run.log`、`batch-m0-summary.json`。脚本：`fetch_262_batch.py`（核验+下载）、`prepare_262_dataset.py`（落位+哈希复验）、`compare_262_batch.py`（汇总+断言）。`.gitignore` 新增 `dataset-262/` 与 `.pi/`，jar 不入库。上一步的归档已由维护者提交为 `5b2589b`，本轮未代做。下一步第一条命令见第五节。三路只读子智能体：A 读本地 `forbric-comparison/MOD_TEST_FAILURES.md`（30327 字节，SHA-256 `96AE0BC7E3DFBAED6F76ABCDDC104FBF79F1DB973048E479490C9BEDEC0E3CFB` 由主智能体实测，与记录一致；子环境无 shell，哈希不取自子任务）抽出 35 行 / 32 个唯一 id 与 12 行 / 12 个唯一 id，其中 24 行提到 26.2；B 核验 Modrinth（`26.2` 是真实 release，2026-06-16）；C 核验 CurseForge（官方 API `403 Forbidden: API Key missing or invalid`，网页是 Cloudflare challenge，`api.cfwidget.com` 只有按项目的 `200`、没有 browse/total）。三路各写自己的 `sources-A.json` / `-B.json` / `-C.json`，互不覆盖；主智能体汇总写 `collectability-262.json` 与人读的 `collectability-262.md`，脚本 `verify_collectability_262.py` 可重跑。
 
 实测：Modrinth 上 `project_type:mod` 且标 26.2 的项目 **14,705**（同一查询在约 40 分钟内从 14,676 漂到 14,705）；fabric 13,875、neoforge 7,219、both 2,669、fabric∨neoforge 14,656；控制组 `versions:99.99` = 0、`1.21.1` + mods = 32,922。单次枚举快照 2,000 条内本地分桶 BOTH 1,390 / FABRIC_ONLY 519 / NEOFORGE_ONLY 91 / NEITHER 0，合计 2,000，断言成立；无重复 projectId 也成立。**未解释、如实记录**：跨查询的容斥不闭合，13,875 + 7,219 − 2,669 = 18,425 而并集查询是 14,656（差 3,769，远超索引漂移），因此不发布任何由 loader `total_hits` 推出的总数，只用快照内分桶。与 1.21.1 数据集重合 81/2,000（数据集归一后 112 个 modId）。与 Forbric 两份清单合计 47 行 / 44 个唯一 id 的重合是 24 行 / 21 个唯一 slug（快照只取前 2,000，属下界）。CurseForge 无可采数字，也没有许可字段，只能记为“不可权威计数”，不得记成 0。
 
@@ -588,6 +592,8 @@ src/
 
 117. 第二十五步做长程任务第 1 段：三路只读子智能体 + 主智能体汇总，零 git 写、`src/` 零改动、未下载任何 jar、未跑 `gradle test`。产物：`forbric-comparison/sources-A.json`（35 行/32 唯一 id、12 行/12 唯一 id、24 行提 26.2；文件哈希由主智能体实测为 `96AE0BC7…0E3CFB`，与记录一致）、`sources-B.json`（Modrinth，前 80 个项目枚举 + 许可分布）、`sources-C.json`（CurseForge，403 / Cloudflare，`authoritativeTotalAvailable=false`）、`collectability-262.json`（汇总与断言）、`collectability-262.md`（人读清单：modId / 版本 / URL / 许可 / 是否已在 1.21.1 数据集）、`verify_collectability_262.py`（可重跑）。实测：Modrinth 标 26.2 的 mod 项目 14,705（40 分钟内从 14,676 漂上来）、fabric 13,875、neoforge 7,219、both 2,669、并集 14,656；控制组 99.99 = 0、1.21.1 mods = 32,922；2,000 条快照内分桶 1,390 + 519 + 91 + 0 = 2,000（断言成立），无重复 projectId；与 1.21.1 数据集重合 81/2,000；与 Forbric 合计 47 行 / 44 唯一 id 重合 24 行 / 21 唯一 slug（下界）。容斥不闭合 18,425 vs 14,656（差 3,769）未解释，因此不发布 loader 推总。第 116 条仍未提交。
 
+118. 第二十六步做长程段 2：先验后下载。81 个 `in 1.21.1 dataset = YES` 逐个调 `/v2/project/{id}/version`，`HAS_262 81 / NO_262 0 / HTTP_ERROR 0`（和 = 81，B1 成立）；按 slug 排序取前 30 下载，**失败 0**，fabric 19 / neoforge 11（B2–B4 成立）。jar 只存在 `dataset-262/`，已加 `.gitignore`，未分发、未复制到仓库外。M0 在 `CWD=dataset-262` 用 `build/install/modgraph/lib/*` 跑，仓库根 `fixtures/jars` 与六个既有产物未被触碰（`mtime` 仍 2026-11-01 18:51:36）。实测：输入 30 / OK 30 / FAILED 0；API 6 / MIXIN 23 / CORE 1 / RENDER 0；SUPPORTED 29 / EXCLUDED 1；FABRIC 19 / NEOFORGE 10 / FORGE 1；空 `mixinTargets` 7，缺口 1（3.33%），空配置非缺口 6；`conflicts.csv` 435 行、`dependencies.csv` 104 行、`cycles.csv` 0、`duplicates.csv` 0。C1–C5 全成立。未跑 `gradle test`，未 commit；归档 `5b2589b` 由维护者已完成。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -704,10 +710,10 @@ src/
 **下一步第一条命令（本轮不执行）：**
 
 ```bash
-git status --short && python verify_collectability_262.py --enumerate 20 --forbric-ids forbric-comparison\sources-A.json
+python -u fetch_262_batch.py --download 30 && python -u prepare_262_dataset.py && cd dataset-262 && java -cp "D:\modgraph\modgraph\build\install\modgraph\lib\*" dev.modgraph.Main > m0-run.log 2>&1 && cd .. && python -u compare_262_batch.py
 ```
 
-第一条只读：确认本轮只新增 `collectability-262.*`、`sources-?.json`、`verify_collectability_262.py`，`src/` 与六个产物无改动。第二条重跑核验（约 27 次 Modrinth 请求，写入 `forbric-comparison/collectability-262.json`）。**段 2 不在本轮执行**：采集先要定“取哪 30 个”（建议先用快照里 `in 1.21.1 dataset = YES` 的 81 个交集，能直接对比旧数据集），并写下载脚本；本轮没有预留接口、没有开工。CurseForge 一侧要权威计数只能等用户提供 CurseForge for Studios 的 `x-api-key`，否则段 4 的对照只覆盖 Modrinth。M2 或任何下一阶段没有开始，等用户明确指令。
+这条是段 2 的完整重跑链（采集 30 → 落位 → M0 → 汇总断言），本轮已跑通。**段 3 不在本轮执行**：下一步是把批次从 30 补到与 Forbric 两份清单同规模（合并 47 行 / 44 个唯一 id），需要先决定是否扩大到全部 81 个可采项目（快照外还有 14,600+）。段 2 只证明链路能跑、不证明 26.2 上的兼容性。M2 或任何下一阶段没有开始，等用户明确指令。
 
 M0 已按 SPEC v0.7 定稿（v0.8–v1.1 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现，M1.5 已按 §3.7 实现。中英文 SPEC 现在都是 v1.1。完整数据集（195 个 jar）下 `gradle clean test` 是 148 个测试、失败 0、错误 0、跳过 0——这是第十九步的实跑结果。`gradle run` 产出六个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头，`duplicates.csv` 4 行数据加表头，不满足的硬依赖 56。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 148 个、跳过 0，两种模式在日志里明确打印当前数据源。
 
