@@ -344,6 +344,20 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 **M0**
 
 - Mixin 目标推断只按命名约定，不读 `@Mixin` 注解，既会漏报也会误报，`mixinTargets` 只能当静态线索
+- 2026-11-07 用 `modcrawl 0.11.3`（`modcrawl mixins --json <jar>`，只读类级 `@Mixin`）对照全部 195 个
+  文件系统 jar：191 条 OK 记录中，157 条两边都检出，1 条仅命名侧命中（sodium-neoforge，其 mixin 在
+  `META-INF/jarjar` 嵌套 jar 内，modcrawl 不扫描嵌套），6 条仅 modcrawl 命中，27 条两边都没检出。
+  `mixinConfigs` 非空但 `mixinTargets` 为空的 10 条 OK 记录（8 个唯一 modId；Searchables 与
+  VisualWorkbench 各有两个加载器变体）里，modcrawl 能补上 5 条（4 个唯一 modId）；剩下 5 条（4 个唯一
+  modId：VisualWorkbench ×2、coroutil、supermartijn642configlib、ForgeConfigAPIPort）的 mixin 配置没有
+  枚举任何类，modcrawl 在顶层读到 0 条 `@Mixin`。
+- 未验证：两侧目标名是否一致（命名侧是无点简单名，modcrawl 返回内部名/可能是混淆名）、运行时行为、
+  modcrawl 对嵌套 jar 的覆盖；4 条 FAILED 记录不在 191 条分母内。
+- 用 Forbric 的 `MOD_TEST_FAILURES.md`（快照 SHA-256 `96AE0BC7…3CFB`；两个具名快照：35 条 + 12 条，
+  不合并）对照：35 条快照里 10 条 / 8 个唯一 id 能在 `candidates.jsonl` 定位（4 条
+  `supportPolicy=EXCLUDED`、5 条依赖未满足信号、1 条仅加载器不匹配），25 条 / 24 个唯一 id 无候选；
+  12 条快照 0/12 能定位。这是 1.21.1 对 26.2 的静态对照，不是运行时验证；`dependencies.csv` /
+  `conflicts.csv` 会把加载器变体合并计数。
 - 中缀式（`PlayerMixinFabric`）与 `AccessXxx` 前缀（controlling 的 5 个类）没有剥除
 - `RENDER` / `CORE` 模组一律 `EXCLUDED`，不做兼容性承诺
 - jar-in-jar 嵌套打包判 `NO_METADATA`（connector、Essential、kotlinforforge ×2）

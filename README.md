@@ -398,6 +398,22 @@ Log-level rules are in [`SPEC.md`](./SPEC.md) §5.
 
 - Mixin target inference follows naming conventions; it does not read the `@Mixin` annotation, so it both misses
   targets and produces false ones — `mixinTargets` is a static hint, not a fact
+- Cross-checked on 2026-11-07 with `modcrawl 0.11.3` (`modcrawl mixins --json <jar>`, class-level `@Mixin`
+  only) over all 195 filesystem JARs: 191 OK records, 157 both detect, 1 naming-only (sodium-neoforge; its
+  mixins are inside a nested `META-INF/jarjar` jar, which modcrawl does not scan), 6 modcrawl-only, 27
+  neither. Of the 10 OK records with non-empty `mixinConfigs` but empty inferred `mixinTargets` (8 unique
+  modIds; Searchables and VisualWorkbench each have two loader variants), modcrawl finds targets in 5
+  records (4 unique modIds); the remaining 5 records (4 unique modIds: VisualWorkbench ×2, coroutil,
+  supermartijn642configlib, ForgeConfigAPIPort) have mixin configs that enumerate no classes, and modcrawl
+  reads 0 top-level `@Mixin` entries.
+- Not verified: whether the two sides name the same targets (inferred targets are simple names; modcrawl
+  returns internal/possibly obfuscated names), runtime behaviour, and modcrawl's nested-JAR coverage. The
+  four FAILED records are outside the 191-record denominator.
+- Cross-checked with Forbric's `MOD_TEST_FAILURES.md` (snapshot SHA-256 `96AE0BC7…3CFB`; two named
+  snapshots, 35 + 12 rows, not merged): the 35-row snapshot has 10 rows / 8 unique ids located in
+  `candidates.jsonl` (4 `supportPolicy=EXCLUDED`, 5 non-SATISFIED dependency signals, 1 loader mismatch),
+  25 rows / 24 unique ids with no candidate; the 12-row snapshot has 0/12 located. This is a static
+  1.21.1-vs-26.2 comparison, not runtime validation; `dependencies.csv` / `conflicts.csv` merge loader variants.
 - Infix names (`PlayerMixinFabric`) and the `AccessXxx` prefix style (5 classes in controlling) are not stripped
 - `RENDER` / `CORE` mods are always `EXCLUDED`, with no compatibility promise
 - jar-in-jar packaging is reported as `NO_METADATA` (connector, Essential, kotlinforforge ×2)

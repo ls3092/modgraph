@@ -1,6 +1,10 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-07（第二十二步：文档固化——新增 `AGENTS.md`、`BOUNDARIES.md` / `BOUNDARIES.zh-CN.md`；两版逐节同步；不改 `src/`、不改既有产物与徽章、未跑 `gradle test`、未 commit）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十三步：核对第二十二步的三份文档交付物，正文零改动；不改 `src/`、不改既有产物与徽章、未跑 `gradle test`、未 commit）。
+
+第二十三步只做核对，不改任何文档正文，`src/` 零改动、没有跑 `gradle test`、没有 commit。核对对象是第二十二步的三份交付物：`AGENTS.md` 9 节 / 94 行，覆盖维护者情况、全局禁令、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法与措辞禁用词；没有 SHA-256 全表、没有项目历史、没有绑定任何具体工具的专有命令。`BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md` 各 91 行、15 个标题，6 个一级节与 2.1–2.5、3.1–3.3 八个二级节在行号上逐一对齐。两版数字与产物实文件逐项比对，全部一致：`mixin-coverage/summary.json` 的 `okFourWay` 是 157 / 100、1 / 1、6 / 5、27 / 21（记录 / 唯一 modId），`gap` 是 10 = 5 + 5、两侧各 4 个唯一 modId；`forbric-comparison/summary.json` 的 35 条表是 35 / 32，主桶 `25 + 1 + 4 + 5 = 35`，`matchedRows` 10 / 8，`noCandidateRows` 25 / 24，非互斥字段 10 / 10 / 0 / 7 / 6 / 4 / 1 / 0 / 9 / 1；12 条表是 12 `NO_CANDIDATE`、`matchedRows` 0；`assertions.listsAreDisjoint = true`。本步没有重跑两个对照脚本、没有重算五个产物哈希（`src/` 未改，产物未被触碰），也没有跑 `gradle test`。
+
+发现一处记录与工作区不一致，本步不自行处理：工作区里 `README.md`（+16 行）与 `README.zh-CN.md`（+14 行）各有一处未提交改动，把两轮外部对照写进了 Known limitations 三条；第二十二步的记录写明“没有改 SPEC 与 README”，提交 `f0671b8` 的文件清单也只有 `AGENTS.md`、`BOUNDARIES.md`、`BOUNDARIES.zh-CN.md`、`PROGRESS.md`，所以这处改动既不在本文件里、也不在提交里。本轮没有改它、也没有回滚，等维护者决定提交、补记录还是撤销。下一步第一条命令见第五节。
 
 第二十二步只写文档，`src/` 零改动、未跑 `gradle test`、未 commit。新增仓库根 `AGENTS.md`（中文单版）：维护者情况、全局禁令、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法；只写约束与方法，不记录历史、不贴 SHA-256 全表、不编数字，也不绑定任何 AI 工具的专有命令。另新增 `BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md`（英文 / 中文，逐节同步），固化第二十、二十一步两轮外部对照的结论与解释边界：modcrawl 191 条 OK 四分类 BOTH 157 / NAMING_ONLY 1 / MODCRAWL_ONLY 6 / NEITHER 27，原缺口 10 条 = 补上 5 + 剩余 5（剩余全部 `EMPTY_CONFIG`，空配置、无可推断目标，非漏报），不递归嵌套 jar，exe 为上游 v0.11.3 预编译；Forbric 两个具名快照 35 条 / 12 条不合并、两表无交集（脚本断言 `listsAreDisjoint = true`），35 条主桶 25 `NO_CANDIDATE` + 1 `LOADER_MISMATCH` + 4 `EXCLUDED_RENDER_CORE` + 5 `DEPENDENCY_SIGNAL`，12 条 12 `NO_CANDIDATE`。
 
@@ -90,7 +94,7 @@ M0.5 的真实结果：195 个输入、OK 191、FAILED 4 不变；共 716 条依
 
 ## 一、当前阶段与目标
 
-当前处于 **M1.5 已实现完成、等用户验收** 的状态，规范是 `SPEC.md` v1.1：§7 管 M0、§3.5 管 M0.5、§3.6 管 M1、§3.7 管 M1.5，四组验收互不替代。M0、M0.5、M1 与 M1.5 都已实现完成。M0.5 只回答一个问题：**“集合里是否存在满足这条声明的目标”**。M1 只回答另一个问题：**“这套硬依赖里有没有环、环里是哪些模组”**。两者都不输出顺序、不做版本回溯与候选选择、不下载、不建议装哪个版本；M1 的拓扑排序只用于判定是否有环，结果永不离开计算过程（§3.6.5）。M1 的当前实测是 `FABRIC` 98 节点 / 68 边、`FORGE` 0 节点 / 0 边、`NEOFORGE` 89 节点 / 20 边、`EDGE` 声明 89、去重边 88、环组 0；`EDGE` 声明数与图边数不是同一个数，区别写在 §3.6.3。第二十步（2026-11-07）只做 Mixin 缺口量化，不改主仓库实现：191 条 OK 记录里 10 条缺口（8 个唯一 modId），modcrawl 补上 5 条、剩 5 条空配置，详见 `mixin-coverage/report.md`；这不改变 M1.5 的验收状态。第二十一步（2026-11-07）只做 Forbric 失败清单的只读对照：35 条快照中 10 条 / 8 个唯一 id 能定位、25 条 / 24 个唯一 id 无候选；12 条快照 0/12 能定位；两个快照不合并，详见 `forbric-comparison/report.md`。第二十二步（2026-11-07）只写文档：新增 `AGENTS.md` 与 `BOUNDARIES.md` / `BOUNDARIES.zh-CN.md`，不改实现与既有产物，未跑 `gradle test`。
+当前处于 **M1.5 已实现完成、等用户验收** 的状态，规范是 `SPEC.md` v1.1：§7 管 M0、§3.5 管 M0.5、§3.6 管 M1、§3.7 管 M1.5，四组验收互不替代。M0、M0.5、M1 与 M1.5 都已实现完成。M0.5 只回答一个问题：**“集合里是否存在满足这条声明的目标”**。M1 只回答另一个问题：**“这套硬依赖里有没有环、环里是哪些模组”**。两者都不输出顺序、不做版本回溯与候选选择、不下载、不建议装哪个版本；M1 的拓扑排序只用于判定是否有环，结果永不离开计算过程（§3.6.5）。M1 的当前实测是 `FABRIC` 98 节点 / 68 边、`FORGE` 0 节点 / 0 边、`NEOFORGE` 89 节点 / 20 边、`EDGE` 声明 89、去重边 88、环组 0；`EDGE` 声明数与图边数不是同一个数，区别写在 §3.6.3。第二十步（2026-11-07）只做 Mixin 缺口量化，不改主仓库实现：191 条 OK 记录里 10 条缺口（8 个唯一 modId），modcrawl 补上 5 条、剩 5 条空配置，详见 `mixin-coverage/report.md`；这不改变 M1.5 的验收状态。第二十一步（2026-11-07）只做 Forbric 失败清单的只读对照：35 条快照中 10 条 / 8 个唯一 id 能定位、25 条 / 24 个唯一 id 无候选；12 条快照 0/12 能定位；两个快照不合并，详见 `forbric-comparison/report.md`。第二十二步（2026-11-07）只写文档：新增 `AGENTS.md` 与 `BOUNDARIES.md` / `BOUNDARIES.zh-CN.md`，不改实现与既有产物，未跑 `gradle test`。第二十三步（2026-11-08）只核对这三份文档的正文与两版对齐，没有改任何文件内容，未跑 `gradle test`。
 
 M0.5 的两套版本语法必须分开实现，因为同名写法在两边的含义相反：Fabric 的裸版本串 `1.21.1` 是**精确匹配**，NeoForge 的无括号 `21.1.219` 是**最低版本**（Maven 软要求）。实现分在 `version/FabricVersionRange` 与 `version/NeoForgeVersionRange` 两个类里，比较规则在 `version/Version`；无括号形式在解析后用 DEBUG 打出采用了哪条约定。
 
@@ -570,6 +574,8 @@ src/
 
 114. 第二十二步只写文档，`src/` 零改动、没有跑 `gradle test`、没有 commit。新增 `AGENTS.md`（仓库根，中文单版）：维护者情况、全局禁令（SPEC §0 / §5 摘要）、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法；只写约束与方法，不写项目历史、不贴 SHA-256 全表、不编数字，不绑定具体 AI 工具命令。新增 `BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md`，两版逐节同步，固化第二十 / 二十一步对照：modcrawl 191 OK 四分类 157 / 1 / 6 / 27，缺口 10 = 5 + 5（剩余全 `EMPTY_CONFIG`，非漏报），不递归嵌套 jar，exe 为上游 v0.11.3 预编译；Forbric 35 条 / 12 条两表不合并、无交集，35 条主桶 25 + 1 + 4 + 5，12 条 12 `NO_CANDIDATE`；写明 26.2 vs 1.21.1、`NO_CANDIDATE` 不是预测失败、`EXCLUDED` 与非 `SATISFIED` 不解释运行时崩溃、工具只做声明性准入检查。所有数字取自本文件；没有改 SPEC / README（无需双版同步），没有改既有产物、徽章、LICENSE、Forbric / Kilt 代码。两版核对结果见交接报告。
 
+115. 第二十三步只做核对、不改文档正文：`AGENTS.md`（9 节 / 94 行）条目覆盖维护者情况、全局禁令、双版同步、基线从本文件读、每步更新本文件、交接报告四标题、90 分钟切法；`BOUNDARIES.md` ↔ `BOUNDARIES.zh-CN.md` 各 15 个标题、行号一一对齐；两版数字与 `mixin-coverage/summary.json`、`forbric-comparison/summary.json` 逐项相同（157/100、1/1、6/5、27/21；缺口 10 = 5 + 5、两侧各 4 个唯一 id；35 = 25 + 1 + 4 + 5，10/8，25/24；12 = 12；`listsAreDisjoint = true`）。没有重跑两个对照脚本、没有重算产物哈希、没有跑 `gradle test`、没有 commit。同时记下工作区里 `README.md` / `README.zh-CN.md` 的一处未提交改动（+16 / +14 行）不在第二十二步记录与提交 `f0671b8` 内，本轮未处理，留给维护者裁决。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -686,10 +692,10 @@ src/
 **下一步第一条命令（本轮不执行）：**
 
 ```bash
-git status --short -- AGENTS.md BOUNDARIES.md BOUNDARIES.zh-CN.md PROGRESS.md src
+git status --short
 ```
 
-这条只读命令确认本轮只出现四份文档的新增/修改，`src/` 没有变化；随后由用户验收 `AGENTS.md` 与两版 `BOUNDARIES.md`。M2 或任何下一阶段没有开始，等用户明确指令。上一轮的 `python verify_forbric_failures.py --expected-sha256 ...` 与 `python verify_mixin_coverage.py --modcrawl <path>` 仍保留在第二十 / 二十一步记录里，不是本步的第一步。
+这条只读命令用来裁决第二十三步记下的那处不一致：工作区的 `README.md` / `README.zh-CN.md`（+16 / +14 行，把两轮外部对照写进 Known limitations）不在第二十二步记录与提交 `f0671b8` 里；`mixin-coverage/`、`forbric-comparison/` 与两个 `verify_*.py` 仍是未跟踪文件；`src/` 应无改动。由维护者决定这处 README 改动是提交、补记录还是撤销，AI 不代替决定。`AGENTS.md` 与两版 `BOUNDARIES.md` 已按第二十三步核对通过，不需要重写。M2 或任何下一阶段没有开始，等用户明确指令。
 
 M0 已按 SPEC v0.7 定稿（v0.8–v1.1 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现，M1.5 已按 §3.7 实现。中英文 SPEC 现在都是 v1.1。完整数据集（195 个 jar）下 `gradle clean test` 是 148 个测试、失败 0、错误 0、跳过 0——这是第十九步的实跑结果。`gradle run` 产出六个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头，`duplicates.csv` 4 行数据加表头，不满足的硬依赖 56。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 148 个、跳过 0，两种模式在日志里明确打印当前数据源。
 
