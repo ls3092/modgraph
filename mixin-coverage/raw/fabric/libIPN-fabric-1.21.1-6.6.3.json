@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "org/anti_ad/mc/common/mixin/MixinKeyboard.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/common/mixin/MixinMinecraftClient.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/common/mixin/MixinMouse.class",
+    "target": "net/minecraft/class_312"
+  }
+]

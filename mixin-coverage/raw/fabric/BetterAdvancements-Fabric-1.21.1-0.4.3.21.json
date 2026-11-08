@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "betteradvancements/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  }
+]

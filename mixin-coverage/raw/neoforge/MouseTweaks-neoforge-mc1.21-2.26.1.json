@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "yalter/mousetweaks/mixin/AbstractContainerScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  }
+]

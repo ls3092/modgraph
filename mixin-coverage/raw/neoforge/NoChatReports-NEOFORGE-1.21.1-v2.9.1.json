@@ -1,0 +1,130 @@
+[
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/AccessorClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinChatComponent.class",
+    "target": "net/minecraft/client/gui/components/ChatComponent"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinChatListener.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinChatOptionsScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/ChatOptionsScreen"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinChatScreen.class",
+    "target": "net/minecraft/client/gui/screens/ChatScreen"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientCommonPacketListenerImpl"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinConnectScreen.class",
+    "target": "net/minecraft/client/gui/screens/ConnectScreen"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTag.class",
+    "target": "net/minecraft/client/GuiMessageTag"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTagIcon.class",
+    "target": "net/minecraft/client/GuiMessageTag$Icon"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinJoinMultiplayerScreen.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinOnlineServerEntry.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinOptions.class",
+    "target": "net/minecraft/client/Options"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinPlayerEntry.class",
+    "target": "net/minecraft/client/gui/screens/social/PlayerEntry"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinRealmsConnect.class",
+    "target": "net/minecraft/realms/RealmsConnect"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinRowHelper.class",
+    "target": "net/minecraft/client/gui/layouts/GridLayout$RowHelper"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinServerData.class",
+    "target": "net/minecraft/client/multiplayer/ServerData"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinServerStatusPinger$1.class",
+    "target": "net/minecraft/client/multiplayer/ServerStatusPinger$1"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinTitleScreen.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinToastComponent.class",
+    "target": "net/minecraft/client/gui/components/toasts/ToastComponent"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/client/MixinYggdrasilUserApiService.class",
+    "target": "com/mojang/authlib/yggdrasil/YggdrasilUserApiService"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/common/MixinFriendlyByteBuf.class",
+    "target": "net/minecraft/network/FriendlyByteBuf"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/common/MixinServerStatus.class",
+    "target": "net/minecraft/network/protocol/status/ServerStatus"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinDedicatedServer.class",
+    "target": "net/minecraft/server/dedicated/DedicatedServer"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinPlayerList.class",
+    "target": "net/minecraft/server/players/PlayerList"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatCommandSignedPacket.class",
+    "target": "net/minecraft/network/protocol/game/ServerboundChatCommandSignedPacket"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatPacket.class",
+    "target": "net/minecraft/network/protocol/game/ServerboundChatPacket"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatSessionUpdatePacket.class",
+    "target": "net/minecraft/network/protocol/game/ServerboundChatSessionUpdatePacket"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/common/mixins/server/MixinServerCommonPacketListenerImpl.class",
+    "target": "net/minecraft/server/network/ServerCommonPacketListenerImpl"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/neoforge/mixins/client/MixinClientConnection.class",
+    "target": "net/minecraft/network/Connection"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/neoforge/mixins/client/MixinClientHandshakePacketListenerImpl.class",
+    "target": "net/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl"
+  },
+  {
+    "mixin_class": "com/aizistral/nochatreports/neoforge/mixins/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientCommonPacketListenerImpl"
+  }
+]

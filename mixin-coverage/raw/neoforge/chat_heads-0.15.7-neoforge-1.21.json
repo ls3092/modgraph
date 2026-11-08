@@ -1,0 +1,78 @@
+[
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/AbstractConfigScreenQuitSaveConsumerMixin.class",
+    "target": "me/shedaniel/clothconfig2/gui/AbstractConfigScreen$QuitSaveConsumer"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/AbstractSliderButtonMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractSliderButton"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatComponentMixin.class",
+    "target": "net/minecraft/client/gui/components/ChatComponent"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatComponentMixin2.class",
+    "target": "net/minecraft/client/gui/components/ChatComponent"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/CommandSuggestionSuggestionsListMixin.class",
+    "target": "net/minecraft/client/gui/components/CommandSuggestions$SuggestionsList"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ConnectionMixin.class",
+    "target": "net/minecraft/network/Connection"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/DownloadedPackSourceMixin.class",
+    "target": "net/minecraft/client/resources/server/DownloadedPackSource"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/FontStringRenderOutputMixin.class",
+    "target": "net/minecraft/client/gui/Font$StringRenderOutput"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/GuiMessageLineMixin.class",
+    "target": "net/minecraft/client/GuiMessage$Line"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/GuiMessageMixin.class",
+    "target": "net/minecraft/client/GuiMessage"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/HttpTextureMixin.class",
+    "target": "net/minecraft/client/renderer/texture/HttpTexture"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/PlayerChatMessageMixin.class",
+    "target": "net/minecraft/network/chat/PlayerChatMessage"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/SkinManagerMixin.class",
+    "target": "net/minecraft/client/resources/SkinManager$TextureCache"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/compat/EmojifulMixin.class",
+    "target": "com/hrznstudio/emojiful/render/EmojiFontRenderer$EmojiCharacterRenderer"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/compat/EmojifulMixin.class",
+    "target": "com/hrznstudio/emojiful/render/EmojiFontHelper$EmojiCharacterRenderer"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/neoforge/mixin/ChatListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/neoforge/mixin/compat/ShowcaseItemFeatureMixin.class",
+    "target": "com/ultramega/showcaseitem/ShowcaseItemFeature"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorJoinMultiplayerScreen.class",
+    "target": "net/minecraft/class_500"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorServerSelectionListEntry.class",
+    "target": "net/minecraft/class_4267$class_4270"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionList.class",
+    "target": "net/minecraft/class_528"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionListEntry.class",
+    "target": "net/minecraft/class_528$class_4272"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionScreen.class",
+    "target": "net/minecraft/class_526"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinCreateWorldScreen.class",
+    "target": "net/minecraft/class_525"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinEditServerScreen.class",
+    "target": "net/minecraft/class_422"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinJoinMultiplayerScreen.class",
+    "target": "net/minecraft/class_500"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinServerSelectionList.class",
+    "target": "net/minecraft/class_4267"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinServerSelectionListEntry.class",
+    "target": "net/minecraft/class_4267$class_4270"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinWorldSelectionList.class",
+    "target": "net/minecraft/class_528"
+  }
+]

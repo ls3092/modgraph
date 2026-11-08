@@ -1,0 +1,82 @@
+[
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/ArrayVSAccess.class",
+    "target": "net/minecraft/world/phys/shapes/ArrayVoxelShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/VoxelShapeAccess.class",
+    "target": "net/minecraft/world/phys/shapes/VoxelShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/DiscreteVSAccess.class",
+    "target": "net/minecraft/world/phys/shapes/DiscreteVoxelShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/SliceShapeAccess.class",
+    "target": "net/minecraft/world/phys/shapes/SliceShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/BakedQuadAccess.class",
+    "target": "net/minecraft/client/renderer/block/model/BakedQuad"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/BitSetDVSAccess.class",
+    "target": "net/minecraft/world/phys/shapes/BitSetDiscreteVoxelShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/accessors/SubShapeAccess.class",
+    "target": "net/minecraft/world/phys/shapes/SubShape"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/blockstatecache/BlockStateBaseMixin.class",
+    "target": "net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/blockstatecache/BlockStateCacheMixin.class",
+    "target": "net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase$Cache"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/dedupbakedquad/SimpleModelBuilderMixin.class",
+    "target": "net/minecraft/client/resources/model/SimpleBakedModel$Builder"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/dedupmultipart/MixinMultipartBuilder.class",
+    "target": "net/minecraft/client/resources/model/MultiPartBakedModel$Builder"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/dedupmultipart/MixinMultipartModel.class",
+    "target": "net/minecraft/client/resources/model/MultiPartBakedModel"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/fastmap/FastMapStateHolderMixin.class",
+    "target": "net/minecraft/world/level/block/state/StateHolder"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/modelsides/SimpleBakedModelMixin.class",
+    "target": "net/minecraft/client/resources/model/SimpleBakedModel"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/mrl/ModelResourceLocationMixin.class",
+    "target": "net/minecraft/client/resources/model/ModelResourceLocation"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/predicates/AndConditionMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/multipart/AndCondition"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/predicates/KeyValueConditionMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/multipart/KeyValueCondition"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/predicates/OrConditionMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/multipart/OrCondition"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/threaddetec/PalettedContainerMixin.class",
+    "target": "net/minecraft/world/level/chunk/PalettedContainer"
+  },
+  {
+    "mixin_class": "malte0811/ferritecore/mixin/datacomponents/PatchedDataComponentMapMixin.class",
+    "target": "net/minecraft/core/component/PatchedDataComponentMap"
+  }
+]

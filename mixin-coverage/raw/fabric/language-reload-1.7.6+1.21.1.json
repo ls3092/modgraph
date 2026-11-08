@@ -1,0 +1,82 @@
+[
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/AdvancementTabMixin.class",
+    "target": "net/minecraft/class_454"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/AdvancementWidgetAccessor.class",
+    "target": "net/minecraft/class_456"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/AdvancementsScreenMixin.class",
+    "target": "net/minecraft/class_457"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/BookScreenAccessor.class",
+    "target": "net/minecraft/class_3872"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/ClientChunkManagerAccessor.class",
+    "target": "net/minecraft/class_631"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/ClientChunkMapAccessor.class",
+    "target": "net/minecraft/class_631$class_3681"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/EntryListWidgetAccessor.class",
+    "target": "net/minecraft/class_350"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/GameOptionsMixin.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/KeyboardMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/LanguageManagerAccessor.class",
+    "target": "net/minecraft/class_1076"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/LanguageManagerMixin.class",
+    "target": "net/minecraft/class_1076"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/LanguageMixin.class",
+    "target": "net/minecraft/class_2477"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/LanguageOptionsScreenMixin.class",
+    "target": "net/minecraft/class_426"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/LanguageSelectionListWidgetAccessor.class",
+    "target": "net/minecraft/class_426$class_4195"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/RecipeBookWidgetMixin.class",
+    "target": "net/minecraft/class_507"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/SearchManagerMixin.class",
+    "target": "net/minecraft/class_1124"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/SignTextAccessor.class",
+    "target": "net/minecraft/class_8242"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/TextDisplayEntityAccessor.class",
+    "target": "net/minecraft/class_8113$class_8123"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/TranslatableTextContentMixin.class",
+    "target": "net/minecraft/class_2588"
+  },
+  {
+    "mixin_class": "jerozgen/languagereload/mixin/TranslationStorageMixin.class",
+    "target": "net/minecraft/class_1078"
+  }
+]

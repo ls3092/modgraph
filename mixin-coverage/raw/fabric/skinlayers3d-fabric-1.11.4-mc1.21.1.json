@@ -1,0 +1,58 @@
+[
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/BlockEntityWithoutLevelRendererMixin.class",
+    "target": "net/minecraft/class_756"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/CustomHeadLayerMixin.class",
+    "target": "net/minecraft/class_976"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/Deadmau5EarsLayerMixin.class",
+    "target": "net/minecraft/class_978"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/EMFModelPartMixin.class",
+    "target": "traben.entity_model_features.models.parts.EMFModelPart"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/HttpTextureMixin.class",
+    "target": "net/minecraft/class_1046"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/ModelPartMixin.class",
+    "target": "net/minecraft/class_630"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/NativeImageMixin.class",
+    "target": "net/minecraft/class_1011"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerModelMixin.class",
+    "target": "net/minecraft/class_591"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerRendererMixin.class",
+    "target": "net/minecraft/class_1007"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullBlockEntityMixin.class",
+    "target": "net/minecraft/class_2631"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullBlockEntityRendererMixin.class",
+    "target": "net/minecraft/class_836"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullModelMixin.class",
+    "target": "net/minecraft/class_607"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullModelStateMixin.class",
+    "target": "net.minecraft.client.Minecraft"
+  }
+]

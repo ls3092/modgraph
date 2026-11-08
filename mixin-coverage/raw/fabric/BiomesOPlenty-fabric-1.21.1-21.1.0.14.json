@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "biomesoplenty/fabric/mixin/MixinBloodFluid.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "biomesoplenty/fabric/mixin/MixinLiquidNullFluid.class",
+    "target": "net/minecraft/class_758"
+  }
+]

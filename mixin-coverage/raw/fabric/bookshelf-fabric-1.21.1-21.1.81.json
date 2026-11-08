@@ -1,0 +1,138 @@
+[
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBannerBlockEntity.class",
+    "target": "net/minecraft/class_2573"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBaseContainerBlockEntity.class",
+    "target": "net/minecraft/class_2624"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBlockEntityRenderers.class",
+    "target": "net/minecraft/class_5616"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorCropBlock.class",
+    "target": "net/minecraft/class_2302"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorFontManager.class",
+    "target": "net/minecraft/class_378"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorItemBlockRenderTypes.class",
+    "target": "net/minecraft/class_4696"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorMinecraft.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/gui/AccessorAbstractWidget.class",
+    "target": "net/minecraft/class_339"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/entity/AccessorEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/level/AccessorRecipeManager.class",
+    "target": "net/minecraft/class_1863"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorCompositeEntryBase.class",
+    "target": "net/minecraft/class_69"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorDynamicLoot.class",
+    "target": "net/minecraft/class_67"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootItem.class",
+    "target": "net/minecraft/class_77"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootPool.class",
+    "target": "net/minecraft/class_55"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootPoolSingletonContainer.class",
+    "target": "net/minecraft/class_85"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootTable.class",
+    "target": "net/minecraft/class_52"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorNestedLootTable.class",
+    "target": "net/minecraft/class_83"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorTagEntry.class",
+    "target": "net/minecraft/class_91"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/particles/AccessSimpleParticleType.class",
+    "target": "net/minecraft/class_2400"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/advancement/MixinPlayerAdvancements.class",
+    "target": "net/minecraft/class_2985"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/block/MixinDecoratedPotPatterns.class",
+    "target": "net/minecraft/class_8173"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/entity/MixinLightningBolt.class",
+    "target": "net/minecraft/class_1538"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/entity/MixinLivingEntity.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/item/MixinCreativeModeTab.class",
+    "target": "net/minecraft/class_1761"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/level/MixinRecipeManager.class",
+    "target": "net/minecraft/class_1863"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/level/MixinWalkNodeEvaluator.class",
+    "target": "net/minecraft/class_14"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/locale/MixinClientLanguage.class",
+    "target": "net/minecraft/class_1078"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootDataType.class",
+    "target": "net/minecraft/class_8490"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootItemKilledByPlayerCondition.class",
+    "target": "net/minecraft/class_221"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootPool.class",
+    "target": "net/minecraft/class_55"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/packs/MixinSimpleJsonResourceReloadListener.class",
+    "target": "net/minecraft/class_4309"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/potions/MixinPotionBrewing.class",
+    "target": "net/minecraft/class_1845"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/server/MixinReloadableServerResources.class",
+    "target": "net/minecraft/class_5350"
+  }
+]

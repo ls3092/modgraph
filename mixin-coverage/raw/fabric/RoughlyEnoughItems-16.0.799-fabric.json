@@ -1,0 +1,38 @@
+[
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinClientPacketListener.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinEffectRenderingInventoryScreen.class",
+    "target": "net/minecraft/class_485"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinInputConstants.class",
+    "target": "net/minecraft/class_3675"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinInputConstantsKey.class",
+    "target": "net/minecraft/class_3675$class_306"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinPacketEncoder.class",
+    "target": "net/minecraft/class_2545"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinRecipeToast.class",
+    "target": "net/minecraft/class_366"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinScreen.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinTagLoader.class",
+    "target": "net/minecraft/class_3503"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/fabric/MixinTagManager.class",
+    "target": "net/minecraft/class_3505"
+  }
+]

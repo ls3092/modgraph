@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorJoinMultiplayerScreen.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorServerSelectionListEntry.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionList.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldSelectionList"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionListEntry.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldSelectionList$WorldListEntry"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/AccessorWorldSelectionScreen.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/SelectWorldScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinCreateWorldScreen.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinEditServerScreen.class",
+    "target": "net/minecraft/client/gui/screens/EditServerScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinJoinMultiplayerScreen.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinServerSelectionList.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinServerSelectionListEntry.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/cherishedworlds/mixin/core/MixinWorldSelectionList.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldSelectionList"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinEffectRenderingInventoryScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/EffectRenderingInventoryScreen"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinFontSet.class",
+    "target": "net/minecraft/client/gui/font/FontSet"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinInputConstants.class",
+    "target": "com/mojang/blaze3d/platform/InputConstants"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinInputConstantsKey.class",
+    "target": "com/mojang/blaze3d/platform/InputConstants$Key"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinPacketEncoder.class",
+    "target": "net/minecraft/network/PacketEncoder"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinRecipeToast.class",
+    "target": "net/minecraft/client/gui/components/toasts/RecipeToast"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinTagLoader.class",
+    "target": "net/minecraft/tags/TagLoader"
+  },
+  {
+    "mixin_class": "me/shedaniel/rei/mixin/forge/MixinTagManager.class",
+    "target": "net/minecraft/tags/TagManager"
+  }
+]

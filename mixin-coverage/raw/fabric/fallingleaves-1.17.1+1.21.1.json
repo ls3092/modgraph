@@ -1,0 +1,42 @@
+[
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/BlockMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/CherryLeavesBlockMixin.class",
+    "target": "net/minecraft/class_8167"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/ClientPlayNetworkHandlerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/GsonConfigSerializerMixin.class",
+    "target": "me/shedaniel/autoconfig/serializer/GsonConfigSerializer"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/LeafTickMixin.class",
+    "target": "net/minecraft/class_2397"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/NativeImageAccessor.class",
+    "target": "net/minecraft/class_1011"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/ParticleManagerMixin.class",
+    "target": "net/minecraft/class_702"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/SimpleSpriteProviderInvoker.class",
+    "target": "net/minecraft/class_702$class_4090"
+  },
+  {
+    "mixin_class": "randommcsomethin/fallingleaves/mixin/SpriteContentsAccessor.class",
+    "target": "net/minecraft/class_7764"
+  }
+]

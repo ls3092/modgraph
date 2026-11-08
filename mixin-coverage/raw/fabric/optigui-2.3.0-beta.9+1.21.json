@@ -1,0 +1,22 @@
+[
+  {
+    "mixin_class": "opekope2/optigui/mixin/BookEditScreenMixin.class",
+    "target": "net/minecraft/class_473"
+  },
+  {
+    "mixin_class": "opekope2/optigui/mixin/BookScreenMixin.class",
+    "target": "net/minecraft/class_3872"
+  },
+  {
+    "mixin_class": "opekope2/optigui/mixin/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "opekope2/optigui/mixin/RenderSystemMixin.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "opekope2/optigui/mixin/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  }
+]

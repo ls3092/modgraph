@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "me/fallenbreath/fastipping/mixins/AddressResolverMixin.class",
+    "target": "net/minecraft/client/multiplayer/resolver/ServerAddressResolver"
+  },
+  {
+    "mixin_class": "me/fallenbreath/fastipping/mixins/ConnectScreenThreadMixin.class",
+    "target": "me/fallenbreath/fastipping/utils/DummyClass"
+  },
+  {
+    "mixin_class": "me/fallenbreath/fastipping/mixins/MultiplayerServerListPingerMixin.class",
+    "target": "me/fallenbreath/fastipping/utils/DummyClass"
+  }
+]

@@ -1,0 +1,366 @@
+[
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/world/biome/BiomeMixin.class",
+    "target": "net/minecraft/world/level/biome/Biome"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/gui/hooks/debug/DebugHudMixin.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/gui/hooks/console/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/gui/hooks/settings/OptionsScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsScreen"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/gui/screen/LevelLoadingScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/LevelLoadingScreen"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/shader/uniform/ShaderProgramMixin.class",
+    "target": "net/minecraft/client/renderer/ShaderInstance"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/matrix_stack/VertexConsumerMixin.class",
+    "target": "com/mojang/blaze3d/vertex/VertexConsumer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/DirectionMixin.class",
+    "target": "net/minecraft/core/Direction"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/buffer_builder/intrinsics/BufferBuilderMixin.class",
+    "target": "com/mojang/blaze3d/vertex/BufferBuilder"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/buffer_builder/sorting/VertexSorterMixin.class",
+    "target": "com/mojang/blaze3d/vertex/VertexSorting"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/buffer_builder/sorting/MeshDataSortStateMixin.class",
+    "target": "com/mojang/blaze3d/vertex/MeshData$SortState"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/immediate/buffer_builder/sorting/MeshDataMixin.class",
+    "target": "com/mojang/blaze3d/vertex/MeshData"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/world/sky/WorldRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/world/sky/BackgroundRendererMixin.class",
+    "target": "net/minecraft/client/renderer/FogRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/world/sky/ClientWorldMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/world/clouds/WorldRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/world/ClientLevelMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/gui/outlines/WorldRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/gui/font/GlyphRendererMixin.class",
+    "target": "net/minecraft/client/gui/font/glyphs/BakedGlyph"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/gui/font/FontSetMixin.class",
+    "target": "net/minecraft/client/gui/font/FontSet"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/remove_streams/HierarchicalModelMixin.class",
+    "target": "net/minecraft/client/model/HierarchicalModel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/remove_streams/ModelPartMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/fast_render/CuboidMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart$Cube"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/fast_render/ModelPartMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/shadows/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/entity/cull/EntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/model/item/ItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ItemRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/model/block/BlockModelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/block/ModelBlockRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/model/RenderLayersMixin.class",
+    "target": "net/minecraft/client/renderer/ItemBlockRenderTypes"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/model/ChunkRenderTypeSetMixin.class",
+    "target": "net/neoforged/neoforge/client/ChunkRenderTypeSet"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/render/particle/BillboardParticleMixin.class",
+    "target": "net/minecraft/client/particle/SingleQuadParticle"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/options/overlays/InGameHudMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/options/render_layers/LeavesBlockMixin.class",
+    "target": "net/minecraft/world/level/block/LeavesBlock"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/options/render_layers/RenderLayersMixin.class",
+    "target": "net/minecraft/client/renderer/ItemBlockRenderTypes"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/options/weather/WorldRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/ModelBakeryMixin.class",
+    "target": "net/minecraft/client/resources/model/ModelBakery"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/BlockElementMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/BlockElement"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/MultipartBakedModelMixin.class",
+    "target": "net/minecraft/client/resources/model/MultiPartBakedModel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/ItemBlockRenderTypesInvoker.class",
+    "target": "net/minecraft/client/renderer/ItemBlockRenderTypes"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/SimpleBakedModelAccessor.class",
+    "target": "net/minecraft/client/resources/model/SimpleBakedModel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/WeightedBakedModelMixin.class",
+    "target": "net/minecraft/client/resources/model/WeightedBakedModel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/model/MultipartModelDataAccessor.class",
+    "target": "net/neoforged/neoforge/client/model/data/MultipartModelData"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/NativeImageAccessor.class",
+    "target": "com/mojang/blaze3d/platform/NativeImage"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/DrawContextMixin.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteBillboardParticleMixin.class",
+    "target": "net/minecraft/client/particle/TextureSheetParticle"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteContentsAnimationFrameAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$FrameInfo"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteContentsMixin.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/BlockModelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/block/ModelBlockRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteMixin.class",
+    "target": "net/minecraft/client/renderer/texture/TextureAtlasSprite"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteContentsAnimationAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$AnimatedTexture"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteContentsAnimatorImplMixin.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$Ticker"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/tracking/SpriteAtlasTextureMixin.class",
+    "target": "net/minecraft/client/renderer/texture/TextureAtlas"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/upload/SpriteContentsAnimationFrameAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$FrameInfo"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/upload/SpriteContentsAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/upload/SpriteContentsInterpolationMixin.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$InterpolationData"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/upload/SpriteContentsAnimationAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$AnimatedTexture"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/animations/upload/SpriteContentsAnimatorImplAccessor.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents$Ticker"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/mipmaps/SpriteContentsMixin.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/mipmaps/MipmapHelperMixin.class",
+    "target": "net/minecraft/client/renderer/texture/MipmapGenerator"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/features/textures/SpriteContentsInvoker.class",
+    "target": "net/minecraft/client/renderer/texture/SpriteContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/workarounds/event_loop/RenderSystemMixin.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/workarounds/context_creation/WindowMixin.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/modcompat/fabric_renderer_indigo/ItemRenderContextMixin.class",
+    "target": "net/fabricmc/fabric/impl/client/indigo/renderer/render/ItemRenderContext"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/map/ClientPlayNetworkHandlerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/map/ClientWorldMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/chunk/EmptyPaletteStorageMixin.class",
+    "target": "net/minecraft/util/ZeroBitStorage"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/chunk/PalettedContainerMixin.class",
+    "target": "net/minecraft/world/level/chunk/PalettedContainer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/chunk/PackedIntegerArrayMixin.class",
+    "target": "net/minecraft/util/SimpleBitStorage"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/world/biome/ClientWorldMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/gui/WorldLoadingStateMixin.class",
+    "target": "net/minecraft/client/multiplayer/LevelLoadStatusManager"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/CrashReportExtenderMixin.class",
+    "target": "net/neoforged/neoforge/logging/CrashReportExtender"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/SpriteTexturedVertexConsumerMixin.class",
+    "target": "net/minecraft/client/renderer/SpriteCoordinateExpander"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/OverlayVertexConsumerMixin.class",
+    "target": "com/mojang/blaze3d/vertex/SheetedDecalTextureGenerator"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/VertexConsumersMixin$UnionMixin.class",
+    "target": "com/mojang/blaze3d/vertex/VertexMultiConsumer$Multiple"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/VertexConsumersMixin$DualMixin.class",
+    "target": "com/mojang/blaze3d/vertex/VertexMultiConsumer$Double"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/OutlineVertexConsumerMixin.class",
+    "target": "net/minecraft/client/renderer/OutlineBufferSource$EntityOutlineGenerator"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/immediate/consumer/BufferBuilderMixin.class",
+    "target": "com/mojang/blaze3d/vertex/BufferBuilder"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/world/WorldRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/world/BufferBuilderStorageMixin.class",
+    "target": "net/minecraft/client/renderer/RenderBuffers"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/MinecraftAccessor.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/frustum/FrustumMixin.class",
+    "target": "net/minecraft/client/renderer/culling/Frustum"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/render/MatrixStackMixin.class",
+    "target": "com/mojang/blaze3d/vertex/PoseStack"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/MinecraftClientMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/postprocess/PostprocessorMixin.class",
+    "target": "org/embeddedt/embeddium/impl/world/WorldSlice"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/postprocess/PostprocessorMixin.class",
+    "target": "org/embeddedt/embeddium/impl/world/cloned/ClonedChunkSection"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/model/SimpleBakedModelBuilderMixin.class",
+    "target": "net/minecraft/client/resources/model/SimpleBakedModel$Builder"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/model/quad/BakedQuadFactoryMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/FaceBakery"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/model/quad/BakedQuadMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/BakedQuad"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/model/colors/BlockColorsMixin.class",
+    "target": "net/minecraft/client/color/block/BlockColors"
+  },
+  {
+    "mixin_class": "org/embeddedt/embeddium/impl/mixin/core/model/colors/ItemColorsMixin.class",
+    "target": "net/minecraft/client/color/item/ItemColors"
+  },
+  {
+    "mixin_class": "me/jellysquid/mods/sodium/mixin/features/model/SimpleBakedModelMixin.class",
+    "target": "net/minecraft/client/resources/model/SimpleBakedModel"
+  }
+]

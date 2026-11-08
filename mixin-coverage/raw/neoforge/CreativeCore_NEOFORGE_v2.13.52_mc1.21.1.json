@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ComponentSerializationMixin.class",
+    "target": "net/minecraft/network/chat/ComponentSerialization"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/FilePackResourcesAccessor.class",
+    "target": "net/minecraft/server/packs/FilePackResources"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ForgeModelBlockRendererAccessor.class",
+    "target": "net/neoforged/neoforge/client/model/lighting/LightPipelineAwareModelBlockRenderer"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ItemRenderer"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/MouseHandlerAccessor.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/PathPackResourcesAccessor.class",
+    "target": "net/minecraft/server/packs/PathPackResources"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/QuadLighterMixin.class",
+    "target": "net/neoforged/neoforge/client/model/lighting/QuadLighter"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ShapesMixin.class",
+    "target": "net/minecraft/world/phys/shapes/Shapes"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/SharedZipFileAccessAccessor.class",
+    "target": "net/minecraft/server/packs/FilePackResources$SharedZipFileAccess"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/StringSplitterAccessor.class",
+    "target": "net/minecraft/client/StringSplitter"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/VanillaPackResourcesAccessor.class",
+    "target": "net/minecraft/server/packs/VanillaPackResources"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/VoxelShapeAccessor.class",
+    "target": "net/minecraft/world/phys/shapes/VoxelShape"
+  }
+]

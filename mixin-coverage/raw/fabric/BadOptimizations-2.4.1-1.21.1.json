@@ -1,0 +1,162 @@
+[
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/accessors/PlayerAccessor.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/accessors/GameRendererAccessor.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/debug/MixinBeeDebugRenderer.class",
+    "target": "net/minecraft/class_4703"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/debug/MixinGameEventDebugRenderer.class",
+    "target": "net/minecraft/class_5739"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/debug/MixinGameTestDebugRenderer.class",
+    "target": "net/minecraft/class_4503"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/debug/MixinVillageDebugRenderer.class",
+    "target": "net/minecraft/class_4207"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/MixinDebugHud_AddText.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/blockentity/MixinBlockEntityRenderDispatcher.class",
+    "target": "net/minecraft/class_824"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/blockentity/MixinBlockEntityType.class",
+    "target": "net/minecraft/class_2591"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/entity/MixinClientPlayer.class",
+    "target": "net/minecraft/class_742"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntityType.class",
+    "target": "net/minecraft/class_1299"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntityRendererDispatcher.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/MixinToastComponent.class",
+    "target": "net/minecraft/class_374"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/MixinParticleManager.class",
+    "target": "net/minecraft/class_702"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/tick/MixinClientWorld.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/tick/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/tick/MixinTutorial.class",
+    "target": "net/minecraft/class_1156"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/tick/MixinLightTexture.class",
+    "target": "net/minecraft/class_765"
+  },
+  {
+    "mixin_class": "fabric/me/thosea/badoptimizations/mixin/MixinWorldRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/accessors/PlayerAccessor.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/accessors/GameRendererAccessor.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/debug/MixinBeeDebugRenderer.class",
+    "target": "net/minecraft/client/renderer/debug/BeeDebugRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/debug/MixinGameEventDebugRenderer.class",
+    "target": "net/minecraft/client/renderer/debug/GameEventListenerRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/debug/MixinGameTestDebugRenderer.class",
+    "target": "net/minecraft/client/renderer/debug/GameTestDebugRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/debug/MixinVillageDebugRenderer.class",
+    "target": "net/minecraft/client/renderer/debug/BrainDebugRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/MixinDebugHud_AddText.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/blockentity/MixinBlockEntityRenderDispatcher.class",
+    "target": "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/blockentity/MixinBlockEntityType.class",
+    "target": "net/minecraft/world/level/block/entity/BlockEntityType"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/entity/MixinClientPlayer.class",
+    "target": "net/minecraft/client/player/AbstractClientPlayer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntityType.class",
+    "target": "net/minecraft/world/entity/EntityType"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntity.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/renderer/entity/MixinEntityRendererDispatcher.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/MixinToastComponent.class",
+    "target": "net/minecraft/client/gui/components/toasts/ToastComponent"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/MixinParticleManager.class",
+    "target": "net/minecraft/client/particle/ParticleEngine"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/tick/MixinClientWorld.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/tick/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/tick/MixinTutorial.class",
+    "target": "net/minecraft/client/tutorial/Tutorial"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/tick/MixinLightTexture.class",
+    "target": "net/minecraft/client/renderer/LightTexture"
+  },
+  {
+    "mixin_class": "forge/me/thosea/badoptimizations/mixin/MixinWorldRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "team/creative/ambientsounds/mixin/OggAudioStreamMixin.class",
+    "target": "net/minecraft/client/sounds/JOrbisAudioStream"
+  },
+  {
+    "mixin_class": "team/creative/ambientsounds/mixin/SoundBufferLibraryAccessor.class",
+    "target": "net/minecraft/client/sounds/SoundBufferLibrary"
+  }
+]

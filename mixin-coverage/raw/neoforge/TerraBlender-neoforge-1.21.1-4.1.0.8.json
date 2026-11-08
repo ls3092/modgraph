@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "terrablender/mixin/MixinMultiNoiseBiomeSource.class",
+    "target": "net/minecraft/world/level/biome/MultiNoiseBiomeSource"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinParameterList.class",
+    "target": "net/minecraft/world/level/biome/Climate$ParameterList"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinPrimaryLevelData.class",
+    "target": "net/minecraft/world/level/storage/PrimaryLevelData"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinNoiseBasedChunkGenerator.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinNoiseGeneratorSettings.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseGeneratorSettings"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinWorldOpenFlows.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldOpenFlows"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MultiNoiseBiomeSourceAccess.class",
+    "target": "net/minecraft/world/level/biome/MultiNoiseBiomeSource"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinChunkGenerator.class",
+    "target": "net/minecraft/world/level/chunk/ChunkGenerator"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinTheEndBiomeSource.class",
+    "target": "net/minecraft/world/level/biome/TheEndBiomeSource"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinBuiltInRegistries.class",
+    "target": "net/minecraft/core/registries/BuiltInRegistries"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinBiomeSource.class",
+    "target": "net/minecraft/world/level/biome/BiomeSource"
+  }
+]

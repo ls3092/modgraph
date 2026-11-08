@@ -1,0 +1,30 @@
+[
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/client/BlockEntityWithoutLevelRendererMixin.class",
+    "target": "net/minecraft/class_756"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/client/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/class_970"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/client/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/client/TextureManagerMixin.class",
+    "target": "net/minecraft/class_1060"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/common/AbstractContainerMenuMixin.class",
+    "target": "net/minecraft/class_1703"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/common/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "software/bernie/geckolib/mixin/common/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  }
+]

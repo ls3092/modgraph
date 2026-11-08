@@ -1,0 +1,154 @@
+[
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/fabric/injection/mixins/hud_batching/compat/appleskin/MixinAppleSkin_HUDOverlayHandler.class",
+    "target": "squeek/appleskin/client/HUDOverlayHandler"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/fabric/injection/mixins/screen_batching/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinDebugHud.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinGlDebug.class",
+    "target": "net/minecraft/class_1008"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinMinecraftClient.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinRenderLayer.class",
+    "target": "net/minecraft/class_1921"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinTextureManager.class",
+    "target": "net/minecraft/class_1060"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinVertexConsumerProvider.class",
+    "target": "net/minecraft/class_4597"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/MixinWindow.class",
+    "target": "net/minecraft/class_1041"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/MixinTextDisplayEntityRenderer.class",
+    "target": "net/minecraft/class_8138$class_8141"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/iris/MixinIris_ShadowRenderer.class",
+    "target": "net/irisshaders/iris/shadows/ShadowRenderer"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/kupe/MixinKupe_FormattedCharSeqRenderer.class",
+    "target": "cc/cosmetica/kupe/impl/text/FormattedCharSeqRenderer"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/rei/MixinRei_BatchedEntryRendererManager.class",
+    "target": "me/shedaniel/rei/impl/client/gui/widget/BatchedEntryRendererManager"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/rei/MixinRei_EntryDefinition_EntryRenderer.class",
+    "target": "me/shedaniel/rei/plugin/client/entry/ItemEntryDefinition$ItemEntryRenderer"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/core/compat/rei/MixinRei_EntryDefinition_EntryRenderer.class",
+    "target": "me/shedaniel/rei/plugin/client/entry/FluidEntryDefinition$FluidEntryRenderer"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/disable_error_checking/MixinGL11.class",
+    "target": "org/lwjgl/opengl/GL11"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/fast_buffer_upload/MixinVertexBuffer.class",
+    "target": "net/minecraft/class_291"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/fast_text_lookup/MixinTextRenderer_Drawer.class",
+    "target": "net/minecraft/class_327$class_5232"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/font_atlas_resizing/MixinGlyphAtlasTexture.class",
+    "target": "net/minecraft/class_380"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/MixinItemRenderer.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/MixinLayeredDrawer.class",
+    "target": "net/minecraft/class_9080"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/MixinBufferRenderer.class",
+    "target": "net/minecraft/class_286"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/MixinDebugHud.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/MixinDrawContext.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/MixinFramebuffer.class",
+    "target": "net/minecraft/class_276"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/MixinRenderSystem.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/journeymap/MixinJourneyMap_MiniMap.class",
+    "target": "journeymap/client/ui/minimap/MiniMap"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/compat/xaerominimap/MixinXaerosMinimap_ClientEvents.class",
+    "target": "xaero/common/events/ClientEvents"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/hud_batching/consumer/MixinDrawContext.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/map_atlas_generation/MixinMapRenderer.class",
+    "target": "net/minecraft/class_330"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/map_atlas_generation/MixinMapRenderer_MapTexture.class",
+    "target": "net/minecraft/class_330$class_331"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/screen_batching/MixinHandledScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/screen_batching/compat/MixinChatScreen.class",
+    "target": "net/minecraft/class_408"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/sign_text_buffering/MixinSignBlockEntityRenderer.class",
+    "target": "net/minecraft/class_837"
+  },
+  {
+    "mixin_class": "net/raphimc/immediatelyfast/injection/mixins/sign_text_buffering/MixinSignText.class",
+    "target": "net/minecraft/class_8242"
+  }
+]

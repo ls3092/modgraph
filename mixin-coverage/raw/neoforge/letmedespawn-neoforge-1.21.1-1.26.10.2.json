@@ -1,0 +1,30 @@
+[
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/ArmorItemMixin.class",
+    "target": "net/minecraft/world/item/ArmorItem"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/BaseSpawnerMixin.class",
+    "target": "net/minecraft/world/level/BaseSpawner"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/EnderManMixin.class",
+    "target": "net/minecraft/world/entity/monster/EnderMan"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/MobAccessor.class",
+    "target": "net/minecraft/world/entity/Mob"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/MobMixin.class",
+    "target": "net/minecraft/world/entity/Mob"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/TrialSpawnerDataAccessor.class",
+    "target": "net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData"
+  },
+  {
+    "mixin_class": "com/frikinjay/letmedespawn/mixin/TrialSpawnerMixin.class",
+    "target": "net/minecraft/world/level/block/entity/trialspawner/TrialSpawner"
+  }
+]

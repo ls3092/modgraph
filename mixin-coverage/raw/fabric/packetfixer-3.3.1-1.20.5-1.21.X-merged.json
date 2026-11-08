@@ -1,0 +1,154 @@
+[
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ByteBufCodecsMixin.class",
+    "target": "net/minecraft/class_9135"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ClientboundCustomPayloadPacketMixin.class",
+    "target": "net/minecraft/class_2658"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ClientboundCustomQueryPacketMixin.class",
+    "target": "net/minecraft/class_2899"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ClientboundLevelChunkPacketDataMixin.class",
+    "target": "net/minecraft/class_6603"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/CompressionDecoderMixin.class",
+    "target": "net/minecraft/class_2532"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/CompressionEncoderMixin.class",
+    "target": "net/minecraft/class_2534"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ConnectionMixin.class",
+    "target": "net.minecraft.network.Connection$1"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/FriendlyByteBufMixin.class",
+    "target": "net/minecraft/class_2540"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/NbtAccounterMixin.class",
+    "target": "net/minecraft/class_2505"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/PayloadHelperMixin.class",
+    "target": "net/fabricmc/fabric/impl/networking/payload/PayloadHelper"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerCommonPacketListenerImplMixin.class",
+    "target": "net/minecraft/class_8609"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerConnectionListenerMixin.class",
+    "target": "net.minecraft.server.network.ServerConnectionListener$1"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerGamePacketListenerImplMixin.class",
+    "target": "net/minecraft/class_3244"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerLoginPacketListenerImplMixin.class",
+    "target": "net/minecraft/class_3248"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerboundCustomPayloadPacketMixin.class",
+    "target": "net/minecraft/class_2817"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/ServerboundCustomQueryPacketMixin.class",
+    "target": "net/minecraft/class_2913"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/VarIntMixin.class",
+    "target": "net/minecraft/class_8703"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/VarLongMixin.class",
+    "target": "net/minecraft/class_8704"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/Varint21FrameDecoderMixin.class",
+    "target": "net/minecraft/class_2550"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_fabric/Varint21LengthFieldPrependerMixin.class",
+    "target": "net/minecraft/class_2552"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ByteBufCodecsMixin.class",
+    "target": "net/minecraft/network/codec/ByteBufCodecs"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ClientboundCustomPayloadPacketMixin.class",
+    "target": "net/minecraft/network/protocol/common/ClientboundCustomPayloadPacket"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ClientboundCustomQueryPacketMixin.class",
+    "target": "net/minecraft/network/protocol/login/ClientboundCustomQueryPacket"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ClientboundLevelChunkPacketDataMixin.class",
+    "target": "net/minecraft/network/protocol/game/ClientboundLevelChunkPacketData"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/CompressionDecoderMixin.class",
+    "target": "net/minecraft/network/CompressionDecoder"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/CompressionEncoderMixin.class",
+    "target": "net/minecraft/network/CompressionEncoder"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ConnectionMixin.class",
+    "target": "net.minecraft.network.Connection$1"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/FriendlyByteBufMixin.class",
+    "target": "net/minecraft/network/FriendlyByteBuf"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/NbtAccounterMixin.class",
+    "target": "net/minecraft/nbt/NbtAccounter"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ServerCommonPacketListenerImplMixin.class",
+    "target": "net/minecraft/server/network/ServerCommonPacketListenerImpl"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ServerGamePacketListenerImplMixin.class",
+    "target": "net/minecraft/server/network/ServerGamePacketListenerImpl"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ServerLoginPacketListenerImplMixin.class",
+    "target": "net/minecraft/server/network/ServerLoginPacketListenerImpl"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ServerboundCustomPayloadPacketMixin.class",
+    "target": "net/minecraft/network/protocol/common/ServerboundCustomPayloadPacket"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/ServerboundCustomQueryPacketMixin.class",
+    "target": "net/minecraft/network/protocol/login/ServerboundCustomQueryAnswerPacket"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/VarIntMixin.class",
+    "target": "net/minecraft/network/VarInt"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/VarLongMixin.class",
+    "target": "net/minecraft/network/VarLong"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/Varint21FrameDecoderMixin.class",
+    "target": "net/minecraft/network/Varint21FrameDecoder"
+  },
+  {
+    "mixin_class": "dev/tonimatas/packetfixer/mixins/v1_20_5_neoforge/Varint21LengthFieldPrependerMixin.class",
+    "target": "net/minecraft/network/Varint21LengthFieldPrepender"
+  }
+]

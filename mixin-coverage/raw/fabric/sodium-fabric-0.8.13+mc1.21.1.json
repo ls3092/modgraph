@@ -1,0 +1,362 @@
+[
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/WindowMixin.class",
+    "target": "net/minecraft/class_1041"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/gui/LevelLoadStatusManagerMixin.class",
+    "target": "net/minecraft/class_8819"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/model/TextureAtlasSpriteMixin.class",
+    "target": "net/minecraft/class_1058"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/model/colors/BlockColorsMixin.class",
+    "target": "net/minecraft/class_324"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/model/colors/ItemColorsMixin.class",
+    "target": "net/minecraft/class_325"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/model/quad/BakedQuadMixin.class",
+    "target": "net/minecraft/class_777"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/BlockEntityTypeMixin.class",
+    "target": "net/minecraft/class_2591"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/TextureAtlasMixin.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/VertexFormatMixin.class",
+    "target": "net/minecraft/class_293"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/frustum/FrustumMixin.class",
+    "target": "net/minecraft/class_4604"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/BufferBuilderMixin.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/EntityOutlineGeneratorMixin.class",
+    "target": "net/minecraft/class_4618$class_4586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/SheetedDecalTextureGeneratorMixin.class",
+    "target": "net/minecraft/class_4583"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/SpriteCoordinateExpanderMixin.class",
+    "target": "net/minecraft/class_4723"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/VertexMultiConsumerMixin$DoubleMixin.class",
+    "target": "net/minecraft/class_4720$class_4589"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/immediate/consumer/VertexMultiConsumerMixin$MultipleMixin.class",
+    "target": "net/minecraft/class_4720$class_6189"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/texture/TextureAtlasAccessor.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/world/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/render/world/RenderBuffersMixin.class",
+    "target": "net/minecraft/class_4599"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/biome/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/chunk/PalettedContainerMixin.class",
+    "target": "net/minecraft/class_2841"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/chunk/SimpleBitStorageMixin.class",
+    "target": "net/minecraft/class_3508"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/chunk/ZeroBitStorageMixin.class",
+    "target": "net/minecraft/class_6502"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/map/ClientChunkCacheMixin.class",
+    "target": "net/minecraft/class_631"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/map/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/core/world/map/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/debug/checks/threading/MixinRenderSystem.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/gui/hooks/console/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/gui/hooks/debug/DebugScreenOverlayMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/gui/hooks/settings/OptionsScreenMixin.class",
+    "target": "net/minecraft/class_429"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/gui/screen/LevelLoadingScreenMixin.class",
+    "target": "net/minecraft/class_3928"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/model/MultiPartBakedModelMixin.class",
+    "target": "net/minecraft/class_1095"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/model/WeightedBakedModelMixin.class",
+    "target": "net/minecraft/class_1097"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/options/overlays/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/options/render_layers/ItemBlockRenderTypesMixin.class",
+    "target": "net/minecraft/class_4696"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/options/render_layers/LeavesBlockMixin.class",
+    "target": "net/minecraft/class_2397"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/options/weather/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/compositing/RenderTargetMixin.class",
+    "target": "net/minecraft/class_276"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/entity/CubeMixin.class",
+    "target": "net/minecraft/class_630$class_628"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/entity/ModelPartMixin.class",
+    "target": "net/minecraft/class_630"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/entity/cull/EntityRendererMixin.class",
+    "target": "net/minecraft/class_897"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/entity/shadows/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/frapi/BakedModelMixin.class",
+    "target": "net/minecraft/class_1087"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/frapi/ItemRendererAccessor.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/frapi/ItemRendererMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/frapi/ModelBlockRendererMixin.class",
+    "target": "net/minecraft/class_778"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/gui/font/BakedGlyphMixin.class",
+    "target": "net/minecraft/class_382"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/gui/outlines/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/DirectionMixin.class",
+    "target": "net/minecraft/class_2350"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/buffer_builder/intrinsics/BufferBuilderAccessor.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/buffer_builder/intrinsics/VertexConsumerMixin.class",
+    "target": "net/minecraft/class_4588"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/buffer_builder/sorting/MeshDataAccessor.class",
+    "target": "net/minecraft/class_9801"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/buffer_builder/sorting/MultiBufferSourceMixin.class",
+    "target": "net/minecraft/class_4597$class_4598"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/buffer_builder/sorting/VertexSortingMixin.class",
+    "target": "net/minecraft/class_8251"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/matrix_stack/PoseStackMixin.class",
+    "target": "net/minecraft/class_4587"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/immediate/matrix_stack/VertexConsumerMixin.class",
+    "target": "net/minecraft/class_4588"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/model/ItemBlockRenderTypesMixin.class",
+    "target": "net/minecraft/class_4696"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/model/block/ModelBlockRendererMixin.class",
+    "target": "net/minecraft/class_778"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/model/item/ItemRendererMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/particle/SingleQuadParticleMixin.class",
+    "target": "net/minecraft/class_3940"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/viewport/GlStateManagerMixin.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/world/clouds/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/world/sky/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/world/sky/FogRendererMixin.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/render/world/sky/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/shader/uniform/ShaderInstanceMixin.class",
+    "target": "net/minecraft/class_5944"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/NativeImageAccessor.class",
+    "target": "net/minecraft/class_1011"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/SpriteContentsInvoker.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/AnimatedTextureAccessor.class",
+    "target": "net/minecraft/class_7764$class_5790"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/GuiGraphicsMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/ModelBlockRendererMixin.class",
+    "target": "net/minecraft/class_778"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/SpriteContentsFrameInfoAccessor.class",
+    "target": "net/minecraft/class_7764$class_5791"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/SpriteContentsMixin.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/SpriteContentsTickerMixin.class",
+    "target": "net/minecraft/class_7764$class_7765"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/TextureAtlasMixin.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/TextureAtlasSpriteMixin.class",
+    "target": "net/minecraft/class_1058"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/tracking/TextureSheetParticleMixin.class",
+    "target": "net/minecraft/class_4003"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/upload/SpriteContentsAccessor.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/upload/SpriteContentsAnimatedTextureAccessor.class",
+    "target": "net/minecraft/class_7764$class_5790"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/upload/SpriteContentsFrameInfoAccessor.class",
+    "target": "net/minecraft/class_7764$class_5791"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/upload/SpriteContentsInterpolationMixin.class",
+    "target": "net/minecraft/class_7764$class_4728"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/animations/upload/SpriteContentsTickerAccessor.class",
+    "target": "net/minecraft/class_7764$class_7765"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/mipmaps/MipmapGeneratorMixin.class",
+    "target": "net/minecraft/class_4725"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/mipmaps/SpriteContentsMixin.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/scan/SpriteContentsMixin.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/textures/scan/TextureAtlasSpriteMixin.class",
+    "target": "net/minecraft/class_1058"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/features/world/biome/BiomeMixin.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/workarounds/context_creation/WindowMixin.class",
+    "target": "net/minecraft/class_1041"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/sodium/mixin/workarounds/event_loop/RenderSystemMixin.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  }
+]

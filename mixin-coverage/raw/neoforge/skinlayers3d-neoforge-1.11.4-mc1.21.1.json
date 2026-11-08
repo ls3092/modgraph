@@ -1,0 +1,58 @@
+[
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/BlockEntityWithoutLevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/CustomHeadLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/CustomHeadLayer"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/Deadmau5EarsLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/Deadmau5EarsLayer"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/EMFModelPartMixin.class",
+    "target": "traben/entity_model_features/models/parts/EMFModelPart"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/HttpTextureMixin.class",
+    "target": "net/minecraft/client/renderer/texture/HttpTexture"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/ModelPartMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/NativeImageMixin.class",
+    "target": "com/mojang/blaze3d/platform/NativeImage"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerModelMixin.class",
+    "target": "net/minecraft/client/model/PlayerModel"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/PlayerRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/SkullBlockEntity"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullBlockEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/SkullBlockRenderer"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullModelMixin.class",
+    "target": "net/minecraft/client/model/SkullModel"
+  },
+  {
+    "mixin_class": "dev/tr7zw/skinlayers/mixin/SkullModelStateMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  }
+]

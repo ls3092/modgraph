@@ -1,0 +1,82 @@
+[
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/AbstractMinecartMixin.class",
+    "target": "net/minecraft/world/entity/vehicle/AbstractMinecart"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/DataCommandsMixin.class",
+    "target": "net/minecraft/server/commands/data/DataCommands"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/EnchantCommandMixin.class",
+    "target": "net/minecraft/server/commands/EnchantCommand"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/ClientSuggestionProviderMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientSuggestionProvider"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/EditBoxMixin.class",
+    "target": "net/minecraft/client/gui/components/EditBox"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/ModelBakeryMixin.class",
+    "target": "net/minecraft/client/resources/model/ModelBakery"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/server/DedicatedServerSettingsMixin.class",
+    "target": "net/minecraft/server/dedicated/DedicatedServerSettings"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/server/EulaMixin.class",
+    "target": "net/minecraft/server/Eula"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/AbstractPackResourcesNeoForgeMixin.class",
+    "target": "net/minecraft/server/packs/AbstractPackResources"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/DatagenModLoaderNeoForgeMixin.class",
+    "target": "net/neoforged/neoforge/data/loading/DatagenModLoader"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/EnchantedCountIncreaseFunctionNeoForgeMixin.class",
+    "target": "net/minecraft/world/level/storage/loot/functions/EnchantedCountIncreaseFunction"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/EnchantmentHelperNeoForgeMixin.class",
+    "target": "net/minecraft/world/item/enchantment/EnchantmentHelper"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/LootItemRandomChanceWithEnchantedBonusConditionNeoForgeMixin.class",
+    "target": "net/minecraft/world/level/storage/loot/predicates/LootItemRandomChanceWithEnchantedBonusCondition"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/MenuProviderWithDataNeoForgeMixin.class",
+    "target": "fuzs/puzzleslib/api/container/v1/MenuProviderWithData"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/TagsProviderNeoForgeMixin.class",
+    "target": "net/minecraft/data/tags/TagsProvider"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/accessor/BiomeSpecialEffectsBuilderNeoForgeAccessor.class",
+    "target": "net/minecraft/world/level/biome/BiomeSpecialEffects$Builder"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/accessor/MobSpawnSettingsBuilderNeoForgeAccessor.class",
+    "target": "net/minecraft/world/level/biome/MobSpawnSettings$Builder"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/accessor/NewRegistryEventNeoForgeAccessor.class",
+    "target": "net/neoforged/neoforge/registries/NewRegistryEvent"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/client/accessor/BlockColorsNeoForgeAccessor.class",
+    "target": "net/minecraft/client/color/block/BlockColors"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/neoforge/mixin/client/accessor/ItemColorsNeoForgeAccessor.class",
+    "target": "net/minecraft/client/color/item/ItemColors"
+  }
+]

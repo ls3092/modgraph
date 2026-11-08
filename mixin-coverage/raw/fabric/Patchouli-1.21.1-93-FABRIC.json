@@ -1,0 +1,54 @@
+[
+  {
+    "mixin_class": "vazkii/patchouli/mixin/AccessorSmithingTransformRecipe.class",
+    "target": "net/minecraft/class_8060"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/AccessorSmithingTrimRecipe.class",
+    "target": "net/minecraft/class_8062"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/AccessorClientAdvancements.class",
+    "target": "net/minecraft/class_632"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/AccessorKeyMapping.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/AccessorMultiBufferSource.class",
+    "target": "net/minecraft/class_4597$class_4598"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/AccessorScreen.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinClientAdvancements.class",
+    "target": "net/minecraft/class_632"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinGuiGraphics.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinInventoryScreen.class",
+    "target": "net/minecraft/class_490"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinMinecraft.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "vazkii/patchouli/mixin/client/MixinSystemReport.class",
+    "target": "net/minecraft/class_6396"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/AtlasLoaderMixin.class",
+    "target": "net/minecraft/class_7947"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/BakedModelManagerMixin.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/BlockModelsMixin.class",
+    "target": "net/minecraft/class_773"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/FallingBlockEntityRendererMixin.class",
+    "target": "net/minecraft/class_901"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/IdentifierMixin.class",
+    "target": "net/minecraft/class_2960"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/LifecycledResourceManagerImplMixin.class",
+    "target": "net/minecraft/class_6861"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/ModelLoaderMixin.class",
+    "target": "net/minecraft/class_1088"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/NamespaceResourceManagerMixin.class",
+    "target": "net/minecraft/class_3294"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/PistonBlockEntityRendererMixin.class",
+    "target": "net/minecraft/class_835"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/ReloadableResourceManagerImplAccessor.class",
+    "target": "net/minecraft/class_3304"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/RenderLayersMixin.class",
+    "target": "net/minecraft/class_4696"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/SpriteLoaderMixin.class",
+    "target": "net/minecraft/class_7766"
+  },
+  {
+    "mixin_class": "me/pepperbell/continuity/client/mixin/SpriteMixin.class",
+    "target": "net/minecraft/class_1058"
+  }
+]

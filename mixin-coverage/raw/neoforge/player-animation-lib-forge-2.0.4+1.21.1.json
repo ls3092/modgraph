@@ -1,0 +1,70 @@
+[
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ArmorFeatureRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/BipedEntityModelMixin.class",
+    "target": "net/minecraft/client/model/HumanoidModel"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/CapeLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/CapeLayer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ElytraLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ElytraLayer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/FeatureRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/RenderLayer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/HeldItemMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ItemInHandLayer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/LivingEntityRenderRedirect_bendOnly.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ModelPartMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerEntityMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerModelAccessor.class",
+    "target": "net/minecraft/client/model/PlayerModel"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerModelMixin.class",
+    "target": "net/minecraft/client/model/PlayerModel"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/CameraAccessor.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/client/renderer/ItemInHandRenderer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/LevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  }
+]

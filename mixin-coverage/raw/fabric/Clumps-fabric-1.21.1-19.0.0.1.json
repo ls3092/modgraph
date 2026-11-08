@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "com/blamejared/clumps/mixin/ExperienceOrbAccess.class",
+    "target": "net/minecraft/class_1303"
+  },
+  {
+    "mixin_class": "com/blamejared/clumps/mixin/MixinExperienceOrb.class",
+    "target": "net/minecraft/class_1303"
+  }
+]

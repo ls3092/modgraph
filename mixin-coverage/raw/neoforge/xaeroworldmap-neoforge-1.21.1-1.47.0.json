@@ -1,0 +1,58 @@
+[
+  {
+    "mixin_class": "xaero/map/mixin/MixinChatListener.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinChunkDeltaUpdateS2CPacketAccessor.class",
+    "target": "net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinClientPlayNetworkHandler.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinClientWorld.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinForgeClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinForgeMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinLevelStorageAccess.class",
+    "target": "net/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinMinecraftServer.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinOptionalGui.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinPlayerList.class",
+    "target": "net/minecraft/server/players/PlayerList"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinServerPlayer.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinServerWorld.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "xaero/map/mixin/MixinWorldChunk.class",
+    "target": "net/minecraft/world/level/chunk/LevelChunk"
+  }
+]

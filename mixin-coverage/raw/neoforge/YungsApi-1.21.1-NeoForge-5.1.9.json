@@ -1,0 +1,78 @@
+[
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/NoMagmaInStructuresMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/UnderwaterMagmaFeature"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/FixJukeboxCrashMixin.class",
+    "target": "net/minecraft/world/level/block/entity/JukeboxBlockEntity"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/IncreaseStructureWeightLimitMixinNeoForge.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/FeaturePoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/FeaturePoolElement"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/NoiseChunkAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseChunk"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/SinglePoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/SinglePoolElement"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/ListPoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/ListPoolElement"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/PotionAccessor.class",
+    "target": "net/minecraft/world/item/alchemy/Potion"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/BoundingBoxAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/BoundingBox"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/StructureTemplatePoolAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/accessor/BeardifierAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/Beardifier"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/NoBasaltColumnsInStructuresMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/BasaltColumnsFeature"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/NoVinesInStructuresMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/VinesFeature"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/NoDeltasInStructuresMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/DeltaFeature"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/NoiseChunkMixin.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseChunk"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/BeardifierMixin.class",
+    "target": "net/minecraft/world/level/levelgen/Beardifier"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/locate/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/locate/ChunkGeneratorMixin.class",
+    "target": "net/minecraft/world/level/chunk/ChunkGenerator"
+  },
+  {
+    "mixin_class": "com/yungnickyoung/minecraft/yungsapi/mixin/locate/LocateCommandMixin.class",
+    "target": "net/minecraft/server/commands/LocateCommand"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "de/keksuccino/melody/mixin/mixins/common/client/IMixinSoundEngine.class",
+    "target": "net/minecraft/class_1140"
+  },
+  {
+    "mixin_class": "de/keksuccino/melody/mixin/mixins/common/client/IMixinSoundManager.class",
+    "target": "net/minecraft/class_1144"
+  },
+  {
+    "mixin_class": "de/keksuccino/melody/mixin/mixins/common/client/MixinSoundEngine.class",
+    "target": "net/minecraft/class_1140"
+  }
+]

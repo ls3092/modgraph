@@ -1,0 +1,442 @@
+[
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/chunk_deadlock/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/chunk_deadlock/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/chunk_deadlock/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/concurrency/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/ender_dragon_leak/EnderDragonRendererMixin.class",
+    "target": "net/minecraft/class_895"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/missing_block_entities/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/paper_chunk_patches/SortedArraySetMixin.class",
+    "target": "net/minecraft/class_4706"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/restore_old_dragon_movement/EnderDragonMixin.class",
+    "target": "net/minecraft/class_1510"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/world_leaks/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/bugfix/world_screen_skipped/WorldSelectionListMixin.class",
+    "target": "net/minecraft/class_528$class_4272"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/core/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/devenv/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/blockentity_incorrect_thread/ChunkAccessMixin.class",
+    "target": "net/minecraft/class_2791"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/blockentity_incorrect_thread/LevelThreadAccessor.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/cause_lag_by_disabling_threads/ChunkRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_846"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/cause_lag_by_disabling_threads/UtilMixin.class",
+    "target": "net/minecraft/class_156"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/direct_stack_trace/CrashReportMixin.class",
+    "target": "net/minecraft/class_128"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/mcfunction_profiling/ServerFunctionManagerMixin.class",
+    "target": "net/minecraft/class_2991"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/BootstrapMixin.class",
+    "target": "net/minecraft/class_2966"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/ConnectScreenMixin.class",
+    "target": "net/minecraft/class_412"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/ProfiledReloadInstanceMixin.class",
+    "target": "net/minecraft/class_4010"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/SimpleReloadInstanceMixin.class",
+    "target": "net/minecraft/class_4014"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/measure_time/WorldLoaderMixin.class",
+    "target": "net/minecraft/class_7237"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/remove_chat_signing/ChatTrustLevelMixin.class",
+    "target": "net/minecraft/class_7595"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/remove_chat_signing/ProfileKeyPairManagerMixin.class",
+    "target": "net/minecraft/class_7853"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/remove_telemetry/ClientTelemetryManagerMixin.class",
+    "target": "net/minecraft/class_6628"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/remove_telemetry/MinecraftMixin_Telemetry.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/spark_profile_world_join/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/spark_profile_world_join/WorldLoaderMixin.class",
+    "target": "net/minecraft/class_7237"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/stalled_chunk_load_detection/ServerChunkCacheMixin.class",
+    "target": "net/minecraft/class_3215"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/feature/suppress_narrator_stacktrace/GameNarratorMixin.class",
+    "target": "net/minecraft/class_333"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/cache_blockstate_cache_arrays/AbstractBlockStateCacheMixin.class",
+    "target": "net/minecraft/class_4970$class_4971$class_3752"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/MultipartMixin.class",
+    "target": "net/minecraft/class_816"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/cache_profile_texture_url/SkinManagerMixin.class",
+    "target": "net/minecraft/client/resources/SkinManager$TextureCache"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ChunkGeneratorMixin.class",
+    "target": "net/minecraft/class_7869"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/chunk_meshing/RebuildTaskMixin.class",
+    "target": "net/minecraft/class_9810"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/compact_bit_storage/PalettedContainerMixin.class",
+    "target": "net/minecraft/class_2841"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/compact_mojang_registries/MappedRegistryMixin.class",
+    "target": "net/minecraft/class_2370"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/compact_mojang_registries/VanillaRegistriesMixin.class",
+    "target": "net/minecraft/class_7887"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/compress_unihex_font/UnihexProviderByteContentsMixin.class",
+    "target": "net/minecraft/client/gui/font/providers/UnihexProvider$ByteContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/compress_unihex_font/UnihexProviderShortContentsMixin.class",
+    "target": "net/minecraft/client/gui/font/providers/UnihexProvider$ShortContents"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/CreateWorldScreenMixin.class",
+    "target": "net/minecraft/class_525"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/WorldOpenFlowsMixin.class",
+    "target": "net/minecraft/class_7196"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/deduplicate_climate_parameters/ParameterMixin.class",
+    "target": "net/minecraft/class_6544$class_6546"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/deduplicate_climate_parameters/ParameterMixin.class",
+    "target": "net/minecraft/class_6544$class_4762"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/deduplicate_location/MixinResourceLocation.class",
+    "target": "net/minecraft/class_2960"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/deduplicate_wall_shapes/WallBlockMixin.class",
+    "target": "net/minecraft/class_2544"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/DataFixTypesMixin.class",
+    "target": "net/minecraft/class_4284"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/DataFixersMixin.class",
+    "target": "net/minecraft/class_3551"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderersMixin.class",
+    "target": "net/minecraft/class_5619"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockModelShaperMixin.class",
+    "target": "net/minecraft/class_773"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockStateModelLoaderMixin.class",
+    "target": "net/minecraft/class_9824"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemModelShaperMixin.class",
+    "target": "net/minecraft/class_763"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemRendererMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/MinecraftMixin_ModelTicking.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ModelBakerImplMixin.class",
+    "target": "net/minecraft/class_1088$class_7778"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ModelBakeryMixin.class",
+    "target": "net/minecraft/class_1088"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ModelManagerMixin.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/dynamic_structure_manager/StructureManagerMixin.class",
+    "target": "net/minecraft/class_3485"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/ItemRendererMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/faster_texture_stitching/StitcherMixin.class",
+    "target": "net/minecraft/class_1055"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/fix_loop_spin_waiting/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/lazy_search_tree_registry/SessionSearchTreesMixin.class",
+    "target": "net/minecraft/class_1124"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/memoize_creative_tab_build/CreativeModeTabMixin.class",
+    "target": "net/minecraft/class_1761"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/BooleanPropertyMixin.class",
+    "target": "net/minecraft/class_2746"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/MultiVariantMixin.class",
+    "target": "net/minecraft/class_807"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/PropertyMixin.class",
+    "target": "net/minecraft/class_2769"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/SelectorMixin.class",
+    "target": "net/minecraft/class_819"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/TransformationMatrixMixin.class",
+    "target": "net/minecraft/class_4590"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/ResourceKeyMixin.class",
+    "target": "net/minecraft/class_5321"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/StateHolderMixin.class",
+    "target": "net/minecraft/class_2688"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlockBehaviourInvoker.class",
+    "target": "net/minecraft/class_4970"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlocksMixin.class",
+    "target": "net/minecraft/class_2246"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/remove_biome_temperature_cache/BiomeMixin.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/resourcepacks/PathPackResourcesMixin.class",
+    "target": "net/minecraft/class_3259"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/state_definition_construct/StateDefinitionMixin.class",
+    "target": "net/minecraft/class_2689"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/IntegratedServerMixin.class",
+    "target": "net/minecraft/class_1132"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/UtilMixin.class",
+    "target": "net/minecraft/class_156"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/ticking_chunk_alloc/BatMixin.class",
+    "target": "net/minecraft/class_1420"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/ticking_chunk_alloc/ChunkAccessMixin.class",
+    "target": "net/minecraft/class_2791"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/MaterialRuleListMixin.class",
+    "target": "net/minecraft/class_6582"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/NoiseChunkMixin.class",
+    "target": "net/minecraft/class_6568"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SequenceRuleMixin.class",
+    "target": "net/minecraft/class_6686$class_6709"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesContextMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$Context"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$BiomeConditionSource$1BiomeCondition"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$StoneDepthCheck$1StoneDepthCondition"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$VerticalGradientConditionSource$1VerticalGradientCondition"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$WaterConditionSource$1WaterCondition"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/perf/worldgen_allocation/SurfaceRulesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$YConditionSource$1YCondition"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/safety/BlockColorsMixin.class",
+    "target": "net/minecraft/class_324"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/safety/ItemColorsMixin.class",
+    "target": "net/minecraft/class_325"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/safety/ItemPropertiesMixin.class",
+    "target": "net/minecraft/class_5272"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/common/mixin/safety/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/class_922"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/core/ClientCommonPacketListenerImplMixin.class",
+    "target": "net/minecraft/class_8674"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/core/ClientMinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/core/ClientPlayNetHandlerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/core/MCMixin_Fabric.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/core/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/feature/branding/GuiMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/feature/measure_time/MinecraftMixin_Fabric.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/perf/faster_command_suggestions/SuggestionsBuilderMixin.class",
+    "target": "com/mojang/brigadier/suggestion/SuggestionsBuilder"
+  },
+  {
+    "mixin_class": "org/embeddedt/modernfix/fabric/mixin/safety/DynamicTextureMixin.class",
+    "target": "net/minecraft/class_1043"
+  }
+]

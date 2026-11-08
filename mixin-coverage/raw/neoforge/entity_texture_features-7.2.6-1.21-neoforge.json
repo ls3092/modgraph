@@ -1,0 +1,242 @@
+[
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinIdentifier.class",
+    "target": "net/minecraft/resources/ResourceLocation"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinModelPart.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinMultiPhase.class",
+    "target": "net/minecraft/client/renderer/RenderType$CompositeRenderType"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinPackScreen.class",
+    "target": "net/minecraft/client/gui/screens/packs/PackSelectionScreen"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinPlayerSkinTexture.class",
+    "target": "net/minecraft/client/renderer/texture/HttpTexture"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinRenderLayer.class",
+    "target": "net/minecraft/client/renderer/RenderType"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/MixinSpriteIdentifier.class",
+    "target": "net/minecraft/client/resources/model/Material"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/accessor/TooltipAccessor.class",
+    "target": "net/minecraft/client/gui/components/Tooltip"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/block/MixinMobSpawnerLogic.class",
+    "target": "net/minecraft/world/level/BaseSpawner"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/block/MixinSkullBlockEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/blockentity/SkullBlockRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinBlazeEntity.class",
+    "target": "net/minecraft/world/entity/monster/Blaze"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/BlockEntity"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinBlockEntityRenderDispatcher.class",
+    "target": "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinBlockEntityRenderState.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinEntity.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinEntityRenderDispatcher.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinEntityRenderState.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinGlowSquidEntity.class",
+    "target": "net/minecraft/world/entity/GlowSquid"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinMob_LeashNBTFix.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinPhantomEntity.class",
+    "target": "net/minecraft/world/entity/monster/Phantom"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinPlayerEntity.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinPlayerEntity_DebugClick.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/misc/MixinSkullBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/SkullBlockEntity"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinEndCrystalRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/EndCrystalRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinEnderDragonEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/EnderDragonRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinIllusionerRenderer.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinLivingEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinPaintingEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/PaintingRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/MixinPlayerEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/feature/MixinElytraFeatureRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ElytraLayer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/feature/MixinEyeFeatureRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/layers/EyesLayer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/feature/MixinMooshroomMushroomFeatureRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/layers/MushroomCowMushroomLayer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/feature/MixinShoulderParrotFeatureRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ParrotOnShoulderLayer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/entity/renderer/feature/MixinWardenExtraTextureParts.class",
+    "target": "net/minecraft/client/renderer/entity/layers/WardenEmissiveLayer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/imediatelyfast/MixinBatchableBufferSource.class",
+    "target": "net/raphimc/immediatelyfast/feature/core/BatchableBufferSource"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/MixinFullyBufferedMultiBufferSource.class",
+    "target": "net/irisshaders/batchedentityrendering/impl/FullyBufferedMultiBufferSource"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/MixinInnerWrappedRenderType.class",
+    "target": "net/irisshaders/iris/layer/InnerWrappedRenderType"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/MixinOuterWrappedRenderType.class",
+    "target": "net/irisshaders/iris/layer/OuterWrappedRenderType"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/old/MixinFullyBufferedMultiBufferSource.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/old/MixinInnerWrappedRenderType.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/iris/old/MixinOuterWrappedRenderType.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/skin_layers/MixinCustomizableModelPart.class",
+    "target": "dev/tr7zw/skinlayers/render/CustomizableModelPart"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/sodium/MixinModelPartSodium.class",
+    "target": "me/jellysquid/mods/sodium/client/render/immediate/model/EntityRenderer"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/sodium/MixinSodiumBufferBuilder.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/mods/sodium/MixinSodiumWorldRenderer.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/reloading/MixinMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/reloading/MixinResourceReload.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/submit/Mixin_GuiEntityRenderer.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/submit/Mixin_ModelPartRenderer.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/submit/Mixin_ModelRenderer.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/submit/Mixin_ModelSubmit_AddData.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/submit/backupstates/Mixin_ChestSpecialRenderer_PassState.class",
+    "target": "traben/entity_texture_features/mixin/CancelTarget"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/vertexconsumers/MixinBufferBuilder.class",
+    "target": "com/mojang/blaze3d/vertex/BufferBuilder"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/vertexconsumers/MixinSheetedDecalTextureGen.class",
+    "target": "com/mojang/blaze3d/vertex/SheetedDecalTextureGenerator"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/vertexconsumers/MixinSpriteCoordExpander.class",
+    "target": "net/minecraft/client/renderer/SpriteCoordinateExpander"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/vertexconsumers/MixinVertexConsumerProvider$Immediate.class",
+    "target": "net/minecraft/client/renderer/MultiBufferSource$BufferSource"
+  },
+  {
+    "mixin_class": "traben/entity_texture_features/mixin/mixins/vertexconsumers/MixinVertexMultiConsumer$Double.class",
+    "target": "com/mojang/blaze3d/vertex/VertexMultiConsumer$Double"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/AmecsKeyModifiersEarlyInitMixin.class",
+    "target": "de/siphalor/amecs/key_modifiers/impl/AmecsKeyModifiersEarlyInit"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/ClientPacketListenerRecipeUpdateMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/ContainerEventHandlerMixin.class",
+    "target": "net/minecraft/class_4069"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/EffectRenderingInventoryScreenMixin.class",
+    "target": "net/minecraft/class_485"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/GuiGraphicsMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/KeyBindsListEntryMixin.class",
+    "target": "net/minecraft/class_459$class_462"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/KeyBindsScreenMixin.class",
+    "target": "net/minecraft/class_6599"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/OptionsMixin.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "mezz/jei/fabric/mixin/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  }
+]

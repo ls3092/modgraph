@@ -1,10 +1,18 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十三步：核对第二十二步的三份文档交付物，正文零改动；不改 `src/`、不改既有产物与徽章、未跑 `gradle test`、未 commit）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十五步：长程任务第 1 段——MC 26.2 可采性核验，三路只读子智能体 + 主智能体汇总；零 git 写、`src/` 零改动、未下载任何 jar、未跑 `gradle test`）。
+
+第二十五步做长程任务第 1 段（MC 26.2 可采性核验），零 git 写、`src/` 零改动、未跑 `gradle test`、未下载任何 jar。三路只读子智能体：A 读本地 `forbric-comparison/MOD_TEST_FAILURES.md`（30327 字节，SHA-256 `96AE0BC7E3DFBAED6F76ABCDDC104FBF79F1DB973048E479490C9BEDEC0E3CFB` 由主智能体实测，与记录一致；子环境无 shell，哈希不取自子任务）抽出 35 行 / 32 个唯一 id 与 12 行 / 12 个唯一 id，其中 24 行提到 26.2；B 核验 Modrinth（`26.2` 是真实 release，2026-06-16）；C 核验 CurseForge（官方 API `403 Forbidden: API Key missing or invalid`，网页是 Cloudflare challenge，`api.cfwidget.com` 只有按项目的 `200`、没有 browse/total）。三路各写自己的 `sources-A.json` / `-B.json` / `-C.json`，互不覆盖；主智能体汇总写 `collectability-262.json` 与人读的 `collectability-262.md`，脚本 `verify_collectability_262.py` 可重跑。
+
+实测：Modrinth 上 `project_type:mod` 且标 26.2 的项目 **14,705**（同一查询在约 40 分钟内从 14,676 漂到 14,705）；fabric 13,875、neoforge 7,219、both 2,669、fabric∨neoforge 14,656；控制组 `versions:99.99` = 0、`1.21.1` + mods = 32,922。单次枚举快照 2,000 条内本地分桶 BOTH 1,390 / FABRIC_ONLY 519 / NEOFORGE_ONLY 91 / NEITHER 0，合计 2,000，断言成立；无重复 projectId 也成立。**未解释、如实记录**：跨查询的容斥不闭合，13,875 + 7,219 − 2,669 = 18,425 而并集查询是 14,656（差 3,769，远超索引漂移），因此不发布任何由 loader `total_hits` 推出的总数，只用快照内分桶。与 1.21.1 数据集重合 81/2,000（数据集归一后 112 个 modId）。与 Forbric 两份清单合计 47 行 / 44 个唯一 id 的重合是 24 行 / 21 个唯一 slug（快照只取前 2,000，属下界）。CurseForge 无可采数字，也没有许可字段，只能记为“不可权威计数”，不得记成 0。
+
+口径（用户已裁决）：47 行 / 37 `NO_CANDIDATE` 是**两份清单合计**（35 行表 25 + 12 行表 12），与 `BOUNDARIES.md` §3.1「两表不合并、无交集」不冲突，后续引用一律写“两份清单合计”；本轮只记进本文件，不改两版 `BOUNDARIES` 的既有结论（那是段 5 的事）。第 116 条继续保持未提交，不代用户决定。下一步第一条命令见第五节。
 
 第二十三步只做核对，不改任何文档正文，`src/` 零改动、没有跑 `gradle test`、没有 commit。核对对象是第二十二步的三份交付物：`AGENTS.md` 9 节 / 94 行，覆盖维护者情况、全局禁令、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法与措辞禁用词；没有 SHA-256 全表、没有项目历史、没有绑定任何具体工具的专有命令。`BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md` 各 91 行、15 个标题，6 个一级节与 2.1–2.5、3.1–3.3 八个二级节在行号上逐一对齐。两版数字与产物实文件逐项比对，全部一致：`mixin-coverage/summary.json` 的 `okFourWay` 是 157 / 100、1 / 1、6 / 5、27 / 21（记录 / 唯一 modId），`gap` 是 10 = 5 + 5、两侧各 4 个唯一 modId；`forbric-comparison/summary.json` 的 35 条表是 35 / 32，主桶 `25 + 1 + 4 + 5 = 35`，`matchedRows` 10 / 8，`noCandidateRows` 25 / 24，非互斥字段 10 / 10 / 0 / 7 / 6 / 4 / 1 / 0 / 9 / 1；12 条表是 12 `NO_CANDIDATE`、`matchedRows` 0；`assertions.listsAreDisjoint = true`。本步没有重跑两个对照脚本、没有重算五个产物哈希（`src/` 未改，产物未被触碰），也没有跑 `gradle test`。
 
 发现一处记录与工作区不一致，本步不自行处理：工作区里 `README.md`（+16 行）与 `README.zh-CN.md`（+14 行）各有一处未提交改动，把两轮外部对照写进了 Known limitations 三条；第二十二步的记录写明“没有改 SPEC 与 README”，提交 `f0671b8` 的文件清单也只有 `AGENTS.md`、`BOUNDARIES.md`、`BOUNDARIES.zh-CN.md`、`PROGRESS.md`，所以这处改动既不在本文件里、也不在提交里。本轮没有改它、也没有回滚，等维护者决定提交、补记录还是撤销。下一步第一条命令见第五节。
+
+第二十四步只做长程任务第 1 段的第 0 步结账，没有提交、没有动 `src/`、没有跑 `gradle test`、没有发出任何网络请求。开工时 `git status --short` 只有四个未跟踪项、没有任何修改（原文：`?? forbric-comparison/`、`?? mixin-coverage/`、`?? verify_forbric_failures.py`、`?? verify_mixin_coverage.py`）；逐项点名：`forbric-comparison/` 是 `MOD_TEST_FAILURES.md` 快照 + `comparison.csv` + `summary.json` + `report.md`，`mixin-coverage/` 是 `comparison.csv` + `modcrawl-invocations.tsv` + `raw/fabric` 100 个与 `raw/neoforge` 95 个（合计 195 个 JSON）+ `report.md` + `summary.json`，另外两个是第二十 / 二十一步落盘的核对脚本。预期待提交的三份文档已经提交在 `b8d475d docs: 补记第二十/二十一步的 README Known limitations 同步`（`PROGRESS.md` +14/−4、`README.md` +16、`README.zh-CN.md` +14，合计 +40/−4），提交信息与文件集与本步要求逐字一致。因此本步没有执行任何 git 写操作，没有用 `git add -A`，四个未跟踪项一个都没有被带走。按“status 与预期不符就停下”的约定，第 1 段（26.2 可采性核验）本轮没有开始，三路子智能体未启动，没有下载任何 jar。下一步第一条命令见第五节。
 
 第二十二步只写文档，`src/` 零改动、未跑 `gradle test`、未 commit。新增仓库根 `AGENTS.md`（中文单版）：维护者情况、全局禁令、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法；只写约束与方法，不记录历史、不贴 SHA-256 全表、不编数字，也不绑定任何 AI 工具的专有命令。另新增 `BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md`（英文 / 中文，逐节同步），固化第二十、二十一步两轮外部对照的结论与解释边界：modcrawl 191 条 OK 四分类 BOTH 157 / NAMING_ONLY 1 / MODCRAWL_ONLY 6 / NEITHER 27，原缺口 10 条 = 补上 5 + 剩余 5（剩余全部 `EMPTY_CONFIG`，空配置、无可推断目标，非漏报），不递归嵌套 jar，exe 为上游 v0.11.3 预编译；Forbric 两个具名快照 35 条 / 12 条不合并、两表无交集（脚本断言 `listsAreDisjoint = true`），35 条主桶 25 `NO_CANDIDATE` + 1 `LOADER_MISMATCH` + 4 `EXCLUDED_RENDER_CORE` + 5 `DEPENDENCY_SIGNAL`，12 条 12 `NO_CANDIDATE`。
 
@@ -574,7 +582,11 @@ src/
 
 114. 第二十二步只写文档，`src/` 零改动、没有跑 `gradle test`、没有 commit。新增 `AGENTS.md`（仓库根，中文单版）：维护者情况、全局禁令（SPEC §0 / §5 摘要）、先读什么、双版同步、`PROGRESS.md` 更新规则、交接报告四标题、90 分钟切法；只写约束与方法，不写项目历史、不贴 SHA-256 全表、不编数字，不绑定具体 AI 工具命令。新增 `BOUNDARIES.md` 与 `BOUNDARIES.zh-CN.md`，两版逐节同步，固化第二十 / 二十一步对照：modcrawl 191 OK 四分类 157 / 1 / 6 / 27，缺口 10 = 5 + 5（剩余全 `EMPTY_CONFIG`，非漏报），不递归嵌套 jar，exe 为上游 v0.11.3 预编译；Forbric 35 条 / 12 条两表不合并、无交集，35 条主桶 25 + 1 + 4 + 5，12 条 12 `NO_CANDIDATE`；写明 26.2 vs 1.21.1、`NO_CANDIDATE` 不是预测失败、`EXCLUDED` 与非 `SATISFIED` 不解释运行时崩溃、工具只做声明性准入检查。所有数字取自本文件；没有改 SPEC / README（无需双版同步），没有改既有产物、徽章、LICENSE、Forbric / Kilt 代码。两版核对结果见交接报告。
 
-115. 第二十三步只做核对、不改文档正文：`AGENTS.md`（9 节 / 94 行）条目覆盖维护者情况、全局禁令、双版同步、基线从本文件读、每步更新本文件、交接报告四标题、90 分钟切法；`BOUNDARIES.md` ↔ `BOUNDARIES.zh-CN.md` 各 15 个标题、行号一一对齐；两版数字与 `mixin-coverage/summary.json`、`forbric-comparison/summary.json` 逐项相同（157/100、1/1、6/5、27/21；缺口 10 = 5 + 5、两侧各 4 个唯一 id；35 = 25 + 1 + 4 + 5，10/8，25/24；12 = 12；`listsAreDisjoint = true`）。没有重跑两个对照脚本、没有重算产物哈希、没有跑 `gradle test`、没有 commit。同时记下工作区里 `README.md` / `README.zh-CN.md` 的一处未提交改动（+16 / +14 行）不在第二十二步记录与提交 `f0671b8` 内，本轮未处理，留给维护者裁决。
+115. 第二十三步只做核对、不改文档正文：`AGENTS.md`（9 节 / 94 行）条目覆盖维护者情况、全局禁令、双版同步、基线从本文件读、每步更新本文件、交接报告四标题、90 分钟切法；`BOUNDARIES.md` ↔ `BOUNDARIES.zh-CN.md` 各 15 个标题、行号一一对齐；两版数字与 `mixin-coverage/summary.json`、`forbric-comparison/summary.json` 逐项相同（157/100、1/1、6/5、27/21；缺口 10 = 5 + 5、两侧各 4 个唯一 id；35 = 25 + 1 + 4 + 5，10/8，25/24；12 = 12；`listsAreDisjoint = true`）。没有重跑两个对照脚本、没有重算产物哈希、没有跑 `gradle test`、没有 commit。同时记下工作区里 `README.md` / `README.zh-CN.md` 的一处未提交改动（+16 / +14 行）不在第二十二步记录与提交 `f0671b8` 内，本轮未处理，留给维护者裁决（后由提交 `b8d475d` 处理，见第二十四步）。
+
+116. 第二十四步只做第 0 步结账，零 git 写：`git status --short` 只有四个未跟踪项（`forbric-comparison/`、`mixin-coverage/`、`verify_forbric_failures.py`、`verify_mixin_coverage.py`），没有修改；要求的三份文档已由 `b8d475d` 提交（3 文件 +40/−4，提交信息逐字一致）。没有新增提交、没有 `git add -A`、未跟踪项一个没带走；第 1 段未开始、三路子智能体未启动、未下载任何 jar、未跑 `gradle test`。
+
+117. 第二十五步做长程任务第 1 段：三路只读子智能体 + 主智能体汇总，零 git 写、`src/` 零改动、未下载任何 jar、未跑 `gradle test`。产物：`forbric-comparison/sources-A.json`（35 行/32 唯一 id、12 行/12 唯一 id、24 行提 26.2；文件哈希由主智能体实测为 `96AE0BC7…0E3CFB`，与记录一致）、`sources-B.json`（Modrinth，前 80 个项目枚举 + 许可分布）、`sources-C.json`（CurseForge，403 / Cloudflare，`authoritativeTotalAvailable=false`）、`collectability-262.json`（汇总与断言）、`collectability-262.md`（人读清单：modId / 版本 / URL / 许可 / 是否已在 1.21.1 数据集）、`verify_collectability_262.py`（可重跑）。实测：Modrinth 标 26.2 的 mod 项目 14,705（40 分钟内从 14,676 漂上来）、fabric 13,875、neoforge 7,219、both 2,669、并集 14,656；控制组 99.99 = 0、1.21.1 mods = 32,922；2,000 条快照内分桶 1,390 + 519 + 91 + 0 = 2,000（断言成立），无重复 projectId；与 1.21.1 数据集重合 81/2,000；与 Forbric 合计 47 行 / 44 唯一 id 重合 24 行 / 21 唯一 slug（下界）。容斥不闭合 18,425 vs 14,656（差 3,769）未解释，因此不发布 loader 推总。第 116 条仍未提交。
 
 ## 四、踩过的坑
 
@@ -692,10 +704,10 @@ src/
 **下一步第一条命令（本轮不执行）：**
 
 ```bash
-git status --short
+git status --short && python verify_collectability_262.py --enumerate 20 --forbric-ids forbric-comparison\sources-A.json
 ```
 
-这条只读命令用来裁决第二十三步记下的那处不一致：工作区的 `README.md` / `README.zh-CN.md`（+16 / +14 行，把两轮外部对照写进 Known limitations）不在第二十二步记录与提交 `f0671b8` 里；`mixin-coverage/`、`forbric-comparison/` 与两个 `verify_*.py` 仍是未跟踪文件；`src/` 应无改动。由维护者决定这处 README 改动是提交、补记录还是撤销，AI 不代替决定。`AGENTS.md` 与两版 `BOUNDARIES.md` 已按第二十三步核对通过，不需要重写。M2 或任何下一阶段没有开始，等用户明确指令。
+第一条只读：确认本轮只新增 `collectability-262.*`、`sources-?.json`、`verify_collectability_262.py`，`src/` 与六个产物无改动。第二条重跑核验（约 27 次 Modrinth 请求，写入 `forbric-comparison/collectability-262.json`）。**段 2 不在本轮执行**：采集先要定“取哪 30 个”（建议先用快照里 `in 1.21.1 dataset = YES` 的 81 个交集，能直接对比旧数据集），并写下载脚本；本轮没有预留接口、没有开工。CurseForge 一侧要权威计数只能等用户提供 CurseForge for Studios 的 `x-api-key`，否则段 4 的对照只覆盖 Modrinth。M2 或任何下一阶段没有开始，等用户明确指令。
 
 M0 已按 SPEC v0.7 定稿（v0.8–v1.1 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现，M1.5 已按 §3.7 实现。中英文 SPEC 现在都是 v1.1。完整数据集（195 个 jar）下 `gradle clean test` 是 148 个测试、失败 0、错误 0、跳过 0——这是第十九步的实跑结果。`gradle run` 产出六个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头，`duplicates.csv` 4 行数据加表头，不满足的硬依赖 56。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 148 个、跳过 0，两种模式在日志里明确打印当前数据源。
 

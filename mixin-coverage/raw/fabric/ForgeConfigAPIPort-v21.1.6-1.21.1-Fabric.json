@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "fuzs/forgeconfigapiport/fabric/mixin/IoUtilsMixin.class",
+    "target": "com.electronwill.nightconfig.core.io.IoUtils"
+  }
+]

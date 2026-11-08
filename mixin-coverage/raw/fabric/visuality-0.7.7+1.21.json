@@ -1,0 +1,22 @@
+[
+  {
+    "mixin_class": "visuality/mixin/AmethystClusterMixin.class",
+    "target": "net/minecraft/class_5542"
+  },
+  {
+    "mixin_class": "visuality/mixin/BlockMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "visuality/mixin/CreeperEntityMixin.class",
+    "target": "net/minecraft/class_1548"
+  },
+  {
+    "mixin_class": "visuality/mixin/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "visuality/mixin/SlimeEntityMixin.class",
+    "target": "net/minecraft/class_1621"
+  }
+]

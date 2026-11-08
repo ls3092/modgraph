@@ -1,0 +1,74 @@
+[
+  {
+    "mixin_class": "dzwdz/chat_heads/fabric/mixin/ChatListenerMixin.class",
+    "target": "net/minecraft/class_7594"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/AbstractConfigScreenQuitSaveConsumerMixin.class",
+    "target": "me/shedaniel/clothconfig2/gui/AbstractConfigScreen$QuitSaveConsumer"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/AbstractSliderButtonMixin.class",
+    "target": "net/minecraft/class_357"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatComponentMixin.class",
+    "target": "net/minecraft/class_338"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatComponentMixin2.class",
+    "target": "net/minecraft/class_338"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ChatListenerMixin.class",
+    "target": "net/minecraft/class_7594"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/CommandSuggestionSuggestionsListMixin.class",
+    "target": "net/minecraft/class_4717$class_464"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/ConnectionMixin.class",
+    "target": "net/minecraft/class_2535"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/DownloadedPackSourceMixin.class",
+    "target": "net/minecraft/class_1066"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/FontStringRenderOutputMixin.class",
+    "target": "net/minecraft/class_327$class_5232"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/GuiMessageLineMixin.class",
+    "target": "net/minecraft/class_303$class_7590"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/GuiMessageMixin.class",
+    "target": "net/minecraft/class_303"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/HttpTextureMixin.class",
+    "target": "net/minecraft/class_1046"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/PlayerChatMessageMixin.class",
+    "target": "net/minecraft/class_7471"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/SkinManagerMixin.class",
+    "target": "net/minecraft/class_1071$class_8687"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/compat/EmojifulMixin.class",
+    "target": "com/hrznstudio/emojiful/render/EmojiFontRenderer$EmojiCharacterRenderer"
+  },
+  {
+    "mixin_class": "dzwdz/chat_heads/mixin/compat/EmojifulMixin.class",
+    "target": "com/hrznstudio/emojiful/render/EmojiFontHelper$EmojiCharacterRenderer"
+  }
+]

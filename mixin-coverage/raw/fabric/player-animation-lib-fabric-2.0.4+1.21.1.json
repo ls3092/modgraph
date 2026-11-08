@@ -1,0 +1,70 @@
+[
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ArmorFeatureRendererMixin.class",
+    "target": "net/minecraft/class_970"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/BipedEntityModelMixin.class",
+    "target": "net/minecraft/class_572"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/CapeLayerMixin.class",
+    "target": "net/minecraft/class_972"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ElytraLayerMixin.class",
+    "target": "net/minecraft/class_979"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/FeatureRendererMixin.class",
+    "target": "net/minecraft/class_3887"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/HeldItemMixin.class",
+    "target": "net/minecraft/class_989"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/LivingEntityRenderRedirect_bendOnly.class",
+    "target": "net/minecraft/class_922"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/ModelPartMixin.class",
+    "target": "net/minecraft/class_630"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerEntityMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerModelAccessor.class",
+    "target": "net/minecraft/class_591"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerModelMixin.class",
+    "target": "net/minecraft/class_591"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/PlayerRendererMixin.class",
+    "target": "net/minecraft/class_1007"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/CameraAccessor.class",
+    "target": "net/minecraft/class_4184"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "dev/kosmx/playerAnim/mixin/firstPerson/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/class_922"
+  }
+]

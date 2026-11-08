@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinAbstractWidget.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinClientLanguage.class",
+    "target": "net/minecraft/client/resources/language/ClientLanguage"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinDynamicTexture.class",
+    "target": "net/minecraft/client/renderer/texture/DynamicTexture"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinEditBox.class",
+    "target": "net/minecraft/client/gui/components/EditBox"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinLocalPlayer.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinMouseHandler.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/IMixinScreen.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/MixinKeyboardHandler.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/client/MixinMouseHandler.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/konkrete/mixin/mixins/neoforge/client/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  }
+]

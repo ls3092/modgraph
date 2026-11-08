@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "me/flashyreese/mods/reeses_sodium_options/mixin/sodium/MixinAbstractWidget.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/widgets/AbstractWidget"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/reeses_sodium_options/mixin/sodium/MixinOption.class",
+    "target": "net/caffeinemc/mods/sodium/client/config/structure/Option"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/reeses_sodium_options/mixin/sodium/MixinSodiumOptionsGUI.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/VideoSettingsScreen"
+  }
+]

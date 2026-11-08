@@ -1,0 +1,82 @@
+[
+  {
+    "mixin_class": "dev/architectury/mixin/MixinLightningBolt.class",
+    "target": "net/minecraft/world/entity/LightningBolt"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinClientLevel.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinFallingBlockEntity.class",
+    "target": "net/minecraft/world/entity/item/FallingBlockEntity"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinInventory.class",
+    "target": "net/minecraft/world/entity/player/Inventory"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinItemExtension.class",
+    "target": "dev/architectury/extensions/ItemExtension"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinLevelEvent.class",
+    "target": "net/neoforged/neoforge/event/level/LevelEvent"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/client/MixinCommandSourceStack.class",
+    "target": "net/minecraft/commands/CommandSourceStack"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/neoforge/BucketItemAccessor.class",
+    "target": "net/minecraft/world/item/BucketItem"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/neoforge/LiquidBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/LiquidBlock"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/neoforge/MixinBucketItem.class",
+    "target": "net/minecraft/world/item/BucketItem"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/forge/neoforge/MixinChunkSerializer.class",
+    "target": "net/minecraft/world/level/chunk/storage/ChunkSerializer"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinBlock.class",
+    "target": "net/minecraft/world/level/block/Block"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinBucketItem.class",
+    "target": "net/minecraft/world/item/BucketItem"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinEntityType.class",
+    "target": "net/minecraft/world/entity/EntityType"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinFluid.class",
+    "target": "net/minecraft/world/level/material/Fluid"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinFoodPropertiesBuilder.class",
+    "target": "net/minecraft/world/food/FoodProperties$Builder"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinItem.class",
+    "target": "net/minecraft/world/item/Item"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinItemProperties.class",
+    "target": "net/minecraft/world/item/Item$Properties"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinLiquidBlock.class",
+    "target": "net/minecraft/world/level/block/LiquidBlock"
+  }
+]

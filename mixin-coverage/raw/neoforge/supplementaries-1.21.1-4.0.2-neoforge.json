@@ -1,0 +1,486 @@
+[
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractArrowMixin.class",
+    "target": "net/minecraft/world/entity/projectile/AbstractArrow"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractHorseMixin.class",
+    "target": "net/minecraft/world/entity/animal/horse/AbstractHorse"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractSkeletonMixin.class",
+    "target": "net/minecraft/world/entity/monster/AbstractSkeleton"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BannerPatternItemMixin.class",
+    "target": "net/minecraft/world/item/BannerPatternItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BlockBehaviourPlanterMixin.class",
+    "target": "net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BlockSourceMixin.class",
+    "target": "net/minecraft/core/dispenser/BlockSource"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BoatRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/BoatRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BookViewScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/BookViewScreen"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BowMixin.class",
+    "target": "net/minecraft/world/item/BowItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BrushItemMixin.class",
+    "target": "net/minecraft/world/item/BrushItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CameraMixin.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CampfireBlockMixin.class",
+    "target": "net/minecraft/world/level/block/CampfireBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableInputSlotMixin.class",
+    "target": "net.minecraft.world.inventory.CartographyTableMenu$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableMixin.class",
+    "target": "net/minecraft/world/inventory/CartographyTableMenu"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CartographyTableScreen"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CatSitOnBlockGoalMixin.class",
+    "target": "net/minecraft/world/entity/ai/goal/CatSitOnBlockGoal"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CelebrateVillagersSurvivedRaidMixin.class",
+    "target": "net/minecraft/world/entity/ai/behavior/CelebrateVillagersSurvivedRaid"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ChatMixin.class",
+    "target": "net/minecraft/client/gui/screens/ChatScreen"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ClientLevelMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CooperativePistonBaseBlockMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonBaseBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CreeperMixin.class",
+    "target": "net/minecraft/world/entity/monster/Creeper"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/DiodeBlockMixin.class",
+    "target": "net/minecraft/world/level/block/DiodeBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EntityAccessor.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EvokerMixin.class",
+    "target": "net/minecraft/world/entity/monster/Evoker"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ExplorationMapFunctionMixin.class",
+    "target": "net/minecraft/world/level/storage/loot/functions/ExplorationMapFunction"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ExplosionMixin.class",
+    "target": "net/minecraft/world/level/Explosion"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FallingBlockEntityMixin.class",
+    "target": "net/minecraft/world/entity/item/FallingBlockEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FireBlockMixin.class",
+    "target": "net/minecraft/world/level/block/FireBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FontRendererMixin.class",
+    "target": "net/minecraft/client/gui/Font"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GoalUtilsMixin.class",
+    "target": "net/minecraft/world/entity/ai/util/GoalUtils"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneInputSlotMixin.class",
+    "target": "net.minecraft.world.inventory.GrindstoneMenu$2"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneInputSlotMixin.class",
+    "target": "net.minecraft.world.inventory.GrindstoneMenu$2"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneMenuMixin.class",
+    "target": "net/minecraft/world/inventory/GrindstoneMenu"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneTestSlotMixin.class",
+    "target": "net.minecraft.world.inventory.GrindstoneMenu$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IDispenserAccessor.class",
+    "target": "net/minecraft/world/level/block/DispenserBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IHangingEntityAccessor.class",
+    "target": "net/minecraft/world/entity/decoration/HangingEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/InkSackMixin.class",
+    "target": "net/minecraft/world/item/InkSacItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IronBarsBlockMixin.class",
+    "target": "net/minecraft/world/level/block/IronBarsBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IronGolemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/IronGolemRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ItemsMixin.class",
+    "target": "net/minecraft/world/item/Items"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LanternBlockPlacementMixin.class",
+    "target": "net/minecraft/world/level/block/LanternBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeadItemMixin.class",
+    "target": "net/minecraft/world/item/LeadItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeashFenceKnotEntityMixin.class",
+    "target": "net/minecraft/world/entity/decoration/LeashFenceKnotEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeashKnotRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LeashKnotRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LiquidBlockRendererMixin.class",
+    "target": "net/minecraft/client/renderer/block/LiquidBlockRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityAccessor.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MapItemMixin.class",
+    "target": "net/minecraft/world/item/MapItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MapTextureMixin.class",
+    "target": "net/minecraft/client/gui/MapRenderer$MapInstance"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MineshaftCorridorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/MineshaftPieces$MineShaftCorridor"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MineshaftPiecesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/MineshaftPieces"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MouseHandlerMixin.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ObserverBlockMixin.class",
+    "target": "net/minecraft/world/level/block/ObserverBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PageButtonMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/PageButton"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ParrotMixin.class",
+    "target": "net/minecraft/world/entity/animal/Parrot"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonBaseBlockMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonBaseBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonHeadRendererMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/PistonHeadRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonMovingBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonMovingBlockEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonStructureResolverMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonStructureResolver"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerAccessor.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerProjectileMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerSocialManagerMixin.class",
+    "target": "net/minecraft/client/gui/screens/social/PlayerSocialManager"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ProjectileWeaponItemMixin.class",
+    "target": "net/minecraft/world/item/ProjectileWeaponItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RaidMixin.class",
+    "target": "net/minecraft/world/entity/raid/Raid"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RedMerchantSpawnerMixin.class",
+    "target": "net/minecraft/world/entity/npc/WanderingTraderSpawner"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RemotePlayerMixin.class",
+    "target": "net/minecraft/client/player/RemotePlayer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerGamePacketListenerMixin.class",
+    "target": "net/minecraft/server/network/ServerGamePacketListenerImpl"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerPlayerMixin.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ShulkerBoxBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/ShulkerBoxBlockEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ShulkerSlotMixin.class",
+    "target": "net/minecraft/world/inventory/ShulkerBoxSlot"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkeletonMixin.class",
+    "target": "net/minecraft/world/entity/monster/Skeleton"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkellyHorseMixin.class",
+    "target": "net/minecraft/world/entity/animal/horse/SkeletonHorse"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkullBlockRendererMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/SkullBlockRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SlimeMixin.class",
+    "target": "net/minecraft/world/entity/monster/Slime"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrayMixin.class",
+    "target": "net/minecraft/world/entity/monster/Stray"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrongholdCrossingSconceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/StrongholdPieces$FiveCrossing"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrongholdRoomSconceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/StrongholdPieces$RoomCrossing"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/UndeadHorseRenderMixin.class",
+    "target": "net/minecraft/client/renderer/entity/UndeadHorseRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/WanderingTraderMixin.class",
+    "target": "net/minecraft/world/entity/npc/WanderingTrader"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/WrittenBookAccessMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/BookViewScreen$BookAccess"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ZombieHorseMixin.class",
+    "target": "net/minecraft/world/entity/animal/horse/ZombieHorse"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatCreeperArclightMixin.class",
+    "target": "net/minecraft/world/entity/monster/Creeper"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatEMFMixin.class",
+    "target": "traben/entity_model_features/models/parts/EMFModelPartCustom"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatFarmersDelightTomatoMixin.class",
+    "target": "vectorwing/farmersdelight/common/block/TomatoBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/BlockEntityRendererDispatcherMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/ChunkHolderMixin.class",
+    "target": "net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData$BlockEntityInfo"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/FireBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/FireBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/ItemStackAccessor.class",
+    "target": "net/minecraft/world/item/ItemStack"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/LevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/ParrotLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ParrotOnShoulderLayer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/TreasureMapForEmeraldsMixin.class",
+    "target": "net.minecraft.world.entity.npc.VillagerTrades$TreasureMapForEmeralds"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/ZetaPistonStructureResolverMixin.class",
+    "target": "org/violetmoon/zeta/piston/ZetaPistonStructureResolver"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/compat/CompatEmbFluidRendererMixin.class",
+    "target": "org/embeddedt/embeddium/impl/render/chunk/compile/pipeline/FluidRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/compat/CompatIFMapAtlasTextureMixin.class",
+    "target": "net/raphimc/immediatelyfast/feature/map_atlas_generation/MapAtlasTexture"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/compat/CompatIFMapTextureMixin2.class",
+    "target": "net/minecraft/client/gui/MapRenderer$MapInstance"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/compat/CompatSodiumFluidRendererMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/DefaultFluidRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfFlammableFluidBlockMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/fluids/FlammableLiquidBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfFrameMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/block/blocks/FrameBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfGunpowderMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/block/blocks/GunpowderBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfLumiseneFluidMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/fluids/LumiseneFluid"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfNetheriteDoorMixin.class",
+    "target": "net.mehvahdjukaar.supplementaries.common.block.blocks.NetheriteTrapdoorBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfNetheriteDoorMixin.class",
+    "target": "net.mehvahdjukaar.supplementaries.common.block.blocks.NetheriteDoorBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfPlanterMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/block/blocks/PlanterBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfSafeMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/block/blocks/SafeBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfSlingshotMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/items/SlingshotItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfSoapItemMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/items/SoapItem"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/neoforge/self/SelfWrenchMixin.class",
+    "target": "net/mehvahdjukaar/supplementaries/common/items/WrenchItem"
+  }
+]

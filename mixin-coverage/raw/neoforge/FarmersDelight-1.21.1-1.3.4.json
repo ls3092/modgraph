@@ -1,0 +1,58 @@
+[
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/CampfireBaleMixin.class",
+    "target": "net/minecraft/world/level/block/CampfireBlock"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/CanvasSignEditScreenMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/CuttingBoardDispenserMixin.class",
+    "target": "net/minecraft/world/level/block/DispenserBlock"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/datafix/ItemStackComponentizationFixMixin.class",
+    "target": "net/minecraft/util/datafix/fixes/ItemStackComponentizationFix"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/datafix/V1460Mixin.class",
+    "target": "net/minecraft/util/datafix/schemas/V1460"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/datafix/V3818_3Mixin.class",
+    "target": "net/minecraft/util/datafix/schemas/V3818_3"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/HideBlockBreakProgressMixin.class",
+    "target": "net/minecraft/client/renderer/block/BlockRenderDispatcher"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/KeepRichSoilGiantTreeMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/Feature"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/KeepRichSoilTreeMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/trunkplacers/TrunkPlacer"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/KeepRichSoilUntrampledMixin.class",
+    "target": "net/minecraft/world/level/block/FarmBlock"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/NourishmentAlwaysEatMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/PlacePumpkinPieMixin.class",
+    "target": "net/minecraft/world/item/Item"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/RopeFenceConnectionMixin.class",
+    "target": "net/minecraft/world/level/block/FenceBlock"
+  },
+  {
+    "mixin_class": "vectorwing/farmersdelight/common/mixin/VillagersTargetRichSoilMixin.class",
+    "target": "net/minecraft/world/entity/ai/sensing/SecondaryPoiSensor"
+  }
+]

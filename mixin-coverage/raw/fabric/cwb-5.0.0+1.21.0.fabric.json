@@ -1,0 +1,18 @@
+[
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/GuiMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/MainMixin.class",
+    "target": "net/minecraft/client/main/Main"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/VideoSettingsScreenMixin.class",
+    "target": "net/minecraft/class_446"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/WindowMixin.class",
+    "target": "net/minecraft/class_1041"
+  }
+]

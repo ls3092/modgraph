@@ -1,0 +1,342 @@
+[
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/BlockItemMixin.class",
+    "target": "net/minecraft/class_1747"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/CartographyTableAdditionalSlotMixin.class",
+    "target": "net/minecraft/class_3910$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/CartographyTableMapSlotMixin.class",
+    "target": "net/minecraft/class_3910$3"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/CartographyTableMenuMixin.class",
+    "target": "net/minecraft/class_3910"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/CartographyTableScreenMixin.class",
+    "target": "net/minecraft/class_3934"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ChunkGeneratorMixin.class",
+    "target": "net/minecraft/class_2794"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ChunkMapMixin.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/DebugPacketsMixin.class",
+    "target": "net/minecraft/class_4209"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/DebugRendererMixin.class",
+    "target": "net/minecraft/class_863"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/DynamicTextureMixin.class",
+    "target": "net/minecraft/class_1043"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/EntityMixin.class",
+    "target": "net/minecraft/class_1308"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/FixBlockPlaceContextMixin.class",
+    "target": "net/minecraft/class_1750"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/GrindstoneMenuMixin.class",
+    "target": "net/minecraft/class_3803"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/GrindstoneMenuSlotMixin.class",
+    "target": "net/minecraft/class_3803$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/InventoryMixin.class",
+    "target": "net/minecraft/class_1661"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ItemMixin.class",
+    "target": "net/minecraft/class_1792"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/JigsawPlacementMixin.class",
+    "target": "net/minecraft/class_3778$class_4182"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/JigsawReplacementProcessorMixin.class",
+    "target": "net/minecraft/class_3794"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/JigsawStructureMixin.class",
+    "target": "net/minecraft/class_5434"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LightingMixin.class",
+    "target": "net/minecraft/class_308"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LightningEntityMixin.class",
+    "target": "net/minecraft/class_1538"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LoomBannerSlotMixin.class",
+    "target": "net/minecraft/class_1726$3"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LoomMenuMixin.class",
+    "target": "net/minecraft/class_1726"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/LoomScreenMixin.class",
+    "target": "net/minecraft/class_494"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MapDataMixin.class",
+    "target": "net/minecraft/class_22"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MapInstanceMixin.class",
+    "target": "net/minecraft/class_330$class_331"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MapItemDataPacketMixin.class",
+    "target": "net/minecraft/class_2683"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MapItemMixin.class",
+    "target": "net/minecraft/class_1806"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MapRendererMixin.class",
+    "target": "net/minecraft/class_330"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ModelPartMixin.class",
+    "target": "net/minecraft/class_630"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/PartDefinitionMixin.class",
+    "target": "net/minecraft/class_5610"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/PistonBlockEntityMixin.class",
+    "target": "net/minecraft/class_2669"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/PlaceStructureCommandMixin.class",
+    "target": "net/minecraft/class_6852"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/PlayerItemInHandLayerMixin.class",
+    "target": "net/minecraft/class_5697"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ReloadableClientResourcesMixin.class",
+    "target": "net/minecraft/class_3304"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ResourceLocationMixin.class",
+    "target": "net/minecraft/class_2960"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ServerPlayerMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ShearItemMixin.class",
+    "target": "net/minecraft/class_1820"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/TeleportCommandMixin.class",
+    "target": "net/minecraft/class_3143"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/TemplateStructurePieceMixin.class",
+    "target": "net/minecraft/class_3470"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ThirdPersonRendererMixin.class",
+    "target": "net/minecraft/class_572"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/ThrownPotionMixin.class",
+    "target": "net/minecraft/class_1686"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/VillagerMixin.class",
+    "target": "net/minecraft/class_1646"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/WorldLoaderMixin.class",
+    "target": "net/minecraft/class_7237"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/accessor/AgeableListModelAccessor.class",
+    "target": "net/minecraft/class_4592"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/accessor/BrainAccessor.class",
+    "target": "net/minecraft/class_4095"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/accessor/DispenserBlockAccessor.class",
+    "target": "net/minecraft/class_2315"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/accessor/DispenserBlockEntityAccessor.class",
+    "target": "net/minecraft/class_2601"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/compat/PistonReactQuarkMixin.class",
+    "target": "net/mehvahdjukaar/moonlight/api/block/IPistonMotionReact"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/BeeGoalMixin.class",
+    "target": "net/minecraft/class_4466$class_4474"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/BlockModelAccessor.class",
+    "target": "net/minecraft/class_793"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/BlockModelDeserializerMixin.class",
+    "target": "net/minecraft/class_793$class_795"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/BlockModelMixin.class",
+    "target": "net/minecraft/class_793"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ClientLanguagesMixin.class",
+    "target": "net/minecraft/class_1078"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/CreateWorldScreenMixin.class",
+    "target": "net/minecraft/class_525"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/EffectInstanceMixin.class",
+    "target": "net/minecraft/class_280"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/FireBlockMixin.class",
+    "target": "net/minecraft/class_2358"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/HoldingPlayerMixin.class",
+    "target": "net/minecraft/class_22$class_23"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ItemRendererAccessor.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ItemRendererMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/LocalPlayerMixin.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/MappedRegistryAccessor.class",
+    "target": "net/minecraft/class_2370"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ModelManagerAccessor.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/PackRepositoryAccessor.class",
+    "target": "net/minecraft/class_3283"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ParticleEngineAccessor.class",
+    "target": "net/minecraft/class_702"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/PistonStructureResolverMixin.class",
+    "target": "net/minecraft/class_2674"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/PoiTypeAccessor.class",
+    "target": "net/minecraft/class_4158"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/RegistryMixin.class",
+    "target": "net/minecraft/class_2378"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/SelfCustomBakedModel.class",
+    "target": "net/mehvahdjukaar/moonlight/api/client/model/CustomBakedModel"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/SelfIExtraModelDataProvider.class",
+    "target": "net/mehvahdjukaar/moonlight/api/client/model/IExtraModelDataProvider"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/SelfItemStackRenderer.class",
+    "target": "net/mehvahdjukaar/moonlight/api/client/ItemStackRenderer"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/SelfModFlowingFluidMixin.class",
+    "target": "net/mehvahdjukaar/moonlight/api/fluids/ModFlowingFluid"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/SelfModFluidRendererPropertiesMixin.class",
+    "target": "net/mehvahdjukaar/moonlight/api/client/ModFluidRenderProperties"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/ServerPackSourceMixin.class",
+    "target": "net/minecraft/class_3286"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/TextureAtlasMixin.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/moonlight/core/mixins/platform/TextureAtlasSpriteMixin.class",
+    "target": "net/minecraft/class_1058"
+  }
+]

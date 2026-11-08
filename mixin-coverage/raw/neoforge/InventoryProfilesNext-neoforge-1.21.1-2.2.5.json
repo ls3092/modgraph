@@ -1,0 +1,62 @@
+[
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinTraderTileEntityBase.class",
+    "target": "de/maxhenkel/easyvillagers/blocks/tileentity/TraderTileentityBase"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinKeyBinding.class",
+    "target": "net/minecraft/client/KeyMapping"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinAbstractContainerScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinAnvilMenu.class",
+    "target": "net/minecraft/world/inventory/AnvilMenu"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinInGameHud.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinItemGroup.class",
+    "target": "net/minecraft/world/item/CreativeModeTab"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinMerchantScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/MerchantScreen"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinMultiPlayerGameMode.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinPlayerController.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinPlayerInventory.class",
+    "target": "net/minecraft/world/entity/player/Inventory"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinScreenHandler.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinServerBoundInteractPacket.class",
+    "target": "net/minecraft/network/protocol/game/ServerboundInteractPacket"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinVirtualMouseHandler.class",
+    "target": "dev/isxander/controlify/virtualmouse/VirtualMouseHandler"
+  }
+]

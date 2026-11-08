@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "earth/terrarium/handcrafted/mixins/common/BlockElementMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/BlockElement$Deserializer"
+  }
+]

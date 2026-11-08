@@ -1,0 +1,470 @@
+[
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractArrowMixin.class",
+    "target": "net/minecraft/class_1665"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractHorseMixin.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/AbstractSkeletonMixin.class",
+    "target": "net/minecraft/class_1547"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BannerPatternItemMixin.class",
+    "target": "net/minecraft/class_1745"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BlockBehaviourPlanterMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BlockSourceMixin.class",
+    "target": "net/minecraft/class_2342"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BoatRendererMixin.class",
+    "target": "net/minecraft/class_881"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BookViewScreenMixin.class",
+    "target": "net/minecraft/class_3872"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BowMixin.class",
+    "target": "net/minecraft/class_1753"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/BrushItemMixin.class",
+    "target": "net/minecraft/class_8162"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CameraMixin.class",
+    "target": "net/minecraft/class_4184"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CampfireBlockMixin.class",
+    "target": "net/minecraft/class_3922"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableInputSlotMixin.class",
+    "target": "net/minecraft/class_3910$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableMixin.class",
+    "target": "net/minecraft/class_3910"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CartographyTableScreenMixin.class",
+    "target": "net/minecraft/class_3934"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CatSitOnBlockGoalMixin.class",
+    "target": "net/minecraft/class_1373"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CelebrateVillagersSurvivedRaidMixin.class",
+    "target": "net/minecraft/class_4242"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ChatMixin.class",
+    "target": "net/minecraft/class_408"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CooperativePistonBaseBlockMixin.class",
+    "target": "net/minecraft/class_2665"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/CreeperMixin.class",
+    "target": "net/minecraft/class_1548"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/DiodeBlockMixin.class",
+    "target": "net/minecraft/class_2312"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EntityAccessor.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/EvokerMixin.class",
+    "target": "net/minecraft/class_1564"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ExplorationMapFunctionMixin.class",
+    "target": "net/minecraft/class_111"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ExplosionMixin.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FallingBlockEntityMixin.class",
+    "target": "net/minecraft/class_1540"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FireBlockMixin.class",
+    "target": "net/minecraft/class_2358"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/FontRendererMixin.class",
+    "target": "net/minecraft/class_327"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GoalUtilsMixin.class",
+    "target": "net/minecraft/class_5493"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneInputSlotMixin.class",
+    "target": "net/minecraft/class_3803$2"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneInputSlotMixin.class",
+    "target": "net/minecraft/class_3803$2"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneMenuMixin.class",
+    "target": "net/minecraft/class_3803"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GrindstoneTestSlotMixin.class",
+    "target": "net/minecraft/class_3803$4"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/class_970"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IDispenserAccessor.class",
+    "target": "net/minecraft/class_2315"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IHangingEntityAccessor.class",
+    "target": "net/minecraft/class_1530"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/InkSackMixin.class",
+    "target": "net/minecraft/class_8233"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IronBarsBlockMixin.class",
+    "target": "net/minecraft/class_2389"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/IronGolemRendererMixin.class",
+    "target": "net/minecraft/class_913"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ItemsMixin.class",
+    "target": "net/minecraft/class_1802"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LanternBlockPlacementMixin.class",
+    "target": "net/minecraft/class_3749"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeadItemMixin.class",
+    "target": "net/minecraft/class_1804"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeashFenceKnotEntityMixin.class",
+    "target": "net/minecraft/class_1532"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LeashKnotRendererMixin.class",
+    "target": "net/minecraft/class_920"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LiquidBlockRendererMixin.class",
+    "target": "net/minecraft/class_775"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityAccessor.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/class_922"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/LocalPlayerMixin.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MapItemMixin.class",
+    "target": "net/minecraft/class_1806"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MapTextureMixin.class",
+    "target": "net/minecraft/class_330$class_331"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MineshaftCorridorMixin.class",
+    "target": "net/minecraft/class_3353$class_3354"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MineshaftPiecesMixin.class",
+    "target": "net/minecraft/class_3353"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/MouseHandlerMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ObserverBlockMixin.class",
+    "target": "net/minecraft/class_2426"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PageButtonMixin.class",
+    "target": "net/minecraft/class_474"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ParrotMixin.class",
+    "target": "net/minecraft/class_1453"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonBaseBlockMixin.class",
+    "target": "net/minecraft/class_2665"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonHeadRendererMixin.class",
+    "target": "net/minecraft/class_835"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonMovingBlockEntityMixin.class",
+    "target": "net/minecraft/class_2669"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PistonStructureResolverMixin.class",
+    "target": "net/minecraft/class_2674"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerAccessor.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerProjectileMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerRendererMixin.class",
+    "target": "net/minecraft/class_1007"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/PlayerSocialManagerMixin.class",
+    "target": "net/minecraft/class_5520"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ProjectileWeaponItemMixin.class",
+    "target": "net/minecraft/class_1811"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RaidMixin.class",
+    "target": "net/minecraft/class_3765"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RedMerchantSpawnerMixin.class",
+    "target": "net/minecraft/class_3990"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/RemotePlayerMixin.class",
+    "target": "net/minecraft/class_745"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerGamePacketListenerMixin.class",
+    "target": "net/minecraft/class_3244"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ServerPlayerMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ShulkerBoxBlockEntityMixin.class",
+    "target": "net/minecraft/class_2627"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ShulkerSlotMixin.class",
+    "target": "net/minecraft/class_1736"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkeletonMixin.class",
+    "target": "net/minecraft/class_1613"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkellyHorseMixin.class",
+    "target": "net/minecraft/class_1506"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SkullBlockRendererMixin.class",
+    "target": "net/minecraft/class_836"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/SlimeMixin.class",
+    "target": "net/minecraft/class_1621"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrayMixin.class",
+    "target": "net/minecraft/class_1627"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrongholdCrossingSconceMixin.class",
+    "target": "net/minecraft/class_3421$class_3424"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/StrongholdRoomSconceMixin.class",
+    "target": "net/minecraft/class_3421$class_3431"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/UndeadHorseRenderMixin.class",
+    "target": "net/minecraft/class_961"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/WanderingTraderMixin.class",
+    "target": "net/minecraft/class_3989"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/WrittenBookAccessMixin.class",
+    "target": "net/minecraft/class_3872$class_3931"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/ZombieHorseMixin.class",
+    "target": "net/minecraft/class_1507"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatCreeperArclightMixin.class",
+    "target": "net/minecraft/class_1548"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatEMFMixin.class",
+    "target": "traben/entity_model_features/models/parts/EMFModelPartCustom"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/compat/CompatFarmersDelightTomatoMixin.class",
+    "target": "vectorwing/farmersdelight/common/block/TomatoBlock"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/BiomeAccessor.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/CropBlockMixin.class",
+    "target": "net/minecraft/class_2302"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/CropBlockMixin.class",
+    "target": "net/minecraft/class_2513"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/CropBlockMixin.class",
+    "target": "net/minecraft/class_2261"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/FireBlockAccessor.class",
+    "target": "net/minecraft/class_2358"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/MC263524FixMixin.class",
+    "target": "net/minecraft/class_4723"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/MinecraftInputMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/MobMixin.class",
+    "target": "net/minecraft/class_1308"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/MouseScrollMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/ParrotLayerMixin.class",
+    "target": "net/minecraft/class_983"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/RedstoneWireBlockMixin.class",
+    "target": "net/minecraft/class_2457"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/SkullBlockRendererMixin.class",
+    "target": "net/minecraft/class_836"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/SugarCaneBlockMixin.class",
+    "target": "net/minecraft/class_2523"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/ThrowableProjectileMixin.class",
+    "target": "net/minecraft/class_1682"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/compat/CompatIFMapAtlasTextureMixin.class",
+    "target": "net/raphimc/immediatelyfast/feature/map_atlas_generation/MapAtlasTexture"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/compat/CompatIFMapTextureMixin2.class",
+    "target": "net/minecraft/class_330$class_331"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/supplementaries/mixins/fabric/compat/CompatSodiumFluidRendererMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/DefaultFluidRenderer"
+  }
+]

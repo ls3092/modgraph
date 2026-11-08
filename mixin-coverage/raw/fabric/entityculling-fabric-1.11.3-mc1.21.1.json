@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/BlockEntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_824"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/BlockEntityRendererMixin.class",
+    "target": "net/minecraft/class_827"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/ClientWorldMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/CullableMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/CullableMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/DebugHudMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/DebugScreenEntriesAccessor.class",
+    "target": "net.minecraft.client.Minecraft"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/DisplayAccessor.class",
+    "target": "net/minecraft/class_8113"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/EntityRendererMixin.class",
+    "target": "net/minecraft/class_897"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/LivingEntityRendererAccessor.class",
+    "target": "net.minecraft.client.Minecraft"
+  },
+  {
+    "mixin_class": "dev/tr7zw/entityculling/mixin/WorldRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  }
+]

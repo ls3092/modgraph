@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/neoforge/ResourcefulFlowingFluidMixin.class",
+    "target": "com/teamresourceful/resourcefullib/common/fluid/ResourcefulFlowingFluid"
+  }
+]

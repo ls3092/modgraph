@@ -1,0 +1,354 @@
+[
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/AbstractFurnaceBlockEntityMixin.class",
+    "target": "net/minecraft/class_2609"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/AbstractHorseMixin.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/AnimalMixin.class",
+    "target": "net/minecraft/class_1429"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/AnvilMenuMixin.class",
+    "target": "net/minecraft/class_1706"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BaseSpawnerMixin.class",
+    "target": "net/minecraft/class_1917"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BlockItemMixin.class",
+    "target": "net/minecraft/class_1747"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BlockMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BoneMealItemMixin.class",
+    "target": "net/minecraft/class_1752"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/BowItemMixin.class",
+    "target": "net/minecraft/class_1753"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ChatListenerMixin.class",
+    "target": "net/minecraft/class_7594"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ClientLanguageMixin.class",
+    "target": "net/minecraft/class_1078"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/CommandsMixin.class",
+    "target": "net/minecraft/class_2170"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/CreateWorldScreenMixin.class",
+    "target": "net/minecraft/class_525"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/EntityTypeMixin.class",
+    "target": "net/minecraft/class_1299"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ExplosionMixin.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/FishingRodHookedTriggerMixin.class",
+    "target": "net/minecraft/class_2058"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ItemEntityMixin.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/LanguageManagerMixin.class",
+    "target": "net/minecraft/class_1076"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/LanguageMixin.class",
+    "target": "net/minecraft/class_2477"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/LightningBoltMixin.class",
+    "target": "net/minecraft/class_1538"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/MagmaCubeMixin.class",
+    "target": "net/minecraft/class_1589"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/MultiPlayerGameModeMixin.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/NaturalSpawnerMixin.class",
+    "target": "net/minecraft/class_1948"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/NetherPortalBlockMixin.class",
+    "target": "net/minecraft/class_2423"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PackRepositoryMixin.class",
+    "target": "net/minecraft/class_3283"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PatrolSpawnerMixin.class",
+    "target": "net/minecraft/class_3769"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PistonBaseBlockMixin.class",
+    "target": "net/minecraft/class_2665"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PlayerListMixin.class",
+    "target": "net/minecraft/class_3324"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PlayerMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/PortalShapeMixin.class",
+    "target": "net/minecraft/class_2424"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ServerEntityMixin.class",
+    "target": "net/minecraft/class_3231"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ServerGamePacketListenerImplMixin.class",
+    "target": "net/minecraft/class_3244"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ServerPlayerGameModeMixin.class",
+    "target": "net/minecraft/class_3225"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/ServerPlayerMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/SoundEngineMixin.class",
+    "target": "net/minecraft/class_1140"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/TeleportCommandMixin.class",
+    "target": "net/minecraft/class_3143"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/TitleScreenMixin.class",
+    "target": "net/minecraft/class_442"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/VillageSiegeMixin.class",
+    "target": "net/minecraft/class_1419"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/WorldOpenFlowsMixin.class",
+    "target": "net/minecraft/class_7196"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/BambooStalkBlockMixin.class",
+    "target": "net/minecraft/class_2211"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/CactusBlockMixin.class",
+    "target": "net/minecraft/class_2266"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/ChorusFlowerBlockMixin.class",
+    "target": "net/minecraft/class_2279"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/CocoaBlockMixin.class",
+    "target": "net/minecraft/class_2282"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/CropBlockMixin.class",
+    "target": "net/minecraft/class_2302"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/GrowingPlantHeadBlockMixin.class",
+    "target": "net/minecraft/class_4865"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/NetherWartBlockMixin.class",
+    "target": "net/minecraft/class_2421"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/StemBlockMixin.class",
+    "target": "net/minecraft/class_2513"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/SugarCaneBlockMixin.class",
+    "target": "net/minecraft/class_2523"
+  },
+  {
+    "mixin_class": "com/natamus/collective/fabric/mixin/crop/SweetBerryBushBlockMixin.class",
+    "target": "net/minecraft/class_3830"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/BlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BlockEntity"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/BoneMealItemMixin.class",
+    "target": "net/minecraft/world/item/BoneMealItem"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/ClientLanguageMixin.class",
+    "target": "net/minecraft/client/resources/language/ClientLanguage"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/LanguageManagerMixin.class",
+    "target": "net/minecraft/client/resources/language/LanguageManager"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/NetherPortalBlockMixin.class",
+    "target": "net/minecraft/world/level/block/NetherPortalBlock"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/PatrolSpawnerMixin.class",
+    "target": "net/minecraft/world/level/levelgen/PatrolSpawner"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/PrimaryLevelDataMixin.class",
+    "target": "net/minecraft/world/level/storage/PrimaryLevelData"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/ServerPlayerMixin.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/TitleScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/VillageSiegeMixin.class",
+    "target": "net/minecraft/world/entity/ai/village/VillageSiege"
+  },
+  {
+    "mixin_class": "com/natamus/collective/forge/mixin/WorldOpenFlowsMixin.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldOpenFlows"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/BlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BlockEntity"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/BoneMealItemMixin.class",
+    "target": "net/minecraft/world/item/BoneMealItem"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/ClientLanguageMixin.class",
+    "target": "net/minecraft/client/resources/language/ClientLanguage"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/LanguageManagerMixin.class",
+    "target": "net/minecraft/client/resources/language/LanguageManager"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/NetherPortalBlockMixin.class",
+    "target": "net/minecraft/world/level/block/NetherPortalBlock"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/PatrolSpawnerMixin.class",
+    "target": "net/minecraft/world/level/levelgen/PatrolSpawner"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/PrimaryLevelDataMixin.class",
+    "target": "net/minecraft/world/level/storage/PrimaryLevelData"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/ServerPlayerMixin.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/TitleScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/VillageSiegeMixin.class",
+    "target": "net/minecraft/world/entity/ai/village/VillageSiege"
+  },
+  {
+    "mixin_class": "com/natamus/collective/neoforge/mixin/WorldOpenFlowsMixin.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldOpenFlows"
+  }
+]

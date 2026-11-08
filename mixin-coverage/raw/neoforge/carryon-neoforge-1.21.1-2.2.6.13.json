@@ -1,0 +1,22 @@
+[
+  {
+    "mixin_class": "tschipp/carryon/mixin/InventoryMixin.class",
+    "target": "net/minecraft/world/entity/player/Inventory"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/HumanoidModelMixin.class",
+    "target": "net/minecraft/client/model/HumanoidModel"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  }
+]

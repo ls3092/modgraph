@@ -1,0 +1,258 @@
+[
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/CustomItemUseEffectsMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/datafixer/ItemStackComponentizationFixMixin.class",
+    "target": "net/minecraft/util/datafix/fixes/ItemStackComponentizationFix"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/datafixer/BlockPosFormatAndRenamesFixMixin.class",
+    "target": "net/minecraft/util/datafix/fixes/BlockPosFormatAndRenamesFix"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/datafixer/V1460Mixin.class",
+    "target": "net/minecraft/util/datafix/schemas/V1460"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/ItemStackMixin.class",
+    "target": "net/minecraft/world/item/ItemStack"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/EnchantedCountIncreaseFunctionMixin.class",
+    "target": "net/minecraft/world/level/storage/loot/functions/EnchantedCountIncreaseFunction"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/BlockMixin.class",
+    "target": "net/minecraft/world/level/block/Block"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/BeehiveBlockMixin.class",
+    "target": "net/minecraft/world/level/block/BeehiveBlock"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/BuiltInRegistriesMixin.class",
+    "target": "net/minecraft/core/registries/BuiltInRegistries"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/ArmorTrimMixin.class",
+    "target": "net/minecraft/world/item/armortrim/ArmorTrim"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/MapItemSavedDataMixin.class",
+    "target": "net/minecraft/world/level/saveddata/maps/MapItemSavedData"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/WaterWheelFluidSpreadMixin.class",
+    "target": "net/minecraft/world/level/material/FlowingFluid"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/BlockDestructionProgressMixin.class",
+    "target": "net/minecraft/server/level/BlockDestructionProgress"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/LevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/EntityContraptionInteractionMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/HeavyBootsOnPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/HumanoidModelMixin.class",
+    "target": "net/minecraft/client/model/HumanoidModel"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/PlayerRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/client/CameraMixin.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/SmithingMenuMixin.class",
+    "target": "net/minecraft/world/inventory/SmithingMenu"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/LavaSwimmingMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/ProjectileUtilMixin.class",
+    "target": "net/minecraft/world/entity/projectile/ProjectileUtil"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/BlockItemMixin.class",
+    "target": "net/minecraft/world/item/BlockItem"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/MobMixin.class",
+    "target": "net/minecraft/world/entity/Mob"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/compat/xaeros/XaeroFullscreenMapAccessor.class",
+    "target": "xaero/map/gui/GuiMap"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/compat/xaeros/XaeroFullscreenMapMixin.class",
+    "target": "xaero/map/gui/GuiMap"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/compat/xaeros/XaeroPauseScreenOverrideMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/MappedRegistryAccessor.class",
+    "target": "net/minecraft/core/MappedRegistry"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/LivingEntityAccessor.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ItemModelGeneratorsAccessor.class",
+    "target": "net/minecraft/data/models/ItemModelGenerators"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/MinecraftAccessor.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/BlockLootSubProviderAccessor.class",
+    "target": "net/minecraft/data/loot/BlockLootSubProvider"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/AgeableListModelAccessor.class",
+    "target": "net/minecraft/client/model/AgeableListModel"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/MouseHandlerAccessor.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/GameTestHelperAccessor.class",
+    "target": "net/minecraft/gametest/framework/GameTestHelper"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/MobEffectInstanceAccessor.class",
+    "target": "net/minecraft/world/effect/MobEffectInstance"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ConcretePowderBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/ConcretePowderBlock"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/CropBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/CropBlock"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/UseOnContextAccessor.class",
+    "target": "net/minecraft/world/item/context/UseOnContext"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/EntityRenderDispatcherAccessor.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ProjectileDispenseBehaviorAccessor.class",
+    "target": "net/minecraft/core/dispenser/ProjectileDispenseBehavior"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/StateHolderAccessor.class",
+    "target": "net/minecraft/world/level/block/state/StateHolder"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ShapedRecipeAccessor.class",
+    "target": "net/minecraft/world/item/crafting/ShapedRecipe"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/FallingBlockEntityAccessor.class",
+    "target": "net/minecraft/world/entity/item/FallingBlockEntity"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/FlowingFluidAccessor.class",
+    "target": "net/minecraft/world/level/material/FlowingFluid"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/NbtAccounterAccessor.class",
+    "target": "net/minecraft/nbt/NbtAccounter"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/MinecartFurnaceAccessor.class",
+    "target": "net/minecraft/world/entity/vehicle/MinecartFurnace"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/HumanoidArmorLayerAccessor.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ItemFrameAccessor.class",
+    "target": "net/minecraft/world/entity/decoration/ItemFrame"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/GuiAccessor.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ServerLevelAccessor.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/SystemReportAccessor.class",
+    "target": "net/minecraft/SystemReport"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/DispenserBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/DispenserBlock"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/TimerAccessor.class",
+    "target": "net/minecraft/client/DeltaTracker$Timer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/FontAccessor.class",
+    "target": "net/minecraft/client/gui/Font"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/BlockBehaviourAccessor.class",
+    "target": "net/minecraft/world/level/block/state/BlockBehaviour"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/LevelRendererAccessor.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/FluidInteractionRegistryAccessor.class",
+    "target": "net/neoforged/neoforge/fluids/FluidInteractionRegistry"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/PotionBrewingAccessor.class",
+    "target": "net/minecraft/world/item/alchemy/PotionBrewing"
+  },
+  {
+    "mixin_class": "com/simibubi/create/foundation/mixin/accessor/ItemStackHandlerAccessor.class",
+    "target": "net/neoforged/neoforge/items/ItemStackHandler"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinBucketItem.class",
+    "target": "net/minecraft/class_1755"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinContainerScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinEntityBucketItem.class",
+    "target": "net/minecraft/class_1785"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinFluid.class",
+    "target": "net/minecraft/class_3611"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinKeyBinding.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/IMixinSlot.class",
+    "target": "net/minecraft/class_1735"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinAnvilScreenHandler.class",
+    "target": "net/minecraft/class_1706"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinClientPlayNetworkHandler.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinClientPlayerInteractionManager.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinContainerScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinCraftingResultSlot.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinGameRendererOptifabric.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinGuiCloseC2SPacket.class",
+    "target": "net/minecraft/class_2815"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinInGameHud.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinItemGroup.class",
+    "target": "net/minecraft/class_1761"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinMerchantScreen.class",
+    "target": "net/minecraft/class_492"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinMinecraftClient.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinPlayerInteractEntityC2SPacket.class",
+    "target": "net/minecraft/class_2824"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinPlayerInteractionManagerForLockedSlotsMovePrevention.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinPlayerInventory.class",
+    "target": "net/minecraft/class_1661"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinScreen.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinSuperMartiJnWidgetScreen.class",
+    "target": "com/supermartijn642/core/gui/WidgetContainerScreen"
+  },
+  {
+    "mixin_class": "org/anti_ad/mc/ipnext/mixin/MixinVirtualMouseHandler.class",
+    "target": "dev/isxander/controlify/virtualmouse/VirtualMouseHandler"
+  }
+]

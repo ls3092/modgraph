@@ -1,0 +1,142 @@
+[
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/block/MixinDecoratedPotPatterns.class",
+    "target": "net/minecraft/world/level/block/entity/DecoratedPotPatterns"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootPool.class",
+    "target": "net/minecraft/world/level/storage/loot/LootPool"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootItemKilledByPlayerCondition.class",
+    "target": "net/minecraft/world/level/storage/loot/predicates/LootItemKilledByPlayerCondition"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/loot/MixinLootDataType.class",
+    "target": "net/minecraft/world/level/storage/loot/LootDataType"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/level/MixinWalkNodeEvaluator.class",
+    "target": "net/minecraft/world/level/pathfinder/WalkNodeEvaluator"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/level/MixinRecipeManager.class",
+    "target": "net/minecraft/world/item/crafting/RecipeManager"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/locale/MixinClientLanguage.class",
+    "target": "net/minecraft/client/resources/language/ClientLanguage"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/server/MixinReloadableServerResources.class",
+    "target": "net/minecraft/server/ReloadableServerResources"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/advancement/MixinPlayerAdvancements.class",
+    "target": "net/minecraft/server/PlayerAdvancements"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/potions/MixinPotionBrewing.class",
+    "target": "net/minecraft/world/item/alchemy/PotionBrewing"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/packs/MixinSimpleJsonResourceReloadListener.class",
+    "target": "net/minecraft/server/packs/resources/SimpleJsonResourceReloadListener"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/entity/MixinLightningBolt.class",
+    "target": "net/minecraft/world/entity/LightningBolt"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/entity/MixinLivingEntity.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/patch/item/MixinCreativeModeTab.class",
+    "target": "net/minecraft/world/item/CreativeModeTab"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBaseContainerBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/BaseContainerBlockEntity"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBannerBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/BannerBlockEntity"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorCropBlock.class",
+    "target": "net/minecraft/world/level/block/CropBlock"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/block/AccessorBlockEntityRenderers.class",
+    "target": "net/minecraft/client/renderer/blockentity/BlockEntityRenderers"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/particles/AccessSimpleParticleType.class",
+    "target": "net/minecraft/core/particles/SimpleParticleType"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootPoolSingletonContainer.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/LootPoolSingletonContainer"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootItem.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/LootItem"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootTable.class",
+    "target": "net/minecraft/world/level/storage/loot/LootTable"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorDynamicLoot.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/DynamicLoot"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorTagEntry.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/TagEntry"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorCompositeEntryBase.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/CompositeEntryBase"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorNestedLootTable.class",
+    "target": "net/minecraft/world/level/storage/loot/entries/NestedLootTable"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/loot/AccessorLootPool.class",
+    "target": "net/minecraft/world/level/storage/loot/LootPool"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/level/AccessorRecipeManager.class",
+    "target": "net/minecraft/world/item/crafting/RecipeManager"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorItemBlockRenderTypes.class",
+    "target": "net/minecraft/client/renderer/ItemBlockRenderTypes"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/gui/AccessorAbstractWidget.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/client/AccessorFontManager.class",
+    "target": "net/minecraft/client/gui/font/FontManager"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/common/mixin/access/entity/AccessorEntity.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "net/darkhax/bookshelf/neoforge/mixin/access/gui/screen/AccessorMenuScreens.class",
+    "target": "net/minecraft/client/gui/screens/MenuScreens"
+  }
+]

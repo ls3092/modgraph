@@ -1,0 +1,410 @@
+{
+  "generatedAt": "2026-11-07T20:02:24.640274+08:00",
+  "modcrawl": {
+    "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\opencode\\modcrawl-bin\\modcrawl.exe",
+    "version": "modcrawl 0.11.3",
+    "sha256": "a1f65355951f81753a10b8d4b9b61aa9eef2b65a761ad1e1569e8007509caf56",
+    "licenseFirstLine": "MIT License",
+    "commandTemplate": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\opencode\\modcrawl-bin\\modcrawl.exe mixins --json <jar>"
+  },
+  "inputs": {
+    "repoRoot": "D:\\modgraph\\modgraph",
+    "jarsRoot": "D:\\modgraph\\modgraph\\fixtures\\jars",
+    "candidates": "D:\\modgraph\\modgraph\\candidates.jsonl"
+  },
+  "counts": {
+    "jarsEnumerated": 195,
+    "candidateRecords": 195,
+    "status": {
+      "FAILED": 4,
+      "OK": 191
+    },
+    "okRecords": 191,
+    "failedRecords": 4,
+    "invocationFailures": 0
+  },
+  "okFourWay": {
+    "total": 191,
+    "counts": {
+      "BOTH": 157,
+      "NAMING_ONLY": 1,
+      "MODCRAWL_ONLY": 6,
+      "NEITHER": 27
+    },
+    "sum": 191,
+    "bothModIds": [
+      "ambientsounds",
+      "appleskin",
+      "architectury",
+      "badoptimizations",
+      "balm",
+      "betteradvancements",
+      "betterf3",
+      "biomesoplenty",
+      "bookshelf",
+      "carryon",
+      "chat_heads",
+      "cherishedworlds",
+      "clumps",
+      "cobblemon",
+      "collective",
+      "continuity",
+      "controlify",
+      "controlling",
+      "create",
+      "creativecore",
+      "curios",
+      "cwb",
+      "distanthorizons",
+      "dynamic_fps",
+      "e4mc",
+      "emi",
+      "enchdesc",
+      "entity_model_features",
+      "entity_texture_features",
+      "entityculling",
+      "euphoria_patcher",
+      "fallingleaves",
+      "fancymenu",
+      "farmersdelight",
+      "fastipping",
+      "ferritecore",
+      "forgeconfigapiport",
+      "geckolib",
+      "handcrafted",
+      "iceberg",
+      "immediatelyfast",
+      "indium",
+      "inventoryprofilesnext",
+      "iris",
+      "jade",
+      "jei",
+      "konkrete",
+      "krypton",
+      "languagereload",
+      "letmedespawn",
+      "libipn",
+      "litematica",
+      "lithium",
+      "lithostitched",
+      "malilib",
+      "melody",
+      "midnightlib",
+      "modelfix",
+      "modernfix",
+      "modmenu",
+      "moonlight",
+      "morechathistory",
+      "moreculling",
+      "mousetweaks",
+      "naturescompass",
+      "netherportalfix",
+      "nochatreports",
+      "notenoughanimations",
+      "optigui",
+      "owo",
+      "packetfixer",
+      "patchouli",
+      "playeranimator",
+      "polymorph",
+      "puzzle",
+      "puzzleslib",
+      "quark",
+      "reeses-sodium-options",
+      "reeses_sodium_options",
+      "resourcefulconfig",
+      "resourcefullib",
+      "roughlyenoughitems",
+      "rrls",
+      "shulkerboxtooltip",
+      "skinlayers3d",
+      "sodium",
+      "sodium-extra",
+      "sodium_extra",
+      "sound_physics_remastered",
+      "supplementaries",
+      "terrablender",
+      "veinminer_client",
+      "visuality",
+      "voicechat",
+      "waystones",
+      "xaerominimap",
+      "xaeroworldmap",
+      "yet_another_config_lib_v3",
+      "yungsapi",
+      "zoomify"
+    ],
+    "namingOnlyModIds": [
+      "sodium"
+    ],
+    "modcrawlOnlyModIds": [
+      "controlling",
+      "embeddium",
+      "modelfix",
+      "presencefootsteps",
+      "searchables"
+    ],
+    "neitherModIds": [
+      "appleskin",
+      "betteradvancements",
+      "cloth-config",
+      "cloth_config",
+      "coroutil",
+      "essential-container",
+      "fabric-api",
+      "fabric-language-kotlin",
+      "fabric_api",
+      "forgeconfigapiport",
+      "fzzy_config",
+      "jei",
+      "lambdynlights",
+      "libipn",
+      "naturescompass",
+      "placeholder-api",
+      "supermartijn642configlib",
+      "veinminer",
+      "veinminer_client",
+      "visualworkbench",
+      "voicechat"
+    ],
+    "emptyNamingTargets": {
+      "total": 33,
+      "withNonEmptyMixinConfigs": 10,
+      "withEmptyMixinConfigs": 23
+    },
+    "neitherBreakdown": {
+      "gapRemaining": 5,
+      "emptyConfigNoModcrawl": 22
+    },
+    "modcrawlOnlyBreakdown": {
+      "gapFilled": 5,
+      "emptyConfigButAnnotated": 1
+    },
+    "namingOnlyRecords": [
+      {
+        "sourceFile": "sodium-neoforge-0.8.13+mc1.21.1.jar",
+        "modId": "sodium",
+        "loaderFamily": "NEOFORGE",
+        "namingTargetCount": 74
+      }
+    ],
+    "modcrawlOnlyRecords": [
+      {
+        "sourceFile": "PresenceFootsteps-1.11.2+1.21.jar",
+        "modId": "presencefootsteps",
+        "loaderFamily": "FABRIC",
+        "modcrawlEntryCount": 9
+      },
+      {
+        "sourceFile": "Searchables-fabric-1.21.1-1.0.2.jar",
+        "modId": "searchables",
+        "loaderFamily": "FABRIC",
+        "modcrawlEntryCount": 1
+      },
+      {
+        "sourceFile": "Controlling-neoforge-1.21.1-19.0.5.jar",
+        "modId": "controlling",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 5
+      },
+      {
+        "sourceFile": "embeddium-1.0.15+mc1.21.1.jar",
+        "modId": "embeddium",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 91
+      },
+      {
+        "sourceFile": "modelfix-1.21-1.10.jar",
+        "modId": "modelfix",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 2
+      },
+      {
+        "sourceFile": "Searchables-neoforge-1.21.1-1.0.2.jar",
+        "modId": "searchables",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 1
+      }
+    ]
+  },
+  "gap": {
+    "definition": "status=OK, mixinTargets empty, mixinConfigs non-empty",
+    "total": 10,
+    "filled": 5,
+    "remaining": 5,
+    "filledModIds": [
+      "controlling",
+      "embeddium",
+      "presencefootsteps",
+      "searchables"
+    ],
+    "remainingModIds": [
+      "coroutil",
+      "forgeconfigapiport",
+      "supermartijn642configlib",
+      "visualworkbench"
+    ],
+    "filledRecords": [
+      {
+        "sourceFile": "PresenceFootsteps-1.11.2+1.21.jar",
+        "modId": "presencefootsteps",
+        "loaderFamily": "FABRIC",
+        "modcrawlEntryCount": 9
+      },
+      {
+        "sourceFile": "Searchables-fabric-1.21.1-1.0.2.jar",
+        "modId": "searchables",
+        "loaderFamily": "FABRIC",
+        "modcrawlEntryCount": 1
+      },
+      {
+        "sourceFile": "Controlling-neoforge-1.21.1-19.0.5.jar",
+        "modId": "controlling",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 5
+      },
+      {
+        "sourceFile": "embeddium-1.0.15+mc1.21.1.jar",
+        "modId": "embeddium",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 91
+      },
+      {
+        "sourceFile": "Searchables-neoforge-1.21.1-1.0.2.jar",
+        "modId": "searchables",
+        "loaderFamily": "NEOFORGE",
+        "modcrawlEntryCount": 1
+      }
+    ],
+    "remainingRecords": [
+      {
+        "sourceFile": "coroutil-fabric-1.21.1-1.3.8.jar",
+        "modId": "coroutil",
+        "loaderFamily": "FABRIC",
+        "reason": "EMPTY_CONFIG",
+        "detail": {
+          "reason": "EMPTY_CONFIG",
+          "configPaths": [
+            "coroutil_fabric.mixins.json"
+          ],
+          "configsFound": [
+            "coroutil_fabric.mixins.json"
+          ],
+          "configsMissing": [],
+          "referencedClassCount": 0,
+          "topLevelClassHits": 0,
+          "nestedJarClassHits": 0
+        }
+      },
+      {
+        "sourceFile": "supermartijn642configlib-1.1.8-fabric-mc1.21.jar",
+        "modId": "supermartijn642configlib",
+        "loaderFamily": "FABRIC",
+        "reason": "EMPTY_CONFIG",
+        "detail": {
+          "reason": "EMPTY_CONFIG",
+          "configPaths": [
+            "supermartijn642configlib.mixins.json"
+          ],
+          "configsFound": [
+            "supermartijn642configlib.mixins.json"
+          ],
+          "configsMissing": [],
+          "referencedClassCount": 0,
+          "topLevelClassHits": 0,
+          "nestedJarClassHits": 0
+        }
+      },
+      {
+        "sourceFile": "VisualWorkbench-v21.1.2-1.21.1-Fabric.jar",
+        "modId": "visualworkbench",
+        "loaderFamily": "FABRIC",
+        "reason": "EMPTY_CONFIG",
+        "detail": {
+          "reason": "EMPTY_CONFIG",
+          "configPaths": [
+            "visualworkbench.common.mixins.json",
+            "visualworkbench.fabric.mixins.json"
+          ],
+          "configsFound": [
+            "visualworkbench.common.mixins.json",
+            "visualworkbench.fabric.mixins.json"
+          ],
+          "configsMissing": [],
+          "referencedClassCount": 0,
+          "topLevelClassHits": 0,
+          "nestedJarClassHits": 0
+        }
+      },
+      {
+        "sourceFile": "ForgeConfigAPIPort-v21.1.6-1.21.1-NeoForge.jar",
+        "modId": "forgeconfigapiport",
+        "loaderFamily": "NEOFORGE",
+        "reason": "EMPTY_CONFIG",
+        "detail": {
+          "reason": "EMPTY_CONFIG",
+          "configPaths": [
+            "forgeconfigapiport.common.mixins.json",
+            "forgeconfigapiport.neoforge.mixins.json"
+          ],
+          "configsFound": [
+            "forgeconfigapiport.common.mixins.json",
+            "forgeconfigapiport.neoforge.mixins.json"
+          ],
+          "configsMissing": [],
+          "referencedClassCount": 0,
+          "topLevelClassHits": 0,
+          "nestedJarClassHits": 0
+        }
+      },
+      {
+        "sourceFile": "VisualWorkbench-v21.1.2-1.21.1-NeoForge.jar",
+        "modId": "visualworkbench",
+        "loaderFamily": "NEOFORGE",
+        "reason": "EMPTY_CONFIG",
+        "detail": {
+          "reason": "EMPTY_CONFIG",
+          "configPaths": [
+            "visualworkbench.common.mixins.json",
+            "visualworkbench.neoforge.mixins.json"
+          ],
+          "configsFound": [
+            "visualworkbench.common.mixins.json",
+            "visualworkbench.neoforge.mixins.json"
+          ],
+          "configsMissing": [],
+          "referencedClassCount": 0,
+          "topLevelClassHits": 0,
+          "nestedJarClassHits": 0
+        }
+      }
+    ],
+    "remainingReasonBuckets": {
+      "EMPTY_CONFIG": 5,
+      "CONFIG_MISSING": 0,
+      "MALFORMED_CONFIG": 0,
+      "NESTED_JAR_ONLY": 0,
+      "CONFIG_REFERENCES_MISSING_CLASS": 0,
+      "CONFIG_CLASS_PRESENT_MODCRAWL_NO_TARGET": 0,
+      "UNCLASSIFIED": 0
+    },
+    "remainingReasonSum": 5,
+    "gapBuckets": {
+      "FILLED_BY_MODCRAWL": 5,
+      "EMPTY_CONFIG": 5
+    },
+    "gapBucketSum": 10
+  },
+  "assertions": {
+    "jarsEqualsCandidates": true,
+    "statusSumEqualsJars": true,
+    "fourWaySumEqualsOk": true,
+    "gapFilledPlusRemainingEqualsTotal": true,
+    "remainingReasonSumEqualsRemaining": true,
+    "gapBucketSumEqualsTotal": true,
+    "emptyNamingEqualsGapPlusEmptyConfig": true,
+    "neitherBreaksDown": true,
+    "modcrawlOnlyBreaksDown": true,
+    "noUnclassifiedRemaining": true
+  }
+}

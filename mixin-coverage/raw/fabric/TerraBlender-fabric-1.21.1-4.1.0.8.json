@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "terrablender/mixin/MixinBiomeSource.class",
+    "target": "net/minecraft/class_1966"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinBuiltInRegistries.class",
+    "target": "net/minecraft/class_7923"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinChunkGenerator.class",
+    "target": "net/minecraft/class_2794"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinMinecraftServer.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinMultiNoiseBiomeSource.class",
+    "target": "net/minecraft/class_4766"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinNoiseBasedChunkGenerator.class",
+    "target": "net/minecraft/class_3754"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinNoiseGeneratorSettings.class",
+    "target": "net/minecraft/class_5284"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinParameterList.class",
+    "target": "net/minecraft/class_6544$class_6547"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinPrimaryLevelData.class",
+    "target": "net/minecraft/class_31"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinTheEndBiomeSource.class",
+    "target": "net/minecraft/class_2169"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MixinWorldOpenFlows.class",
+    "target": "net/minecraft/class_7196"
+  },
+  {
+    "mixin_class": "terrablender/mixin/MultiNoiseBiomeSourceAccess.class",
+    "target": "net/minecraft/class_4766"
+  }
+]

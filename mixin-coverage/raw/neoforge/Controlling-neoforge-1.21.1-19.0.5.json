@@ -1,0 +1,22 @@
+[
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessKeyMapping.class",
+    "target": "net/minecraft/client/KeyMapping"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessKeyBindsScreenNeoForge.class",
+    "target": "net/minecraft/client/gui/screens/options/controls/KeyBindsScreen"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessInputConstantsKey.class",
+    "target": "com/mojang/blaze3d/platform/InputConstants$Key"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessKeyBindsScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/controls/KeyBindsScreen"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessOptionsSubScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsSubScreen"
+  }
+]

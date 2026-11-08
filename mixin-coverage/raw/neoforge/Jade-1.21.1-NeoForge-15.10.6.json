@@ -1,0 +1,26 @@
+[
+  {
+    "mixin_class": "snownee/jade/mixin/AbstractFurnaceBlockEntityAccess.class",
+    "target": "net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/CanItemPerformAbilityAccess.class",
+    "target": "net/neoforged/neoforge/common/loot/CanItemPerformAbility"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/EntityAccess.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/FontMixin.class",
+    "target": "net/minecraft/client/gui/Font"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/SessionSearchTreesMixin.class",
+    "target": "net/minecraft/client/multiplayer/SessionSearchTrees"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/StringRenderOutputMixin.class",
+    "target": "net/minecraft/client/gui/Font$StringRenderOutput"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/IEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/ILivingEntity.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MAbstractBlock.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MBlockSettings.class",
+    "target": "net/minecraft/class_4970$class_2251"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MClientPlayNetworkHandler.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MDebugHud.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MLivingEntity.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MSoundSystem.class",
+    "target": "net/minecraft/class_1140"
+  },
+  {
+    "mixin_class": "eu/ha3/presencefootsteps/mixins/MStairsBlock.class",
+    "target": "net/minecraft/class_2510"
+  }
+]

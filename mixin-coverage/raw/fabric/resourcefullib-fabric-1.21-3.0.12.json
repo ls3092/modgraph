@@ -1,0 +1,26 @@
+[
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/DedicatedServerMixin.class",
+    "target": "net/minecraft/class_3176"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/FogRendererMixin.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefullib/mixins/fabric/ScreenEffectRendererMixin.class",
+    "target": "net/minecraft/class_4603"
+  }
+]

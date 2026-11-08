@@ -1,0 +1,30 @@
+[
+  {
+    "mixin_class": "link/infra/indium/mixin/renderer/AccessAmbientOcclusionCalculator.class",
+    "target": "net.minecraft.client.render.block.BlockModelRenderer$AmbientOcclusionCalculator"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/renderer/ItemRendererAccessor.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/renderer/MixinBlockModelRenderer.class",
+    "target": "net/minecraft/class_778"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/renderer/MixinItemRenderer.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/sodium/AccessBlockRenderer.class",
+    "target": "me/jellysquid/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderer"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/sodium/MixinBlockRenderCache.class",
+    "target": "me/jellysquid/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderCache"
+  },
+  {
+    "mixin_class": "link/infra/indium/mixin/sodium/MixinChunkBuilderMeshingTask.class",
+    "target": "me/jellysquid/mods/sodium/client/render/chunk/compile/tasks/ChunkBuilderMeshingTask"
+  }
+]

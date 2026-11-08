@@ -1,0 +1,174 @@
+[
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/adaptive_sync/MixinWindow.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/animation/MixinSpriteAtlasTexture.class",
+    "target": "net/minecraft/client/renderer/texture/TextureAtlas"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/biome_colors/MixinBiomeColors.class",
+    "target": "net/minecraft/client/renderer/BiomeColors"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/cloud/MixinDimensionEffectsOverworld.class",
+    "target": "net/minecraft/client/renderer/DimensionSpecialEffects$OverworldEffects"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinFogRenderer.class",
+    "target": "net/minecraft/client/renderer/FogRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinOcclusionCuller.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/occlusion/OcclusionCuller"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinRenderSectionManager.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/RenderSectionManager"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinShaderInstance.class",
+    "target": "net/minecraft/client/renderer/ShaderInstance"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinSodiumShaderLoader.class",
+    "target": "net/caffeinemc/mods/sodium/client/gl/shader/ShaderLoader"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fog/MixinTraversableTree.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/tree/TraversableTree"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/fps/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/gui/MixinGui.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/gui/MixinMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/instant_sneak/MixinCamera.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/light_updates/MixinLevelLightEngine.class",
+    "target": "net/minecraft/world/level/lighting/LevelLightEngine"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/AccessorLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/AccessorPostChain.class",
+    "target": "net/minecraft/client/renderer/PostChain"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/MixinPostChain.class",
+    "target": "net/minecraft/client/renderer/PostChain"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/panini_projection/MixinRenderTarget.class",
+    "target": "com/mojang/blaze3d/pipeline/RenderTarget"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/particle/MixinFireworkParticle.class",
+    "target": "net/minecraft/client/particle/FireworkParticles$Starter"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/particle/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/particle/MixinParticleEngine.class",
+    "target": "net/minecraft/client/particle/ParticleEngine"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/prevent_shaders/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/reduce_resolution_on_mac/MixinRenderTarget.class",
+    "target": "com/mojang/blaze3d/pipeline/RenderTarget"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/reduce_resolution_on_mac/MixinWindow.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/block/entity/MixinBeaconRenderer.class",
+    "target": "net/minecraft/client/renderer/blockentity/BeaconRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/block/entity/MixinEnchantingTableBlockEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/blockentity/EnchantTableRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/block/entity/MixinPistonBlockEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/blockentity/PistonHeadRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/entity/MixinItemFrameEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/ItemFrameRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/entity/MixinLivingEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/render/entity/MixinPaintingEntityRenderer.class",
+    "target": "net/minecraft/client/renderer/entity/PaintingRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/sky/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/sky_colors/MixinBiome.class",
+    "target": "net/minecraft/world/level/biome/Biome"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/sodium/cloud/MixinCloudRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/immediate/CloudRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/stars/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/steady_debug_hud/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/sun_moon/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/toasts/MixinToastInstance.class",
+    "target": "net/minecraft/client/gui/components/toasts/ToastComponent$ToastInstance"
+  },
+  {
+    "mixin_class": "me/flashyreese/mods/sodiumextra/mixin/toasts/MixinToastManager.class",
+    "target": "net/minecraft/client/gui/components/toasts/ToastComponent"
+  }
+]

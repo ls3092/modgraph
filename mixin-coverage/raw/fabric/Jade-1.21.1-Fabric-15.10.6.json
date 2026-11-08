@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "snownee/jade/mixin/AbstractFurnaceBlockEntityAccess.class",
+    "target": "net/minecraft/class_2609"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/AbstractHorseAccess.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/BossHealthOverlayMixin.class",
+    "target": "net/minecraft/class_337"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/EntityAccess.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/FontMixin.class",
+    "target": "net/minecraft/class_327"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/HarvestToolProviderMixin.class",
+    "target": "snownee/jade/addon/harvest/HarvestToolProvider"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/KeyAccess.class",
+    "target": "net/minecraft/class_3675$class_306"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/SessionSearchTreesMixin.class",
+    "target": "net/minecraft/class_1124"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/StringRenderOutputMixin.class",
+    "target": "net/minecraft/class_327$class_5232"
+  },
+  {
+    "mixin_class": "snownee/jade/mixin/ThemeHelperMixin.class",
+    "target": "snownee/jade/impl/theme/ThemeHelper"
+  }
+]

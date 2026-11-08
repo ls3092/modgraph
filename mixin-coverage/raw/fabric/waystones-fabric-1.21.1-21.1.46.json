@@ -1,0 +1,34 @@
+[
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ClientLevelAccessor.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ItemPropertiesAccessor.class",
+    "target": "net/minecraft/class_5272"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/JigsawPlacementPlacerMixin.class",
+    "target": "net/minecraft/class_3778$class_4182"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ServerEntityMixin.class",
+    "target": "net/minecraft/class_3231"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ServerScoreboardMixin.class",
+    "target": "net/minecraft/class_2995"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/SinglePoolElementMixin.class",
+    "target": "net/minecraft/class_3781"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/StructureTemplatePoolAccessor.class",
+    "target": "net/minecraft/class_3785"
+  }
+]

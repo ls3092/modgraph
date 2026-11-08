@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "net/mehvahdjukaar/modelfix/mixins/ItemModelMixin.class",
+    "target": "net/minecraft/client/renderer/block/model/ItemModelGenerator"
+  },
+  {
+    "mixin_class": "net/mehvahdjukaar/modelfix/mixins/TextureAtlasSpriteMixin.class",
+    "target": "net/minecraft/client/renderer/texture/TextureAtlasSprite"
+  }
+]

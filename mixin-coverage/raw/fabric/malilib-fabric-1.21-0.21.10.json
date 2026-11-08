@@ -1,0 +1,118 @@
+[
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/client/MixinMinecraftClient.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/IMixinAbstractHorseEntity.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/IMixinAnimalArmorItem.class",
+    "target": "net/minecraft/class_4059"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/IMixinMerchantEntity.class",
+    "target": "net/minecraft/class_3988"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/IMixinPiglinEntity.class",
+    "target": "net/minecraft/class_4836"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/IMixinPlayerEntity.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/MixinHorseEntity.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/MixinPiglinEntity.class",
+    "target": "net/minecraft/class_4836"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/entity/MixinSimpleInventory.class",
+    "target": "net/minecraft/class_1277"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/hud/MixinInGameHud.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/input/MixinKeyboard.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/input/MixinMouse.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/item/IMixinContainerComponent.class",
+    "target": "net/minecraft/class_9288"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/item/MixinItemStack.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/network/IMixinDataQueryHandler.class",
+    "target": "net/minecraft/class_300"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/network/MixinClientConfigurationNetworkHandler.class",
+    "target": "net/minecraft/class_8674"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/network/MixinClientPlayNetworkHandler.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/render/MixinDrawContext.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/render/MixinWorldRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/screen/IMixinHandledScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/screen/MixinChatScreen.class",
+    "target": "net/minecraft/class_408"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/screen/MixinHandledScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/screen/MixinInventoryScreen.class",
+    "target": "net/minecraft/class_490"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/server/MixinIntegratedServer.class",
+    "target": "net/minecraft/class_1132"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/server/MixinMinecraftServer.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/test/MixinBundleItem.class",
+    "target": "net/minecraft/class_5537"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/test/MixinClientPlayInteractionManager_testSelector.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/test/MixinMinecraftClient_testSelector.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "fi/dy/masa/malilib/mixin/test/MixinSharedConstants.class",
+    "target": "net/minecraft/class_155"
+  }
+]

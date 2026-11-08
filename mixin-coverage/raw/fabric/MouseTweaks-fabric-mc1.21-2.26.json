@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "yalter/mousetweaks/fabric/mixin/MixinMouseHandler.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "yalter/mousetweaks/mixin/AbstractContainerScreenAccessor.class",
+    "target": "net/minecraft/class_465"
+  }
+]

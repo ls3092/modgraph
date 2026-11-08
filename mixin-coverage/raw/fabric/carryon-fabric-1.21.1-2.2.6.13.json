@@ -1,0 +1,38 @@
+[
+  {
+    "mixin_class": "tschipp/carryon/mixin/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/HumanoidModelMixin.class",
+    "target": "net/minecraft/class_572"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/InventoryMixin.class",
+    "target": "net/minecraft/class_1661"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/PlayerMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/PlayerMixinFabric.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "tschipp/carryon/mixin/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  }
+]

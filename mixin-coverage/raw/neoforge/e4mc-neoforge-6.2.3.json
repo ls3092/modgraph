@@ -1,0 +1,58 @@
+[
+  {
+    "mixin_class": "link/e4mc/mixin/BanListCommandsMixin.class",
+    "target": "net/minecraft/server/commands/BanListCommands"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/BanPlayerCommandsMixin.class",
+    "target": "net/minecraft/server/commands/BanPlayerCommands"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ClientHandshakePacketListenerImplMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ConnectionMixin.class",
+    "target": "net/minecraft/network/Connection"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/DirsUtilMixin.class",
+    "target": "link/e4mc/shadow/dirs/Util"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/PardonCommandMixin.class",
+    "target": "net/minecraft/server/commands/PardonCommand"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/PlayerListMixin.class",
+    "target": "net/minecraft/server/players/PlayerList"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerAddressMixin.class",
+    "target": "net/minecraft/client/multiplayer/resolver/ServerAddress"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerCommonPacketListenerImplAccessor.class",
+    "target": "net/minecraft/server/network/ServerCommonPacketListenerImpl"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerConnectionListenerMixin.class",
+    "target": "net/minecraft/server/network/ServerConnectionListener"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerLoginPacketListenerImplMixin.class",
+    "target": "net/minecraft/server/network/ServerLoginPacketListenerImpl"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerNameResolverMixin.class",
+    "target": "net/minecraft/client/multiplayer/resolver/ServerNameResolver"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/ServerboundKeyPacketMixin.class",
+    "target": "net/minecraft/network/protocol/login/ServerboundKeyPacket"
+  },
+  {
+    "mixin_class": "link/e4mc/mixin/WhitelistCommandMixin.class",
+    "target": "net/minecraft/server/commands/WhitelistCommand"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/EntityRenderDispatcherAccessor.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/ItemInHandLayerMixin.class",
+    "target": "net/minecraft/class_989"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/ItemStackRenderStateMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/class_922"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/LivingRenderStateMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/PlayerEntityMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/PlayerEntityModelMixin.class",
+    "target": "net/minecraft/class_591"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/PlayerModelAccessor.class",
+    "target": "net/minecraft/class_591"
+  },
+  {
+    "mixin_class": "dev/tr7zw/notenoughanimations/mixins/PlayerRendererMixin.class",
+    "target": "net/minecraft/class_1007"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorAbstractFurnaceBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorCrafterMenu.class",
+    "target": "net/minecraft/world/inventory/CrafterMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorCraftingMenu.class",
+    "target": "net/minecraft/world/inventory/CraftingMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorInventoryMenu.class",
+    "target": "net/minecraft/world/inventory/InventoryMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorSmithingScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/SmithingScreen"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorSmithingTransformRecipe.class",
+    "target": "net/minecraft/world/item/crafting/SmithingTransformRecipe"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/AccessorSmithingTrimRecipe.class",
+    "target": "net/minecraft/world/item/crafting/SmithingTrimRecipe"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinCrafterMenu.class",
+    "target": "net/minecraft/world/inventory/CrafterMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinCraftingMenu.class",
+    "target": "net/minecraft/world/inventory/CraftingMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinLevelChunk.class",
+    "target": "net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinPolymorphApi.class",
+    "target": "com/illusivesoulworks/polymorph/api/PolymorphApi"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinPolymorphWidgets.class",
+    "target": "com/illusivesoulworks/polymorph/api/client/PolymorphWidgets"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinRecipeCache.class",
+    "target": "net/minecraft/world/item/crafting/RecipeCache"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinRecipeManager.class",
+    "target": "net/minecraft/world/item/crafting/RecipeManager"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinServerLevel.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/core/MixinSmithingMenu.class",
+    "target": "net/minecraft/world/inventory/SmithingMenu"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/integration/emi/MixinEmiRecipeFiller.class",
+    "target": "dev/emi/emi/registry/EmiRecipeFiller"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/integration/fastbench/MixinFastBenchUtil.class",
+    "target": "dev/shadowsoffire/fastbench/util/FastBenchUtil"
+  },
+  {
+    "mixin_class": "com/illusivesoulworks/polymorph/mixin/integration/roughlyenoughitems/MixinInternalWidgets.class",
+    "target": "me/shedaniel/rei/impl/client/gui/widget/InternalWidgets"
+  }
+]

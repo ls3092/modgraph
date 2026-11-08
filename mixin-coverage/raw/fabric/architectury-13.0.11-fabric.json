@@ -1,0 +1,262 @@
+[
+  {
+    "mixin_class": "dev/architectury/mixin/MixinLightningBolt.class",
+    "target": "net/minecraft/class_1538"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/BiomeAccessor.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/BucketItemAccessor.class",
+    "target": "net/minecraft/class_1755"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/HorseTameInvoker.class",
+    "target": "net/minecraft/class_1387"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/LiquidBlockAccessor.class",
+    "target": "net/minecraft/class_2404"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/LivingDeathInvoker.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/LivingDeathInvoker.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/LivingDeathInvoker.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinBaseSpawner.class",
+    "target": "net/minecraft/class_1917"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinBlockItem.class",
+    "target": "net/minecraft/class_1747"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinBucketItem.class",
+    "target": "net/minecraft/class_1755"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinCatSpawner.class",
+    "target": "net/minecraft/class_4274"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinChunkMap.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinChunkSerializer.class",
+    "target": "net/minecraft/class_2852"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinCommands.class",
+    "target": "net/minecraft/class_2170"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinDedicatedServer.class",
+    "target": "net/minecraft/class_3176"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinExplosion.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinFallingBlockEntity.class",
+    "target": "net/minecraft/class_1540"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinFarmBlock.class",
+    "target": "net/minecraft/class_2344"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinFurnaceResultSlot.class",
+    "target": "net/minecraft/class_1719"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinInventory.class",
+    "target": "net/minecraft/class_1661"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinItemEntity.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinLevel.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinLivingEntity.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinNaturalSpawner.class",
+    "target": "net/minecraft/class_1948"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinOcelot.class",
+    "target": "net/minecraft/class_3701"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPatrolSpawner.class",
+    "target": "net/minecraft/class_3769"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPersistentEntitySectionManager.class",
+    "target": "net/minecraft/class_5579"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPhantomSpawner.class",
+    "target": "net/minecraft/class_2910"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPlayer.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPlayerAdvancements.class",
+    "target": "net/minecraft/class_2985"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinPlayerList.class",
+    "target": "net/minecraft/class_3324"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinResultSlot.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinServerLevel.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinServerPlayer.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinServerPlayerGameMode.class",
+    "target": "net/minecraft/class_3225"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/MixinTamableAnimal.class",
+    "target": "net/minecraft/class_1321"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/PlayerAttackInvoker.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/ClientPlayerAttackInvoker.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/ClientPlayerAttackInvoker.class",
+    "target": "net/minecraft/class_745"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinAbstractContainerScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinChatListener.class",
+    "target": "net/minecraft/class_7594"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinClientLevel.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinEffectInstance.class",
+    "target": "net/minecraft/class_280"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinFabricClientCommandSource.class",
+    "target": "net/fabricmc/fabric/api/client/command/v2/FabricClientCommandSource"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinGuiGraphics.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinIntegratedServer.class",
+    "target": "net/minecraft/class_1132"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinKeyboardHandler.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinMinecraft.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinMouseHandler.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinMultiPlayerGameMode.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinScreen.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/fabric/client/MixinTooltipRenderUtil.class",
+    "target": "net/minecraft/class_8002"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinBlock.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinBucketItem.class",
+    "target": "net/minecraft/class_1755"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinEntityType.class",
+    "target": "net/minecraft/class_1299"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinFluid.class",
+    "target": "net/minecraft/class_3611"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinFoodPropertiesBuilder.class",
+    "target": "net/minecraft/class_4174$class_4175"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinItem.class",
+    "target": "net/minecraft/class_1792"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinItemProperties.class",
+    "target": "net/minecraft/class_1792$class_1793"
+  },
+  {
+    "mixin_class": "dev/architectury/mixin/inject/MixinLiquidBlock.class",
+    "target": "net/minecraft/class_2404"
+  }
+]

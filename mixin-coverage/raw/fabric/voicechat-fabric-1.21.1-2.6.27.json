@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/ConnectionAccessor.class",
+    "target": "net/minecraft/class_2535"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/IntegratedServerMixin.class",
+    "target": "net/minecraft/class_1132"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/KeyboardMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/MouseMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/PackRepositoryMixin.class",
+    "target": "net/minecraft/class_3283"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/PlayerEntryMixin.class",
+    "target": "net/minecraft/class_5519"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/PlayerManagerMixin.class",
+    "target": "net/minecraft/class_3324"
+  },
+  {
+    "mixin_class": "de/maxhenkel/voicechat/mixin/PlayerRendererMixin.class",
+    "target": "net/minecraft/class_1007"
+  }
+]

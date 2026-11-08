@@ -1,0 +1,46 @@
+[
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/ChannelAccessor.class",
+    "target": "net/minecraft/class_4224"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/DebugRendererMixin.class",
+    "target": "net/minecraft/class_863"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/LibraryMixin.class",
+    "target": "net/minecraft/class_4225"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/LocalPlayerMixin.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/SoundEventMixin.class",
+    "target": "net/minecraft/class_3414"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/SoundSystemMixin.class",
+    "target": "net/minecraft/class_1140"
+  },
+  {
+    "mixin_class": "com/sonicether/soundphysics/mixin/SourceMixin.class",
+    "target": "net/minecraft/class_4224"
+  }
+]

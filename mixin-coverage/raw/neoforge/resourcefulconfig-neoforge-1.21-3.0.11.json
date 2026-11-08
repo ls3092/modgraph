@@ -1,0 +1,18 @@
+[
+  {
+    "mixin_class": "com/teamresourceful/resourcefulconfig/mixins/client/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefulconfig/mixins/common/DedicatedServerAccessor.class",
+    "target": "net/minecraft/server/dedicated/DedicatedServer"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefulconfig/mixins/common/PlayerListAccessor.class",
+    "target": "net/minecraft/server/players/PlayerList"
+  },
+  {
+    "mixin_class": "com/teamresourceful/resourcefulconfig/mixins/common/SettingsAccessor.class",
+    "target": "net/minecraft/server/dedicated/Settings"
+  }
+]

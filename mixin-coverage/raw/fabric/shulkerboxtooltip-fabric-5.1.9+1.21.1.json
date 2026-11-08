@@ -1,0 +1,34 @@
+[
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/GuiGraphicsMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/ShulkerBoxBlockMixin.class",
+    "target": "net/minecraft/class_2480"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/TooltipRenderUtilMixin.class",
+    "target": "net/minecraft/class_8002"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/fabric/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "com/misterpemodder/shulkerboxtooltip/mixin/client/fabric/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "mixin_class": "io/wispforest/owo/mixin/BufferBuilderAccessor.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/CachedRegistryInfoGetterAccessor.class",
+    "target": "net/minecraft/class_6903$class_9683"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ClientCommonNetworkHandlerAccessor.class",
+    "target": "net/minecraft/class_8673"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ClientConfigurationNetworkHandlerMixin.class",
+    "target": "net/minecraft/class_8674"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ClientConnectionMixin.class",
+    "target": "net/minecraft/class_2535"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ClientLoginNetworkHandlerAccessor.class",
+    "target": "net/minecraft/class_635"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ComponentTypeBuilderMixin.class",
+    "target": "net/minecraft/class_9331$class_9332"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/Copenhagen.class",
+    "target": "net/minecraft/class_3122"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/DataResultMixin$DataResultErrorMixin.class",
+    "target": "com/mojang/serialization/DataResult$Error"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/DataResultMixin.class",
+    "target": "com/mojang/serialization/DataResult"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/DrawContextMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ForwardingDynamicOpsAccessor.class",
+    "target": "net/minecraft/class_5379"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/MainMixin.class",
+    "target": "net/minecraft/server/Main"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/NbtCompoundMixin.class",
+    "target": "net/minecraft/class_2487"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/PacketByteBufMixin.class",
+    "target": "net/minecraft/class_2540"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/RegistryOpsAccessor.class",
+    "target": "net/minecraft/class_6903"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ScreenAccessor.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ScreenHandlerInvoker.class",
+    "target": "net/minecraft/class_1703"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ScreenHandlerMixin.class",
+    "target": "net/minecraft/class_1703"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ServerCommonNetworkHandlerAccessor.class",
+    "target": "net/minecraft/class_8609"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ServerPlayerEntityMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ServerPlayerInteractionManagerMixin.class",
+    "target": "net/minecraft/class_3225"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/SetComponentsLootFunctionAccessor.class",
+    "target": "net/minecraft/class_9320"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/TagGroupLoaderMixin.class",
+    "target": "net/minecraft/class_3503"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ext/ComponentMapImplAccessor.class",
+    "target": "net/minecraft/class_9335"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ext/ComponentMapImplMixin.class",
+    "target": "net/minecraft/class_9335"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ext/ItemMixin.class",
+    "target": "net/minecraft/class_1792"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ext/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/AbstractInventoryScreenMixin.class",
+    "target": "net/minecraft/class_485"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/CreativeInventoryScreenAccessor.class",
+    "target": "net/minecraft/class_481"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/CreativeInventoryScreenMixin.class",
+    "target": "net/minecraft/class_481"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/ItemGroupAccessor.class",
+    "target": "net/minecraft/class_1761"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/ItemMixin.class",
+    "target": "net/minecraft/class_1792"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/ItemSettingsMixin.class",
+    "target": "net/minecraft/class_1792$class_1793"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/itemgroup/MixinCreativeInventoryScreenMixin.class",
+    "target": "net/minecraft/class_481"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/offline/AdvancementProgressAccessor.class",
+    "target": "net/minecraft/class_167"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/offline/PlayerAdvancementTrackerMixin.class",
+    "target": "net/minecraft/class_2985"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/offline/ProgressMapAccessor.class",
+    "target": "net/minecraft/advancement/PlayerAdvancementTracker$ProgressMap"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/offline/WorldSaveHandlerMixin.class",
+    "target": "net/minecraft/class_29"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/recipe_remainders/CraftingResultSlotMixin.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/recipe_remainders/RecipeManagerMixin.class",
+    "target": "net/minecraft/class_1863"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/registry/ReferenceAccessor.class",
+    "target": "net/minecraft/class_6880$class_6883"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/registry/SimpleRegistryMixin.class",
+    "target": "net/minecraft/class_2370"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/shader/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/shader/ShaderProgramAccessor.class",
+    "target": "net/minecraft/class_5944"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/shader/ShaderProgramMixin.class",
+    "target": "net/minecraft/class_5944"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/text/LanguageMixin.class",
+    "target": "net/minecraft/class_2477"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/text/TextCodecsMixin.class",
+    "target": "net/minecraft/class_8824"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/text/TranslatableTextContentMixin.class",
+    "target": "net/minecraft/class_2588"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/text/TranslationStorageMixin.class",
+    "target": "net/minecraft/class_1078"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/text/stapi/SystemDelegatedLanguageFixin.class",
+    "target": "xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/tweaks/EulaReaderMixin.class",
+    "target": "net/minecraft/class_2981"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/tweaks/LevelInfoMixin.class",
+    "target": "net/minecraft/class_1940"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/tweaks/OperatingSystemMixin.class",
+    "target": "net/minecraft/class_156$class_158"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/tweaks/TextFieldWidgetMixin.class",
+    "target": "net/minecraft/class_342"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/ChatScreenMixin.class",
+    "target": "net/minecraft/class_408"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/ClickableWidgetMixin.class",
+    "target": "net/minecraft/class_339"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/DrawContextInvoker.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/DrawContextMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/EditBoxWidgetMixin.class",
+    "target": "net/minecraft/class_7529"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/EntityRendererMixin.class",
+    "target": "net/minecraft/class_897"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/HandledScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/RenderSystemMixin.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/SliderWidgetMixin.class",
+    "target": "net/minecraft/class_357"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/SlotAccessor.class",
+    "target": "net/minecraft/class_1735"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/SlotMixin.class",
+    "target": "net/minecraft/class_1735"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/TessellatorMixin.class",
+    "target": "net/minecraft/class_289"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/TextFieldWidgetMixin.class",
+    "target": "net/minecraft/class_342"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/BaseOwoHandledScreenAccessor.class",
+    "target": "io/wispforest/owo/ui/base/BaseOwoHandledScreen"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/BlockEntityAccessor.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/ButtonWidgetAccessor.class",
+    "target": "net/minecraft/class_4185"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/CheckboxWidgetAccessor.class",
+    "target": "net/minecraft/class_4286"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/ClickableWidgetAccessor.class",
+    "target": "net/minecraft/class_339"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/EditBoxAccessor.class",
+    "target": "net/minecraft/class_7530"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/EditBoxWidgetAccessor.class",
+    "target": "net/minecraft/class_7529"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/TextBoxComponentAccessor.class",
+    "target": "io/wispforest/owo/ui/component/TextBoxComponent"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/access/TextFieldWidgetAccessor.class",
+    "target": "net/minecraft/class_342"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/layers/HandledScreenAccessor.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/layers/KeyboardMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/layers/MouseMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "io/wispforest/owo/mixin/ui/layers/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  }
+]

@@ -1,0 +1,566 @@
+[
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/iris/mixins/BaseOptionElementWidgetMixin.class",
+    "target": "net/irisshaders/iris/gui/element/widget/BaseOptionElementWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/rrls/mixins/HideTypeMixin.class",
+    "target": "org.redlance.dima_dencep.mods.rrls.config.HideType"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/rso/mixins/AbstractFrameAccessor.class",
+    "target": "me/flashyreese/mods/reeses_sodium_options/client/gui/frame/AbstractFrame"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/rso/mixins/SodiumVideoOptionsScreenMixin.class",
+    "target": "me/flashyreese/mods/reeses_sodium_options/client/gui/SodiumVideoOptionsScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/rso/mixins/TabFrameAccessor.class",
+    "target": "me/flashyreese/mods/reeses_sodium_options/client/gui/frame/tab/TabFrame"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/simplevoicechat/mixins/KeyEventsAccessor.class",
+    "target": "de/maxhenkel/voicechat/voice/client/KeyEvents"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/simplevoicechat/mixins/PTTKeyHandlerMixin.class",
+    "target": "de/maxhenkel/voicechat/voice/client/PTTKeyHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/AbstractWidgetMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/widgets/AbstractWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/CycleControlElementMixin.class",
+    "target": "net.caffeinemc.mods.sodium.client.gui.options.control.CyclingControl$CyclingControlElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/FlatButtonWidgetAccessor.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/widgets/FlatButtonWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/FlatButtonWidgetMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/widgets/FlatButtonWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/SliderControlElementMixin.class",
+    "target": "net.caffeinemc.mods.sodium.client.gui.options.control.SliderControl$Button"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/SodiumOptionsGUIMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/SodiumOptionsGUI"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/sodium/mixins/TickBoxControlElementMixin.class",
+    "target": "net.caffeinemc.mods.sodium.client.gui.options.control.TickBoxControl$TickBoxControlElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/ControllerWidgetAccessor.class",
+    "target": "dev/isxander/yacl3/gui/controllers/ControllerWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/CyclingControllerElementMixin.class",
+    "target": "dev/isxander/yacl3/gui/controllers/cycling/CyclingControllerElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/GroupSeparatorEntryAccessor.class",
+    "target": "dev/isxander/yacl3/gui/OptionListWidget$GroupSeparatorEntry"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/OptionListWidgetMixin.class",
+    "target": "dev/isxander/yacl3/gui/OptionListWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/SliderControllerElementMixin.class",
+    "target": "dev/isxander/yacl3/gui/controllers/slider/SliderControllerElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/StringControllerElementAccessor.class",
+    "target": "dev/isxander/yacl3/gui/controllers/string/StringControllerElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/StringControllerElementMixin.class",
+    "target": "dev/isxander/yacl3/gui/controllers/string/StringControllerElement"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/YACLScreenCategoryTabAccessor.class",
+    "target": "dev/isxander/yacl3/gui/YACLScreen$CategoryTab"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/YACLScreenCategoryTabMixin.class",
+    "target": "dev/isxander/yacl3/gui/YACLScreen$CategoryTab"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/compatibility/yacl/mixins/YACLScreenMixin.class",
+    "target": "dev/isxander/yacl3/gui/YACLScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/GLXMixin.class",
+    "target": "com/mojang/blaze3d/platform/GLX"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/GuiGraphicsMixin.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/core/MouseHandlerMixin.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/accessibility/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/bind/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/bind/KeyMappingMixin.class",
+    "target": "net/minecraft/client/KeyMapping"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/bind/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/bind/ToggleKeyMappingMixin.class",
+    "target": "net/minecraft/client/ToggleKeyMapping"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/font/FontAccessor.class",
+    "target": "net/minecraft/client/gui/Font"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/font/KeybindContentsMixin.class",
+    "target": "net/minecraft/network/chat/contents/KeybindContents"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/font/TranslatableContentsMixin.class",
+    "target": "net/minecraft/network/chat/contents/TranslatableContents"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/ingame/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/ingame/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/ingame/PlayerAccessor.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/screen/AbstractButtonMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractButton"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/screen/AbstractContainerScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/screen/AbstractWidgetMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/guide/screen/TabNavigationBarMixin.class",
+    "target": "net/minecraft/client/gui/components/tabs/TabNavigationBar"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/hdhaptics/SoundBufferAccessor.class",
+    "target": "com/mojang/blaze3d/audio/SoundBuffer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/hdhaptics/SoundEngineAccessor.class",
+    "target": "net/minecraft/client/sounds/SoundEngine"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/hdhaptics/SoundManagerAccessor.class",
+    "target": "net/minecraft/client/sounds/SoundManager"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/input/DebugScreenOverlayAccessor.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/input/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/oofinput/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/analogueboat/BoatMixin.class",
+    "target": "net/minecraft/world/entity/vehicle/Boat"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/analogueboat/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/bookfocusfix/BookEditScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/BookEditScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/keymessages/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/keymessages/DemoIntroScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/DemoIntroScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/keymessages/MovementTutorialStepInstanceMixin.class",
+    "target": "net/minecraft/client/tutorial/MovementTutorialStepInstance"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/keymessages/OpenInventoryTutorialStepMixin.class",
+    "target": "net/minecraft/client/tutorial/OpenInventoryTutorialStep"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/keymessages/PunchTreeTutorialStepInstanceMixin.class",
+    "target": "net/minecraft/client/tutorial/PunchTreeTutorialStepInstance"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/patches/sprintfix/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/reacharound/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/blockbreak/MultiPlayerGameModeMixin.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/damage/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/damage/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/damage/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/explosion/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/explosion/LightningBoltMixin.class",
+    "target": "net/minecraft/world/entity/LightningBolt"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/fishing/FishingHookMixin.class",
+    "target": "net/minecraft/world/entity/projectile/FishingHook"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/itembreak/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/itembreak/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/levelevents/LevelEventHandlerMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/slowblock/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/useitem/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/useitem/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/useitem/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/waterland/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/rumble/waterland/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/ContainerEventHandlerMixin.class",
+    "target": "net/minecraft/client/gui/components/events/ContainerEventHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/ScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/bundle/BundleMouseActionsMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/chat/ChatComponentMixin.class",
+    "target": "net/minecraft/client/gui/components/ChatComponent"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/chat/ChatScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/ChatScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/chat/CommandSuggestionsMixin.class",
+    "target": "net/minecraft/client/gui/components/CommandSuggestions"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/InventoryScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractFurnaceScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CraftingScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/CreativeModeInventoryScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/container/MerchantScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/MerchantScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/AbstractButtonMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractButton"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/AbstractContainerEventHandlerMixin.class",
+    "target": "net/minecraft/client/gui/components/events/AbstractContainerEventHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/AbstractSelectionListMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractSelectionList"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/AbstractSliderButtonMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractSliderButton"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/AbstractWidgetMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/ContainerObjectSelectionListEntryMixin.class",
+    "target": "net/minecraft/client/gui/components/ContainerObjectSelectionList$Entry"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/elements/EditBoxMixin.class",
+    "target": "net/minecraft/client/gui/components/EditBox"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/CreateWorldScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/DirectJoinServerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/DirectJoinServerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/JoinMultiplayerScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/JoinMultiplayerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/LanguageSelectionListEntryMixin.class",
+    "target": "net.minecraft.client.gui.screens.options.LanguageSelectScreen$LanguageSelectionList$Entry"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/ManageServerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/EditServerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/OptionsScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/OptionsSubScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsSubScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/OptionsSubScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsSubScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/PauseScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/PauseScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/PauseScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/PauseScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/SelectWorldScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/SelectWorldScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/SelectWorldScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/SelectWorldScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/ServerSelectionListEntryMixin.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$Entry"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/TabNavigationBarAccessor.class",
+    "target": "net/minecraft/client/gui/components/tabs/TabNavigationBar"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/TitleScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/outofgame/WorldSelectionListEntryMixin.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldSelectionList$WorldListEntry"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/sign/AbstractSignEditScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractSignEditScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/sign/HangingSignEditScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/HangingSignEditScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/screenop/impl/sign/SignEditScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/SignEditScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/settingsbutton/ControlsScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/options/controls/ControlsScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/steamdeck/ScreenshotAccessor.class",
+    "target": "net/minecraft/client/Screenshot"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/ui/AbstractSelectionListAccessor.class",
+    "target": "net/minecraft/client/gui/components/AbstractSelectionList"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/util/ConnectScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/ConnectScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/InputConstantsMixin.class",
+    "target": "com/mojang/blaze3d/platform/InputConstants"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/MouseHandlerAccessor.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/MouseHandlerMixin.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/InventoryScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractFurnaceScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/AbstractRecipeBookScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CraftingScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/CreativeModeInventoryScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/EnchantmentScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/EnchantmentScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/LoomMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/LoomScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/RecipeBookComponentAccessor.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeBookComponent"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/RecipeBookPageAccessor.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeBookPage"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/mixins/feature/virtualmouse/snapping/StonecutterScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/StonecutterScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/platform/neoforge/mixins/CreativeModeInventoryScreenAccessor.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen"
+  },
+  {
+    "mixin_class": "dev/isxander/controlify/platform/neoforge/mixins/OptionsMixin.class",
+    "target": "net/minecraft/client/Options"
+  }
+]

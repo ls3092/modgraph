@@ -1,0 +1,1018 @@
+[
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/block/hopper/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/collections/poi_types/PoiTypesMixin.class",
+    "target": "net/minecraft/class_7477"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/compat/worldedit/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/entity/collisions/fluid/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/experimental/entity/block_caching/fluid_pushing/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/util/inventory_change_listening/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/fabric/mixin/util/inventory_change_listening/ChestBlockEntityMixin.class",
+    "target": "net/minecraft/class_2595"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/non_poi_block_search/HoglinSpecificSensorMixin.class",
+    "target": "net/minecraft/class_4832"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/non_poi_block_search/MoveToBlockGoalMixin.class",
+    "target": "net/minecraft/class_1367"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/non_poi_block_search/PiglinSpecificSensorMixin.class",
+    "target": "net/minecraft/class_4834"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/non_poi_block_search/RemoveBlockGoalMixin.class",
+    "target": "net/minecraft/class_1382"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/BootstrapMixin.class",
+    "target": "net/minecraft/class_2966"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/FlyNodeEvaluatorMixin.class",
+    "target": "net/minecraft/class_6"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/PathNavigationRegionMixin.class",
+    "target": "net/minecraft/class_1950"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/PathfindingContextAccessor.class",
+    "target": "net/minecraft/class_9316"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/PathfindingContextMixin.class",
+    "target": "net/minecraft/class_9316"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/pathing/WalkNodeEvaluatorMixin.class",
+    "target": "net/minecraft/class_14"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/PoiManagerMixin.class",
+    "target": "net/minecraft/class_4153"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/PoiSectionMixin.class",
+    "target": "net/minecraft/class_4157"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/SectionStorageMixin.class",
+    "target": "net/minecraft/class_4180"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/fast_portals/PoiManagerMixin.class",
+    "target": "net/minecraft/class_4153"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/fast_portals/PortalForcerMixin.class",
+    "target": "net/minecraft/class_1946"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/tasks/LocateHidingPlaceMixin.class",
+    "target": "net/minecraft/class_4246"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/poi/tasks/RaiderEntityAttackHomeGoalMixin.class",
+    "target": "net/minecraft/class_3763$class_4261"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/raid/RaidMixin.class",
+    "target": "net/minecraft/class_3765"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/raid/Raider$ObtainRaidLeaderBannerGoalMixin.class",
+    "target": "net/minecraft/class_3763$class_3764"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/raid/RaiderMixin.class",
+    "target": "net/minecraft/class_3763"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/sensor/secondary_poi/SecondaryPoiSensorMixin.class",
+    "target": "net/minecraft/class_4221"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/launch/BrainMixin.class",
+    "target": "net/minecraft/class_4095"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/memory_change_counting/BehaviorMixin.class",
+    "target": "net/minecraft/class_4097"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/memory_change_counting/BrainMixin.class",
+    "target": "net/minecraft/class_4095"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/replace_streams/GateBehaviorMixin.class",
+    "target": "net/minecraft/class_4103"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/replace_streams/ShufflingListMixin.class",
+    "target": "net/minecraft/class_6032"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/task/run/long_jump_weighted_choice/LongJumpToRandomPosMixin.class",
+    "target": "net/minecraft/class_6030"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/useless_sensors/BrainAccessor.class",
+    "target": "net/minecraft/class_4095"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/useless_sensors/SensorAccessor.class",
+    "target": "net/minecraft/class_4148"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/useless_sensors/goat_item_sensor/GoatMixin.class",
+    "target": "net/minecraft/class_6053"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/ai/useless_sensors/parent_animal_sensor/AgeableMobMixin.class",
+    "target": "net/minecraft/class_1296"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/chunk_random/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/chunk_random/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/chunk_ticking/ServerChunkCacheMixin.class",
+    "target": "net/minecraft/class_3215"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/composter/ComposterMixin$ComposterBlockComposterInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3963"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/composter/ComposterMixin$ComposterBlockDummyInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3925"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/composter/ComposterMixin$ComposterBlockFullComposterInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3964"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/deep_passengers/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/entity_iteration/ClassInstanceMultiMapAccessor.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/entity_iteration/EntitySectionMixin.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/entity_tracker/ChunkMap$TrackedEntityMixin.class",
+    "target": "net/minecraft/class_3898$class_3208"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/enum_values/piston_block/PistonBaseBlockMixin.class",
+    "target": "net/minecraft/class_2665"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/enum_values/piston_handler/PistonStructureResolverMixin.class",
+    "target": "net/minecraft/class_2674"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/enum_values/redstone_wire/RedStoneWireBlockMixin.class",
+    "target": "net/minecraft/class_2457"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/explosion_behavior/EntityBasedExplosionDamageCalculatorMixin.class",
+    "target": "net/minecraft/class_5361"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/nbt/CompoundTagMixin$Type.class",
+    "target": "net/minecraft/class_2487$1"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/alloc/nbt/CompoundTagMixin.class",
+    "target": "net/minecraft/class_2487"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/flatten_states/FluidStateMixin.class",
+    "target": "net/minecraft/class_3610"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/fluid/flow/FlowingFluidMixin.class",
+    "target": "net/minecraft/class_3609"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/AbstractContainerMenuMixin.class",
+    "target": "net/minecraft/class_1703"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/AbstractMinecartMixin.class",
+    "target": "net/minecraft/class_1688"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/BlockBehaviourMixin.class",
+    "target": "net/minecraft/class_4970"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ChestBoatMixin.class",
+    "target": "net/minecraft/class_7264"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ChiseledBookShelfBlockEntityMixin.class",
+    "target": "net/minecraft/class_7716"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ClassInstanceMultiMapMixin.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ComposterMixin$ComposterBlockComposterInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3963"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ComposterMixin$ComposterBlockDummyInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3925"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ComposterMixin$ComposterBlockFullComposterInventoryMixin.class",
+    "target": "net/minecraft/class_3962$class_3964"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/CompoundContainerAccessor.class",
+    "target": "net/minecraft/class_1258"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/ContainerMixin.class",
+    "target": "net/minecraft/class_1263"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/EntityAccessor.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/EntityDataAccessorMixin.class",
+    "target": "net/minecraft/class_3169"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/EntitySectionAccessor.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/HopperBlockEntityMixin.class",
+    "target": "net/minecraft/class_2614"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/HopperBlockMixin.class",
+    "target": "net/minecraft/class_2377"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$AbstractFurnaceBlockEntityMixin.class",
+    "target": "net/minecraft/class_2609"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$AbstractMinecartContainerMixin.class",
+    "target": "net/minecraft/class_1693"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$BarrelBlockEntityMixin.class",
+    "target": "net/minecraft/class_3719"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$BrewingStandBlockEntityMixin.class",
+    "target": "net/minecraft/class_2589"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$ChestBlockEntityMixin.class",
+    "target": "net/minecraft/class_2595"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$DispenserBlockEntityMixin.class",
+    "target": "net/minecraft/class_2601"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$HopperBlockEntityMixin.class",
+    "target": "net/minecraft/class_2614"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/InventoryAccessors$ShulkerBoxBlockEntityMixin.class",
+    "target": "net/minecraft/class_2627"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/hopper/NonNullListAccessor.class",
+    "target": "net/minecraft/class_2371"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/moving_block_shapes/PistonMovingBlockEntityMixin.class",
+    "target": "net/minecraft/class_2669"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/moving_block_shapes/VoxelShapeMixin.class",
+    "target": "net/minecraft/class_265"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block/redstone_wire/RedStoneWireBlockMixin.class",
+    "target": "net/minecraft/class_2457"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block_pattern_matching/BlockPatternMixin.class",
+    "target": "net/minecraft/class_2700"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/block_pattern_matching/EndDragonFightMixin.class",
+    "target": "net/minecraft/class_2881"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/cached_hashcode/Block$BlockStatePairKeyMixin.class",
+    "target": "net/minecraft/class_2248$class_2249"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/entity_class_groups/ClassInstanceMultiMapMixin.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/entity_class_groups/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/no_locking/LevelChunkSectionMixin.class",
+    "target": "net/minecraft/class_2826"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/no_locking/PalettedContainerMixin.class",
+    "target": "net/minecraft/class_2841"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/no_validation/SimpleBitStorageMixin.class",
+    "target": "net/minecraft/class_3508"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/no_validation/ZeroBitStorageMixin.class",
+    "target": "net/minecraft/class_6502"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/palette/PalettedContainer$StrategyMixin.class",
+    "target": "net/minecraft/class_2841$class_6563"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/serialization/PalettedContainerMixin.class",
+    "target": "net/minecraft/class_2841"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/chunk/serialization/SimpleBitStorageMixin.class",
+    "target": "net/minecraft/class_3508"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/attributes/AttributeMapMixin.class",
+    "target": "net/minecraft/class_5131"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/block_entity_tickers/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/brain/BrainMixin.class",
+    "target": "net/minecraft/class_4095"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/chunk_tickets/SortedArraySetMixin.class",
+    "target": "net/minecraft/class_4706"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/entity_by_type/ClassInstanceMultiMapMixin.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/entity_filtering/ClassInstanceMultiMapMixin.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/entity_ticking/EntityTickListMixin.class",
+    "target": "net/minecraft/class_5574"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/fluid_submersion/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/gamerules/GameRulesMixin.class",
+    "target": "net/minecraft/class_1928"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/goals/GoalSelectorMixin.class",
+    "target": "net/minecraft/class_1355"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/mob_spawning/MobSpawnSettingsMixin.class",
+    "target": "net/minecraft/class_5483"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/collections/mob_spawning/WeightedRandomListMixin.class",
+    "target": "net/minecraft/class_6012"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/debug/palette/ClientBoundLevelChunkPacketDataAccessor.class",
+    "target": "net/minecraft/class_6603"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/debug/palette/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/debug/palette/PalettedContainerMixin.class",
+    "target": "net/minecraft/class_2841"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/intersection/EntityGetterMixin.class",
+    "target": "net/minecraft/class_1924"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/intersection/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/movement/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/AbstractMinecartMixin.class",
+    "target": "net/minecraft/class_1688"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/BoatMixin.class",
+    "target": "net/minecraft/class_1690"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/EntitySectionMixin.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/EntitySelectorMixin.class",
+    "target": "net/minecraft/class_1301"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/collisions/unpushable_cramming/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/equipment_tracking/ArmorStandMixin.class",
+    "target": "net/minecraft/class_1531"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/equipment_tracking/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/equipment_tracking/MobMixin.class",
+    "target": "net/minecraft/class_1308"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/equipment_tracking/enchantment_ticking/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/equipment_tracking/equipment_changes/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/fast_elytra_check/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/fast_hand_swing/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/fast_powder_snow_check/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/fast_retrieval/EntitySectionStorageMixin.class",
+    "target": "net/minecraft/class_5573"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/DrownedEntityLeaveWaterGoalMixin.class",
+    "target": "net/minecraft/class_1551$class_1554"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/DrownedMixin.class",
+    "target": "net/minecraft/class_1551"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/MobMixin.class",
+    "target": "net/minecraft/class_1308"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/PathNavigationMixin.class",
+    "target": "net/minecraft/class_1408"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/ServerLevel$EntityCallbacksMixin.class",
+    "target": "net/minecraft/class_3218$class_5526"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/inactive_navigations/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/AbstractMinecartMixin.class",
+    "target": "net/minecraft/class_1688"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/ArmorStandMixin.class",
+    "target": "net/minecraft/class_1531"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/GolemRandomStrollInVillageGoalMixin.class",
+    "target": "net/minecraft/class_5274"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/HangingEntityMixin.class",
+    "target": "net/minecraft/class_1530"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/ItemFrameMixin.class",
+    "target": "net/minecraft/class_1533"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/replace_entitytype_predicates/LlamaFollowCaravanGoalMixin.class",
+    "target": "net/minecraft/class_1362"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/entity/sprinting_particles/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/block_caching/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/block_caching/block_support/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/block_caching/block_touching/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/block_caching/fire_lava_touching/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/block_caching/suffocation/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/experimental/entity/item_entity_merging/ItemEntityMixin.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/gen/cached_generator_settings/NoiseBasedChunkGeneratorMixin.class",
+    "target": "net/minecraft/class_3754"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_blockpos/BlockPosMixin.class",
+    "target": "net/minecraft/class_2338"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_blockpos/DirectionMixin.class",
+    "target": "net/minecraft/class_2350"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_util/AABBMixin.class",
+    "target": "net/minecraft/class_238"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_util/AxisCycleDirectionMixin$BackwardMixin.class",
+    "target": "net/minecraft/class_2335$3"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_util/AxisCycleDirectionMixin$ForwardMixin.class",
+    "target": "net/minecraft/class_2335$2"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/fast_util/DirectionMixin.class",
+    "target": "net/minecraft/class_2350"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/math/sine_lut/MthMixin.class",
+    "target": "net/minecraft/class_3532"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/ai/sensor/frog_attackables/FrogAttackablesSensorMixin.class",
+    "target": "net/minecraft/class_7100"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/collisions/empty_space/ArrayVoxelShapeInvoker.class",
+    "target": "net/minecraft/class_245"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/collisions/empty_space/BitSetDiscreteVoxelShapeAccessor.class",
+    "target": "net/minecraft/class_244"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/collisions/empty_space/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/spawning/EntitySectionAccessor.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/spawning/EntitySectionStorageMixin.class",
+    "target": "net/minecraft/class_5573"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/spawning/PersistentEntitySectionManagerAccessor.class",
+    "target": "net/minecraft/class_5579"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/spawning/ServerChunkCacheMixin.class",
+    "target": "net/minecraft/class_3215"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/spawning/ServerLevelAccessor.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/world/block_entity_ticking/support_cache/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/world/block_entity_ticking/support_cache/DirectBlockEntityTickInvokerMixin.class",
+    "target": "net/minecraft/class_2818$class_5563"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/world/block_entity_ticking/support_cache/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/minimal_nonvanilla/world/expiring_chunk_tickets/DistanceManagerMixin.class",
+    "target": "net/minecraft/class_3204"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/profiler/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/blockstate_cache/BlockMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/lazy_shape_context/EntityCollisionContextMixin.class",
+    "target": "net/minecraft/class_3727"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/optimized_matching/ShapesMixin.class",
+    "target": "net/minecraft/class_259"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/precompute_shape_arrays/CubePointRangeMixin.class",
+    "target": "net/minecraft/class_246"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/precompute_shape_arrays/CubeVoxelShapeMixin.class",
+    "target": "net/minecraft/class_249"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/shape_merging/ShapesMixin.class",
+    "target": "net/minecraft/class_259"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/specialized_shapes/ShapesMixin.class",
+    "target": "net/minecraft/class_259"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/shapes/specialized_shapes/VoxelShapeMixin.class",
+    "target": "net/minecraft/class_265"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/EntitySectionAccessor.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/ItemEntityAccessor.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/ItemStackAccessor.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/LevelAccessor.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/PersistentEntitySectionManagerAccessor.class",
+    "target": "net/minecraft/class_5579"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/ServerLevelAccessor.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/accessors/TransientEntitySectionManagerAccessor.class",
+    "target": "net/minecraft/class_5582"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/block_entity_retrieval/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/block_tracking/BlockStateBaseMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/block_tracking/BootstrapMixin.class",
+    "target": "net/minecraft/class_2966"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/block_tracking/LevelChunkSectionMixin.class",
+    "target": "net/minecraft/class_2826"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/chunk_access/LevelReaderMixin.class",
+    "target": "net/minecraft/class_4538"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/chunk_access/PathNavigationRegionMixin.class",
+    "target": "net/minecraft/class_1950"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/chunk_status_tracking/ChunkHolderMixin.class",
+    "target": "net/minecraft/class_3193"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/chunk_status_tracking/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/data_storage/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_collection_replacement/ClassInstanceMultiMapMixin.class",
+    "target": "net/minecraft/class_3509"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_movement_tracking/EntitySectionMixin.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_movement_tracking/PersistentEntitySectionManagerAccessor.class",
+    "target": "net/minecraft/class_5579"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_movement_tracking/ServerEntityManagerListenerMixin.class",
+    "target": "net/minecraft/class_5579$class_5580"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_movement_tracking/ServerLevelAccessor.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_section_position/EntitySectionMixin.class",
+    "target": "net/minecraft/class_5572"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/entity_section_position/EntitySectionStorageMixin.class",
+    "target": "net/minecraft/class_5573"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/BaseContainerBlockEntityMixin.class",
+    "target": "net/minecraft/class_2624"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$AbstractFurnaceBlockEntityMixin.class",
+    "target": "net/minecraft/class_2609"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$BarrelBlockEntityMixin.class",
+    "target": "net/minecraft/class_3719"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$BaseContainerBlockEntityMixin.class",
+    "target": "net/minecraft/class_2624"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$BrewingStandBlockEntityMixin.class",
+    "target": "net/minecraft/class_2589"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$ChestBlockEntityMixin.class",
+    "target": "net/minecraft/class_2595"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$DispenserBlockEntityMixin.class",
+    "target": "net/minecraft/class_2601"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$HopperBlockEntityMixin.class",
+    "target": "net/minecraft/class_2614"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_change_listening/StackListReplacementTracking$ShulkerBoxBlockEntityMixin.class",
+    "target": "net/minecraft/class_2627"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_comparator_tracking/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/inventory_comparator_tracking/DiodeBlockMixin.class",
+    "target": "net/minecraft/class_2312"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/item_component_and_count_tracking/ItemEntityMixin.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/item_component_and_count_tracking/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/item_component_and_count_tracking/PatchedDataComponentMapMixin.class",
+    "target": "net/minecraft/class_9335"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/util/world_border_listener/WorldBorderMixin.class",
+    "target": "net/minecraft/class_2784"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/chunk_tickable/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/BlockEntityMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/ServerLevelMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/WrappedBlockEntityTickInvokerAccessor.class",
+    "target": "net/minecraft/class_2818$class_5564"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/brewing_stand/BrewingStandBlockEntityMixin.class",
+    "target": "net/minecraft/class_2589"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/campfire/CampfireBlockEntityMixin.class",
+    "target": "net/minecraft/class_3924"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/campfire/lit/CampfireBlockEntityMixin.class",
+    "target": "net/minecraft/class_3924"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/campfire/unlit/CampfireBlockEntityMixin.class",
+    "target": "net/minecraft/class_3924"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/crafter/CrafterBlockEntityMixin.class",
+    "target": "net/minecraft/class_8887"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/furnace/AbstractFurnaceBlockEntityMixin.class",
+    "target": "net/minecraft/class_2609"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/hopper/HopperBlockEntityMixin.class",
+    "target": "net/minecraft/class_2614"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/sleeping/shulker_box/ShulkerBoxBlockEntityMixin.class",
+    "target": "net/minecraft/class_2627"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/block_entity_ticking/world_border/DirectBlockEntityTickInvokerMixin.class",
+    "target": "net/minecraft/class_2818$class_5563"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/chunk_access/ChunkHolderMixin.class",
+    "target": "net/minecraft/class_3193"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/chunk_access/GenerationChunkHolderAccessor.class",
+    "target": "net/minecraft/class_9761"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/chunk_access/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/chunk_access/ServerChunkCacheMixin.class",
+    "target": "net/minecraft/class_3215"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/chunk_ticking/spread_ice/BiomeMixin.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/combined_heightmap_update/HeightmapAccessor.class",
+    "target": "net/minecraft/class_2902"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/combined_heightmap_update/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/explosions/block_raycast/ExplosionMixin.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/explosions/cache_exposure/ExplosionDamageCalculatorMixin.class",
+    "target": "net/minecraft/class_5362"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/explosions/cache_exposure/ExplosionMixin.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/game_events/dispatch/GameEventDispatcherMixin.class",
+    "target": "net/minecraft/class_7719"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/game_events/dispatch/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/inline_block_access/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/inline_block_access/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/inline_height/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/inline_height/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/raycast/BlockGetterMixin.class",
+    "target": "net/minecraft/class_1922"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/raycast/ClipContextAccessor.class",
+    "target": "net/minecraft/class_3959"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/temperature_cache/BiomeMixin.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "net/caffeinemc/mods/lithium/mixin/world/tick_scheduler/LevelChunkTicksMixin.class",
+    "target": "net/minecraft/class_6755"
+  }
+]

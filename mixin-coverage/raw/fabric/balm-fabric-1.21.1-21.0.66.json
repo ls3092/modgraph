@@ -1,0 +1,182 @@
+[
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/AbstractClientPlayerMixin.class",
+    "target": "net/minecraft/class_742"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/AbstractContainerScreenAccessor.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/BossHealthOverlayMixin.class",
+    "target": "net/minecraft/class_337"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ChatComponentMixin.class",
+    "target": "net/minecraft/class_338"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/CheckboxAccessor.class",
+    "target": "net/minecraft/class_4286"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ChunkMapAccessor.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ChunkMapMixin.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ClientLevelMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/CommandsMixin.class",
+    "target": "net/minecraft/class_2170"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/CropBlockMixin.class",
+    "target": "net/minecraft/class_2302"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/DebugScreenOverlayMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/EntityMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/EntityModelSetAccessor.class",
+    "target": "net/minecraft/class_5599"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/EntityModelSetMixin.class",
+    "target": "net/minecraft/class_5599"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/FabricCropBlockMixin.class",
+    "target": "net/minecraft/class_2302"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/FabricStemBlockMixin.class",
+    "target": "net/minecraft/class_2513"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ImageButtonAccessor.class",
+    "target": "net/minecraft/class_344"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/KeyMappingAccessor.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/KeyboardHandlerMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/LevelChunkMixin.class",
+    "target": "net/minecraft/class_2818"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/LevelMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/LevelRendererMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/LivingEntityMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/LootTableMixin.class",
+    "target": "net/minecraft/class_52"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ModelBakeryAccessor.class",
+    "target": "net/minecraft/class_1088"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ModelBakeryMixin.class",
+    "target": "net/minecraft/class_1088"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/MouseHandlerAccessor.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/MouseHandlerMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/PlayerListMixin.class",
+    "target": "net/minecraft/class_3324"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/PlayerMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/PlayerTabOverlayMixin.class",
+    "target": "net/minecraft/class_355"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/PoiTypesAccessor.class",
+    "target": "net/minecraft/class_7477"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ReloadableServerResourcesMixin.class",
+    "target": "net/minecraft/class_5350"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ResultSlotMixin.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ScreenAccessor.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/ServerPlayerMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/SlotAccessor.class",
+    "target": "net/minecraft/class_1735"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/StemBlockMixin.class",
+    "target": "net/minecraft/class_2513"
+  },
+  {
+    "mixin_class": "net/blay09/mods/balm/mixin/TrackedEntityAccessor.class",
+    "target": "net/minecraft/class_3898$class_3208"
+  }
+]

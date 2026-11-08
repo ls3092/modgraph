@@ -1,0 +1,34 @@
+[
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/hooks/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/spyglass/AbstractClientPlayerEntityMixin.class",
+    "target": "net/minecraft/class_742"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/spyglass/InGameHudMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/spyglass/SpyglassItemMixin.class",
+    "target": "net/minecraft/class_5538"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/zoom/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/zoom/MouseMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/zoom/secondary/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "dev/isxander/zoomify/mixins/zoom/secondary/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  }
+]

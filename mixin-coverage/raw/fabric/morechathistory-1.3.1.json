@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "red/jackf/morechathistory/mixins/ChatComponentMixin.class",
+    "target": "net/minecraft/class_338"
+  }
+]

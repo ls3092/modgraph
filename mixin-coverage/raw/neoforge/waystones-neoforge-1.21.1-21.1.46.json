@@ -1,0 +1,34 @@
+[
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ClientLevelAccessor.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ItemPropertiesAccessor.class",
+    "target": "net/minecraft/client/renderer/item/ItemProperties"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/JigsawPlacementPlacerMixin.class",
+    "target": "net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement$Placer"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ServerEntityMixin.class",
+    "target": "net/minecraft/server/level/ServerEntity"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/ServerScoreboardMixin.class",
+    "target": "net/minecraft/server/ServerScoreboard"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/SinglePoolElementMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/SinglePoolElement"
+  },
+  {
+    "mixin_class": "net/blay09/mods/waystones/mixin/StructureTemplatePoolAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  }
+]

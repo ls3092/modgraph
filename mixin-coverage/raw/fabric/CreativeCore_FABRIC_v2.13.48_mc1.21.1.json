@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "team/creative/creativecore/mixin/AbstractContainerScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ArgumentTypeInfosAccessor.class",
+    "target": "net/minecraft/class_2316"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ComponentSerializationMixin.class",
+    "target": "net/minecraft/class_8824"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/FilePackResourcesAccessor.class",
+    "target": "net/minecraft/class_3258"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ModNioResourcePackAccessor.class",
+    "target": "net/fabricmc/fabric/impl/resource/loader/ModNioResourcePack"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/MouseHandlerAccessor.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/PathPackResourcesAccessor.class",
+    "target": "net/minecraft/class_3259"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/ShapesMixin.class",
+    "target": "net/minecraft/class_259"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/SharedZipFileAccessAccessor.class",
+    "target": "net/minecraft/class_3258$class_8616"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/StringSplitterAccessor.class",
+    "target": "net/minecraft/class_5225"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/VanillaPackResourcesAccessor.class",
+    "target": "net/minecraft/class_3268"
+  },
+  {
+    "mixin_class": "team/creative/creativecore/mixin/VoxelShapeAccessor.class",
+    "target": "net/minecraft/class_265"
+  }
+]

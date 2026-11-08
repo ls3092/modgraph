@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "com/terraformersmc/modmenu/mixin/AccessorGridWidget.class",
+    "target": "net/minecraft/class_7845"
+  },
+  {
+    "mixin_class": "com/terraformersmc/modmenu/mixin/MixinGameMenu.class",
+    "target": "net/minecraft/class_433"
+  },
+  {
+    "mixin_class": "com/terraformersmc/modmenu/mixin/MixinTitleScreen.class",
+    "target": "net/minecraft/class_442"
+  }
+]

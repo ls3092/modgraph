@@ -1,0 +1,34 @@
+[
+  {
+    "mixin_class": "squeek/appleskin/mixin/DebugHudMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/InGameHudMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/JEIRenderHelperMixin.class",
+    "target": "mezz/jei/fabric/platform/RenderHelper"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/PlayerManagerMixin.class",
+    "target": "net/minecraft/class_3324"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/ServerPlayerEntityMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "squeek/appleskin/mixin/TooltipComponentMixin.class",
+    "target": "net/minecraft/class_5684"
+  }
+]

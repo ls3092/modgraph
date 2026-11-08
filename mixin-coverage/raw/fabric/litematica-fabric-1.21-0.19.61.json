@@ -1,0 +1,166 @@
+[
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinAbstractBlock.class",
+    "target": "net/minecraft/class_4970"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinFenceGateBlock.class",
+    "target": "net/minecraft/class_2349"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinRedstoneWireBlock.class",
+    "target": "net/minecraft/class_2457"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinStairsBlock.class",
+    "target": "net/minecraft/class_2510"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinVineBlock.class",
+    "target": "net/minecraft/class_2541"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/IMixinWallMountedBlock.class",
+    "target": "net/minecraft/class_2341"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinBlock.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinBlockStateFlattening.class",
+    "target": "net/minecraft/class_3580"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinBlockStatesLoader.class",
+    "target": "net/minecraft/class_9824"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinChestBlock.class",
+    "target": "net/minecraft/class_2281"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinRailBlocks.class",
+    "target": "net/minecraft/class_2443"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinRailBlocks.class",
+    "target": "net/minecraft/class_2313"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinRailBlocks.class",
+    "target": "net/minecraft/class_2442"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/block/MixinStairsBlock.class",
+    "target": "net/minecraft/class_2510"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/client/IMixinProfilerSystem.class",
+    "target": "net/minecraft/class_3533"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/client/MixinMinecraftClient.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/easyplace/MixinBlockItem_easyPlace.class",
+    "target": "net/minecraft/class_1747"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/easyplace/MixinClientPlayerInteractionManager_easyPlace.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/easyplace/MixinMinecraftClient_easyPlace.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/easyplace/MixinServerPlayNetworkHandler_easyPlace.class",
+    "target": "net/minecraft/class_3244"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/entity/IMixinEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/entity/IMixinSignBlockEntity.class",
+    "target": "net/minecraft/class_2625"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/entity/MixinAbstractSignEditScreen.class",
+    "target": "net/minecraft/class_7743"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/entity/MixinEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/hud/MixinDebugHud.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/input/IMixinKeyBinding.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/network/IMixinChunkDeltaUpdateS2CPacket.class",
+    "target": "net/minecraft/class_2637"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/network/MixinClientCommonNetworkHandler.class",
+    "target": "net/minecraft/class_8673"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/network/MixinClientPlayNetworkHandler.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/render/IMixinBlockRenderManager.class",
+    "target": "net/minecraft/class_776"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/render/MixinBufferBuilder.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/render/MixinModelOverrideList.class",
+    "target": "net/minecraft/class_806"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/render/MixinWorldRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/screen/IMixinHandledScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/screen/MixinHandledScreen.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/server/MixinMinecraftServer.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/world/IMixinWorld.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/world/IMixinWorldTickScheduler.class",
+    "target": "net/minecraft/class_6757"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/world/MixinClientWorld.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/world/MixinWorld.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "fi/dy/masa/litematica/mixin/world/MixinWorldChunk.class",
+    "target": "net/minecraft/class_2818"
+  }
+]

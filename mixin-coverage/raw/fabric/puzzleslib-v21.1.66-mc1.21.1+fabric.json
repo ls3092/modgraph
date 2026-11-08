@@ -1,0 +1,354 @@
+[
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/AbstractHorseFabricMixin.class",
+    "target": "net/minecraft/class_1496"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/AnimalFabricMixin.class",
+    "target": "net/minecraft/class_1429"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/AnvilMenuFabricMixin.class",
+    "target": "net/minecraft/class_1706"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/AxeItemFabricMixin.class",
+    "target": "net/minecraft/class_1743"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/BlockEntityFabricMixin.class",
+    "target": "net/minecraft/class_2586"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/BlockFabricMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/BoneMealItemFabricMixin.class",
+    "target": "net/minecraft/class_1752"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/BowItemFabricMixin.class",
+    "target": "net/minecraft/class_1753"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/CatFabricMixin.class",
+    "target": "net/minecraft/class_1451"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ChunkMapFabricMixin.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/CrossbowItemFabricMixin.class",
+    "target": "net/minecraft/class_1764"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/EnchantedCountIncreaseFunctionFabricMixin.class",
+    "target": "net/minecraft/class_125"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/EnchantmentHelperFabricMixin.class",
+    "target": "net/minecraft/class_1890"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/EnderManFabricMixin.class",
+    "target": "net/minecraft/class_1560"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/EntityFabricMixin.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ExperienceOrbFabricMixin.class",
+    "target": "net/minecraft/class_1303"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ExplosionFabricMixin.class",
+    "target": "net/minecraft/class_1927"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/FarmBlockFabricMixin.class",
+    "target": "net/minecraft/class_2344"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/FoxBreedGoalFabricMixin.class",
+    "target": "net/minecraft/class_4019$class_4024"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/GrindstoneMenu$ResultSlotFabricMixin.class",
+    "target": "net/minecraft/class_3803$4"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/GrindstoneMenuFabricMixin.class",
+    "target": "net/minecraft/class_3803"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ItemEntityFabricMixin.class",
+    "target": "net/minecraft/class_1542"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/LevelFabricMixin.class",
+    "target": "net/minecraft/class_1937"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/LivingEntityFabricMixin.class",
+    "target": "net/minecraft/class_1309"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/LootItemRandomChanceWithEnchantedBonusConditionFabricMixin.class",
+    "target": "net/minecraft/class_225"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/MagmaCubeFabricMixin.class",
+    "target": "net/minecraft/class_1589"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/MenuProviderWithDataFabricMixin.class",
+    "target": "fuzs/puzzleslib/api/container/v1/MenuProviderWithData"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/MobFabricMixin.class",
+    "target": "net/minecraft/class_1308"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/MonsterFabricMixin.class",
+    "target": "net/minecraft/class_1588"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/NaturalSpawnerFabricMixin.class",
+    "target": "net/minecraft/class_1948"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/OcelotFabricMixin.class",
+    "target": "net/minecraft/class_3701"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/PackRepositoryFabricMixin.class",
+    "target": "net/minecraft/class_3283"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ParrotFabricMixin.class",
+    "target": "net/minecraft/class_1453"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/PersistentEntitySectionManagerFabricMixin.class",
+    "target": "net/minecraft/class_5579"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/PlayerChunkSenderFabricMixin.class",
+    "target": "net/minecraft/class_8608"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/PlayerFabricMixin.class",
+    "target": "net/minecraft/class_1657"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ProjectileFabricMixin.class",
+    "target": "net/minecraft/class_1676"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/RunAroundLikeCrazyGoalFabricMixin.class",
+    "target": "net/minecraft/class_1387"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ServerEntityFabricMixin.class",
+    "target": "net/minecraft/class_3231"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ServerLevelFabricMixin.class",
+    "target": "net/minecraft/class_3218"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ServerPlayerFabricMixin.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/StartAttackingFabricMixin.class",
+    "target": "net/minecraft/class_4824"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/ThrownEnderpearlFabricMixin.class",
+    "target": "net/minecraft/class_1684"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/WolfFabricMixin.class",
+    "target": "net/minecraft/class_1493"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/accessor/GrindstoneMenuFabricAccessor.class",
+    "target": "net/minecraft/class_3803"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/accessor/PackRepositoryFabricAccessor.class",
+    "target": "net/minecraft/class_3283"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/AbstractClientPlayerFabricMixin.class",
+    "target": "net/minecraft/class_742"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/AbstractContainerScreenFabricMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/CameraFabricMixin.class",
+    "target": "net/minecraft/class_4184"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ChatListenerFabricMixin.class",
+    "target": "net/minecraft/class_7594"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ClientLevelFabricMixin.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ClientPacketListenerFabricMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/DebugScreenOverlayMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/EffectRenderingInventoryScreenFabricMixin.class",
+    "target": "net/minecraft/class_485"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/EntityRendererFabricMixin.class",
+    "target": "net/minecraft/class_897"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/FogRendererFabricMixin.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/GameRendererFabricMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/GuiFabricMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/GuiGraphicsFabricMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ItemInHandRendererFabricMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ItemRendererFabricMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/KeyMappingFabricMixin.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/KeyboardHandlerFabricMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/LivingEntityRendererFabricMixin.class",
+    "target": "net/minecraft/class_922"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/LocalPlayerFabricMixin.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/MinecraftFabricMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ModelManagerFabricMixin.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/MouseHandlerFabricMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/OptionsFabricMixin.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/PackSelectionScreenFabricMixin.class",
+    "target": "net/minecraft/class_5375"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/PlayerRendererFabricMixin.class",
+    "target": "net/minecraft/class_1007"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/RemotePlayerMixin.class",
+    "target": "net/minecraft/class_745"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/RenderBuffersFabricMixin.class",
+    "target": "net/minecraft/class_4599"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ScreenEffectRendererFabricMixin.class",
+    "target": "net/minecraft/class_4603"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ScreenFabricMixin.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/SkullBlockRendererFabricMixin.class",
+    "target": "net/minecraft/class_836"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/ToastComponentFabricMixin.class",
+    "target": "net/minecraft/class_374"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/accessor/AbstractContainerScreenFabricAccessor.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/client/accessor/MultiPlayerGameModeFabricAccessor.class",
+    "target": "net/minecraft/class_636"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/fabric/mixin/server/MainServerFabricMixin.class",
+    "target": "net/minecraft/server/Main"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/AbstractMinecartMixin.class",
+    "target": "net/minecraft/class_1688"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/DataCommandsMixin.class",
+    "target": "net/minecraft/class_3164"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/EnchantCommandMixin.class",
+    "target": "net/minecraft/class_3048"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/ClientSuggestionProviderMixin.class",
+    "target": "net/minecraft/class_637"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/EditBoxMixin.class",
+    "target": "net/minecraft/class_342"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/client/ModelBakeryMixin.class",
+    "target": "net/minecraft/class_1088"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/server/DedicatedServerSettingsMixin.class",
+    "target": "net/minecraft/class_3807"
+  },
+  {
+    "mixin_class": "fuzs/puzzleslib/mixin/server/EulaMixin.class",
+    "target": "net/minecraft/class_2981"
+  }
+]

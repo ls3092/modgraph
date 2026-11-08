@@ -1,0 +1,410 @@
+[
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/AccessorMixinBlockModel.class",
+    "target": "net/minecraft/client/renderer/block/model/BlockModel"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinAbstractContainerScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinAbstractSliderButton.class",
+    "target": "net/minecraft/client/gui/components/AbstractSliderButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinAbstractWidget.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinBossHealthOverlay.class",
+    "target": "net/minecraft/client/gui/components/BossHealthOverlay"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinButton.class",
+    "target": "net/minecraft/client/gui/components/Button"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinChatScreen.class",
+    "target": "net/minecraft/client/gui/screens/ChatScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinClientLanguage.class",
+    "target": "net/minecraft/client/resources/language/ClientLanguage"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinCommandSuggestions.class",
+    "target": "net/minecraft/client/gui/components/CommandSuggestions"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinConnectScreen.class",
+    "target": "net/minecraft/client/gui/screens/ConnectScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinEditBox.class",
+    "target": "net/minecraft/client/gui/components/EditBox"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinGui.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinGuiGraphics.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinLevelLoadingScreen.class",
+    "target": "net/minecraft/client/gui/screens/LevelLoadingScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinMusicManager.class",
+    "target": "net/minecraft/client/sounds/MusicManager"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinNativeImage.class",
+    "target": "com/mojang/blaze3d/platform/NativeImage"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinOptions.class",
+    "target": "net/minecraft/client/Options"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinPlayerModel.class",
+    "target": "net/minecraft/client/model/PlayerModel"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinPostChain.class",
+    "target": "net/minecraft/client/renderer/PostChain"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinProgressScreen.class",
+    "target": "net/minecraft/client/gui/screens/ProgressScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinRealmsNotificationsScreen.class",
+    "target": "com/mojang/realmsclient/gui/screens/RealmsNotificationsScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinReceivingLevelScreen.class",
+    "target": "net/minecraft/client/gui/screens/ReceivingLevelScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinScreen.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinServerList.class",
+    "target": "net/minecraft/client/multiplayer/ServerList"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinSpectatorGui.class",
+    "target": "net/minecraft/client/gui/components/spectator/SpectatorGui"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinSplashRenderer.class",
+    "target": "net/minecraft/client/gui/components/SplashRenderer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/IMixinSuggestionsList.class",
+    "target": "net/minecraft/client/gui/components/CommandSuggestions$SuggestionsList"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractButton.class",
+    "target": "net/minecraft/client/gui/components/AbstractButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractContainerEventHandler.class",
+    "target": "net/minecraft/client/gui/components/events/AbstractContainerEventHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractContainerScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractSelectionList.class",
+    "target": "net/minecraft/client/gui/components/AbstractSelectionList"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractSliderButton.class",
+    "target": "net/minecraft/client/gui/components/AbstractSliderButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinAbstractWidget.class",
+    "target": "net/minecraft/client/gui/components/AbstractWidget"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinChatListener.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinConnectScreen.class",
+    "target": "net/minecraft/client/gui/screens/ConnectScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinContainerEventHandler.class",
+    "target": "net/minecraft/client/gui/components/events/ContainerEventHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCreateWorldScreen.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCreateWorldScreen_GameTab.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen$GameTab"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCreateWorldScreen_MoreTab.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen$MoreTab"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCreateWorldScreen_WorldTab.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/CreateWorldScreen$WorldTab"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCreativeModeInventoryScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinCycleButton.class",
+    "target": "net/minecraft/client/gui/components/CycleButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinDeathScreen.class",
+    "target": "net/minecraft/client/gui/screens/DeathScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinDisconnectedScreen.class",
+    "target": "net/minecraft/client/gui/screens/DisconnectedScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinFilePackResources.class",
+    "target": "net/minecraft/server/packs/FilePackResources"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinGLFW.class",
+    "target": "org/lwjgl/glfw/GLFW"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinGameLoadCookie.class",
+    "target": "net.minecraft.client.Minecraft$GameLoadCookie"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinGenericMessageScreen.class",
+    "target": "net/minecraft/client/gui/screens/GenericMessageScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinGuiGraphics.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinImageButton.class",
+    "target": "net/minecraft/client/gui/components/ImageButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinInventoryScreen.class",
+    "target": "net/minecraft/client/gui/screens/inventory/InventoryScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinJoinMultiplayerScreen.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinKeyboardHandler.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLevelLoadStatusManager.class",
+    "target": "net/minecraft/client/multiplayer/LevelLoadStatusManager"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLevelLoadingScreen.class",
+    "target": "net/minecraft/client/gui/screens/LevelLoadingScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLevelStorageAccess.class",
+    "target": "net/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLivingEntity.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLoadingOverlay.class",
+    "target": "net/minecraft/client/gui/screens/LoadingOverlay"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinLocalPlayer.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinMouseHandler.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinMultiPlayerGameMode.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinMusicManager.class",
+    "target": "net/minecraft/client/sounds/MusicManager"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinOnlineServerEntry.class",
+    "target": "net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinOptions.class",
+    "target": "net/minecraft/client/Options"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinPathPackResources.class",
+    "target": "net/minecraft/server/packs/PathPackResources"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinPauseScreen.class",
+    "target": "net/minecraft/client/gui/screens/PauseScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinPlainTextButton.class",
+    "target": "net/minecraft/client/gui/components/PlainTextButton"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinPlayer.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinPoseStack.class",
+    "target": "com/mojang/blaze3d/vertex/PoseStack"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinProgressScreen.class",
+    "target": "net/minecraft/client/gui/screens/ProgressScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinQuickPlay.class",
+    "target": "net/minecraft/client/quickplay/QuickPlay"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinRealmsNotificationsScreen.class",
+    "target": "com/mojang/realmsclient/gui/screens/RealmsNotificationsScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinReceivingLevelScreen.class",
+    "target": "net/minecraft/client/gui/screens/ReceivingLevelScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinRenderSystem.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinResourceLoadStateTracker.class",
+    "target": "net/minecraft/client/ResourceLoadStateTracker"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinScreen.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinSelectWorldScreen.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/SelectWorldScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinSoundEngine.class",
+    "target": "net/minecraft/client/sounds/SoundEngine"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinSoundManager.class",
+    "target": "net/minecraft/client/sounds/SoundManager"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinSpriteIconButton_CenteredIcon.class",
+    "target": "net/minecraft/client/gui/components/SpriteIconButton$CenteredIcon"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinStringDecomposer.class",
+    "target": "net/minecraft/util/StringDecomposer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinSwitchGrid_SwitchBuilder.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/SwitchGrid$SwitchBuilder"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinTabNavigationBar.class",
+    "target": "net/minecraft/client/gui/components/tabs/TabNavigationBar"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinTitleScreen.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinVanillaPackResources.class",
+    "target": "net/minecraft/server/packs/VanillaPackResources"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinWindow.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinWorldListEntry.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldSelectionList$WorldListEntry"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/client/MixinWorldOpenFlows.class",
+    "target": "net/minecraft/client/gui/screens/worldselection/WorldOpenFlows"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/server/MixinLivingEntity.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/server/MixinServerLevel.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/common/server/MixinServerPlayer.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/neoforge/client/MixinNeoForgeGameRenderer.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/neoforge/client/MixinNeoForgeKeyboardHandler.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/neoforge/client/MixinNeoForgeLoadingOverlay.class",
+    "target": "net/neoforged/neoforge/client/loading/NeoForgeLoadingOverlay"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/neoforge/client/MixinNeoForgeMouseHandler.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "de/keksuccino/fancymenu/mixin/mixins/neoforge/client/MixinNeoForgeTitleScreen.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  }
+]

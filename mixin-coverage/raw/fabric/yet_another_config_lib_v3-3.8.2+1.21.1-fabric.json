@@ -1,0 +1,30 @@
+[
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/AbstractSelectionListAccessor.class",
+    "target": "net/minecraft/class_350"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/AbstractSelectionListMixin.class",
+    "target": "net/minecraft/class_350"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/ContainerEventHandlerMixin.class",
+    "target": "net/minecraft/class_4069"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/GuiGraphicsMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/OptionInstanceAccessor.class",
+    "target": "net/minecraft/class_7172"
+  },
+  {
+    "mixin_class": "dev/isxander/yacl3/mixin/TabNavigationBarAccessor.class",
+    "target": "net/minecraft/class_8089"
+  }
+]

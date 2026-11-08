@@ -1,0 +1,38 @@
+[
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/debugaid/ResourceLeakDetectorDisableConditionalMixin.class",
+    "target": "net/minecraft/class_155"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/microopt/EntityTrackerEntryMixin.class",
+    "target": "net/minecraft/class_3231"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/microopt/StringEncodingMixin.class",
+    "target": "net/minecraft/class_8702"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/microopt/VarIntsMixin.class",
+    "target": "net/minecraft/class_8703"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/pipeline/LegacyQueryHandlerMixin.class",
+    "target": "net/minecraft/class_3238"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/pipeline/SplitterHandlerMixin.class",
+    "target": "net/minecraft/class_2550"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/pipeline/compression/ClientConnectionMixin.class",
+    "target": "net/minecraft/class_2535"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/pipeline/encryption/ClientConnectionMixin.class",
+    "target": "net/minecraft/class_2535"
+  },
+  {
+    "mixin_class": "me/steinborn/krypton/mixin/shared/network/pipeline/encryption/ServerLoginNetworkHandlerMixin.class",
+    "target": "net/minecraft/class_3248"
+  }
+]

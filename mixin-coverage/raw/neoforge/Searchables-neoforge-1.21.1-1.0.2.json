@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "com/blamejared/searchables/mixin/AccessEditBox.class",
+    "target": "net/minecraft/client/gui/components/EditBox"
+  }
+]

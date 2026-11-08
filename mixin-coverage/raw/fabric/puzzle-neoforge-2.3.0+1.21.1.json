@@ -1,0 +1,30 @@
+[
+  {
+    "mixin_class": "net/puzzlemc/gui/mixin/MixinOptionsScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsScreen"
+  },
+  {
+    "mixin_class": "net/puzzlemc/models/mixin/MixinBlockElementRotation.class",
+    "target": "net/minecraft/client/renderer/block/model/BlockElementRotation"
+  },
+  {
+    "mixin_class": "net/puzzlemc/models/mixin/MixinFaceBakery.class",
+    "target": "net/minecraft/client/renderer/block/model/FaceBakery"
+  },
+  {
+    "mixin_class": "net/puzzlemc/models/mixin/MixinModelElementDeserializer.class",
+    "target": "net/minecraft/client/renderer/block/model/BlockElement$Deserializer"
+  },
+  {
+    "mixin_class": "net/puzzlemc/splashscreen/mixin/MixinNeoForgeLoadingOverlay.class",
+    "target": "net/neoforged/neoforge/client/loading/NeoForgeLoadingOverlay"
+  },
+  {
+    "mixin_class": "net/puzzlemc/splashscreen/mixin/MixinSplashScreen.class",
+    "target": "net/minecraft/client/gui/screens/LoadingOverlay"
+  },
+  {
+    "mixin_class": "net/puzzlemc/splashscreen/mixin/RenderPipelinesAccessor.class",
+    "target": "eu/midnightdust/core/MidnightLib"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "earth/terrarium/handcrafted/mixins/common/BlockElementMixin.class",
+    "target": "net.minecraft.client.renderer.block.model.BlockElement$Deserializer"
+  },
+  {
+    "mixin_class": "earth/terrarium/handcrafted/mixins/common/fabric/PoiTypesAccessor.class",
+    "target": "net/minecraft/class_7477"
+  }
+]

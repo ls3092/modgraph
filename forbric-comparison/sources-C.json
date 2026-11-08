@@ -1,0 +1,47 @@
+{
+  "lane": "C",
+  "source": "CurseForge",
+  "authoritativeTotalAvailable": false,
+  "attempts": [
+    {
+      "url": "https://api.curseforge.com/v1/mods/search?gameId=432&gameVersion=26.2",
+      "status": 403,
+      "bodyExcerpt": "Forbidden: API Key missing or invalid"
+    },
+    {
+      "url": "https://www.curseforge.com/minecraft/search?page=1&pageSize=20&sortBy=relevancy&class=mc-mods&gameVersion=26.2",
+      "status": 403,
+      "bodyExcerpt": "<title>Just a moment...</title> ... <noscript><div class=\"h2\"><span id=\"challenge-error-text\">Enable JavaScript and cookies to continue</span></div></noscript>"
+    },
+    {
+      "url": "https://www.curseforge.com/api/v1/mods/search?gameId=432&gameVersion=26.2",
+      "status": 403,
+      "bodyExcerpt": "<title>Just a moment...</title> ... Enable JavaScript and cookies to continue ... cType: 'managed' (Cloudflare managed challenge)"
+    },
+    {
+      "url": "https://api.cfwidget.com/minecraft/search?q=sodium",
+      "status": 404,
+      "bodyExcerpt": "(no body; no search/list endpoint is documented for this host)"
+    },
+    {
+      "url": "https://api.cfwidget.com/minecraft/mc-mods/sodium",
+      "status": 200,
+      "bodyExcerpt": "{\"id\":394468,\"title\":\"Sodium\",...,\"downloads\":{\"monthly\":0,\"total\":163207289},\"license\":\"\",\"donate\":\"\",...,\"files\":[{\"id\":9504673,...,\"display\":\"Sodium 0.9.3-beta.4 for Fabric 26.3\"},{\"id\":8396429,...,\"display\":\"Sodium 0.9.1 for NeoForge 26.2\",\"version\":\"26.2\"}]}"
+    }
+  ],
+  "totalHits": null,
+  "enumerated": 0,
+  "projects": [],
+  "licenseAvailability": "not exposed by public API",
+  "conclusion": "No keyless CurseForge path yields even a single 26.2 result, let alone a total: the official API returns HTTP 403 'Forbidden: API Key missing or invalid' without an x-api-key header, and every www.curseforge.com search surface (site search page and its internal /api/v1 endpoint) returns a Cloudflare managed-challenge 403 with no data. An authoritative total does exist in principle - the docs define data.pagination.totalCount ('The total number of items available by the request') for /v1/mods/search - but it is reachable only with a CurseForge for Studios key, so for this read-only keyless verification the 26.2 count cannot be established.",
+  "notes": [
+    "tools: no shell/curl available in this lane; all status codes are the ones the fetch tool reported (readable mode surfaces 'HTTP <code>: <reason>'), and the 403 body text was captured verbatim in raw mode.",
+    "official docs state: 'Authentication * API Key (API_KEY) * Parameter Name: x-api-key, in: header. The API key can be generated in the CurseForge for Studios developer console' (docs.curseforge.com/rest-api/).",
+    "official docs also state: 'The maximum page size is 50 results per page and capped at 10000 total results. Note: The limit is (index + pageSize <= 10,000)' - so even with a key, full enumeration by paging stops at 10,000 rows, but totalCount still reports the true total.",
+    "Minecraft 26.2 is a real, current CurseForge game version: cfwidget file records contain version '26.2' and display names such as 'Sodium 0.9.1 for Fabric 26.2' (uploaded 2026-07-08), and 26.3 beta files already exist.",
+    "cfwidget cannot substitute for a search index: its documented surface is only GET /{projectId-or-path} and /author/{id} plus /author/search/{username}; version filtering is per project (version=, loader=) and returns one 'download' object, never a count.",
+    "license: cfwidget's own docs say License 'no longer has accurate values' since the 2020 API change, and the live Sodium record returns an empty string (\"license\":\"\"). CurseForge's public API mod objects also carry no license field. Any license column for a CurseForge project must be sourced from the human-readable project page, which is itself behind the same 403 challenge.",
+    "caveat on 403 semantics: a publicly reported bug (Regrave/content-installer #22, 2026-07-27) shows CurseForge returns this same 403 'API Key missing or invalid' body even for a valid key during upstream incidents, so 403 here proves 'no key supplied' only together with the fact that this lane sent no key at all.",
+    "no jar was downloaded; no credential was read, printed or used."
+  ]
+}

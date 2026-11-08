@@ -1,0 +1,1738 @@
+[
+  {
+    "mixin_class": "dev/emi/emi/mixin/AbstractInventoryScreenMixin.class",
+    "target": "net/minecraft/class_485"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/ClientConfigurationNetworkHandlerMixin.class",
+    "target": "net/minecraft/class_8674"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/ClientPlayNetworkHandlerMixin.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/CraftingResultSlotMixin.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/DrawContextMixin.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.EmiUtil"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.VanillaPlugin"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$BlameString"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$BadValueException"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$3$1$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$2$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$SyntaxErrorException"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$3"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$3$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$QDCSSException"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.com.unascribed.qdcss.QDCSS$2"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipes$Manager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiIngredientSerializers"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipeFiller$DiscoveredItem"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipes"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiStackProviders"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiStackList"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipeSorter"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiStackList$ComparisonHashStrategy"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiStackList$StrictHashStrategy"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipeFiller"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiPluginContainer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiCommands"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiTags"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiInitRegistryImpl"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRecipes$Worker"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiRegistryImpl"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiStackList$IndexGroup"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiExclusionAreas"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiDragDropHandlers"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.registry.EmiComparisonDefaults"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiProfiler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiFavorite"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiTagKey"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiFavorite$Synthetic"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiScreenshotRecorder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiFavorites$CompoundList"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiSidebars"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiReloadManager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiFavorites"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiReloadLog"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiLog"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiHistory"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiDrawContext"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiFavorite$Craftable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiHidden"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiReloadManager$ReloadWorker"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiSidebars$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.EmiPersistentData"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.dev.EmiDev"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.dev.RecipeError$Severity"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.runtime.dev.RecipeError"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.EmiClient"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.EmiAgnos"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.EmiMain"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiPlugin$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiStackSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlot$OffsetDrawable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlot$TankInfo"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlotDrawablesView"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlot$IngredientRenderer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiIngredientConsumer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiWidgetBuilder$WidgetConstructor"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiScrollBoxWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiScrollGridWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiRecipeExtrasBuilder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiPlaceable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiWidgetBuilder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.extras.JemiTextWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiTooltipBuilder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlotBuilder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlotDrawable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlot"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiIngredientAcceptor"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeSlotsView"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.impl.JemiRecipeLayoutBuilder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.runtime.JemiBookmarkOverlay"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.runtime.JemiDragDropHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.runtime.JemiIngredientListOverlay"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.runtime.JemiIngredientFilter"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.runtime.JemiRecipesGui"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiPlugin"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiUtil"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.widget.JemiSlotWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.widget.JemiTankWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiRecipe$JemiWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiCategory"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.jemi.JemiRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.PieceType"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessMove"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessEvaluation$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessEvaluation"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessBoard"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.NetworkedMoveGenerator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.PieceColor"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.StandardMoveGenerator$Worker"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessPiece"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.RandomMoveGenerator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.StandardMoveGenerator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessBoard$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.EmiChess"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.MoveGenerator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.chess.ChessEmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.EmiNetwork"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.EmiPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.EmiChessPacket$S2C"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.FillRecipeC2SPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.EmiChessPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.CommandS2CPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.CreateItemC2SPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.EmiChessPacket$C2S"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.network.PingS2CPacket"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.EmiRenderHelper$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeTreeButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeDefaultButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeBackground"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeDefaultButtonWidget$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.widget.RecipeScreenshotButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.EmiRenderHelper"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.Margins"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ConfigEnum"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ScreenAlign"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.IndexSource"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarPages$SidebarPage"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.EffectLocation"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarSide"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ButtonVisibility"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ScreenAlign$Horizontal"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarSubpanels"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.EmiConfig"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarPages"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarSubpanels$Subpanel"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.IntGroup"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.HelpLevel"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.HeaderType"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarType"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ScreenAlign$Vertical"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.RecipeBookAction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.ConfigPresets"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.FluidUnit"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.CheatMode"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarTheme"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.config.SidebarSettings"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.stack.serializer.TagEmiIngredientSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.stack.serializer.ListEmiIngredientSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.stack.serializer.ItemEmiStackSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.stack.serializer.FluidEmiStackSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.util.InheritanceMap"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.VanillaPlugin$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.EmiPort"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.handler.CookingRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.handler.CoercedRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.handler.InventoryRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.handler.CraftingRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.handler.StonecuttingRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.RecipeScreen$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.EmiTooltipComponent$TooltipRenderData"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.RecipeCostTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.TagTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.EmiTextTooltipWrapper"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.RemainderTooltipComponent$Remainder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.RemainderTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.EmiTooltip"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.EmiTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.RecipeTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.RecipeCostTooltipComponent$Node"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.EmiTooltipComponent$TextRenderData"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.tooltip.IngredientTooltipComponent"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigEnumScreen$SelectionWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.WidgetGroup$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.DisabledToast"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen$Hover"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher$UnlitFacade"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher$ClaimedCollection"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigEnumScreen$Entry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenManager$SidebarEmiStackInteraction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigScreen$3"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.WidgetGroup"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen$TreeVolume"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.MicroTextRenderer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen$Cost"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.SizedButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.EmiSearchWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.ResolutionButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.SidebarButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.SidebarPagesWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ConfigEntryWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.EmiNameWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ConfigSearch$ConfigSearchWidgetField"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.EmiBindWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ListWidget$MoveDirection"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.SidebarSubpanelsWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.SubGroupNameWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ListWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.BooleanWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ConfigSearch"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.IntWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.GroupNameWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ListWidget$Entry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.IntGroupWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ScreenAlignWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.EnumWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.ConfigJumpButton"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.widget.config.IntEdit"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.RecipeDisplay$ButtonType"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigEnumScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.RecipeDisplay"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.MicroTextRenderer$MicroChar"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher$Batchable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenManager$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.MicroTextRenderer$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigPresetScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigScreen$Mutator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen$TreeVolume$Width"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenManager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenManager$ScreenSpace"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen$Node"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigPresetScreen$PresetWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.MicroTextRenderer$UnitScale"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher$UnlitFacade$Consumer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenBase"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.EmiScreenManager$SidebarPanel"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.BoMScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.StackBatcher$BatcherVertexConsumerProvider"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigScreen$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.RecipeScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.RecipeTab"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigPresetScreen$PresetGroupWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.ConfigScreen$2"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiDragDropHandler$BoundsBased"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiScreenBoundsProvider"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiDragDropHandler$SlotBased$TriConsumer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiDragDropHandler$SlotBased"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.render.EmiRenderable"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.render.EmiTooltipMetadata"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.render.EmiTexture"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.render.EmiTooltipComponents"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.render.EmiRender"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiEntrypoint"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiPlugin"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.ButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.TooltipWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.GeneratedSlotWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.TankWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.DrawableWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.FillingArrowWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.DrawableWidget$DrawableWidgetConsumer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.RecipeFillButtonWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.Bounds"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.TextWidget$Alignment"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.TextWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.TextureWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.Widget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.WidgetTooltipHolder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.AnimatedTextureWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.ButtonWidget$ClickAction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.SlotWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.widget.WidgetHolder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiStackConvertible"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiRegistryAdapter$StackConstructor"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.Comparison$HashFunction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.FluidEmiStack$FluidEntry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiStack$Entry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.ItemEmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmptyEmiStack$EmptyEntry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.ItemEmiStack$ItemEntry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.Comparison$Predicate"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.FluidEmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmptyEmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.ListEmiIngredient"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.Comparison$Builder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiIngredient"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiRegistryAdapter$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiStackInteraction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.TagEmiIngredient"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.EmiRegistryAdapter"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.Comparison"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.serializer.EmiStackSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.stack.serializer.EmiIngredientSerializer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiExclusionArea"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiApi$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiApi"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiDragDropHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiStackProvider"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiInitRegistry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiFillAction"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.EmiRegistry"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiWorldInteractionRecipe$WorldIngredient"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiRecipeDecorator"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiInfoRecipe$PageManager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiIngredientRecipe$PageSlotWidget"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiPatternCraftingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiWorldInteractionRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiIngredientRecipe$PageManager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.VanillaEmiRecipeCategories"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiCraftingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiIngredientRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiPlayerInventory"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiRecipeSorting"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.EmiRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.EmiCraftContext$Destination"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.StandardRecipeHandler"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.EmiCraftContext$Type"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.EmiCraftContext"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.handler.StandardRecipeHandler$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiRecipeCategory"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.BasicEmiRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiWorldInteractionRecipe$Builder"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiInfoRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiRecipeManager"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.recipe.EmiResolutionRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.EmiUtil$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.BoM$DefaultStatus"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.FlatMaterialCost"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.FoldState"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.ProgressState"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.TreeCost"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.ChanceMaterialCost"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.BoM"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.ChanceState"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.MaterialNode"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.MaterialTree"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.bom.FractionalMaterialCost"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.input.EmiInput"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.input.EmiBind$ModifiedKey"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.input.EmiBind"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.LogicalOrQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.RegexModQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.RegexTooltipQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.EmiSearch$SearchWorker"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.TooltipQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.ModQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.SearchStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.Query"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.NameQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.EmiSearch"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.AliasQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.QueryType"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.RegexTagQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.EmiSearch$CompiledQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.TagQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.LogicalAndQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.search.RegexNameQuery"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiResourceReloadListener"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiDataLoader"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.IndexStackData$Filter"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.TagExclusions"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiData"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiDataLoader$DataConsumer"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.RecipeDefaultLoader"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiAlias"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.RecipeDefaults"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiAlias$Baked"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.IndexStackData$Added"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.RecipeDefaults$Tag"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiRecipeCategoryProperties"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.RecipeDefaults$Resolution"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.EmiTagExclusionsLoader"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.data.IndexStackData"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiAnvilRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiFuelRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiGrindstoneRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiFireworkStarFadeRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiRepairItemRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiSmithingTrimRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiSuspiciousStewRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiArmorDyeRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiFireworkRocketRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiAnvilEnchantRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiBookCloningRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiBannerShieldRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiGrindstoneDisenchantingBookRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiFireworkStarRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiMapCloningRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiBannerDuplicateRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiGrindstoneDisenchantingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiBookCloningRecipe$Template"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.special.EmiAnvilRepairItemRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiShapedRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiCompostingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiBrewingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiShapelessRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiCookingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiSmithingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiSyntheticIngredientRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiStonecuttingRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.recipe.EmiTagRecipe"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.fabric.EmiClientFabric$1"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.fabric.EmiAgnosFabric"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.fabric.EmiMainFabric"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.platform.fabric.EmiClientFabric"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.screen.FakeScreen"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.api.FabricEmiStack"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/GlobalMixin.class",
+    "target": "dev.emi.emi.compat.EmiModMenu"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/HandledScreenMixin.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/HoeItemMixin.class",
+    "target": "net/minecraft/class_1794"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/KeyboardMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/MinecraftClientMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/MouseMixin.class",
+    "target": "net/minecraft/class_312"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/RecipeBookWidgetMixin.class",
+    "target": "net/minecraft/class_507"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/ScreenMixin.class",
+    "target": "net/minecraft/class_437"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/ToastManagerMixin.class",
+    "target": "net/minecraft/class_374"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/AxeItemAccessor.class",
+    "target": "net/minecraft/class_1743"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/BakedModelManagerAccessor.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/BrewingRecipeRegistryAccessor.class",
+    "target": "net/minecraft/class_1845"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/CraftingResultSlotAccessor.class",
+    "target": "net/minecraft/class_1734"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/DrawContextAccessor.class",
+    "target": "net/minecraft/class_332"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/HandledScreenAccessor.class",
+    "target": "net/minecraft/class_465"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/HoeItemAccessor.class",
+    "target": "net/minecraft/class_1794"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/ItemRendererAccessor.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/OrderedTextTooltipComponentAccessor.class",
+    "target": "net/minecraft/class_5683"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/ShovelItemAccessor.class",
+    "target": "net/minecraft/class_1821"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/SmithingTransformRecipeAccessor.class",
+    "target": "net/minecraft/class_8060"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/accessor/SmithingTrimRecipeAccessor.class",
+    "target": "net/minecraft/class_8062"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/conversion/FluidMixin.class",
+    "target": "net/minecraft/class_3611"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/conversion/ItemConvertibleMixin.class",
+    "target": "net/minecraft/class_1935"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/conversion/ItemStackMixin.class",
+    "target": "net/minecraft/class_1799"
+  },
+  {
+    "mixin_class": "dev/emi/emi/mixin/jei/PluginCallerMixin.class",
+    "target": "mezz/jei/library/load/PluginCaller"
+  }
+]

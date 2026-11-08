@@ -1,0 +1,278 @@
+[
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/client/IntegratedServerMixin.class",
+    "target": "net/minecraft/client/server/IntegratedServer"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/BeardifierMixin.class",
+    "target": "net/minecraft/world/level/levelgen/Beardifier"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/BiomeAccessor.class",
+    "target": "net/minecraft/world/level/biome/Biome"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/BiomeGenerationSettingsAccessor.class",
+    "target": "net/minecraft/world/level/biome/BiomeGenerationSettings"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/BiomeSourceInvoker.class",
+    "target": "net/minecraft/world/level/biome/BiomeSource"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/ChunkGeneratorAccessor.class",
+    "target": "net/minecraft/world/level/chunk/ChunkGenerator"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/ChunkMapMixin.class",
+    "target": "net/minecraft/server/level/ChunkMap"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/GameTestServerMixin.class",
+    "target": "net/minecraft/gametest/framework/GameTestServer"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/HolderReferenceAccessor.class",
+    "target": "net/minecraft/core/Holder$Reference"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/JigsawStructureAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/JigsawStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/JigsawStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/JigsawStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/ListPoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/ListPoolElement"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/MappedRegistryAccessor.class",
+    "target": "net/minecraft/core/MappedRegistry"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/MobSpawnSettingsAccessor.class",
+    "target": "net/minecraft/world/level/biome/MobSpawnSettings"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/MultiNoiseBiomeSourceAccessor.class",
+    "target": "net/minecraft/world/level/biome/MultiNoiseBiomeSource"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/NoiseBasedChunkGeneratorAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/NoiseBasedChunkGeneratorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/NoiseChunkAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseChunk"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/NoiseGeneratorSettingsAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseGeneratorSettings"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/PlacedFeatureAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/placement/PlacedFeature"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/PoolAliasLookupMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/alias/PoolAliasLookup"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/RandomStateAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/RandomState"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/RandomStateMixin.class",
+    "target": "net/minecraft/world/level/levelgen/RandomState"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/SinglePoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/SinglePoolElement"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/StructureProcessorListAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/StructureSetAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/StructureSet"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/StructureTemplatePoolAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/StructureTemplatePoolMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/SurfaceRulesContextMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceRules$Context"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/TreeConfigurationAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/bandlands/NoiseBasedChunkGeneratorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/bandlands/SurfaceSystemMixin.class",
+    "target": "net/minecraft/world/level/levelgen/SurfaceSystem"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/compat/terrablender/NoiseBasedChunkGeneratorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/density/DensityFunctionsMapAllMixin.class",
+    "target": "net.minecraft.world.level.levelgen.DensityFunctions$Ap2"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/density/DensityFunctionsMapAllMixin.class",
+    "target": "net.minecraft.world.level.levelgen.DensityFunctions$RangeChoice"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/density/DensityFunctionsMapAllMixin.class",
+    "target": "net.minecraft.world.level.levelgen.DensityFunctions$ShiftedNoise"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/density/DensityFunctionsMapAllMixin.class",
+    "target": "net.minecraft.world.level.levelgen.DensityFunctions$Spline"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/mnbs/MNBSMixin.class",
+    "target": "net/minecraft/world/level/biome/MultiNoiseBiomeSource"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/mnbs/MNBSPLMixin.class",
+    "target": "net/minecraft/world/level/biome/MultiNoiseBiomeSourceParameterList"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/mnbs/ParameterListAccessor.class",
+    "target": "net/minecraft/world/level/biome/Climate$ParameterList"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/neoforge/ServerLifecycleHooksMixin.class",
+    "target": "net/neoforged/neoforge/server/ServerLifecycleHooks"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/predicate/RegistryDataLoaderMixin.class",
+    "target": "net/minecraft/resources/RegistryDataLoader"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/DesertPyramidStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/DesertPyramidStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/EndCityPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/EndCityPieces$EndCityPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/IglooPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/IglooPieces$IglooPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/MineshaftCorridorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/MineshaftPieces$MineShaftCorridor"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/MineshaftPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/MineshaftPieces$MineShaftPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/MonsterThroneMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/NetherFortressPieces$MonsterThrone"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/NetherFossilPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/NetherFossilPieces$NetherFossilPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/OceanRuinPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/OceanRuinPieces$OceanRuinPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/PortalRoomMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/StrongholdPieces$PortalRoom"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/RuinedPortalPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/RuinedPortalPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/ShipwreckPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/ShipwreckPieces$ShipwreckPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/StructurePieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/StructurePiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/StructureStartMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/StructureStart"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/WoodlandMansionPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$WoodlandMansionPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/processor/WoodlandMansionStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/NetherFossilStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/NetherFossilStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/RuinedPortalStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/RuinedPortalStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/ShipwreckStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/ShipwreckStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/FloorRoomCollectionMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$FloorRoomCollection"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/PiecePlacerMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$MansionPiecePlacer"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/WoodlandMansionPieceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$WoodlandMansionPiece"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/WoodlandMansionStructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionStructure"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/floor/FirstFloorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$FirstFloorRoomCollection"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/floor/SecondFloorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$SecondFloorRoomCollection"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/template/mansion/floor/ThirdFloorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/WoodlandMansionPieces$ThirdFloorRoomCollection"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/common/villager/VillagerTypeMixin.class",
+    "target": "net/minecraft/world/entity/npc/VillagerType"
+  },
+  {
+    "mixin_class": "dev/worldgen/lithostitched/mixin/server/DedicatedServerMixin.class",
+    "target": "net/minecraft/server/dedicated/DedicatedServer"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/DebugScreenOverlayMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/GameRendererMixin.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/LoadingOverlayMixin.class",
+    "target": "net/minecraft/class_425"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/OptionsMixin.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/SoundEngineMixin.class",
+    "target": "net/minecraft/class_1140"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/ToastComponentMixin.class",
+    "target": "net/minecraft/class_374"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/WindowMixin.class",
+    "target": "net/minecraft/class_1041"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/bugfix/BlockableEventLoopMixin.class",
+    "target": "net/minecraft/class_1255"
+  },
+  {
+    "mixin_class": "net/lostluma/dynamic_fps/impl/textile/mixin/GuiMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/lostluma/dynamic_fps/impl/textile/mixin/OptionsMixin.class",
+    "target": "net/minecraft/class_315"
+  }
+]

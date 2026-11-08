@@ -1,0 +1,42 @@
+[
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/DebugScreenOverlayMixin.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/LoadingOverlayMixin.class",
+    "target": "net/minecraft/client/gui/screens/LoadingOverlay"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/OptionsMixin.class",
+    "target": "net/minecraft/client/Options"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/SoundEngineMixin.class",
+    "target": "net/minecraft/client/sounds/SoundEngine"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/ToastComponentMixin.class",
+    "target": "net/minecraft/client/gui/components/toasts/ToastComponent"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/WindowMixin.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  },
+  {
+    "mixin_class": "dynamic_fps/impl/mixin/bugfix/BlockableEventLoopMixin.class",
+    "target": "net/minecraft/util/thread/BlockableEventLoop"
+  }
+]

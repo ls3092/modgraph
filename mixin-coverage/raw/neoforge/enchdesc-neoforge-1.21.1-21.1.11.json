@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "net/darkhax/enchdesc/common/mixin/patch/MixinItemEnchants.class",
+    "target": "net/minecraft/world/item/enchantment/ItemEnchantments"
+  },
+  {
+    "mixin_class": "net/darkhax/enchdesc/common/mixin/patch/MixinItemStack.class",
+    "target": "net/minecraft/world/item/ItemStack"
+  }
+]

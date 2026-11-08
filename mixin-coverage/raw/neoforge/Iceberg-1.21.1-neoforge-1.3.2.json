@@ -1,0 +1,94 @@
+[
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/ClientPacketListenerMixin.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/ClientTextTooltipMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/tooltip/ClientTextTooltip"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/GuiGraphicsInvoker.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/GuiGraphicsMixin.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/ItemMixin.class",
+    "target": "net/minecraft/world/item/Item"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/PlayerAdvancementsMixin.class",
+    "target": "net/minecraft/server/PlayerAdvancements"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/TextColorMixin.class",
+    "target": "net/minecraft/network/chat/TextColor"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/TooltipRenderUtilMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/tooltip/TooltipRenderUtil"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelib/AzArmorModelMixin.class",
+    "target": "mod/azure/azurelib/rewrite/render/armor/AzArmorModel"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelib/GeoArmorRendererMixin.class",
+    "target": "mod/azure/azurelib/common/api/client/renderer/GeoArmorRenderer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelib/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelib/ItemArmorGeoLayerMixin.class",
+    "target": "mod/azure/azurelib/common/api/client/renderer/layer/ItemArmorGeoLayer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelibarmor/AzArmorModelMixin.class",
+    "target": "mod/azure/azurelibarmor/rewrite/render/armor/AzArmorModel"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelibarmor/GeoArmorRendererMixin.class",
+    "target": "mod/azure/azurelibarmor/common/api/client/renderer/GeoArmorRenderer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelibarmor/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/azurelibarmor/ItemArmorGeoLayerMixin.class",
+    "target": "mod/azure/azurelibarmor/common/api/client/renderer/layer/ItemArmorGeoLayer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/mixin/geckolib/GeoArmorRendererMixin.class",
+    "target": "software/bernie/geckolib/renderer/GeoArmorRenderer"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/neoforge/mixin/ClientHooksMixin.class",
+    "target": "net/neoforged/neoforge/client/ClientHooks"
+  },
+  {
+    "mixin_class": "com/anthonyhilyard/iceberg/neoforge/mixin/TooltipRenderUtilMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/tooltip/TooltipRenderUtil"
+  }
+]

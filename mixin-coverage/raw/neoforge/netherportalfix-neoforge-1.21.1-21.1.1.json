@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "net/blay09/mods/netherportalfix/mixin/NetherPortalBlockMixin.class",
+    "target": "net/minecraft/world/level/block/NetherPortalBlock"
+  },
+  {
+    "mixin_class": "net/blay09/mods/netherportalfix/mixin/LivingEntityAccessor.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  }
+]

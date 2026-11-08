@@ -1,0 +1,174 @@
+[
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinChunkSectionsToRender.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinClientLevel.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinFogRenderer.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinGameRenderer.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinImmersivePortalsRenderStates.class",
+    "target": "qouteall.imm_ptl.core.render.context_management.RenderStates"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinIrisFrameBuffer.class",
+    "target": "net.irisshaders.iris.gl.framebuffer.GlFramebuffer"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinLightTexture.class",
+    "target": "net/minecraft/class_765"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinMain.class",
+    "target": "net/minecraft/client/main/Main"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinMinecraft.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinOptionsScreen.class",
+    "target": "net/minecraft/class_429"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinProjectionMatrixBuffer.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/client/MixinSharedConstants.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinChunkGenerator.class",
+    "target": "net/minecraft/class_2794"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinChunkMap.class",
+    "target": "net/minecraft/class_3898"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinEntity.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinLevelTicks.class",
+    "target": "net/minecraft/class_1297"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinServerPlayer.class",
+    "target": "net/minecraft/class_3222"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinTracingExecutor.class",
+    "target": "net/minecraft/class_156"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/fabric/mixins/server/MixinUtilBackgroundThread.class",
+    "target": "net/minecraft/class_156"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinSharedConstants.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinChunkSectionsToRender.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinOptionsScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsScreen"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/client/gui/components/DebugScreenOverlay"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinServerPlayer.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinImmersivePortalsRenderStates.class",
+    "target": "qouteall.imm_ptl.core.render.context_management.RenderStates"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinMain.class",
+    "target": "net/minecraft/client/main/Main"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinLightTexture.class",
+    "target": "net/minecraft/client/renderer/LightTexture"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinLevelTicks.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinProjectionMatrixBuffer.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinChunkGenerator.class",
+    "target": "net/minecraft/world/level/chunk/ChunkGenerator"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinMinecraft.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinIrisFrameBuffer.class",
+    "target": "net.irisshaders.iris.gl.framebuffer.GlFramebuffer"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinFogRenderer.class",
+    "target": "net/minecraft/client/renderer/FogRenderer"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinGameRenderer.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinChunkMap.class",
+    "target": "net/minecraft/server/level/ChunkMap"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinClientPacketListener.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinTracingExecutor.class",
+    "target": "net/minecraft/Util"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinTFChunkGenerator.class",
+    "target": "net/minecraft/world/level/chunk/ChunkGenerator"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/client/MixinLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "com/seibel/distanthorizons/neoforge/mixins/server/MixinUtilBackgroundThread.class",
+    "target": "net/minecraft/Util"
+  }
+]

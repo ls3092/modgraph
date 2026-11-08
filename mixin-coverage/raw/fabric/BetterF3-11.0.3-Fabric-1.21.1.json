@@ -1,0 +1,42 @@
+[
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/DebugMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/FabricDebugMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/KeyboardMixin.class",
+    "target": "net/minecraft/class_309"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/autof3/DebugOptionMixin.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/bossbar/BossbarMixin.class",
+    "target": "net/minecraft/class_337"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/chunk/ChunkBuilderMixin.class",
+    "target": "net/minecraft/class_846"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/chunk/ClientChunkManagerMixin.class",
+    "target": "net/minecraft/class_631"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/chunk/ClientChunkMapMixin.class",
+    "target": "net/minecraft/class_631$class_3681"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/debugcrosshair/DebugCrosshairMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "me/cominixo/betterf3/mixin/scoreboard/ScoreboardMixin.class",
+    "target": "net/minecraft/class_329"
+  }
+]

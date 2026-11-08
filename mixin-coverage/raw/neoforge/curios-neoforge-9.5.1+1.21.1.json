@@ -1,0 +1,54 @@
+[
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/AccessorEntity.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinApplyBonusCount.class",
+    "target": "net/minecraft/world/level/storage/loot/functions/ApplyBonusCount"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinCuriosApi.class",
+    "target": "top/theillusivec4/curios/api/CuriosApi"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinCuriosDataProvider.class",
+    "target": "top/theillusivec4/curios/api/CuriosDataProvider"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinCuriosTriggers.class",
+    "target": "top/theillusivec4/curios/api/CuriosTriggers"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinCuriosTriggersEquip.class",
+    "target": "top/theillusivec4/curios/api/CuriosTriggers$EquipBuilder"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinEnchantedCountIncreaseFunction.class",
+    "target": "net/minecraft/world/level/storage/loot/functions/EnchantedCountIncreaseFunction"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinInventory.class",
+    "target": "net/minecraft/world/entity/player/Inventory"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinLivingEntity.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinNbtPredicate.class",
+    "target": "net/minecraft/advancements/critereon/NbtPredicate"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinPiglinAi.class",
+    "target": "net/minecraft/world/entity/monster/piglin/PiglinAi"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinPowderSnowBlock.class",
+    "target": "net/minecraft/world/level/block/PowderSnowBlock"
+  },
+  {
+    "mixin_class": "top/theillusivec4/curios/mixin/core/MixinV1460.class",
+    "target": "net/minecraft/util/datafix/schemas/V1460"
+  }
+]

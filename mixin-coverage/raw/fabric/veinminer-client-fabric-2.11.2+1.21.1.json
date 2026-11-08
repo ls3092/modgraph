@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "de/miraculixx/veinminerClient/mixin/MixinMouseHandler.class",
+    "target": "net/minecraft/class_312"
+  }
+]

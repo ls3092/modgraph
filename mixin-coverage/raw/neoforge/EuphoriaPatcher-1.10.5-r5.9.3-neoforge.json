@@ -1,0 +1,94 @@
+[
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/ClientTickMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/EnderDragonRendererMixin.class",
+    "target": "net.minecraft.client.renderer.entity.EnderDragonRenderer"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/EuphoriaPatcherMixin.class",
+    "target": "net.minecraft.client.main.Main"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisConfigPropertiesMixin.class",
+    "target": "net.irisshaders.iris.Iris"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisHeaderEntryMixin.class",
+    "target": "net.irisshaders.iris.gui.element.ShaderPackOptionList$HeaderEntry"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernExclusiveUniformsMixin.class",
+    "target": "net.irisshaders.iris.uniforms.IrisExclusiveUniforms"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernExtendedDataHelperMixin.class",
+    "target": "net.irisshaders.iris.vertices.ExtendedDataHelper"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernOptionMenuContainerMixin.class",
+    "target": "net.irisshaders.iris.shaderpack.option.menu.OptionMenuContainer"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernOptionMenuElementMixin.class",
+    "target": "net.irisshaders.iris.shaderpack.option.menu.OptionMenuElement"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernPackRenderTargetDirectivesMixin.class",
+    "target": "net.irisshaders.iris.shaderpack.properties.PackRenderTargetDirectives"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernPipelineManagerMixin.class",
+    "target": "net.irisshaders.iris.pipeline.PipelineManager"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernProfileElementWidgetMixin.class",
+    "target": "net.irisshaders.iris.gui.element.widget.ProfileElementWidget"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernShaderPackMixin.class",
+    "target": "net.irisshaders.iris.shaderpack.ShaderPack"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernShaderPropertiesMixin.class",
+    "target": "net.irisshaders.iris.shaderpack.properties.ShaderProperties"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisModernStandardMacrosMixin.class",
+    "target": "net.irisshaders.iris.gl.shader.StandardMacros"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/IrisShaderPackScreenMixin.class",
+    "target": "net.irisshaders.iris.gui.screen.ShaderPackScreen"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/NativeImageMixin.class",
+    "target": "com/mojang/blaze3d/platform/NativeImage"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/PreparedRenderTypeMixin.class",
+    "target": "net.minecraft.client.renderer.rendertype.PreparedRenderType"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/ReloadShadersOnDimensionChangeMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/RenderTypeMixin.class",
+    "target": "net.minecraft.client.renderer.rendertype.RenderType"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/ScreenshotMixin.class",
+    "target": "net.minecraft.client.Screenshot"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/SodiumMessagePopupContainerMixin.class",
+    "target": "net.minecraft.client.gui.components.AbstractSelectionList"
+  },
+  {
+    "mixin_class": "com/euphoriapatches/euphoria_patcher/neoforge/mixin/SodiumMessagePopupMixin.class",
+    "target": "net.irisshaders.iris.gui.screen.ShaderPackScreen"
+  }
+]

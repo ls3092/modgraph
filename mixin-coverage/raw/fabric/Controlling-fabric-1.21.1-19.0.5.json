@@ -1,0 +1,22 @@
+[
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessInputConstantsKey.class",
+    "target": "net/minecraft/class_3675$class_306"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessKeyBindsScreen.class",
+    "target": "net/minecraft/class_6599"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessKeyMapping.class",
+    "target": "net/minecraft/class_304"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/AccessOptionsSubScreen.class",
+    "target": "net/minecraft/class_4667"
+  },
+  {
+    "mixin_class": "com/blamejared/controlling/mixin/OpenGuiMixin.class",
+    "target": "net/minecraft/class_310"
+  }
+]

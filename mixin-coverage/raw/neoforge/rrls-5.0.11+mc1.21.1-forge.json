@@ -1,0 +1,78 @@
+[
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/workaround/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/workaround/ReloadableResourceManagerMixin.class",
+    "target": "net/minecraft/server/packs/resources/ReloadableResourceManager"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/workaround/VertexBufferMixin.class",
+    "target": "com/mojang/blaze3d/vertex/VertexBuffer"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/workaround/GuiGraphicsMixin.class",
+    "target": "net/minecraft/client/gui/GuiGraphics"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/workaround/NativeImageMixin.class",
+    "target": "com/mojang/blaze3d/platform/NativeImage"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/TitleScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/TitleScreen"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/LoadingOverlayMixin.class",
+    "target": "net/minecraft/client/gui/screens/LoadingOverlay"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/ItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ItemRenderer"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/RendererKeyboardMouseMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/RendererKeyboardMouseMixin.class",
+    "target": "net/minecraft/client/KeyboardHandler"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/RendererKeyboardMouseMixin.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/ServerPackManagerMixin.class",
+    "target": "net/minecraft/client/resources/server/ServerPackManager"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/compat/OverlayMixin.class",
+    "target": "net/minecraft/client/gui/screens/Overlay"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/mixins/MinecraftClientMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/forge/mixins/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/forge/mixins/NeoForgeLoadingOverlayMixin.class",
+    "target": "net/neoforged/neoforge/client/loading/NeoForgeLoadingOverlay"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/forge/mixins/config/ConfigurationSectionScreenMixin.class",
+    "target": "net/neoforged/neoforge/client/gui/ConfigurationScreen$ConfigurationSectionScreen"
+  },
+  {
+    "mixin_class": "org/redlance/dima_dencep/mods/rrls/forge/mixins/config/ConfigurationScreenMixin.class",
+    "target": "net/neoforged/neoforge/client/gui/ConfigurationScreen"
+  }
+]

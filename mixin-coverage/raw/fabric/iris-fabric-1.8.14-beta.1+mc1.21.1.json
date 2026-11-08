@@ -1,0 +1,630 @@
+[
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/BufferSourceAccessor.class",
+    "target": "net/minecraft/class_4597$class_4598"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/CompositeStateAccessor.class",
+    "target": "net/minecraft/class_1921$class_4688"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinBannerRenderer.class",
+    "target": "net/minecraft/class_823"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinBufferBuilder_SegmentRendering.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinBufferSource.class",
+    "target": "net/minecraft/class_4597$class_4598"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinByteBufferBuilder.class",
+    "target": "net/minecraft/class_9799"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinCompositeRenderType.class",
+    "target": "net/minecraft/class_1921$class_4687"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinFishingHookRenderer.class",
+    "target": "net/minecraft/class_906"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinLevelRenderer_EntityListSorting.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinRenderBuffers.class",
+    "target": "net/minecraft/class_4599"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinRenderType.class",
+    "target": "net/minecraft/class_1921"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/MixinSheets.class",
+    "target": "net/minecraft/class_4722"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/OutlineBufferSourceAccessor.class",
+    "target": "net/minecraft/class_4618"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/RenderStateShardAccessor.class",
+    "target": "net/minecraft/class_4668"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/RenderTypeAccessor.class",
+    "target": "net/minecraft/class_1921"
+  },
+  {
+    "mixin_class": "net/irisshaders/batchedentityrendering/mixin/SectionBufferBuilderPackAccessor.class",
+    "target": "net/minecraft/class_750"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/dh/mixin/MixinAdvancedShadowCullingFrustum.class",
+    "target": "net/irisshaders/iris/shadows/frustum/advanced/AdvancedShadowCullingFrustum"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/dh/mixin/MixinBoxCullingFrustum.class",
+    "target": "net/irisshaders/iris/shadows/frustum/fallback/BoxCullingFrustum"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/dh/mixin/MixinCullEverythingFrustum.class",
+    "target": "net/irisshaders/iris/shadows/frustum/CullEverythingFrustum"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/dh/mixin/MixinNonCullingFrustum.class",
+    "target": "net/irisshaders/iris/shadows/frustum/fallback/NonCullingFrustum"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/BlockRendererAccessor.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/EnumOptionBuilderImplAccessor.class",
+    "target": "net/caffeinemc/mods/sodium/client/config/builder/EnumOptionBuilderImpl"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/IntegerOptionBuilderImplAccessor.class",
+    "target": "net/caffeinemc/mods/sodium/client/config/builder/IntegerOptionBuilderImpl"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinAbstractBlockRenderContext.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/frapi/render/AbstractBlockRenderContext"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinBlockRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinChunkMeshBuildTask.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/tasks/ChunkBuilderMeshingTask"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinChunkVertex.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/vertex/format/ChunkVertexEncoder$Vertex"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinDefaultChunkRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/DefaultChunkRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinDefaultFluidRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/DefaultFluidRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinGlRenderDevice.class",
+    "target": "net/caffeinemc/mods/sodium/client/gl/device/GLRenderDevice$ImmediateDrawCommandList"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinRenderRegion.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/region/RenderRegion"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinRenderRegionArenas.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/region/RenderRegion$DeviceResources"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinRenderRegionManager.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/region/RenderRegionManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinRenderSectionManager.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/RenderSectionManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinRenderSectionManagerShadow.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/RenderSectionManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinShaderChunkRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/ShaderChunkRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinSodiumGameOptions.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/VideoSettingsScreen"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinSodiumOptions.class",
+    "target": "net/caffeinemc/mods/sodium/client/gui/SodiumConfigBuilder"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/compat/sodium/mixin/MixinSodiumWorldRenderer.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/SodiumWorldRenderer"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/DimensionTypeAccessor.class",
+    "target": "net/minecraft/class_2874"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/GameRendererAccessor.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/GlStateManagerAccessor.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/LevelRendererAccessor.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/LightTextureAccessor.class",
+    "target": "net/minecraft/class_765"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinBiome.class",
+    "target": "net/minecraft/class_1959"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinBiomeAmbientSoundsHandler.class",
+    "target": "net/minecraft/class_4897"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinBiomes.class",
+    "target": "net/minecraft/class_1972"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinBlockStateBehavior.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinBooleanState.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager$class_1018"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinByteBufferBuilder.class",
+    "target": "net/minecraft/class_9799"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinChainedJsonException.class",
+    "target": "net/minecraft/class_2973"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinChunkBorderRenderer.class",
+    "target": "net/minecraft/class_862"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinClientLanguage.class",
+    "target": "net/minecraft/class_1078"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinClientPacketListener.class",
+    "target": "net/minecraft/class_634"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinDebugScreenOverlay.class",
+    "target": "net/minecraft/class_340"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinEntityRenderDispatcher.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinFogRenderer.class",
+    "target": "net/minecraft/class_758"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGameRenderer.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGameRenderer_NightVisionCompat.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGlStateManager.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGlStateManager.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGlStateManager_BlendOverride.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGlStateManager_DepthColorOverride.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinGlStateManager_FramebufferBinding.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinItem.class",
+    "target": "net/minecraft/class_1792"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinItemBlockRenderTypes.class",
+    "target": "net/minecraft/class_4696"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinItemInHandRenderer.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLevelRenderer_SkipRendering.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLevelRenderer_Sky.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLightTexture.class",
+    "target": "net/minecraft/class_765"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLightningBoltRenderer.class",
+    "target": "net/minecraft/class_919"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinLocalPlayer.class",
+    "target": "net/minecraft/class_746"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinMaxFpsCrashFix.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinMinecraft_Images.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinMinecraft_Keybinds.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinMinecraft_PipelineManagement.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinModelViewBobbing.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinOptions_Entrypoint.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinParticleEngine.class",
+    "target": "net/minecraft/class_702"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinProgram.class",
+    "target": "net/minecraft/class_281"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinProgramManager.class",
+    "target": "net/minecraft/class_285"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinProgramType.class",
+    "target": "net/minecraft/class_281$class_282"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinQuickPlayDev.class",
+    "target": "net/minecraft/class_8496"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinRenderSystem.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinRenderTarget.class",
+    "target": "net/minecraft/class_276"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinRenderType.class",
+    "target": "net/minecraft/class_1921"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinScreenEffectRenderer.class",
+    "target": "net/minecraft/class_4603"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinShaderInstance.class",
+    "target": "net/minecraft/class_5944"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinSystemReport.class",
+    "target": "net/minecraft/class_6396"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinTheEndPortalRenderer.class",
+    "target": "net/minecraft/class_840"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinTitleScreen.class",
+    "target": "net/minecraft/class_442"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinTweakFarPlane.class",
+    "target": "net/minecraft/class_757"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinUniform.class",
+    "target": "net/minecraft/class_284"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinVertexBuffer.class",
+    "target": "net/minecraft/class_291"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/MixinWindow.class",
+    "target": "net/minecraft/class_1041"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/ProgramTypeAccessor.class",
+    "target": "net/minecraft/class_281$class_282"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/bettermipmaps/MixinMipmapGenerator.class",
+    "target": "net/minecraft/class_4725"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/bettermipmaps/MixinTextureAtlasSprite.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinBlockEntityRenderDispatcher.class",
+    "target": "net/minecraft/class_824"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinCapeLayer.class",
+    "target": "net/minecraft/class_972"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinElytraLayer.class",
+    "target": "net/minecraft/class_979"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinEnderDragonRenderer.class",
+    "target": "net/minecraft/class_895"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinEntityRenderDispatcher.class",
+    "target": "net/minecraft/class_898"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinEntityRenderer.class",
+    "target": "net/minecraft/class_897"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinHorseArmorLayer.class",
+    "target": "net/minecraft/class_4073"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinHumanoidArmorLayer.class",
+    "target": "net/minecraft/class_970"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/entity_render_context/MixinItemRenderer.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fabric/MixinFluidRendererImpl.class",
+    "target": "net/caffeinemc/mods/sodium/fabric/render/FluidRendererImpl"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fabric/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fabric/MixinParticleEngine.class",
+    "target": "net/minecraft/class_702"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fabulous/MixinDisableFabulousGraphics.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fantastic/MixinFireworkSparkParticle.class",
+    "target": "net/minecraft/class_677$class_680"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fantastic/MixinStationaryItemParticle.class",
+    "target": "net/minecraft/class_6734"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/fantastic/MixinTerrainParticle.class",
+    "target": "net/minecraft/class_727"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/gui/MixinGui.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/gui/MixinVideoSettingsScreen.class",
+    "target": "net/minecraft/class_446"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/integrationtest/MixinRenderTarget_StencilBufferTest.class",
+    "target": "net/minecraft/class_276"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/rendertype/RenderStateShardAccessor.class",
+    "target": "net/minecraft/class_4668"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/rendertype/RenderTypeAccessor.class",
+    "target": "net/minecraft/class_1921"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/shadows/MixinBeaconRenderer.class",
+    "target": "net/minecraft/class_822"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/shadows/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/shadows/MixinPreventRebuildNearInShadowPass.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/sky/MixinClientLevelData_DisableVoidPlane.class",
+    "target": "net/minecraft/class_638$class_5271"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/sky/MixinDimensionSpecialEffects.class",
+    "target": "net/minecraft/class_5294"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/sky/MixinLevelRenderer_SunMoonToggle.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/sky/MixinOptions_CloudsOverride.class",
+    "target": "net/minecraft/class_315"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/state_tracking/MixinPostChain.class",
+    "target": "net/minecraft/class_279"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/state_tracking/MixinRenderTarget.class",
+    "target": "net/minecraft/class_276"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/statelisteners/BooleanStateAccessor.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager$class_1018"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/statelisteners/MixinGlStateManager.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/statelisteners/MixinRenderSystem.class",
+    "target": "com/mojang/blaze3d/systems/RenderSystem"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/AnimationMetadataSectionAccessor.class",
+    "target": "net/minecraft/class_1079"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/MixinAbstractTexture.class",
+    "target": "net/minecraft/class_1044"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/MixinGlStateManager.class",
+    "target": "com/mojang/blaze3d/platform/GlStateManager"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/MixinResourceLocation.class",
+    "target": "net/minecraft/class_2960"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/MixinSpriteContents.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/MixinTextureManager.class",
+    "target": "net/minecraft/class_1060"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/SimpleTextureAccessor.class",
+    "target": "net/minecraft/class_1049"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/SpriteContentsAccessor.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/SpriteContentsAnimatedTextureAccessor.class",
+    "target": "net/minecraft/class_7764$class_5790"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/SpriteContentsFrameInfoAccessor.class",
+    "target": "net/minecraft/class_7764$class_5791"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/SpriteContentsTickerAccessor.class",
+    "target": "net/minecraft/class_7764$class_7765"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/TextureAtlasAccessor.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/pbr/MixinDirectoryLister.class",
+    "target": "net/minecraft/class_7954"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/pbr/MixinSpriteContents.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/texture/pbr/MixinTextureAtlas.class",
+    "target": "net/minecraft/class_1059"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/MixinBufferBuilder.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/MixinVertexFormat.class",
+    "target": "net/minecraft/class_293"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/MixinVertexFormatElement.class",
+    "target": "net/minecraft/class_296"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/block_rendering/MixinBufferBuilder_SeparateAo.class",
+    "target": "net/minecraft/class_287"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/block_rendering/MixinChunkRebuildTask.class",
+    "target": "net/minecraft/class_846$class_851$class_4578"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/block_rendering/MixinClientLevel.class",
+    "target": "net/minecraft/class_638"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/immediate/MixinBufferSource.class",
+    "target": "net/minecraft/class_4597$class_4598"
+  },
+  {
+    "mixin_class": "net/irisshaders/iris/mixin/vertices/immediate/MixinLevelRenderer.class",
+    "target": "net/minecraft/class_761"
+  }
+]

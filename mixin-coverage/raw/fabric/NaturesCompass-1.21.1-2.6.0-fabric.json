@@ -1,0 +1,14 @@
+[
+  {
+    "mixin_class": "com/chaosthedude/naturescompass/mixins/HUDMixin.class",
+    "target": "net/minecraft/class_329"
+  },
+  {
+    "mixin_class": "com/chaosthedude/naturescompass/mixins/HeldItemRendererMixin.class",
+    "target": "net/minecraft/class_759"
+  },
+  {
+    "mixin_class": "com/chaosthedude/naturescompass/mixins/ServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  }
+]

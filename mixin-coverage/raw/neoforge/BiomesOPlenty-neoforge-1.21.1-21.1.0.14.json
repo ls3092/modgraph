@@ -1,0 +1,10 @@
+[
+  {
+    "mixin_class": "biomesoplenty/neoforge/mixin/MixinLiquidNullFluid.class",
+    "target": "biomesoplenty/block/LiquidNullFluid"
+  },
+  {
+    "mixin_class": "biomesoplenty/neoforge/mixin/MixinBloodFluid.class",
+    "target": "biomesoplenty/block/BloodFluid"
+  }
+]

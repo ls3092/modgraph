@@ -1,0 +1,446 @@
+[
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/AbstractArrowMixin.class",
+    "target": "net/minecraft/world/entity/projectile/AbstractArrow"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/BeeEntityMixin.class",
+    "target": "net/minecraft/world/entity/animal/Bee$BeeGrowCropGoal"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/BeeOccupantMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BeehiveBlockEntity$Occupant"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BeehiveBlockEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/BuiltinModelItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ChunkStorageMixin.class",
+    "target": "net/minecraft/world/level/chunk/storage/ChunkStorage"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/CrashReportMixin.class",
+    "target": "net/minecraft/CrashReport"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/DecoratedPotPatternsMixin.class",
+    "target": "net/minecraft/world/level/block/entity/DecoratedPotPatterns"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EnderPearlItemMixin.class",
+    "target": "net/minecraft/world/item/EnderpearlItem"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntityCreeperMixin.class",
+    "target": "net/minecraft/world/entity/monster/Creeper"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntityFoxMixin.class",
+    "target": "net/minecraft/world/entity/animal/Fox"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntityRenderDispatcherMixin.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntitySkeletonMixin.class",
+    "target": "net/minecraft/world/entity/monster/AbstractSkeleton"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntityStorageMixin.class",
+    "target": "net/minecraft/world/level/chunk/storage/EntityStorage"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/EntityVillagerMixin.class",
+    "target": "net/minecraft/world/entity/npc/Villager"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ItemPropertiesMixin.class",
+    "target": "net/minecraft/client/renderer/item/ItemProperties"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ItemStackComponentizationFixMixin.class",
+    "target": "net/minecraft/util/datafix/fixes/ItemStackComponentizationFix"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/LecternBlockMixin.class",
+    "target": "net/minecraft/world/level/block/LecternBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/LightningBoltMixin.class",
+    "target": "net/minecraft/world/entity/LightningBolt"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/MinecraftDedicatedServerMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/MinecraftServerMixin.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/MusicManagerMixin.class",
+    "target": "net/minecraft/client/sounds/MusicManager"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/NbtUtilsMixin.class",
+    "target": "net/minecraft/nbt/NbtUtils"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/NoteBlockMixin.class",
+    "target": "net/minecraft/world/level/block/NoteBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ParticleManagerMixin.class",
+    "target": "net/minecraft/client/particle/ParticleEngine"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PhantomSweepAttackGoalMixin.class",
+    "target": "net/minecraft/world/entity/monster/Phantom$PhantomSweepAttackGoal"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PiglinBarterMixin.class",
+    "target": "net/minecraft/world/entity/monster/piglin/PiglinAi"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PiglinEntityMixin.class",
+    "target": "net/minecraft/world/entity/monster/piglin/Piglin"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PlayerAdvancementsMixin.class",
+    "target": "net/minecraft/server/PlayerAdvancements"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PlayerMixin.class",
+    "target": "net/minecraft/world/entity/player/Player"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PointedDripstoneBlockMixin.class",
+    "target": "net/minecraft/world/level/block/PointedDripstoneBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/PowderSnowBlockMixin.class",
+    "target": "net/minecraft/world/level/block/PowderSnowBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ServerEntityMixin.class",
+    "target": "net/minecraft/server/level/ServerEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ServerPlayerMixin.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/ShearsDispenserBehaviorMixin.class",
+    "target": "net/minecraft/core/dispenser/ShearsDispenseItemBehavior"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/SimpleBlockFeatureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/SimpleBlockFeature"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/SoundEngineMixin.class",
+    "target": "net/minecraft/client/sounds/SoundEngine"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/SoundManagerMixin.class",
+    "target": "net/minecraft/client/sounds/SoundManager"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/StructureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/Structure"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/StructurePoolAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/StructureTemplatePool"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/StructurePoolGeneratorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/JigsawPlacement$Placer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/StructureProcessorListMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/templatesystem/StructureProcessorList"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/SweetBerryBushBlockMixin.class",
+    "target": "net/minecraft/world/level/block/SweetBerryBushBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/TargetingConditionsMixin.class",
+    "target": "net/minecraft/world/entity/ai/targeting/TargetingConditions"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/VillagerProfessionLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/RenderLayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/AccessorEntity.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/BeeDataAccessor.class",
+    "target": "net/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeData"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/BeehiveBlockEntityAccessor.class",
+    "target": "net/minecraft/world/level/block/entity/BeehiveBlockEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/BiomeAccessor.class",
+    "target": "net/minecraft/world/level/biome/Biome"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/BlockEntityAccessor.class",
+    "target": "net/minecraft/world/level/block/entity/BlockEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/BoatEntityAccessor.class",
+    "target": "net/minecraft/world/entity/vehicle/Boat"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/ChunkMapAccessor.class",
+    "target": "net/minecraft/server/level/ChunkMap"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/DispenserBlockAccessor.class",
+    "target": "net/minecraft/world/level/block/DispenserBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/EntryListWidgetAccessor.class",
+    "target": "net/minecraft/client/gui/components/AbstractSelectionList"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/KeyBindingAccessor.class",
+    "target": "net/minecraft/client/KeyMapping"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/RecipeBookComponentAccessor.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeBookComponent"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/SinglePoolElementAccessor.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/SinglePoolElement"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/StatusEffectInstanceAccessor.class",
+    "target": "net/minecraft/world/effect/MobEffectInstance"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/accessor/TrackedEntityAccessor.class",
+    "target": "net/minecraft/server/level/ChunkMap$TrackedEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/brewing/BrewingStandBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BrewingStandBlockEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/brewing/BrewingStandMenuMixin.class",
+    "target": "net/minecraft/world/inventory/BrewingStandMenu"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/brewing/IngredientSlotMixin.class",
+    "target": "net/minecraft/world/inventory/BrewingStandMenu$IngredientsSlot"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/brewing/PotionSlotMixin.class",
+    "target": "net/minecraft/world/inventory/BrewingStandMenu$PotionSlot"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/AbstractClientPlayerMixin.class",
+    "target": "net/minecraft/client/player/AbstractClientPlayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/AgeableListModelMixin.class",
+    "target": "net/minecraft/client/model/AgeableListModel"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/CameraMixin.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ChannelMixin.class",
+    "target": "com/mojang/blaze3d/audio/Channel"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ClientRecipeBookMixin.class",
+    "target": "net/minecraft/client/ClientRecipeBook"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/EntryListWidgetMixin.class",
+    "target": "net/minecraft/client/gui/components/AbstractSelectionList"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/GameRendererMixin.class",
+    "target": "net/minecraft/client/renderer/GameRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.class",
+    "target": "net/minecraft/client/model/HumanoidModel"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ItemInHandLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ItemInHandLayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/client/renderer/ItemInHandRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ItemRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ModelLoaderMixin.class",
+    "target": "net/minecraft/client/resources/model/ModelBakery"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/ModelPartMixin.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/MouseHandlerMixin.class",
+    "target": "net/minecraft/client/MouseHandler"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/OptionsMixin.class",
+    "target": "net/minecraft/client/Options"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/PlayerRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/player/PlayerRenderer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/RecipeBookComponentMixin.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeBookComponent"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/RecipeBookTabButtonMixin.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeBookTabButton"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.class",
+    "target": "net/minecraft/client/gui/screens/recipebook/RecipeCollection"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/SearchTreeMixin.class",
+    "target": "net/minecraft/client/searchtree/IdSearchTree"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/StringRenderOutputMixin.class",
+    "target": "net/minecraft/client/gui/Font$StringRenderOutput"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/client/snapshots/SnapshotWarningMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/entity/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/entity/TameableEntityMixin.class",
+    "target": "net/minecraft/world/entity/TamableAnimal"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/AdornRegisterInvoker.class",
+    "target": "juuxel/adorn/block/variant/BlockVariantSets"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/BlocksInvoker.class",
+    "target": "net/minecraft/world/level/block/Blocks"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/BooleanRuleInvoker.class",
+    "target": "net/minecraft/world/level/GameRules$BooleanValue"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/ClientPlayNetworkHandlerInvoker.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/DoorBlockInvoker.class",
+    "target": "net/minecraft/world/level/block/DoorBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/FireBlockInvoker.class",
+    "target": "net/minecraft/world/level/block/FireBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/PressurePlateBlockInvoker.class",
+    "target": "net/minecraft/world/level/block/PressurePlateBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/StairsBlockInvoker.class",
+    "target": "net/minecraft/world/level/block/StairBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/invoker/TrapdoorBlockInvoker.class",
+    "target": "net/minecraft/world/level/block/TrapDoorBlock"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/pokeball/ThrownEntityMixin.class",
+    "target": "net/minecraft/world/entity/projectile/ThrowableProjectile"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/common/mixin/riding/JetMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/GenericPacketSplitterMixin.class",
+    "target": "net/neoforged/neoforge/network/filters/GenericPacketSplitter"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/NeoforgeBrewingStandMenuMixin.class",
+    "target": "net/minecraft/world/inventory/BrewingStandMenu"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/ServerEntityMixin.class",
+    "target": "net/minecraft/server/level/ServerEntity"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/client/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/client/LocalPlayerMixin.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/client/NeoforgeCameraMixin.class",
+    "target": "net/minecraft/client/Camera"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/client/NeoforgeSoundEngineMixin.class",
+    "target": "net/minecraft/client/sounds/SoundEngine"
+  },
+  {
+    "mixin_class": "com/cobblemon/mod/neoforge/mixin/client/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  }
+]

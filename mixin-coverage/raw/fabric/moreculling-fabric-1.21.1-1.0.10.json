@@ -1,0 +1,210 @@
+[
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/BakedQuad_cacheMixin.class",
+    "target": "net/minecraft/class_777"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/LevelRenderer_cloudsMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/LevelRenderer_rainMixin.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/MapItemSavedData_cacheMixin.class",
+    "target": "net/minecraft/class_22"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/Minecraft_managersMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/TextureAtlasSprite_opacityMixin.class",
+    "target": "net/minecraft/class_1058"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/accessors/BlockModelShaperAccessor.class",
+    "target": "net/minecraft/class_773"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/accessors/LevelRendererAccessor.class",
+    "target": "net/minecraft/class_761"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/accessors/SpriteContentsAccessor.class",
+    "target": "net/minecraft/class_7764"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockentity/BeaconRenderer_frustumMixin.class",
+    "target": "net/minecraft/class_822"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockentity/SignRenderer_textMixin.class",
+    "target": "net/minecraft/class_837"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockentity/TheEndGatewayRenderer_beamMixin.class",
+    "target": "net/minecraft/class_841"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/BaseRailBlock_cullAgainstMixin.class",
+    "target": "net/minecraft/class_2241"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/DoorBlock_cullAgainstMixin.class",
+    "target": "net/minecraft/class_2323"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/EndGatewayBlock_cullMixin.class",
+    "target": "net/minecraft/class_2329"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/FletchingTableBlock_devMixin.class",
+    "target": "net/minecraft/class_3712"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/LadderBlock_cullAgainstMixin.class",
+    "target": "net/minecraft/class_2399"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/LeavesBlock_typesMixin.class",
+    "target": "net/minecraft/class_2397"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/MangroveRootsBlock_typesMixin.class",
+    "target": "net/minecraft/class_7116"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/PowderSnowBlock_cullMixin.class",
+    "target": "net/minecraft/class_5635"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/ShulkerBoxBlock_cullMixin.class",
+    "target": "net/minecraft/class_2480"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/BaseTorchBlock_voxelMixin.class",
+    "target": "net/minecraft/class_8810"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/BrewingStandBlock_voxelMixin.class",
+    "target": "net/minecraft/class_2260"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/CampfireBlock_voxelMixin.class",
+    "target": "net/minecraft/class_3922"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/ChorusFlowerBlock_voxelMixin.class",
+    "target": "net/minecraft/class_2279"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/EndRodBlock_voxelMixin.class",
+    "target": "net/minecraft/class_5551"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blocks/cullshape/LightningRodBlock_voxelMixin.class",
+    "target": "net/minecraft/class_5554"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockstates/BlockStateBase_moreMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockstates/Block_drawSideMixin.class",
+    "target": "net/minecraft/class_2248"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/blockstates/Minecraft_loadBlocksMixin.class",
+    "target": "net/minecraft/class_310"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/compat/AbstractBlockRenderContext_vulkanModMixin.class",
+    "target": "net/vulkanmod/render/chunk/build/frapi/render/AbstractBlockRenderContext"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/compat/BambooStalkBlock_clientTweaksMixin.class",
+    "target": "net/minecraft/class_2211"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/compat/BlockOcclusionCache_sodiumMixin.class",
+    "target": "net/caffeinemc/mods/sodium/client/render/chunk/compile/pipeline/BlockOcclusionCache"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/compat/ItemRenderer_sodiumMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/compat/SignBlock_ebeMixin.class",
+    "target": "net/minecraft/class_2478"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/entities/ItemFrameRenderer_cullMixin.class",
+    "target": "net/minecraft/class_915"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/BakedModel_extendsMixin.class",
+    "target": "net/minecraft/class_1087"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/BuiltInModel_cacheMixin.class",
+    "target": "net/minecraft/class_1090"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/ForwardingBakedModel_compatMixin.class",
+    "target": "net/fabricmc/fabric/api/renderer/v1/model/ForwardingBakedModel"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/MultiPartBakedModel_cacheMixin.class",
+    "target": "net/minecraft/class_1095"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/SimpleBakedModel_cacheMixin.class",
+    "target": "net/minecraft/class_1093"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/WeightedBakedModel_cacheMixin.class",
+    "target": "net/minecraft/class_1097"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/cullshape/BlockModel_cullShapeMixin.class",
+    "target": "net/minecraft/class_793"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/cullshape/BlockStateBase_cullShapeMixin.class",
+    "target": "net/minecraft/class_4970$class_4971"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/cullshape/Deserializer_cullShapeMixin.class",
+    "target": "net/minecraft/class_793$class_795"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/cullshape/ModelManager_cullShapeMixin.class",
+    "target": "net/minecraft/class_1092"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/models/cullshape/UnbakedModel_extendsMixin.class",
+    "target": "net/minecraft/class_1100"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/renderers/ItemRenderer_apiMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/renderers/ItemRenderer_fabricFaceCullingMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/renderers/ItemRenderer_faceCullingMixin.class",
+    "target": "net/minecraft/class_918"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/renderers/ModelBlockRenderer_cullMixin.class",
+    "target": "net/minecraft/class_778"
+  },
+  {
+    "mixin_class": "ca/fxco/moreculling/mixin/renderers/PaintingRenderer_faceCullingMixin.class",
+    "target": "net/minecraft/class_928"
+  }
+]

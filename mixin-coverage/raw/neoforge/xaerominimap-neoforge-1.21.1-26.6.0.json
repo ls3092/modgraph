@@ -1,0 +1,102 @@
+[
+  {
+    "mixin_class": "xaero/common/mixin/MixinAbstractClientPlayerEntity.class",
+    "target": "net/minecraft/client/player/AbstractClientPlayer"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinAnimalModel.class",
+    "target": "net/minecraft/client/model/AgeableListModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinBufferSource.class",
+    "target": "net/minecraft/client/renderer/MultiBufferSource$BufferSource"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinChatListener.class",
+    "target": "net/minecraft/client/multiplayer/chat/ChatListener"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinChunkDeltaUpdateS2CPacket.class",
+    "target": "net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinClientPlayNetworkHandler.class",
+    "target": "net/minecraft/client/multiplayer/ClientPacketListener"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinClientPlayerEntity.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinClientWorld.class",
+    "target": "net/minecraft/client/multiplayer/ClientLevel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinCompositeEntityModel.class",
+    "target": "net/minecraft/client/model/ListModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinDragonEntityModel.class",
+    "target": "net/minecraft/client/renderer/entity/EnderDragonRenderer$DragonModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinLevelStorageAccess.class",
+    "target": "net/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinLlamaEntityModel.class",
+    "target": "net/minecraft/client/model/LlamaModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinLocalPlayer.class",
+    "target": "net/minecraft/client/player/LocalPlayer"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinMinecraftClient.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinMinecraftServer.class",
+    "target": "net/minecraft/server/MinecraftServer"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinModelPart.class",
+    "target": "net/minecraft/client/model/geom/ModelPart"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinNeoforgeToggleKeyMapping.class",
+    "target": "net/minecraft/client/ToggleKeyMapping"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinOptionalInGameHud.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinPlayerList.class",
+    "target": "net/minecraft/server/players/PlayerList"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinRabbitEntityModel.class",
+    "target": "net/minecraft/client/model/RabbitModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinServerPlayer.class",
+    "target": "net/minecraft/server/level/ServerPlayer"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinSinglePartEntityModel.class",
+    "target": "net/minecraft/client/model/HierarchicalModel"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/MixinWorldChunk.class",
+    "target": "net/minecraft/world/level/chunk/LevelChunk"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/immediatelyfast/MixinBatchableBufferSource.class",
+    "target": "net/raphimc/immediatelyfast/feature/core/BatchableBufferSource"
+  },
+  {
+    "mixin_class": "xaero/common/mixin/waystones/MixinPlayerWaystoneManager.class",
+    "target": "net/blay09/mods/waystones/core/PlayerWaystoneManager"
+  }
+]

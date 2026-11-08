@@ -1,0 +1,18 @@
+[
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/GuiMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/MainMixin.class",
+    "target": "net/minecraft/client/main/Main"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/VideoSettingsScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/options/VideoSettingsScreen"
+  },
+  {
+    "mixin_class": "dev/kirant/cwb/mixin/WindowMixin.class",
+    "target": "com/mojang/blaze3d/platform/Window"
+  }
+]

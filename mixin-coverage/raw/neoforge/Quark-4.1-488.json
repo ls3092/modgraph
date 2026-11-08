@@ -1,0 +1,486 @@
+[
+  {
+    "mixin_class": "org/violetmoon/quark/integration/mixin/lootr/LootrServiceRegistryMixin.class",
+    "target": "noobanidus/mods/lootr/common/impl/LootrServiceRegistry"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ShearsItemMixin.class",
+    "target": "net/minecraft/world/item/ShearsItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/MerchantOffersMixin.class",
+    "target": "net/minecraft/world/item/trading/MerchantOffers"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BlockItemMixin.class",
+    "target": "net/minecraft/world/item/BlockItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/HugeBrownMushroomFeatureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/HugeBrownMushroomFeature"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BoatMixin.class",
+    "target": "net/minecraft/world/entity/vehicle/Boat"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/LivingEntityMixin.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ServerLevelMixin.class",
+    "target": "net/minecraft/server/level/ServerLevel"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ItemMixin.class",
+    "target": "net/minecraft/world/item/Item"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/LightningBoltMixin.class",
+    "target": "net/minecraft/world/entity/LightningBolt"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/VillagerTradesMixin.class",
+    "target": "net/minecraft/world/entity/npc/VillagerTrades"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/SpringFeatureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/SpringFeature"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/LadderBlockMixin.class",
+    "target": "net/minecraft/world/level/block/LadderBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ConcretePowderBlockMixin.class",
+    "target": "net/minecraft/world/level/block/ConcretePowderBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/PistonMovingBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonMovingBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/HarvestFarmlandMixin.class",
+    "target": "net/minecraft/world/entity/ai/behavior/HarvestFarmland"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ComposterBlockMixin.class",
+    "target": "net/minecraft/world/level/block/ComposterBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/IronBarsBlockMixin.class",
+    "target": "net/minecraft/world/level/block/IronBarsBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/EntityMixin.class",
+    "target": "net/minecraft/world/entity/Entity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/HalfTransparentBlockMixin.class",
+    "target": "net/minecraft/world/level/block/HalfTransparentBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/DamageSourcesMixin.class",
+    "target": "net/minecraft/world/damagesource/DamageSources"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ClimateParameterPointMixin.class",
+    "target": "net/minecraft/world/level/biome/Climate$ParameterPoint"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ItemStackMixin.class",
+    "target": "net/minecraft/world/item/ItemStack"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/EnchantmentHelperMixin.class",
+    "target": "net/minecraft/world/item/enchantment/EnchantmentHelper"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/AnvilMenuMixin.class",
+    "target": "net/minecraft/world/inventory/AnvilMenu"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/CeilingHangingSignBlockMixin.class",
+    "target": "net/minecraft/world/level/block/CeilingHangingSignBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BaseCoralPlantTypeBlockMixin.class",
+    "target": "net/minecraft/world/level/block/BaseCoralPlantTypeBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ProjectileWeaponItemMixin.class",
+    "target": "net/minecraft/world/item/ProjectileWeaponItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/LanternBlockMixin.class",
+    "target": "net/minecraft/world/level/block/LanternBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/LevelRendererMixin.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ParrotRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ParrotRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ElytraLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/ElytraLayer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ItemRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ItemRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/MinecartSoundInstanceMixin.class",
+    "target": "net/minecraft/client/resources/sounds/MinecartSoundInstance"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/BeaconTileEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/BeaconRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/DolphinRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/DolphinRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/PigRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/PigRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/ArmadilloRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ArmadilloRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/RabbitRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/RabbitRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/FrogRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/FrogRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/LlamaRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LlamaRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/SlimeRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/SlimeRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/ChickenRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ChickenRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/AllayRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/AllayRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/CowRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/CowRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/variants/BeeRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/BeeRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ChatComponentMixin.class",
+    "target": "net/minecraft/client/gui/components/ChatComponent"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/HumanoidModelMixin.class",
+    "target": "net/minecraft/client/model/HumanoidModel"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ArmorStandModelMixin.class",
+    "target": "net/minecraft/client/model/ArmorStandModel"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/CapeLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/CapeLayer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/RenderBuffersMixin.class",
+    "target": "net/minecraft/client/renderer/RenderBuffers"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/PistonTileEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/blockentity/PistonHeadRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/MinecraftMixin.class",
+    "target": "net/minecraft/client/Minecraft"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/LivingEntityRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/LivingEntityRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorModelManager.class",
+    "target": "net/minecraft/client/resources/model/ModelManager"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorCustomCreativeSlot.class",
+    "target": "net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen$CustomCreativeSlot"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorEntityRenderDispatcher.class",
+    "target": "net/minecraft/client/renderer/entity/EntityRenderDispatcher"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorMultiPlayerGameMode.class",
+    "target": "net/minecraft/client/multiplayer/MultiPlayerGameMode"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorLevelRenderer.class",
+    "target": "net/minecraft/client/renderer/LevelRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/accessor/AccessorMenuScreens.class",
+    "target": "net/minecraft/client/gui/screens/MenuScreens"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/JukeboxBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/JukeboxBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/AbstractCandleBlockMixin.class",
+    "target": "net/minecraft/world/level/block/AbstractCandleBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ContainerScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/Screen"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/GuiMixin.class",
+    "target": "net/minecraft/client/gui/Gui"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/LoomScreenMixin.class",
+    "target": "net/minecraft/client/gui/screens/inventory/LoomScreen"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/HumanoidArmorLayerMixin.class",
+    "target": "net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ItemBlockRenderTypesMixin.class",
+    "target": "net/minecraft/client/renderer/ItemBlockRenderTypes"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/BannerItemMixin.class",
+    "target": "net/minecraft/world/item/BannerItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ItemInHandRendererMixin.class",
+    "target": "net/minecraft/client/renderer/ItemInHandRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/BiomeMixin.class",
+    "target": "net/minecraft/world/level/biome/Biome"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/client/ThrownTridentRendererMixin.class",
+    "target": "net/minecraft/client/renderer/entity/ThrownTridentRenderer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/WallBlockMixin.class",
+    "target": "net/minecraft/world/level/block/WallBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BeaconBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BeaconBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/TripWireHookBlockMixin.class",
+    "target": "net/minecraft/world/level/block/TripWireHookBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/LoomMenuMixin.class",
+    "target": "net/minecraft/world/inventory/LoomMenu"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/TemptingSensorMixin.class",
+    "target": "net/minecraft/world/entity/ai/sensing/TemptingSensor"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorSinglePoolElement.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/SinglePoolElement"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorAbstractArrow.class",
+    "target": "net/minecraft/world/entity/projectile/AbstractArrow"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorArmorTrim.class",
+    "target": "net/minecraft/world/item/armortrim/ArmorTrim"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorBlockItem.class",
+    "target": "net/minecraft/world/item/BlockItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorLivingEntity.class",
+    "target": "net/minecraft/world/entity/LivingEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorServerGamePacketListener.class",
+    "target": "net/minecraft/server/network/ServerGamePacketListenerImpl"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorMerchantOffer.class",
+    "target": "net/minecraft/world/item/trading/MerchantOffer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorWolf.class",
+    "target": "net/minecraft/world/entity/animal/Wolf"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorOverworldBiomes.class",
+    "target": "net/minecraft/data/worldgen/biome/OverworldBiomes"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorPistonMovingBlockEntity.class",
+    "target": "net/minecraft/world/level/block/piston/PistonMovingBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorChunkAccess.class",
+    "target": "net/minecraft/world/level/chunk/ChunkAccess"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorBlockBehavior.class",
+    "target": "net/minecraft/world/level/block/state/BlockBehaviour"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorMerchantMenu.class",
+    "target": "net/minecraft/world/inventory/MerchantMenu"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorTemptingSensor.class",
+    "target": "net/minecraft/world/entity/ai/sensing/TemptingSensor"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorBaseContainerBlockEntity.class",
+    "target": "net/minecraft/world/level/block/entity/BaseContainerBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/accessor/AccessorAbstractChestedHorse.class",
+    "target": "net/minecraft/world/entity/animal/horse/AbstractChestedHorse"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/NetherFortressPiecesMixin$CastleEntranceMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/NetherFortressPieces$CastleEntrance"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ChunkGeneratorMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/pools/JigsawPlacement"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BannerDuplicateRecipeMixin.class",
+    "target": "net/minecraft/world/item/crafting/BannerDuplicateRecipe"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/TemptGoalMixin.class",
+    "target": "net/minecraft/world/entity/ai/goal/TemptGoal"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/MerchantOfferMixin.class",
+    "target": "net/minecraft/world/item/trading/MerchantOffer"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/PlayerAdvancementsMixin.class",
+    "target": "net/minecraft/server/advancements/AdvancementVisibilityEvaluator"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ServerAdvancementManagerMixin.class",
+    "target": "net/minecraft/server/ServerAdvancementManager"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/AbstractVillagerMixin.class",
+    "target": "net/minecraft/world/entity/npc/AbstractVillager"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/AnimalMixin.class",
+    "target": "net/minecraft/world/entity/animal/Animal"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/PigMixin.class",
+    "target": "net/minecraft/world/entity/animal/Pig"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/FallingBlockEntityMixin.class",
+    "target": "net/minecraft/world/entity/item/FallingBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/WorldGenRegionMixin.class",
+    "target": "net/minecraft/server/level/WorldGenRegion"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/SpongeBlockMixin.class",
+    "target": "net/minecraft/world/level/block/SpongeBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ArmorStandMixin.class",
+    "target": "net/minecraft/world/entity/decoration/ArmorStand"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ExperienceOrbMixin.class",
+    "target": "net/minecraft/world/entity/ExperienceOrb"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/MerchantMenuMixin.class",
+    "target": "net/minecraft/world/inventory/MerchantMenu"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/SlimeMixin.class",
+    "target": "net/minecraft/world/entity/monster/Slime"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ServerEntityMixin.class",
+    "target": "net/minecraft/server/level/ServerEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/SpawnerBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/SpawnerBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/NetherFortressPiecesMixin.class",
+    "target": "net/minecraft/world/level/levelgen/structure/structures/NetherFortressPieces"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BeehiveBlockEntityMixin.class",
+    "target": "net/minecraft/world/level/block/entity/BeehiveBlockEntity"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ElytraItemMixin.class",
+    "target": "net/minecraft/world/item/ElytraItem"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/ProjectileUtilMixin.class",
+    "target": "net/minecraft/world/entity/projectile/ProjectileUtil"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/VillagerMixin.class",
+    "target": "net/minecraft/world/entity/npc/Villager"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BlockMixin.class",
+    "target": "net/minecraft/world/level/block/Block"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/PistonBaseBlockMixin.class",
+    "target": "net/minecraft/world/level/block/piston/PistonBaseBlock"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/BlockBehaviourMixin.class",
+    "target": "net/minecraft/world/level/block/state/BlockBehaviour"
+  },
+  {
+    "mixin_class": "org/violetmoon/quark/mixin/mixins/HugeRedMushroomFeatureMixin.class",
+    "target": "net/minecraft/world/level/levelgen/feature/HugeRedMushroomFeature"
+  }
+]

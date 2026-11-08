@@ -1,0 +1,6 @@
+[
+  {
+    "mixin_class": "eu/midnightdust/core/mixin/MixinOptionsScreen.class",
+    "target": "net/minecraft/client/gui/screens/options/OptionsScreen"
+  }
+]
