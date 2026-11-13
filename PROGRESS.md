@@ -1,6 +1,10 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-08（第二十九步：长程段 5——26.2 的 Mixin 四分类、可采基线对照、两版 BOUNDARIES 新增 §3.5；C6 断言入测）。
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-13（第三十步：段 1–5 归档提交、dataset-262 元数据仓库外备份、AGENTS 子任务落盘约束）。
+
+第三十步只做段 1–5 的收尾维护，不启动段 6、不重算 baseline 或既有 summary、不改 `src/`、六个既有产物、徽章、M0–M1.5 数字、两版 SPEC、两版 README、两版 BOUNDARIES、LICENSE 或 Forbric / Kilt 代码，也不跑 `gradle test`。按开工时 `git status --short` 的全部原文逐项核对后，只把清单内的段 3–5 文档、脚本和 `forbric-comparison/` JSON 加入暂存区，再按指定信息提交为 `2e03aad`；没有使用 `git add -A`，`dataset-262/` 与 `.pi/` 未进入提交。既有 `dataset-262/aggregate-262-final.json` 仍为 `ok=true`、J1–J6 全成立：Lane A 四分类 `29 + 2 + 1 + 4 = 36`，缺口 `1 = 1 + 0`；对照 `47 = 39 + 2 + 3 + 3 + 0`；冲突行 `435 = C(30,2)`、`595 = C(35,2)`。`dataset-262/forbric/batch-m0-summary.json` 仍为输入 `36 = OK 36 + FAILED 0`、C1–C6 全成立；这些数字均抄自既有 summary，本轮没有重算。
+
+仓库外备份写在 `D:\modgraph\backup-262\dataset-262-metadata.zip`，打包 `dataset-262/` 下全部非 jar 元数据（含 `forbric/`、CSV、JSON、JSONL、日志、TSV、TXT 与 `normalization.md`）。核验结果：zip 内文件 `70` 个、`.jar` 或 `jars/` 路径条目 `0` 个、全部条目可完整读取、路径集合与源端非 jar 元数据一致；SHA-256 为 `4248F5A4839F26F95EDE772BB8D1157D5EE27454A23D4A0628C124C26EAC71AA`。jar 仍只留在本地 `dataset-262/`，没有进入备份、上传或分发。另在 `AGENTS.md` 全局禁令中只新增一条：主智能体不得代写子任务落盘文件，需重算时另起文件名并写明 `producedBy`。本轮只改 `AGENTS.md` 与 `PROGRESS.md` 两个中文单版文件，不触发双版同步。
 
 第二十九步做长程段 5。**先答一句**：`conflicts.csv` 595 不是 630 的缺口，而是口径——行数按**唯一 modId** 的两两组合，不是按记录数。36 条记录里有两条 `bclib` 共享同一 modId，所以塌成 35 个唯一 → `C(35,2)=595`；段 2 的 `435 = C(30,2)`、旧基线 `6670 = C(116,2)` 是同一规则，**两段口径一致，无数字错误**。本轮新增 **C6** 断言把这条写进脚本（`conflicts.csv` 行数 == C(唯一 modId, 2)），两批均通过，并写进两版 `BOUNDARIES` §3.5。
 
@@ -616,6 +620,8 @@ src/
 
 121. 第二十九步做长程段 5（最后一段）：先用数据回答了 `595` 与 `C(36,2)` 的差——行数是**唯一 modId** 的配对，`bclib` 双记录使 36→35，`C(35,2)=595`，与段 2 的 `C(30,2)=435` 同口径，**非数字错误**；新增 **C6** 断言把这条入测（两批均过）。Lane A（modcrawl，exe 重校哈希 K1/K2 均成立，36/36 raw）四分类 **29 / 2 / 1 / 4 = 36**，缺口 1（`entitycrosshair`）被补上 2 个目标 → filled 1 / remaining 0。Lane B 声称写了 `baseline-262.json`，盘上为主智能体版本；主智能体按唯一 modId 复算并**改正自己两个错**：`mixinTargets` 31→**30**、`loaderMismatch` 由大小写敏感导致的 27/36 改为真值 **14/31**（17 匹配、8 无标签）。最终分布：基线 30 = 26/23/17/1/0，失败组 35 = 32/30/24/3/0；冲突行 `435 = C(30,2)`、`595 = C(35,2)`。汇总断言 J1–J6 全过；两版 `BOUNDARIES` 新增 §3.5 并写明“这些信号在普通模组里同样普遍、本轮不能证明其对运行时失败有区分力”与“零信号 0 条不是命中率”。新增 `run_modcrawl_262.py`、`recount_baseline_262.py`、`crosscheck_baseline_262.py`、`aggregate_262_final.py`。未改 `src/`、既有产物、徽章、M0–M1.5 数字、SPEC、LICENSE、AGENTS.md、README；未跑 `gradle test`；未 commit。
 
+122. 第三十步只做段 1–5 收尾维护：按开工 `git status --short` 原文逐项归档清单内文件并提交 `2e03aad`，未用 `git add -A`，`dataset-262/` 与 `.pi/` 未入库；zip 写到 `D:\modgraph\backup-262\dataset-262-metadata.zip`，SHA-256 `4248F5A4839F26F95EDE772BB8D1157D5EE27454A23D4A0628C124C26EAC71AA`，文件 `70` 个，`.jar` 或 `jars/` 路径条目 `0` 个，全部条目读取成功且路径集合与源端一致；`AGENTS.md` 只新增“主智能体不得代写子任务落盘文件；需重算时另起文件名并写明 `producedBy`”一条。既有 summary 数字未重算；关键结论仍为 J1–J6 / C1–C6 全成立。未改 `src/`、六个既有产物、徽章、M0–M1.5 数字、两版 SPEC、两版 README、两版 BOUNDARIES、LICENSE 或 Forbric / Kilt 代码；未跑 `gradle test`、未 push、未提 PR、未启动新阶段。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -729,13 +735,13 @@ src/
 
 ## 五、下一步建议
 
-**下一步第一条命令（本轮不执行）：**
+**下一步第一条命令（本轮不执行；没有自动下一阶段）：**
 
-```bash
-python -u aggregate_262_final.py && python -u compare_262_batch.py --new dataset-262/forbric/candidates.jsonl --old candidates.jsonl --out dataset-262/forbric/batch-m0-summary.json
+```powershell
+python -u aggregate_262_final.py
 ```
 
-第一条重算段 5 的六条汇总断言，第二条重算带 C6 的 M0 汇总（覆盖 `conflicts.csv` 与组合数的一致性）。**段 1–5 已全部完成，本轮不启动新阶段。** 留下两件任维护者定：① Lane B 未交付，`baseline-262.json` 由主智能体代算并标注；要不要用独立会话重跑一遍 B 以双确认；② `dataset-262/` 目前只在本地且已 gitignore，是否要归档到仓库外备份。M2 或任何下一阶段没有开始，等用户明确指令。
+该命令可重跑既有段 5 汇总并校验 J1–J6，本轮没有执行。**段 1–5 已完成，无自动下一阶段。** M2 或任何新阶段没有开始；除非用户明确下达新指令，不启动后续工作。
 
 M0 已按 SPEC v0.7 定稿（v0.8–v1.1 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现，M1.5 已按 §3.7 实现。中英文 SPEC 现在都是 v1.1。完整数据集（195 个 jar）下 `gradle clean test` 是 148 个测试、失败 0、错误 0、跳过 0——这是第十九步的实跑结果。`gradle run` 产出六个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头，`duplicates.csv` 4 行数据加表头，不满足的硬依赖 56。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 148 个、跳过 0，两种模式在日志里明确打印当前数据源。
 
