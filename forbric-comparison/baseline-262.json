@@ -1,0 +1,90 @@
+{
+  "lane": "B",
+  "producedBy": "parent agent (recount_baseline_262.py) — lane B claimed to write this file but the bytes on disk were the parent's; parent re-checked every number and corrected two of them",
+  "provenance": {
+    "note": "Lane B reported writing this file. The file present on disk was the parent's earlier version, so the parent re-derived every count with `recount_baseline_262.py` (unique-modId basis) and fixed two errors in its own earlier numbers: mixinTargetsNonEmpty 31 -> 30 (record basis vs unique-modId basis), and loaderMismatch, which the parent first compared case-sensitively ('FABRIC' vs 'Fabric') and therefore reported as 27 modIds / 36 records. The case-insensitive truth is 14 of 31 labelled rows.",
+    "sourceScripts": ["recount_baseline_262.py", "crosscheck_baseline_262.py"],
+    "sourceArtifact": "dataset-262/aggregate-262-final.json"
+  },
+  "baselineGroup": {
+    "name": "可采模组基线（无运行时标签）",
+    "records": 30,
+    "uniqueModIds": 30,
+    "paths": [
+      "dataset-262/candidates.jsonl",
+      "dataset-262/dependencies.csv",
+      "dataset-262/conflicts.csv"
+    ]
+  },
+  "failureGroup": {
+    "name": "Forbric 两份清单合计的 LOCATED 行",
+    "rows": 39,
+    "records": 36,
+    "uniqueModIds": 35,
+    "labelledRows": 31,
+    "nullLoaderLabelRows": 8,
+    "paths": [
+      "dataset-262/forbric/candidates.jsonl",
+      "dataset-262/forbric/dependencies.csv",
+      "dataset-262/forbric/conflicts.csv",
+      "dataset-262/forbric/comparison-262.json"
+    ]
+  },
+  "fields": {
+    "dependenciesNonSatisfied": {
+      "baseline": 26,
+      "failure": 32
+    },
+    "mixinTargetsNonEmpty": {
+      "baseline": 23,
+      "failure": 30,
+      "note": "唯一 modId 口径；按记录数是 31，因为 bclib 有两条记录共享同一 modId"
+    },
+    "conflictsHighMedium": {
+      "baseline": 17,
+      "failure": 24
+    },
+    "loaderMismatch": {
+      "baseline": null,
+      "failure": 14,
+      "labelledRows": 31,
+      "matchRows": 17,
+      "nullLoaderLabelRows": 8,
+      "note": "大小写无关比较；14/31 条已标注行不匹配，17 条匹配，另有 8 行 Forbric 未给 loader 标签。按统一加载器读法这是标注差异，已从证据中剔除。"
+    },
+    "supportPolicyExcluded": {
+      "baseline": 1,
+      "failure": 3
+    },
+    "statusFailed": {
+      "baseline": 0,
+      "failure": 0
+    }
+  },
+  "conflictRowMath": {
+    "baseline": {
+      "conflictRows": 435,
+      "uniqueModIds": 30,
+      "pairsFromUnique": 435
+    },
+    "failure": {
+      "conflictRows": 595,
+      "uniqueModIds": 35,
+      "pairsFromUnique": 595
+    }
+  },
+  "assertions": {
+    "L1_baseline_denominator_30": true,
+    "L2_failure_denominator_39_rows": true,
+    "L3_conflict_rows_equal_pairs": true,
+    "L4_counts_within_denominators": true,
+    "L5_labelled_plus_nulllabel_equals_unique": true
+  },
+  "limitation": "这 30 个只有静态信号、没有运行时通过/失败标签；不能据此推断这些信号对运行时失败有区分力。本轮不给命中率，也不给预测结论。",
+  "notes": [
+    "字段计数按唯一 modId，非互斥，不能相加。",
+    "三个分母不可混用：39 行（含表内重复行）、36 条记录（bclib 双记录）、35 个唯一 modId。",
+    "14 + 17 = 31 条已标注行；31 + 8 = 39 行。",
+    "statusFailed = 0 只表示 status 字段不是 FAILED，不是运行时状态。"
+  ]
+}

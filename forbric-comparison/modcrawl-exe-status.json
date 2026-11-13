@@ -1,0 +1,35 @@
+{
+  "lane": "side",
+  "tool": "modcrawl",
+  "version": "0.11.3",
+  "expectedSha256": "A1F65355951F81753A10B8D4B9B61AA9EEF2B65A761AD1E1569E8007509CAF56",
+  "status": "AVAILABLE",
+  "usablePath": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\opencode\\modcrawl-bin\\modcrawl.exe",
+  "measuredSha256": "A1F65355951F81753A10B8D4B9B61AA9EEF2B65A761AD1E1569E8007509CAF56",
+  "bytes": 3824128,
+  "rejectedPaths": [
+    {
+      "path": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\modcrawl-v0.11.3\\modcrawl.exe",
+      "measuredSha256": "BEF140A1A96994029153DCA8C00B1750B9A5A764FB9DB2DC68D7BB40E8A29E8A",
+      "reason": "504 HTML error page, not a binary"
+    }
+  ],
+  "upstreamRetry": {
+    "url": "https://github.com/SirCesarium/modcrawl/releases/download/v0.11.3/modcrawl-windows-x86_64-msvc.exe",
+    "httpStatus": 504,
+    "bytes": 92,
+    "bodyKind": "html error page"
+  },
+  "executed": false,
+  "method": "evidence file read by parent; this lane has no shell",
+  "notes": [
+    "Evidence source: dataset-262/modcrawl-exe-evidence.txt (produced by parent, 2026-11-08).",
+    "Hash values were reported by certutil -hashfile SHA256 in lowercase; this file records them uppercase.",
+    "where /r D:\\ modcrawl*.exe found nothing on D:; the fork checkout D:\\modgraph\\tools\\modcrawl contains no .exe (Cargo.toml version = 0.11.3).",
+    "The usable copy sits under a Temp path whose shape is a short (8.3) user name; it may be deleted by temp cleanup, so path stability is not verified.",
+    "The 92-byte copy under Temp\\modcrawl-v0.11.3 is an aborted-download artifact and must not be executed.",
+    "Upstream retry returned HTTP 504 with a 92-byte HTML body; an earlier attempt without --ssl-no-revoke failed with schannel CRYPT_E_NO_REVOCATION_CHECK (0x80092012), a local TLS revocation-check issue.",
+    "executed is false: this lane has no shell and the binary has not been run by anyone in this evidence set.",
+    "Static file comparison only; nothing here says the current build can crash before it writes logs, so this status file must not be read as resolving that smoke-test blocker."
+  ]
+}

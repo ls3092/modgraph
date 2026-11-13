@@ -78,6 +78,7 @@ def summarize(path):
         "path": path,
         "input": len(rows),
         "ok": len(ok),
+        "uniqueModIds": len({r.get("modId") for r in ok if r.get("modId")}),
         "failed": len(failed),
         "failureCodes": codes,
         "invasiveness": inv,
@@ -117,6 +118,11 @@ def main():
         "C4_input_equals_summary_csv_rows": new["csvRows"]["summary.csv"] is None
         or new["csvRows"]["summary.csv"] == new["input"],
         "C5_new_and_old_are_different_files": old is None or os.path.abspath(args.new) != os.path.abspath(args.old),
+        "C6_conflicts_equal_pairs_of_unique_modids": (
+            new["csvRows"]["conflicts.csv"] is None
+            or new["csvRows"]["conflicts.csv"]
+            == new["uniqueModIds"] * (new["uniqueModIds"] - 1) // 2
+        ),
     }
     out = {"new": new, "old": old, "assertions": checks, "ok": all(checks.values())}
     try:

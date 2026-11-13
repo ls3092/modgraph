@@ -1,6 +1,8 @@
 # BOUNDARIES — external comparisons and what they do not show
 
-Status: v1.0 (2026-11-07). This document is not part of the SPEC acceptance criteria. It freezes what two external comparisons measured, and the interpretation limits that must travel with those numbers. All counts below are taken from `PROGRESS.md` (steps 第二十步 and 第二十一步); if `PROGRESS.md` changes, this document must be re-synced in both language versions.
+Status: v1.1 (2026-11-08). This document is not part of the SPEC acceptance criteria. It freezes what two external comparisons measured, and the interpretation limits that must travel with those numbers. All counts below are taken from `PROGRESS.md` (steps 第二十步 and 第二十一步) and, for §7, from the 26.2 batch run in step 第二十六步; if `PROGRESS.md` changes, this document must be re-synced in both language versions.
+
+Change log: v1.1 adds §7 (loader-family coverage, with the 1.21.1-baseline qualifier and the first real 26.2 trigger) and §8 (data handling), and adds one bullet to §2.5.
 
 ## 1. Why this file exists
 
@@ -47,6 +49,7 @@ The unique-modId column overlaps across buckets (for example, sodium has one Fab
 
 - Whether the two sides name targets the same way: the naming side uses dotless simple names; `modcrawl` returns internal names (possibly obfuscated). No intersection was computed.
 - Runtime behavior; nested-jar coverage of `modcrawl`; the 4 FAILED records (they were also run and returned 0 records, but they are outside the 191 denominator).
+- The 26.2 re-run of this comparison was **not performed**: the upstream v0.11.3 Windows binary recorded in `PROGRESS.md` step 第二十步 is no longer on disk (`D:\modgraph\tools\modcrawl` is a source checkout with no `.exe`), and re-fetching it from the recorded release URL returned `504 Gateway Time-out` (92-byte HTML error body). So there is no 26.2 four-way number, and none is inferred from the 1.21.1 one.
 
 ## 3. Forbric failure-list comparison
 
@@ -69,6 +72,30 @@ The unique-modId column overlaps across buckets (for example, sodium has one Fab
 
 - Candidate located: 0; no candidate: 12 rows / 12 unique ids. `NO_CANDIDATE` 12 = 12. All other buckets are 0.
 
+### 3.4 The same two tables against the 26.2 batch (one quantitative sentence)
+
+Against a 26.2 batch of 36 collected jars, the two tables (47 rows / 44 unique ids, not merged) bucket as **LOCATED 39 / `NO_262` 2 / `NOT_FOUND` 3 / `NOT_IN_BATCH` 3 / download-failure 0 = 47 rows**, i.e. **39 of 47 rows (36 unique identities) have a candidate in the 26.2 batch**, and inside those 39 rows the signals are non-SATISFIED dependency 36, non-empty `mixinTargets` 33, HIGH/MEDIUM conflict 27, loader mismatch 20, `supportPolicy=EXCLUDED` 4, `status=FAILED` 0, rows with no signal at all 0 (non-exclusive field counts; they must not be added). The five identities outside the batch are the two `NO_262` and the three `NOT_FOUND` ones listed in `PROGRESS.md` step 第二十八步; the 2026-10-11 re-test (“fixed down to 0”) is not used in any label here.
+
+### 3.5 What the 26.2 batch can and cannot say
+
+An earlier revision of this section said `mixinTargets` = 31 (a record-basis figure presented as unique-modId) and loader mismatch = 36/36 (a case-sensitive comparison of `FABRIC` against `Fabric`); both were wrong. The numbers below are re-derived with `recount_baseline_262.py` on a unique-modId basis, and the correction is recorded in `PROGRESS.md` step 第二十九步.
+
+- **Sizes.** The two tables together are 47 rows / 44 unique ids; 39 rows (36 unique identities) have a candidate in the 26.2 batch, and all 36 downloaded jars ran through M0 (36 OK / 0 FAILED).
+- **Field distribution, side by side**, counted per unique modId (non-exclusive, so they must not be added):
+
+| field | collectable baseline (30 mods) | Forbric rows (35 unique of 39 rows) |
+|---|---:|---:|
+| dependencies non-`SATISFIED` | 26 | 32 |
+| `mixinTargets` non-empty | 23 | 30 |
+| HIGH/MEDIUM conflict | 17 | 24 |
+| `supportPolicy=EXCLUDED` | 1 | 3 |
+| `status=FAILED` | 0 | 0 |
+
+- **These signals are common in ordinary collectable mods too** (26/30, 23/30, 17/30). This round cannot show that any of them discriminates runtime failure. “0 rows with no signal” is a row count, not a hit rate and not a success rate; no predictive claim follows from it.
+- **Loader mismatch is excluded from the evidence.** Of the 39 located rows, 31 carry a Forbric loader label and 8 do not; among the 31 labelled rows, 17 match the classifier’s `loaderFamily` and **14 do not** (case-insensitive comparison). Forbric labels the loader of the failing build while this batch selects files by file-level `loaders`, so the mismatch is a labelling artefact rather than a failure signal, and it is dropped from the table above.
+- **Mixin four-way on 26.2 (modcrawl, local):** BOTH 29 / `NAMING_ONLY` 2 / `MODCRAWL_ONLY` 1 / `NEITHER` 4 = 36 records; unique modIds 28 / 2 / 1 / 4 (not summed). The single naming gap (`entitycrosshair`) is filled by modcrawl with 2 targets, so 1 of 1 is filled and 0 remain.
+- **Assertion coverage.** C4 only checked the `summary.csv` row count. C6 now also checks `conflicts.csv` rows == C(unique modIds, 2) on both batches (30 → 435, 35 → 595); that identity is why 595 is the correct number for 36 records rather than C(36,2) = 630.
+
 ## 4. How these numbers may and may not be read
 
 1. **Version mismatch is not prediction failure.** The Forbric list describes MC 26.2; the modgraph dataset is 1.21.1. `NO_CANDIDATE` means “no record with this identity exists in the 1.21.1 dataset” — a version/identity mismatch — not “modgraph predicted this mod would fail”, and not “modgraph would also miss it on 26.2”. No 26.2 dataset was analyzed.
@@ -89,3 +116,42 @@ The unique-modId column overlaps across buckets (for example, sodium has one Fab
 - `python verify_mixin_coverage.py --modcrawl <path-to-modcrawl.exe>` — read-only w.r.t. the main artifacts; writes `mixin-coverage/`.
 - `python verify_forbric_failures.py --expected-sha256 96AE0BC7E3DFBAED6F76ABCDDC104FBF79F1DB973048E479490C9BEDEC0E3CFB` — read-only w.r.t. the main artifacts; writes `forbric-comparison/`.
 - Both scripts exit non-zero on assertion mismatch. Full hashes of the tool binary, the source Markdown, and the generated comparison files are in `PROGRESS.md` steps 第二十步 and 第二十一步.
+
+## 7. Loader-family coverage: 1.21.1 baseline vs the first 26.2 trigger
+
+- **In the 1.21.1 baseline**, `QUILT` = 0, `FORGE` = 0 and `OTHER_UNIVERSE` = 0 records. Those branches of §3.6.2 were therefore covered only by constructed tests, never by real data. Any sentence claiming “FORGE/QUILT are zero” must carry that qualifier: it describes the 1.21.1 dataset, not the tool.
+- **In the 26.2 batch (30 jars)**, `loaderFamily` is FABRIC 19 / NEOFORGE 10 / FORGE 1 — the FORGE branch is hit by real data for the first time.
+- The record is `carryon` 2.11.0, file `carryon-forge-26.2-2.11.0.jar`. It was placed on the NeoForge side by its filename, but the jar contains no `META-INF/neoforge.mods.toml`; it only has `META-INF/mods.toml`, so the §2.2 fallback rule assigns `FORGE`. Excerpt of `META-INF/mods.toml` (cosmetic fields, `ordering` and `side` lines omitted; the complete file is quoted in `PROGRESS.md` step 第二十七步):
+
+```toml
+modLoader="javafml"
+loaderVersion="[65,)"
+license="GNU LGPLv3"
+issueTrackerURL="https://github.com/Tschipp/CarryOn/issues"
+
+[[mods]]
+    modId="carryon"
+    version="2.11.0"
+    displayName="Carry On"
+
+authors="Tschipp, PurpliciousCow"
+
+[[dependencies.carryon]]
+    modId="forge"
+    mandatory=true
+    versionRange="[65,)"
+
+[[dependencies.carryon]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.2, 27)"
+```
+
+- What this does **not** show: that the FORGE branch is correct in general. One record, one version, one loader family. `QUILT` remains untriggered by real data in both datasets.
+- **Selection rule (added in v1.1):** a batch must pick the jar by **file-level `loaders`**, not by project name and not by the project's primary file. Step 第二十六步 picked the primary file of each project's `26.2` version; for `carryon` that primary file is the **Forge build** (`carryon-forge-26.2-2.11.0.jar`). So the FORGE branch fired because of a wrong-variant selection on our side, **not** because the classifier misjudged: that jar really does contain only `META-INF/mods.toml`, and §2.2's fallback rule then correctly yields `FORGE`. A NeoForge build of the same mod would classify as NEOFORGE. Step 第二十八步 applies the file-level rule (`dataset-262/forbric/normalization.md` records the normalization, `fetch_262_forbric.py` the selection).
+
+## 8. Data handling and redistribution
+
+- Mod jars are **never committed and never redistributed**. They live only under `dataset-262/`, which is listed in `.gitignore`; no jar byte appears in any tracked file.
+- Comparison manifests keep exactly three kinds of derived facts per jar: the download **URL**, the **hashes** (SHA-256 measured locally; SHA-512 as published by the source), and the **license identifier exactly as published** (SPDX id or `LicenseRef-*`). A license identifier is a quotation, not a permission analysis: this repository makes no claim that a jar may be redistributed under it.
+- Recorded in step 第二十六步: 30 of 30 local jars matched the source-published SHA-512, and every local SHA-256 matched its manifest entry. If a hash ever mismatches, the batch must be discarded rather than partially used.

@@ -1,0 +1,107 @@
+{
+  "lane": "A",
+  "scope": "dataset-262/forbric 36 jars, MC 26.2",
+  "inputs": {
+    "candidates": "dataset-262/forbric/candidates.jsonl",
+    "candidateRecords": 36,
+    "invocations": "dataset-262/forbric/modcrawl-262/invocations.tsv",
+    "invocationRows": 36,
+    "allExitCodesZero": true
+  },
+  "modcrawl": {
+    "exeSha256": "A1F65355951F81753A10B8D4B9B61AA9EEF2B65A761AD1E1569E8007509CAF56",
+    "rawDir": "dataset-262/forbric/modcrawl-262/raw",
+    "perJarRawFiles": 36,
+    "rawFilesWithEntries": 30,
+    "rawFilesWithEmptyArray": 6
+  },
+  "fourWay": {
+    "BOTH": 29,
+    "NAMING_ONLY": 2,
+    "MODCRAWL_ONLY": 1,
+    "NEITHER": 4
+  },
+  "fourWayUniqueModIds": {
+    "BOTH": 28,
+    "NAMING_ONLY": 2,
+    "MODCRAWL_ONLY": 1,
+    "NEITHER": 4
+  },
+  "gap": {
+    "definition": "records with empty mixinTargets but non-empty mixinConfigs",
+    "records": 1,
+    "modIds": [
+      "entitycrosshair"
+    ],
+    "filledByModcrawl": 1,
+    "remaining": 0,
+    "reasonBuckets": {
+      "EMPTY_CONFIG": 0,
+      "CONFIG_MISSING": 0,
+      "MALFORMED_CONFIG": 0,
+      "NESTED_JAR_ONLY": 0,
+      "CONFIG_CLASSES_NOT_NAMING_INFERABLE": 0,
+      "CONFIG_REFERENCES_MISSING_CLASS": 0,
+      "UNCLASSIFIED": 0
+    },
+    "evidenceLevel": "modcrawl evidence is primary (raw JSON array read from disk: 2 entries); naming-side emptiness is metadata only (candidates.jsonl) because the jar's mixins.entitycrosshair.json was not opened - this lane has no shell and cannot unzip",
+    "detail": "jar EntityCrosshair-2.0.0-26.2+_fabric.jar, modId entitycrosshair, mixinConfigs [\"mixins.entitycrosshair.json\"], mixinTargets []. modcrawl raw gives 2 entries: tomeko/entitycrosshair/mixins/HudMixin.class -> net/minecraft/client/gui/Hud and tomeko/entitycrosshair/mixins/MainMixin.class -> net/minecraft/client/main/Main. Because modcrawl supplies targets, no reason bucket was assigned."
+  },
+  "assertions": {
+    "fourWaySumsTo36": true,
+    "gapSplits": true,
+    "uniqueNotAdded": true,
+    "perJarRawFilesMatchInvocationRows": true,
+    "fourEmptyConfigRecordsAreExactlyTheNeitherBucket": true
+  },
+  "perJar": [
+    {"jar": "AutoEat-Fabric-1.6.1+1.21.x+26.1.x+26.2.x.jar", "modId": "autoeat", "namingTargets": 1, "modcrawlTargets": 1, "bucket": "BOTH"},
+    {"jar": "BiomesOPlenty-fabric-26.2-26.1.2.0.40.jar", "modId": "biomesoplenty", "namingTargets": 3, "modcrawlTargets": 3, "bucket": "BOTH"},
+    {"jar": "ClientCarts-1.1+26.2.jar", "modId": "clientcarts", "namingTargets": 3, "modcrawlTargets": 3, "bucket": "BOTH"},
+    {"jar": "EasyMagic-v26.2.0-mc26.2.x-Fabric.jar", "modId": "easymagic", "namingTargets": 2, "modcrawlTargets": 2, "bucket": "BOTH"},
+    {"jar": "EntityCrosshair-2.0.0-26.2+_fabric.jar", "modId": "entitycrosshair", "namingTargets": 0, "modcrawlTargets": 2, "bucket": "MODCRAWL_ONLY"},
+    {"jar": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar", "modId": "leavesbegone", "namingTargets": 5, "modcrawlTargets": 5, "bucket": "BOTH"},
+    {"jar": "MyConnectionMyChoice-1.6.1.jar", "modId": "mcmc", "namingTargets": 1, "modcrawlTargets": 1, "bucket": "BOTH"},
+    {"jar": "OneConfig-26.2-fabric-1.0.0.jar", "modId": "oneconfigbootstrap", "namingTargets": 0, "modcrawlTargets": 0, "bucket": "NEITHER"},
+    {"jar": "PlayerAnimationLibMerged-1.2.4+mc.26.2.jar", "modId": "player_animation_library", "namingTargets": 12, "modcrawlTargets": 14, "bucket": "BOTH"},
+    {"jar": "SimpleGUI-API-Fabric-1.5.1+1.21.x+26.1.x+26.2.x.jar", "modId": "simpleguiapi", "namingTargets": 0, "modcrawlTargets": 0, "bucket": "NEITHER"},
+    {"jar": "SodiumExtraInformation-fabric-2.9.0.jar", "modId": "sodiumextrainformation", "namingTargets": 4, "modcrawlTargets": 4, "bucket": "BOTH"},
+    {"jar": "amup-fabric-26.2-1.0.0.jar", "modId": "amup", "namingTargets": 25, "modcrawlTargets": 25, "bucket": "BOTH"},
+    {"jar": "bclib-26.201.5.jar", "modId": "bclib", "namingTargets": 38, "modcrawlTargets": 42, "bucket": "BOTH"},
+    {"jar": "c2me-fabric-mc26.2-0.4.1-beta.1.0.jar", "modId": "c2me", "namingTargets": 0, "modcrawlTargets": 0, "bucket": "NEITHER"},
+    {"jar": "drippyloadingscreen_fabric_3.1.4_MC_26.2.jar", "modId": "drippyloadingscreen", "namingTargets": 16, "modcrawlTargets": 17, "bucket": "BOTH"},
+    {"jar": "emotesounds-1.0.0.jar", "modId": "emotesounds", "namingTargets": 2, "modcrawlTargets": 2, "bucket": "BOTH"},
+    {"jar": "extended-drawers-polymer-patch-5.1.0.0+26.2.jar", "modId": "extended-drawers-polymer-patch", "namingTargets": 16, "modcrawlTargets": 16, "bucket": "BOTH"},
+    {"jar": "fancymenu_fabric_3.9.4_MC_26.2.jar", "modId": "fancymenu", "namingTargets": 68, "modcrawlTargets": 106, "bucket": "BOTH"},
+    {"jar": "iris-fabric-1.11.0+mc26.2.jar", "modId": "iris", "namingTargets": 148, "modcrawlTargets": 175, "bucket": "BOTH"},
+    {"jar": "itemglintrelight-fabric-26.2-0.3.0+26.2.jar", "modId": "itemglintrelight", "namingTargets": 23, "modcrawlTargets": 23, "bucket": "BOTH"},
+    {"jar": "lambdynamiclights-4.12.0+26.2.jar", "modId": "lambdynlights", "namingTargets": 25, "modcrawlTargets": 25, "bucket": "BOTH"},
+    {"jar": "lplm-1.0.1+mc26.1.x.jar", "modId": "lplm", "namingTargets": 2, "modcrawlTargets": 2, "bucket": "BOTH"},
+    {"jar": "macebot-1.3.0+26.2.jar", "modId": "macebot", "namingTargets": 7, "modcrawlTargets": 7, "bucket": "BOTH"},
+    {"jar": "pigeonchat-fabric-26.2-0.1.0.jar", "modId": "pigeonchat", "namingTargets": 2, "modcrawlTargets": 2, "bucket": "BOTH"},
+    {"jar": "tuanzis_server_mod-1.0.6.jar", "modId": "tuanzis-server-mod", "namingTargets": 26, "modcrawlTargets": 27, "bucket": "BOTH"},
+    {"jar": "ukulib-fabric-2.1.0+26.2.jar", "modId": "ukulib", "namingTargets": 4, "modcrawlTargets": 4, "bucket": "BOTH"},
+    {"jar": "CrashAssistant-neoforge-26.2-1.11.10.jar", "modId": "crash_assistant", "namingTargets": 3, "modcrawlTargets": 0, "bucket": "NAMING_ONLY"},
+    {"jar": "Time & Weather Changer-neoforge-26.2-1.2.0.jar", "modId": "timechanger", "namingTargets": 2, "modcrawlTargets": 2, "bucket": "BOTH"},
+    {"jar": "animated-loading-overlay-1.0.0+26.2-neoforge.jar", "modId": "animated_loading_overlay", "namingTargets": 3, "modcrawlTargets": 3, "bucket": "BOTH"},
+    {"jar": "bclib-26.2.1.jar", "modId": "bclib", "namingTargets": 48, "modcrawlTargets": 53, "bucket": "BOTH"},
+    {"jar": "bettercombat-neoforge-3.2.1+26.2.jar", "modId": "bettercombat", "namingTargets": 16, "modcrawlTargets": 20, "bucket": "BOTH"},
+    {"jar": "fzzy_config-0.7.6+26.2+neoforge.jar", "modId": "fzzy_config", "namingTargets": 0, "modcrawlTargets": 0, "bucket": "NEITHER"},
+    {"jar": "particle_core-0.3.3+26.2+neoforge.jar", "modId": "particle_core", "namingTargets": 17, "modcrawlTargets": 17, "bucket": "BOTH"},
+    {"jar": "particledrawing-1.0.22-ALPHA.jar", "modId": "particledrawing", "namingTargets": 3, "modcrawlTargets": 3, "bucket": "BOTH"},
+    {"jar": "sodium-extra-neoforge-0.8.8+mc26.2.jar", "modId": "sodium_extra", "namingTargets": 28, "modcrawlTargets": 31, "bucket": "BOTH"},
+    {"jar": "sodium-neoforge-0.9.0+mc26.2.jar", "modId": "sodium", "namingTargets": 74, "modcrawlTargets": 0, "bucket": "NAMING_ONLY"}
+  ],
+  "notes": [
+    "Record count: 36 lines in candidates.jsonl; 36 rows (plus header) in invocations.tsv; 36 files in raw/. Every row has exit_code 0.",
+    "namingTargets = number of elements in candidates.mixinTargets for that record. Every count was checked with an exact-length regex match (\"mixinTargets\":\\[(\"[^\"]*\",){N-1}\"[^\"]*\"\\]) against candidates.jsonl, so no length is estimated.",
+    "modcrawlTargets = number of entries in the raw JSON array. The raw files are pretty-printed with 4 lines per entry, so the closing \"]\" line is 4N+2; entry counts were taken from the grep-reported closing-bracket line numbers and cross-checked by reading files end to end or by tail (AutoEat 1 entry/line 6, BiomesOPlenty 3/14, EntityCrosshair 2/10, iris 175/702).",
+    "Every one of the 30 entry files closes on a line congruent to 2 mod 4, consistent with the uniform 4-line entry shape; the other 6 files are exactly \"[]\" on line 1.",
+    "NEITHER bucket = c2me, oneconfigbootstrap, simpleguiapi, fzzy_config. Exactly 4 records in candidates.jsonl have \"mixinConfigs\":[] and they are the same 4 records, so the whole NEITHER bucket has no declared mixin config at this level.",
+    "NAMING_ONLY bucket = crash_assistant (3 naming targets, 2 declared configs) and sodium (74 naming targets, 2 declared configs); modcrawl returned an empty array for both. Not classified further in this lane.",
+    "gap = 1 record (entitycrosshair) as expected for this batch; the 5 records with empty mixinTargets are entitycrosshair, oneconfigbootstrap, simpleguiapi, c2me, fzzy_config, and only entitycrosshair has a non-empty mixinConfigs.",
+    "Unique modIds are reported per bucket only and are never summed across buckets; the BOTH record count (29) exceeds its unique modId count (28) because bclib appears twice (fabric bclib-26.201.5.jar and neoforge bclib-26.2.1.jar).",
+    "sha256 pairing between candidates.jsonl and invocations.tsv was spot-checked on 3 of 36 rows (AutoEat, EntityCrosshair, Time & Weather Changer) and matches case-insensitively; the full 36-row comparison was not performed.",
+    "Read-only: no jar was unpacked, no download, no modcrawl execution in this lane. Config file contents inside jars were not read, so nothing here is evidence about what those configs enumerate."
+  ]
+}
