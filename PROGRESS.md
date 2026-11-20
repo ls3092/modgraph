@@ -1,6 +1,54 @@
 # modgraph 项目进度
 
-> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-13（第三十步：段 1–5 归档提交、dataset-262 元数据仓库外备份、AGENTS 子任务落盘约束）。
+> **ARCHIVED / 只读历史存档**：本文件自 2026-11-20 起冻结，不再追加每步记录；历史数字、五个产物 SHA-256 与徽章一律不迁移、不改写。
+
+> 本文件用自然语言记录项目进展，面向不熟悉 Java 的读者。最后更新：2026-11-20（第三十九步/M2 第一刀固化脚本 install-m2-entry.bat + 离线 JVM 自检；游戏实测未执行）。
+
+第三十五步口径澄清：用户裁决“不触碰 jar”表示不修改、不移动、不复制、不入库、不分发、不新增下载，允许只读打开并允许用于受控启动；仍不得下载 Minecraft、不得 patch、不得下载 Gradle、不得生成 wrapper，只使用本机 JDK 21.0.8 与 Gradle 8.10。cohort jar 只取 `dataset-262/` 现有文件。
+
+本步新增 `oracle/normalize_candidates.py`、`oracle/post_slice.py`、`oracle/run_original.py`，并生成 `oracle/replacement-pre.json`、`oracle/replacement-post.json`、`oracle/forbric-original-first5.json`、`oracle/forbric-original-first5-buckets.json`。唯一物料子智能体只新增 `forbric-comparison/original-baseline.json`，并在仓库外创建空的临时目录；没有修改主仓库其他文件、没有联网、没有下载、没有构建、没有启动 MC、没有跑 `gradle test`。子智能体自评违规 `0`；主链有一次临时写入越界：错误 shell 调用生成仓库根下 `$null` 与 `$null)` 两个 65 字节错误文本文件，随后已删除，无残留，既有文件未受影响。
+
+PRE 规范化只读 `candidates.jsonl`：输入 `195` 条 = FOUND `191` + REJECTED `4`，唯一 SHA-256 `193`，保留 `716` 个实际依赖声明键；没有预置 oracle，因此所有记录为 `ORACLE_MISSING`，不把静态一致性写成启动结果。POST 最小切片按 `cohort.json` 顺序只读 64 个本地 jar 的 zip entry 与 `fabric.mod.json` / `neoforge.mods.toml` / `mods.toml` 文本，不读取 class：PARSEABLE `64 / 64`，MALFORMED `0`、ABSENT `0`、BOUNDARY_BLOCKED `0`，记录 `260` 个实际依赖声明键。PRE 的来源是旧 candidates 集合，POST 的来源是 26.2 cohort；两者分母不同，本轮没有合并或计算跨实现准确率。
+
+FORBRIC_ORIGINAL 启动门先检查固定提交 `f7f4ff92f67fe8de1a5957efda5cceb4c55d5057` 的物料。本机 JDK 21.0.8 与 Gradle 8.10 可用，但未找到 Forbric 本地源码、未验证构建入口、未找到 `forbric-kernel` 产物，也未找到 Minecraft 26.2 二进制；按“不猜入口、不联网补、不绕过”，没有启动 JVM/MC，没有编造命令或输出。`oracle/run_original.py` 对 cohort 顺序前 5 条逐项记 `BOUNDARY_BLOCKED / UNKNOWN / ABSENT`，原始输出哈希为 `null`。第一份 N 桶为 `N = 5`，其中 `BOUNDARY_BLOCKED = 5`、其余 8 桶均为 0；`N_eval = 5`、`N_answered = 0`、`accuracy = null`，5 条桶/分母断言全成立。这里的 `N_eval = 5` 是既定公式下的分母，不是成功运行覆盖。
+
+物料阻断原文已保存在 `forbric-comparison/original-baseline.json`（SHA-256 `A0EC7F7300D43DC2B8B6C330BC071A46D7A4EBE6AC10FC4F180B01E92271119D`）：`FORBRIC_LOCAL_CHECKOUT_MISSING`、`FORBRIC_BUILD_ENTRY_UNVERIFIED`、`FORBRIC_BUILD_PRODUCT_MISSING`、`MINECRAFT_26_2_BINARY_MISSING`。本机只发现 26.1 snapshot 的 version JSON，没有 26.2 版本目录或 client jar；不能用近版本冒充。
+
+第三十四步在 `STATIC_ANALYSIS` 域第一次落盘可运行 Python：新增 `oracle/freeze_cohort.py`、`oracle/schema.py`、`oracle/buckets.py`、`oracle/selftest.py`，运行冻结脚本生成 `oracle/cohort.json`。没有启动 Minecraft、加载类、触碰 jar 本体、读取 Forbric/Kilt 源码、改 `src/`、引入 MC / 加载器依赖、跑 `gradle test`、commit / push / PR 或进入 M2。
+
+cohort 冻结只读两份 manifest：段 2 顶层 `manifest` 与段 4 `rows` 中 `DOWNLOADED` 的行。实测段 2 为 `30` 条、段 4 为 `36` 条、按小写 SHA-256 去重后重叠 `2`、并集 `64`；分布为段 2 独有 `28`、段 4 独有 `34`、两份共有 `2`。64 个摘要全部是 64 位 hex，批内重复 `0`，SHA-256 对应 URL / 文件名 / SPDX 原值 / loader 的冲突 `0`；冻结断言 `6 / 6` 成立，公式为 `64 = 30 + 36 - 2`。`oracle/cohort.json` 的 SHA-256 为 `FBFB49E738A6FC83994E41DE263A5C1500FF8CA02120B9574C18314EBF7FC3F0`，连续两次生成相同；`cohortId` 为 `a6ee5d7b1ab073ddb5ad90a749a3fac6e41dca5c2ad6a8383f7c0882d4212b22`。这个 `64` 是将来 GitHub About 应采用的清单数，但本轮没有改 README / About，也没有把 `dataset-262/` 的 jar 复制、提交或分发。
+
+`schema.py` 只定义三种实现（`FORBRIC_ORIGINAL` / `REPLACEMENT_PRE` / `REPLACEMENT_POST`）的 JSON schema、每个「实现 × jar」结果字段，以及 `Runner` / `Adapter` / `Normalizer` Protocol 占位；不接真实实现。`buckets.py` 实现 9 主桶、`N_eval`、`N_answered`、仅以 `N_answered` 为分母的 accuracy、三组成对一致闭合、4 桶与 8 模式各自等于 `N_common_3` 的正交断言、以及 `D_expected` 四桶闭合；额外依赖独立于 `D_expected`。构造数据 selftest 实测 `24 / 24` 通过，失败 `0`、未运行 `0`，没有为通过而放宽断言。
+
+第三十三步按用户已批准的两道闸门落地规范，不启动 Minecraft、不下载 jar、不写加载器代码、不跑 `gradle test`、不 commit / push / PR。两版 SPEC 新增同一 §0.1，声明 `STATIC_ANALYSIS` / `LOADER_EXPERIMENT` 为互斥运行域；静态域保留原有边界，加载器实验域仅在以下三条锁内允许 Minecraft 启动、类加载、Mixin、transform 与新依赖：① 只用于一个冻结 cohort 和一个受控环境；② jar 不入库、不分发，清单只留来源 URL 与 SHA-256；③ 不输出安装 / 加载 / 拓扑 / 分层顺序，不自动兼容、自动修复、自动选版本或推荐候选。超出三锁的结果记 `BOUNDARY_BLOCKED`。长期运行时错误与 §5“一次解析尝试至多一条 ERROR”的分账在两种语言中均写为 `TO BE DECIDED`，没有提前定义。
+
+双版 §0.1 一致性实测：区块均 `85` 行、`6` 个标题，绝对标题行均 `47,59,81,99,109,126`，十进制数字 token 各 `31` 个且顺序一致。四组受保护原文（`AGENTS.md:17`、`SPEC.md:15`、`SPEC.md:19-20`、`AGENTS.md:18`）在两版各逐字命中 `1 + 1` 次，P3 换行一致。准确率只写 `accuracy = CORRECT / N_answered`；两版 §0.1 的 `N_eval` 均为 `0` 次。4 桶与 8 模式均明确为同一 `N_common_3` 的正交切分，不得相加或混报。
+
+七处 `MUST_QUALIFY` 已全部加静态模式限定：`AGENTS.md:17`、`README.md:101-102`、`README.md:358`、`README.zh-CN.md:95`、`README.zh-CN.md:317`、`BOUNDARIES.md:104`、`BOUNDARIES.zh-CN.md:104`，核对 `7 / 7`。为防止紧跟其后的依赖禁令仍被读成全局规则，`AGENTS.md:18` 也加了 `STATIC_ANALYSIS` / `SPEC §0.1` 限定；这不是新增运行许可，权威依赖清单选 AGENTS 还是 README 仍未裁决。
+
+待补可追踪性项按第三十二步的修正口径记录：改动前，完整依赖清单在 `SPEC.md` §0 / §5 中没有逐字落位并可追踪的规范来源；不能写成“全仓库仅见 AGENTS”。第三十三步已把该清单作为 §0.1 静态原文引用补入两版 SPEC，权威版本仍未选择。四个原草稿 / 报告文件未改，SHA-256 仍为：英文草稿 `0E628990B86373F8099D5E5E374760CF39DDCC794B23A3EF836E89E9CA31C6D1`、中文草稿 `F4208F8EB61C4BBC6BA85609DEA2E326F98ED47820EF63FA82C088AA160329D0`、核对表 `2DFC0DEADF54F19BC6176CC25CED1993DFDB984396DCB8D9E834AE0436364463`、影响面报告 `B2986822FB6A8807DAB4238E1C5CFAE6A9E80C9D7B1F65C5082591CCD1E47119`。
+
+第三十二步只做规范草稿与影响面核验，两路子智能体各写自己的文件：A 新增 `forbric-comparison/spec-draft-0x.md`、`spec-draft-0x.zh-CN.md`、`spec-draft-0x-preservation-check.md`；B 新增 `forbric-comparison/spec-impact-B.md`。没有把草稿写入两版 SPEC，没有改 `src/`、六个既有产物、徽章、M0–M1.5 数字、两版 README、两版 BOUNDARIES、LICENSE 或 AGENTS；没有下载 jar、启动 Minecraft、加载类、运行 Gradle/test、执行 git 写操作或写实现代码。
+
+两版 §0.1 草稿均声明 `STATIC_ANALYSIS` / `LOADER_EXPERIMENT` 为互斥运行域；加载器实验仅限一个冻结 cohort 和一个受控环境，jar 不入库不分发，不输出安装 / 加载 / 拓扑 / 分层顺序，不自动兼容、修复、选版本或推荐候选；长期运行时错误与 §5“一次解析尝试至多一条 ERROR”的分账仍待裁决。草稿不授权启动 Minecraft、加载类、处理 Mixin、改写字节码或增加依赖；受控启动须另行批准，否则相关结果记 `BOUNDARY_BLOCKED`。准确率只写 `accuracy = CORRECT / N_answered`，`N_eval` 在两版均为 0 次；其余状态单列。4 桶与 8 模式明确为同一 `N_common_3` 的两套正交切分，不得相加或混报。
+
+两版一致性实测：各 `63` 行、`6` 个标题，标题行号均为 `4,10,29,42,48,60`，十进制数字 token 各 `26` 个且顺序一致；四组受保护原文（`AGENTS.md:17`、`SPEC.md:15`、`SPEC.md:19-20`、`AGENTS.md:18`）在两版各逐字命中 `1 + 1` 次，P3 的换行也一致。英文 / 中文草稿 SHA-256 为 `0E628990B86373F8099D5E5E374760CF39DDCC794B23A3EF836E89E9CA31C6D1` / `F4208F8EB61C4BBC6BA85609DEA2E326F98ED47820EF63FA82C088AA160329D0`；更新后的核对表为 `2DFC0DEADF54F19BC6176CC25CED1993DFDB984396DCB8D9E834AE0436364463`。
+
+B 按分域前的六文件快照扫描 `AGENTS.md`、两版 `BOUNDARIES`、两版 `README` 与本文件：命中行主项 `26`，处置 `MUST_QUALIFY 7 / KEEP 19 / INVALID 0 = 26`，六文件分布 `1 + 6 + 6 + 2 + 2 + 9 = 26`；五个标签累计 `H 10 / L 12 / P 14 / M 6 / B 4 = 46`，标签可重叠，不能与 `26` 相加。报告中的 `PROGRESS.md` 行号固定为第三十二步写入前的 810 行快照，本次插入记录后其后续行号会平移。报告 SHA-256 为 `B2986822FB6A8807DAB4238E1C5CFAE6A9E80C9D7B1F65C5082591CCD1E47119`。
+
+“完整依赖清单仅见 `AGENTS.md:18`”按仓库全文核对不成立：两版 README 也逐字列有六项，`README.md:342`、`README.zh-CN.md:303`；但该清单确实没有在 `SPEC.md` §0 / §5 逐字落位。后续待补项必须写成“在 SPEC §0 / §5 可追踪性缺失”，不能写成“全仓库仅见 AGENTS”。本轮没有修改这些文档，也没有替维护者选择权威来源。
+
+A 还自报一次写入范围违规：错误 shell 调用在允许路径外生成临时仓库内 `$null` 文件；该文件只含错误文本，已删除，最终无残留，既有文件未受影响。因此 A 的违规计数为 `1`，不是 `0`；B 为 `0`。这属于一次未获允许的临时写入 / 删除，已由 A 在自己的核对表中如实记录。
+
+第三十一步只做方案核验，三路子智能体各写自己的文件，互不读取、互不覆盖：A 新增 `forbric-comparison/architecture-A.md`，B 新增 `forbric-comparison/spec-gates-B.md`，C 新增 `forbric-comparison/oracle-design-C.md`。本轮没有修改 SPEC、`src/`、六个既有产物、徽章、M0–M1.5 数字、两版 README、两版 BOUNDARIES、LICENSE 或 AGENTS，没有下载 jar、没有启动 Minecraft、没有跑 `gradle test`，没有 commit / push / PR，也没有写实现代码。三路各自报告“违反禁令”均为无；主智能体复核未发现越界改动，违规计数为 `0 / 3`。
+
+A 通过 GitHub API / raw / tree 只读核验公开 Forbric 仓库，固定到 `main@f7f4ff92f67fe8de1a5957efda5cceb4c55d5057`，递归 tree 原文 `truncated=false`（6,100 个条目）；没有 clone/fork、下载 jar 或复制源码。结构结论：`forbric-kernel/` 为当前主实现，`forbric-loader/` 为仍保留的旧差分基线；当前内核的发现、元数据、候选契约与选择位于 BOOT 侧，选定 jar 后才进入 GAME 侧唯一的 `ForbricClassLoader`、`TransformChain`、终端 Mixin 和 `defineClass`。BOOT 的 `CandidateContractScanner` 会静态读 class/Mixin 字节来建模候选契约，但该报告没有把“读取结构证据”写成“执行 transform / 类加载”。B 只读 `SPEC.md` §0（第 13–47 行，35 行）与 §5（第 919–948 行，30 行），拆为 §0 的 19 项、§5 的 14 项，共 33 个核验项；其中 §0 的表面冲突为 6 个必须改、1 个必须拆分裁决、1 个待用户裁决、11 个可保留，§5 为 13 个可直接保留、1 个需把长期运行时事件另列。B 逐字定位 `AGENTS.md:17` 的“不启动 Minecraft、不加载类、不解析 class 文件、不处理 Mixin、不改写字节码”、`SPEC.md:15` 的英文对应句，以及 `AGENTS.md:18` 的“不引入 Minecraft / Fabric Loader / Forge / NeoForge / Mixin / ASM 依赖”；后者在本次指定的 `SPEC.md` §0 / §5 范围内没有逐字落位，报告按定位缺口记录，没有自行补写。
+
+C 只设计、不跑数：以 `artifact_key = SHA-256(jar bytes)` 冻结同一批 jar；三种实现统一记录运行、条目、元数据和依赖多重集结果，把技术完成、领域回答、静态语义一致、批次成功分层，不能以进程成功、输出可解析、和原版 Forbric 一致或三实现一致代替语义正确。原版 Forbric 只作外部基线，不能自动充当 oracle；没有独立冻结 oracle 时只能报共同可评估交集上的一致性。每个“实现 × jar”的主分桶断言为
+`N = CORRECT + INCORRECT + UNSUPPORTED + NO_PARSEABLE_OUTPUT + TOOL_FAILURE + TIMEOUT + NOT_ATTEMPTED + BOUNDARY_BLOCKED + ORACLE_MISSING`
+且 `INPUT_CURATION_ERROR = 0`；还有 `N_eval = N - ORACLE_MISSING`、`N_answered = CORRECT + INCORRECT`、依赖行 `D_expected = D_EXACT + D_WRONG_OUTCOME + D_MISSING + D_UNAVAILABLE`，额外依赖单列，不能混入 `D_expected`。两两比较、替换前后 2×2 和八模式也必须各在自己的共同分母上闭合。本轮没有 `N` 的实测值，不能把公式当结果。
+
+主智能体把三路去重归一为 7 条共享断言：G1 三实现必须固定到具体 commit / build 与同一 cohort，不能把 Forbric 的 kernel 与旧 loader 混称；G2 主分母由冻结 jar 清单先定，不能用成功输出反推；G3 发现、元数据、依赖选择与 transform / 类加载严格分层，静态一致不外推运行时；G4 失败、超时、不可评估、边界阻断和空输出都必须计桶，不能吞掉或只留较好一次；G5 原版实现只是基线，不是 oracle；G6 任何主分桶、依赖行和成对转移都必须有分子分母及闭合断言；G7 不得把一致性或静态闸门结果写成运行时保证，也不得输出安装 / 加载 / 拓扑顺序。上述断言只有方案层证据，尚未用同一批真实 jar 运行三实现验证。A / B / C 三份报告分别 257 / 103 / 392 行，SHA-256 分别为 `D45B2CC744CB5D3A03ED099EAD0C8FE3F7574F00467A32031511201286ED2F6F` / `B6620F6A105EAE39C02F2D3B0F0CBDD55440DE196DA33B2382B75F9BF3F424DF` / `E598049FE4FCBB30B88FE16C5C51C7D96756762E9BDB4B09D7A17351F6D272A0`。
 
 第三十步只做段 1–5 的收尾维护，不启动段 6、不重算 baseline 或既有 summary、不改 `src/`、六个既有产物、徽章、M0–M1.5 数字、两版 SPEC、两版 README、两版 BOUNDARIES、LICENSE 或 Forbric / Kilt 代码，也不跑 `gradle test`。按开工时 `git status --short` 的全部原文逐项核对后，只把清单内的段 3–5 文档、脚本和 `forbric-comparison/` JSON 加入暂存区，再按指定信息提交为 `2e03aad`；没有使用 `git add -A`，`dataset-262/` 与 `.pi/` 未进入提交。既有 `dataset-262/aggregate-262-final.json` 仍为 `ok=true`、J1–J6 全成立：Lane A 四分类 `29 + 2 + 1 + 4 = 36`，缺口 `1 = 1 + 0`；对照 `47 = 39 + 2 + 3 + 3 + 0`；冲突行 `435 = C(30,2)`、`595 = C(35,2)`。`dataset-262/forbric/batch-m0-summary.json` 仍为输入 `36 = OK 36 + FAILED 0`、C1–C6 全成立；这些数字均抄自既有 summary，本轮没有重算。
 
@@ -123,6 +171,12 @@ M0.5 的真实结果：195 个输入、OK 191、FAILED 4 不变；共 716 条依
 第八步的结论不是“全部通过”。旧的 §7 第 1 条要求 200 个 jar，实际是 100 + 95 = 195，缺 5 个 NeoForge 样本；这条验收线已在 v0.7 改成“全部真实 jar，数量由文件系统真实列举”，不再写死数字。第 7 条抽检发现的三类命名问题里，嵌套类已在第九步修掉，中缀式与 `AccessXxx` 按用户裁决保留为已知局限。
 
 第七步的核心变化：单个 jar 不管是不可读、不是 zip、JSON 语法错误、TOML 写坏还是缺必填字段，都在同一层被捕获，填 failureCode 和 failureMessage、打一条 ERROR、标记 FAILED，然后继续处理下一个文件。扫描阶段的失败不会再被解析器改写成 NO_METADATA。当前真实数据 195 个输入、OK 191、FAILED 4（全部 NO_METADATA），191 + 4 = 195。测试从 30 个增加到 41 个，失败 0、错误 0、跳过 0。
+
+第三十六步（2026-11-20）只交付一个双击可运行脚本，不执行：新增 `D:\Minecraft\.minecraft\versions\install-mods-to-pcl.bat`（路径写死 VER_ROOT / INSTANCE / SRC_JAR / LOG_FILE），功能仅两件事——在目标实例下创建 `mods/`、把 1 个本地 jar 复制进去，过程追加到同目录日志；CRLF 换行 46 行。AOCI-CODE MCP 已查：外层仓库 204 条 code 索引全为 `.pi` 任务快照，三个项目（modgraph / Connector / modcrawl）的 aoci.code.txt 正文 S 字段均为 `-`，没有承载"双运行域授权 / §0.1 / PCL"的条款；本轮按用户已裁决口径"只写不跑、不启动、不用 Computer Use"执行，旧 §0.1 是否仍生效未在 AOCI 中找到依据，故不据此扩大授权。只读探测：目标目录 `D:\Minecraft\.minecraft\versions` 下有 11 个实例，选 `1.21.11-Fabric`（绝对路径 `D:\Minecraft\.minecraft\versions\1.21.11-Fabric`），其 `mods/`、`config/`、`saves/` 均已存在且有真实内容（存档 `Arnis World 1`），hmclversion.cfg 为 `usesGlobal=true / gameDir="" / gameDirType=0`，表明 PCL 按版本隔离使用该文件夹下 mods/。选中 mod 为 emotesounds-1.0.0.jar（slug ggYHhqqJ / emotesounds，MIT，来源批次 segment_4，SHA-256 `de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6`，16076 B），哈希与 `oracle/cohort.json` 原值一致。未执行 .bat、未复制 jar、未启动 PCL、未用 Computer Use、未联网下载、未改 AGENTS / README / BOUNDARIES / LICENSE / src / 六个既有产物 / 徽章 / M0–M1.5 数字、未跑 gradle test、未 commit / push / PR；日志因未执行而不存在。残留状态见本步报告，未回滚 / 未覆盖 / 未删除。
+
+第三十七步（2026-11-20）只交付安装脚本、不执行：新增仓库根 `install-262-fabric-pcl.bat`（双击运行，提取内嵌 PowerShell worker 到临时 .ps1 执行，249 行，语法 ParseFile 通过）。目标：在 `D:\Minecraft\.minecraft\versions` 下新建两个版本文件夹 `26.2` 与 `fabric-loader-0.20.1-26.2`。AOCI-CODE 当前生效缓存 check_only：204 条 code、语义变化 8（阈值 30）、检索"加载器实验"0 条，正文 S 字段均为 `-`，无新增授权条款；SPEC 已删未找、未补 §0.1。白名单联网实查（仅 6 个 Mojang/Fabric 官方域，Assert-Host 逐个强制）原文：manifest 版本清单 26.2 为 release、metadata url `https://piston-meta.mojang.com/v1/packages/cf103b8fab4900562221bf7f23b72725dd9a914a/26.2.json`；26.2.json 的 `javaVersion.majorVersion=25`（component java-runtime-epsilon）、client.sha1=`2dc72797acbc1b63fc16a11c4ac393605f453754`、size=39193383、assetIndex id=32 sha1=`3c3870c9175c45348c8549855958e59e674a80d3` size=586566、objects=5059、libraries=131（131 个带显式 path/sha1/size，77 带 rules，natives/classifiers=0）；26.2.json 实测 sha1 等于 URL 路径段 cf103b8f…。Fabric stable loader = `0.20.1`（build 1，maven net.fabricmc:fabric-loader:0.20.1），profile id `fabric-loader-0.20.1-26.2`、inheritsFrom=26.2、mainClass=net.fabricmc.loader.impl.launch.knot.KnotClient、7 个 libraries（6 个带 sha1/size，fabric-loader jar 无 sha1）；其 sha1 取 maven.fabricmc.net 旁车 `7c7f9831e9f27b303d5d08decb5f4258a9f03296`、size=1988880；dummy jar 取 Fabric profile/zip 内真实空 jar，sha1=`da39a3ee5e6b4b0d3255bfef95601890afd80709` size=0，不自造。脚本按 6 步写日志：探测（本机仅 Java 21，**无 Java 25，不擅自装 JRE**；versions 11 个实例；PCL 根 D:\Minecraft\.minecraft；隔离用户已确认开）→ 26.2.json/client.jar 逐个核 sha1/size → 131 libraries + assetIndex + 5059 objects 逐个核 sha1、失败单列成桶不跳过 → Fabric profile/provider json 原样落盘、inheritsFrom 闭合校验 → 建 mods/config/saves 并放 1 个 MIT mod（emotesounds-1.0.0.jar，slug emotesounds/project ggYHhqqJ，sha256 `de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6`，来源 segment_4，与 cohort.json 原值一致）→ 收尾自检（两层 json 存在可解析、链闭合、client/dummy jar sha1、失败桶计数、assets index、mods/），任一不闭合写 FAIL 并停。未执行 .bat、未启动 PCL、未用 Computer Use、未联网下载到本机（探测拉取的元数据都在系统 TEMP）、未改 AGENTS/README/BOUNDARIES/LICENSE/src/六个产物/徽章/M0–M1.5 数字、未跑 gradle test、未 commit/push/PR；install-262-fabric-pcl.log 与两个新实例文件夹因未执行而不存在。既定边界照旧：不挂 modgraph/Forbric/Kilt 产物进 mainClass/libraries，不装 Fabric API 本体；mods/ 内 mod 因缺 Fabric API 可能被跳过，本轮不验证。
+
+第三十八步（2026-11-20，M2 第一刀）在本仓库 src/ 落下本项目自己的第一行 Java：`src/main/java/dev/modgraph/m2/M2Entry.java`（包 dev.modgraph.m2），main() 先打印可识别标记 `MODGRAPH_M2_ENTRY project=modgraph build=3be75d9c34fab056ffcc15afa0ec61962a4872b5`（构建哈希取 git HEAD），再以字符串 `Class.forName("net.fabricmc.loader.impl.launch.knot.KnotClient")` + `getMethod("main", String[].class)` 反射转调官方 Fabric；编译期不引用任何 MC/Fabric/Mixin/ASM 类，无空 catch，异常原样.printStackTrace 到 stderr 后 System.exit(1)，只走标准流不引 SLF4J。本机 `gradle jar --offline --no-daemon`（Gradle 8.10 + JDK 21，未下载发行版、未生成 wrapper）BUILD SUCCESSFUL，jar `D:\modgraph\modgraph\build\libs\modgraph.jar`（127153 B，SHA-256 `bb29dbf439ebb4c006d5a5d8b61ae3c543c62c71b621786ada928396a419c54c`），内含 `dev/modgraph/m2/M2Entry.class`。挂进实例：jar 复制到 `D:\Minecraft\.minecraft\libraries\dev\modgraph\modgraph\0.1.0-m2\modgraph-0.1.0-m2.jar`（哈希与库条目一致）；目标实例 `fabric-loader-0.20.1-26.2` 的 json 先原样备份为 `.bak-pre-m2`（SHA-256 `ad6913df9e38bd979181ad2b0f3ecdcf83c1dcafa2e2ba00762539992878808a`），再在 libraries 末尾追加一条 7 字段条目（字段顺序照 A/C 模板 name/url/md5/sha1/sha256/sha512/size，真实值填编译产物），mainClass 由 `net.fabricmc.loader.impl.launch.knot.KnotClient` 改为 `dev.modgraph.m2.M2Entry`，inheritsFrom 仍 26.2、id 不变、父 26.2.json 未动。自检 7/7 PASS（json 可解析/备份存在/jar 在 libraries/jar 哈希与 json 一致/inheritsFrom=26.2/自己的类可定位/父 json 存在），落盘 `install-m2-entry.log` 与 `rollback-m2-entry.md`。三路只读子智能体（A 环境模板 / B AOCI / C 构建回滚）用同模型 Hy4 flash（model=default）并行落盘 `forbric-comparison/m2-env-A.md`、`m2-aoci-B.md`、`m2-build-C.md`：A/C 模板同源同 7 字段、同实例、同 inheritsFrom/mainClass，条数闭合 13 实例/204 entry/6 风险，三路均无违反约束。AOCI check_only：entry_count=204、语义变化 8/阈值 30、cognition_state=invalid；逐词检索 LOADER_EXPERIMENT/STATIC_ANALYSIS/双运行域/授权/PCL/version.json 均 0 条、src 1 条（进度快照无关）——记 AUTH_GAP 原文，按「用户本轮直接授权 M2 第一刀」+ AOCI 生效禁令执行，不补旧 §0.1。开放点：本机仅 Java 21，26.2 需 Java 25（不擅自装 JRE；若 PCL 点启动报 Java 不足则 BOUNDARY_BLOCKED）；url 字段与本地 jar 解析行为 U1、thin jar 运行依赖 U2 未验证；mods/ 内 mod 缺 Fabric API 可能被跳过，本轮不验证。未点启动、未用 Computer Use、未跑 gradle test、未改 AGENTS/README/BOUNDARIES/LICENSE/六个产物/徽章/M0–M1.5 数字/oracle 四 Python、未复制 Forbric/Kilt 源码、未联网下载 MC、未 git 写。
 
 ## 一、当前阶段与目标
 
@@ -622,6 +676,24 @@ src/
 
 122. 第三十步只做段 1–5 收尾维护：按开工 `git status --short` 原文逐项归档清单内文件并提交 `2e03aad`，未用 `git add -A`，`dataset-262/` 与 `.pi/` 未入库；zip 写到 `D:\modgraph\backup-262\dataset-262-metadata.zip`，SHA-256 `4248F5A4839F26F95EDE772BB8D1157D5EE27454A23D4A0628C124C26EAC71AA`，文件 `70` 个，`.jar` 或 `jars/` 路径条目 `0` 个，全部条目读取成功且路径集合与源端一致；`AGENTS.md` 只新增“主智能体不得代写子任务落盘文件；需重算时另起文件名并写明 `producedBy`”一条。既有 summary 数字未重算；关键结论仍为 J1–J6 / C1–C6 全成立。未改 `src/`、六个既有产物、徽章、M0–M1.5 数字、两版 SPEC、两版 README、两版 BOUNDARIES、LICENSE 或 Forbric / Kilt 代码；未跑 `gradle test`、未 push、未提 PR、未启动新阶段。
 
+123. 第三十一步做三路只读方案核验，分别落盘 `architecture-A.md`、`spec-gates-B.md`、`oracle-design-C.md`，主智能体只汇总并更新本文件。A 固定 Forbric `main@f7f4ff9` 并描述 BOOT 发现/元数据/候选选择与 GAME transform/类加载边界；B 核验 `SPEC.md` §0 的 19 项和 §5 的 14 项，定位两条特别原文并发现 AGENTS 的依赖禁令在指定 SPEC 范围内没有逐字落位；C 定义 jar-hash cohort、三实现统一 schema、技术/语义分层、主分桶 `sum = N`、依赖行守恒、两两交集与替换前后 2×2。主智能体归一去重断言 G1–G7，确认子任务违规 `0 / 3`。未改 SPEC / `src/` / 既有产物 / 徽章 / M0–M1.5 数字 / README / BOUNDARIES / LICENSE / AGENTS；未下载 jar、未启动 MC、未跑 `gradle test`；未 commit / push / PR。
+
+124. 第三十二步做 §0.x 双版分域草稿与影响面复核。A 输出静态分析 / 加载器实验两种互斥模式的英文、中文草稿和逐字核对表；两版各 63 行、6 个标题、标题行号一致、26 个数字 token 顺序一致，四组原文逐字一致，`N_eval` 均为 0，准确率只以 `N_answered` 为分母。B 扫描六份文档，命中行 `26 = MUST_QUALIFY 7 + KEEP 19 + INVALID 0`，标签累计 46 次单列；并纠正“完整依赖清单全仓仅见 AGENTS”这一范围，确认两版 README 也有完整清单、但 SPEC §0 / §5 仍缺逐字落位。A 另有一次临时 `$null` 文件写删违规，已无残留。两版 SPEC 正文未改，无代码 / jar / MC / Gradle / git 写，未进入 M2。
+
+125. 第三十三步落地两道已批准闸门：两版 SPEC 写入同一 §0.1，区块均 85 行 / 6 标题、绝对标题行一致，四组原文逐字一致，准确率分母固定 `N_answered` 且无 `N_eval`，4 桶与 8 模式保持正交；受控 MC、类加载、Mixin、transform 和新依赖仅在加载器实验域和三锁内允许，长期错误分账写 `TO BE DECIDED`。七处 MUST_QUALIFY 全改，另同步限定 AGENTS 依赖禁令。未实际启动 MC、未下载 / 触碰 jar、未写加载器代码、未跑测试、未 git 写，未改 src、既有产物、徽章、M0–M1.5 数字、LICENSE 或外部项目。
+
+126. 第三十四步新增 `oracle/` 纯 Python 静态工具：`freeze_cohort.py` 只读两批 manifest，按 SHA-256 冻结为 30 条段 2、36 条段 4、重叠 2、并集 64（28 + 34 + 2 = 64），冲突 0，6/6 冻结断言成立；`schema.py` 定义三实现 JSON schema 与 runner/adapter/normalizer 占位；`buckets.py` 实现九桶、准确率、成对、4/8 正交和依赖四桶闭合；`selftest.py` 构造断言 24/24 通过。`cohort.json` 连续两次哈希相同。未启动 MC、未触碰 jar、未改 src / SPEC / README / BOUNDARIES / AGENTS / LICENSE / 既有产物、未跑 gradle test、未 git 写。
+
+127. 第三十五步完成加载器实验第一刀：PRE 规范化 candidates `195` 条（191 FOUND / 4 REJECTED、193 唯一 SHA、716 依赖键），POST 读取 26.2 cohort 的 64 个本地 jar 元数据并全部可解析（260 依赖键），未读 class。FORBRIC_ORIGINAL 启动门因本地源码、构建入口/产物和 MC 26.2 binary 均缺失而 `BOUNDARY_BLOCKED`；前 5 个 jar 的 N 桶为 `N=5 = BOUNDARY_BLOCKED 5`，`N_eval=5`、`N_answered=0`、`accuracy=null`，没有启动 JVM/MC，没有编造输出。新增 3 个脚本 + 4 个结果文件，子智能体只新增 `original-baseline.json`；主链误生成两个 `$null` 临时文件并已删除。未改 src / 两版 SPEC / README / BOUNDARIES / AGENTS / LICENSE / 既有产物，未下载、未 patch、未跑 gradle test、未 git 写。
+
+128. 第三十六步只新增仓库外一个双击脚本 `D:\Minecraft\.minecraft\versions\install-mods-to-pcl.bat`（VER_ROOT / INSTANCE=1.21.11-Fabric / SRC_JAR=emotesounds-1.0.0.jar / LOG 均写死），仅建 mods/ 与复制 1 个 MIT jar，CRLF 46 行；本轮按用户口径不执行、不启动 PCL、不用 Computer Use。AOCI-CODE 三处索引正文 S 均为 `-`，无双运行域授权条款。未改 src / SPEC / README / BOUNDARIES / AGENTS / LICENSE / 既有产物 / 徽章 / M0–M1.5 数字，未跑 gradle test，未 git 写，未联网下载。仅改本 PROGRESS.md。
+
+129. 第三十七步只新增仓库根 `install-262-fabric-pcl.bat`（内嵌 249 行 PowerShell worker，ParseFile 通过），双击后全新安装 `26.2` + `fabric-loader-0.20.1-26.2` 两个版本文件夹到 versions/。白名单实查拿到官方原文：26.2 需 Java 25（本机无，不装 JRE）、client sha1 2dc72797…、assetIndex 32 sha1 3c3870c9…、131 libraries、5059 objects、Fabric stable loader 0.20.1、dummy jar sha1 da39a3ee…（取 profile/zip 真实空 jar）。六步日志 + 失败桶 + 收尾自检齐备，单个 MIT mod 来自 cohort segment_4。未执行、未启动 PCL、未用 Computer Use、未下载到本机持久目录、未改受保护文件、未跑 gradle test、未 git 写。仅改本 PROGRESS.md。
+
+130. 第三十八步（M2 第一刀）src 新增唯一入口 `dev/modgraph/m2/M2Entry.java`（打 MODGRAPH_M2_ENTRY 标记 + 字符串反射转调 KnotClient.main，异常原样打 stderr 后 exit 1）。本机 `gradle jar --offline` BUILD SUCCESSFUL，jar SHA-256 bb29dbf4…c54c。按 A/C 同源 7 字段模板把 jar 挂进 `fabric-loader-0.20.1-26.2` 的 libraries，备份 `.bak-pre-m2`（SHA-256 ad6913df…8808a），mainClass 改为 dev.modgraph.m2.M2Entry，inheritsFrom 仍 26.2；自检 7/7 PASS，落 install-m2-entry.log 与 rollback-m2-entry.md。三路子智能体（Hy4 flash）只读预检三份报告落 forbric-comparison/，A/C 断言一致、AUTH_GAP 记原文。未点启动、未用 Computer Use、未跑 gradle test、未改受保护文件、未 git 写；Java 25 缺失待用户处理。
+
+131. 第三十九步（M2 第一刀固化脚本 + 离线 JVM 自检）新增仓库根 `install-m2-entry.bat`（内嵌 PowerShell worker，本轮只写不跑）：把第一刀分步合成幂等流程 `gradle jar --offline --no-daemon` → 复制 `build/libs/modgraph.jar` 到 `D:\Minecraft\.minecraft\libraries\dev\modgraph\modgraph\0.1.0-m2\modgraph-0.1.0-m2.jar` → 备份 `<id>.json` 为 `.bak-pre-m2` → 追加 1 条 library → 改 mainClass → 文件级自检；重复双击不重复追加 library、不覆盖已有 `.bak-pre-m2`；`install-m2-entry.bat rollback` 把 `.bak-pre-m2` 覆盖回 `<id>.json` 即退回官方 Fabric。library 七字段沿用上一轮模板原文 `name/url/md5/sha1/sha256/sha512/size`，真实值不变（sha256 bb29dbf4…c54c、size 127153），未造新字段。**游戏实测未执行**：未启动 Minecraft、未打开 PCL、未用 Computer Use、未让用户双击任何东西。本轮唯一新增证据是离线 JVM 执行记录：`java -cp build/libs/modgraph.jar dev.modgraph.m2.M2Entry` 原始 stdout 打印 `MODGRAPH_M2_ENTRY project=modgraph build=3be75d9c34fab056ffcc15afa0ec61962a4872b5`，转调 KnotClient 失败的 `java.lang.ClassNotFoundException: net.fabricmc.loader.impl.launch.knot.KnotClient` 原样打到 stderr（非吞异常，无空 catch），退出码 1；这是离线 JVM 自检，不是游戏实测，编译过/自检 7/7 不等于跑起来了。实测前置条件清单：① Java 25 未提供（本机仅 Java 21，父 json 要求 majorVersion 25 / java-runtime-epsilon，不擅自装 JRE）；② U1 library url 与本地 jar 解析行为未验证；③ U2 thin jar 运行依赖（slf4j/gson/night-config/log4j 未打包）未验证；④ Fabric API 未装，mods/ 内 mod 可能被跳过。未跑 gradle test（没跑）、未联网、未下载 MC 文件、未改 AGENTS/README/BOUNDARIES/LICENSE/六个产物/徽章/M0–M1.5 数字/oracle 四 Python、未动 versions 下其他实例、未写第二块功能（ModContainer/发现/ClassLoader/transform/Mixin 全部未动）、未 commit/push/PR。
+
 ## 四、踩过的坑
 
 1. **数据集在步骤之间发生过重组，旧数字不能再用。** 第二步和第三步时 fixtures/jars/fabric 是 194 个、neoforge 是 10 个；第四步补充返工时重新清点，fabric 变成 100 个、neoforge 变成 95 个，合计 195 个。上一轮报告里的 100 OK / 94 FAILED 和 92 个 NO_METADATA 清单已经过期。为什么必须重新清点：用户明确禁止硬编码数量，而且测试要断言记录数等于文件系统真实 .jar 数；如果照着旧数字写，测试会和当前数据对不上。当前代码和测试都只信文件系统。
@@ -735,13 +807,11 @@ src/
 
 ## 五、下一步建议
 
-**下一步第一条命令（本轮不执行；没有自动下一阶段）：**
+**下一步第一条命令（本轮只写不跑；AI 侧可重跑的离线校验，不是游戏实测）：**
 
-```powershell
-python -u aggregate_262_final.py
-```
+`cd /d/modgraph/modgraph && java -cp build/libs/modgraph.jar dev.modgraph.m2.M2Entry > /tmp/m2_stdout.txt 2> /tmp/m2_stderr.txt; echo EXIT=$?; echo ===STDOUT===; cat /tmp/m2_stdout.txt; echo ===STDERR===; cat /tmp/m2_stderr.txt`。预期：stdout 出现 `MODGRAPH_M2_ENTRY project=modgraph build=3be75d9c34fab056ffcc15afa0ec61962a4872b5`，stderr 出现原样 `ClassNotFoundException` 栈，退出码 1。游戏实测仍由用户明确推迟，不启动 Minecraft、不打开 PCL、不用 Computer Use；前置条件清单见第三十九步。回滚：`install-m2-entry.bat rollback`（把 `.bak-pre-m2` 覆盖回 `<id>.json`，退回官方 Fabric，详见 `rollback-m2-entry.md`）。
 
-该命令可重跑既有段 5 汇总并校验 J1–J6，本轮没有执行。**段 1–5 已完成，无自动下一阶段。** M2 或任何新阶段没有开始；除非用户明确下达新指令，不启动后续工作。
+待办清单（本轮均未执行）：① 用户双击后看日志每行 OK/FAIL，确认自检 PASS；② 本机无 Java 25，需自行安装后 PCL 才能启动 26.2，脚本不装 JRE；③ mods/ 内 mod 因缺 Fabric API 可能被跳过，本轮不验证；④ 不把 modgraph/Forbric/Kilt 产物挂进 version json 的 mainClass/libraries、不装 Fabric API 本体、不写加载器/ClassLoader/transform/Mixin 实现、不做崩溃回传与 reason code——下一轮；⑤ 原 M0.5/M1/M1.5 与 Forbric 加载器实验的阻塞条件不变：物料门仍需固定 commit 的 Forbric 本地源码/构建产物与本机 MC 26.2 二进制，不得下载或猜入口。没有自动进入 MC 运行、加载器实现或 M2。
 
 M0 已按 SPEC v0.7 定稿（v0.8–v1.1 都没有改动 M0 的十条），M0.5 已按 §3.5 完成，M1 已按 §3.6 实现，M1.5 已按 §3.7 实现。中英文 SPEC 现在都是 v1.1。完整数据集（195 个 jar）下 `gradle clean test` 是 148 个测试、失败 0、错误 0、跳过 0——这是第十九步的实跑结果。`gradle run` 产出六个文件，依赖判定 716 行，环组 0，`cycles.csv` 只有表头，`duplicates.csv` 4 行数据加表头，不满足的硬依赖 56。把 `fixtures/jars` 临时改名后（内置 11 个样本）测试依然是 148 个、跳过 0，两种模式在日志里明确打印当前数据源。
 
@@ -796,3 +866,5 @@ M0.5 自身的已知边界：
 - 环境事实是**声明**而非观测：`quilt_loader` 与 `forge` 当前没有任何数据引用
 
 没有执行 git commit，提交仍由用户完成；不要自动兼容、不要自动修复、不要引入 Minecraft / Fabric / Forge / NeoForge / Mixin / ASM 依赖。
+
+无自动下一阶段；游戏实测与推送均待用户单独授权。

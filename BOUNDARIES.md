@@ -101,7 +101,7 @@ An earlier revision of this section said `mixinTargets` = 31 (a record-basis fig
 1. **Version mismatch is not prediction failure.** The Forbric list describes MC 26.2; the modgraph dataset is 1.21.1. `NO_CANDIDATE` means “no record with this identity exists in the 1.21.1 dataset” — a version/identity mismatch — not “modgraph predicted this mod would fail”, and not “modgraph would also miss it on 26.2”. No 26.2 dataset was analyzed.
 2. **`EXCLUDED` is a support-policy disclaimer.** It is not a finding that the mod is broken, and it does not explain a runtime crash.
 3. **A non-`SATISFIED` dependency row is a 1.21.1 declarative judgement.** It can be a true gap, a version-range artifact, or a known false positive (see the hyphenated-version caveat in `PROGRESS.md`); it is not proof of the runtime cause of a Forbric failure.
-4. **The tool does only declarative admission checks.** It does not predict Mixin transforms, class loading, mod loading order, or runtime behavior, and it does not guarantee stability. See `SPEC.md` §0.
+4. **In the `STATIC_ANALYSIS` operating mode, the tool does only declarative admission checks.** It does not predict Mixin transforms, class loading, mod loading order, or runtime behavior, and it does not guarantee stability. See `SPEC.md` §0.
 5. **The `modcrawl` comparison is not a correctness proof either.** It shows which targets the naming rule did not produce under this tool/version, with the nested-jar and naming caveats above.
 6. **Zero means “zero under this definition”.** `NO_CANDIDATE` 12 in the 12-row table means 0 of 12 rows could be located in the 1.21.1 dataset; it does not mean 0 failures, 0 mixins, or “verified effective”.
 

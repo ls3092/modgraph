@@ -1,0 +1,183 @@
+{
+  "schemaRevision": 1,
+  "producedBy": "baseline_material",
+  "status": "BOUNDARY_BLOCKED",
+  "checkedDate": "2026-11-13",
+  "networkUsed": false,
+  "downloadsPerformed": false,
+  "source": {
+    "repository": "https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader",
+    "requestedCommit": "f7f4ff92f67fe8de1a5957efda5cceb4c55d5057",
+    "localCheckoutPresent": false,
+    "localHeadVerified": false,
+    "reason": "No local Forbric checkout or forbric-kernel build source was found in the permitted local search roots."
+  },
+  "environment": {
+    "os": "Microsoft Windows NT 10.0.26300.0",
+    "architecture": "AMD64",
+    "powershell": "7.6.9",
+    "javaHomeEnvironmentVariable": null,
+    "java": {
+      "path": "C:\\Program Files\\Microsoft\\jdk-21.0.8.9-hotspot\\bin\\java.exe",
+      "version": "21.0.8",
+      "vendor": "Microsoft",
+      "usable": true,
+      "sha256": "A9604872170258865E88EF4A754744E8853DBCE2161D4DC3AC5820FB449AB3AD"
+    },
+    "javac": {
+      "path": "C:\\Program Files\\Microsoft\\jdk-21.0.8.9-hotspot\\bin\\javac.exe",
+      "version": "21.0.8",
+      "usable": true
+    },
+    "gradle": {
+      "path": "C:\\Gradle\\gradle-8.10\\bin\\gradle.bat",
+      "version": "8.10",
+      "usable": true,
+      "wrapperPresent": false,
+      "sha256": "AC655797D193F30D5132052B987506116E3E197396C9CE4FD74738BB321AB688"
+    }
+  },
+  "build": {
+    "status": "BOUNDARY_BLOCKED",
+    "entry": null,
+    "commandTemplate": null,
+    "products": [],
+    "reason": "The local source checkout is absent, so the build entry, exact task names, expected output paths, and build command template cannot be verified without guessing or network retrieval.",
+    "probes": [
+      {
+        "kind": "local-source-search",
+        "roots": [
+          "D:\\modgraph",
+          "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+          "C:\\Users\\Administrator\\.gradle",
+          "C:\\Users\\Administrator\\Downloads",
+          "C:\\Users\\Administrator\\Desktop",
+          "C:\\Users\\Administrator\\Documents",
+          "C:\\Users\\Administrator\\source",
+          "C:\\Users\\Administrator\\Projects"
+        ],
+        "result": "NO_FORBRIC_BUILD_SOURCE_BY_PATH",
+        "text": "NO_FORBRIC_DIRECTORY_IN_USER_WORKSPACES; NO_FORBRIC_FILE_IN_USER_WORKSPACES"
+      },
+      {
+        "kind": "local-artifact-search",
+        "roots": [
+          "D:\\modgraph",
+          "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+          "C:\\Users\\Administrator\\.gradle"
+        ],
+        "result": "NO_LOCAL_FORBRIC_ARTIFACT",
+        "text": "NO_LOCAL_FORBRIC_ARTIFACT"
+      }
+    ]
+  },
+  "minecraftBinary": {
+    "status": "BOUNDARY_BLOCKED",
+    "requiredGameVersion": "26.2",
+    "usableLocalBinary": null,
+    "reason": "No local Minecraft 26.2 version directory or client jar was found in the standard launcher roots. The available 26.1 snapshot directories contain only version JSON files and no client jar.",
+    "searchedRoots": [
+      "C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions",
+      "D:\\Minecraft\\.minecraft\\versions"
+    ],
+    "observedVersionDirectories": {
+      "C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions": [
+        "1.21.11",
+        "1.8.9",
+        "26.1-snapshot-6",
+        "26.1-snapshot-7"
+      ],
+      "D:\\Minecraft\\.minecraft\\versions": [
+        "1.20.1-Forge_47.4.22",
+        "1.21.11-Fabric",
+        "1.21.11-Fabric 0.19.5",
+        "1.21.8 Fabric 0.18.4",
+        "1.21.8-Fabric 0.18.4",
+        "1111",
+        "原版",
+        "自然之需YSM兼容整合",
+        "Fabulously Optimized",
+        "xiaohe66-lotus-1.21.8",
+        "xiaohe66-lotus-17.2-1.21.11"
+      ]
+    },
+    "nearMisses": [
+      {
+        "version": "26.1-snapshot-6",
+        "jsonPath": "C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-6\\26.1-snapshot-6.json",
+        "jsonSha256": "BA7B9592B05C53F14BB62C923EC64A9C6C574CF7B2DA11FF3B300A25875EF600",
+        "clientJarPresent": false
+      },
+      {
+        "version": "26.1-snapshot-7",
+        "jsonPath": "C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-7\\26.1-snapshot-7.json",
+        "jsonSha256": "EBCFF7E58CEDD885C42F896EF39B8115723E07D5C40D123BA6FE1058A6AACD0B",
+        "clientJarPresent": false
+      }
+    ],
+    "probes": [
+      {
+        "command": "Get-ChildItem D:\\Minecraft\\.minecraft\\versions -Directory | Where-Object Name -match '^26\\.2($|[- ])'",
+        "rawOutput": "NO_26_2_VERSION_IN_D_MINECRAFT"
+      },
+      {
+        "command": "Get-ChildItem C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions -Directory | Where-Object Name -match '^26\\.2($|[- ])'",
+        "rawOutput": "NO_26_2_VERSION_DIRECTORY"
+      },
+      {
+        "command": "Get-ChildItem C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-6,C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-7 -File -Recurse",
+        "rawOutput": "Only 26.1-snapshot-6.json and 26.1-snapshot-7.json were observed; no client jar was observed."
+      }
+    ]
+  },
+  "temporaryWorkspace": {
+    "path": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\modgraph-forbric-baseline-9d1aa4fcc27844f0841af8f5cfb05096",
+    "created": true,
+    "products": [],
+    "productHashes": {},
+    "reason": "A temporary workspace was created, but no build product could be produced because both the local source checkout and the required Minecraft 26.2 binary are absent."
+  },
+  "blockers": [
+    {
+      "code": "FORBRIC_LOCAL_CHECKOUT_MISSING",
+      "detail": "No local directory or file matching Forbric was found under the searched workspace, user-work, temp, or Gradle-cache roots."
+    },
+    {
+      "code": "FORBRIC_BUILD_ENTRY_UNVERIFIED",
+      "detail": "Without the local source checkout, the forbric-kernel build entry, exact Gradle task and expected product path were not guessed."
+    },
+    {
+      "code": "FORBRIC_BUILD_PRODUCT_MISSING",
+      "detail": "No local forbric-kernel jar was found in the searched roots."
+    },
+    {
+      "code": "MINECRAFT_26_2_BINARY_MISSING",
+      "detail": "No local Minecraft 26.2 version directory or client jar was found in the two standard launcher roots."
+    }
+  ],
+  "constraintsObserved": {
+    "onlyPermittedOutputAddedToMainRepository": true,
+    "existingMainRepositoryFilesModified": false,
+    "forbricSourceCopiedIntoModgraph": false,
+    "minecraftLaunched": false,
+    "gradleTestRun": false,
+    "minecraftBinaryDownloaded": false,
+    "gradleDownloaded": false,
+    "wrapperGenerated": false,
+    "networkUsed": false
+  },
+  "unrelatedMainRepositoryObservations": [
+    {
+      "path": "D:\\modgraph\\modgraph\\$null",
+      "bytes": 65,
+      "sha256": "42BD6E835C6EC8DCCE7454BCCA9C4F3AD94AF783BFE7D2D2CAA7609B0AEF77BB",
+      "deletedByThisSubtask": false
+    },
+    {
+      "path": "D:\\modgraph\\modgraph\\$null)",
+      "bytes": 65,
+      "sha256": "42BD6E835C6EC8DCCE7454BCCA9C4F3AD94AF783BFE7D2D2CAA7609B0AEF77BB",
+      "deletedByThisSubtask": false
+    }
+  ]
+}

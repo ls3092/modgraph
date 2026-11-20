@@ -1,0 +1,160 @@
+{
+  "assertions": {
+    "accuracyUsesAnsweredOnly": true,
+    "allSelectedItemsBoundaryBlocked": true,
+    "nAnsweredFormula": true,
+    "nEvalFormula": true,
+    "nineBucketSumEqualsN": true
+  },
+  "buckets": {
+    "BOUNDARY_BLOCKED": 5,
+    "CORRECT": 0,
+    "INCORRECT": 0,
+    "NOT_ATTEMPTED": 0,
+    "NO_PARSEABLE_OUTPUT": 0,
+    "ORACLE_MISSING": 0,
+    "TIMEOUT": 0,
+    "TOOL_FAILURE": 0,
+    "UNSUPPORTED": 0
+  },
+  "cohortId": "a6ee5d7b1ab073ddb5ad90a749a3fac6e41dca5c2ad6a8383f7c0882d4212b22",
+  "derived": {
+    "N": 5,
+    "N_answered": 0,
+    "N_eval": 5,
+    "accuracy": null,
+    "inputCurationError": 0
+  },
+  "items": [
+    {
+      "capabilityState": "UNKNOWN",
+      "fileName": "appleskin-neoforge-mc26.2-3.0.10.jar",
+      "manifestOrder": 1,
+      "measurementState": "BOUNDARY_BLOCKED",
+      "outputState": "ABSENT",
+      "rawOutputSha256": null,
+      "sha256": "03d07db47d21fc148d2c3348a9c2f2cf385d216ef34276f77abbfced3a18e35f",
+      "technicalState": "BOUNDARY_BLOCKED"
+    },
+    {
+      "capabilityState": "UNKNOWN",
+      "fileName": "Time & Weather Changer-neoforge-26.2-1.2.0.jar",
+      "manifestOrder": 2,
+      "measurementState": "BOUNDARY_BLOCKED",
+      "outputState": "ABSENT",
+      "rawOutputSha256": null,
+      "sha256": "05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9",
+      "technicalState": "BOUNDARY_BLOCKED"
+    },
+    {
+      "capabilityState": "UNKNOWN",
+      "fileName": "itemglintrelight-fabric-26.2-0.3.0+26.2.jar",
+      "manifestOrder": 3,
+      "measurementState": "BOUNDARY_BLOCKED",
+      "outputState": "ABSENT",
+      "rawOutputSha256": null,
+      "sha256": "07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090",
+      "technicalState": "BOUNDARY_BLOCKED"
+    },
+    {
+      "capabilityState": "UNKNOWN",
+      "fileName": "particle_core-0.3.3+26.2+neoforge.jar",
+      "manifestOrder": 4,
+      "measurementState": "BOUNDARY_BLOCKED",
+      "outputState": "ABSENT",
+      "rawOutputSha256": null,
+      "sha256": "0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141",
+      "technicalState": "BOUNDARY_BLOCKED"
+    },
+    {
+      "capabilityState": "UNKNOWN",
+      "fileName": "coroutil-neoforge-26.2-1.3.8.jar",
+      "manifestOrder": 5,
+      "measurementState": "BOUNDARY_BLOCKED",
+      "outputState": "ABSENT",
+      "rawOutputSha256": null,
+      "sha256": "0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4",
+      "technicalState": "BOUNDARY_BLOCKED"
+    }
+  ],
+  "launchAttempt": {
+    "attempted": true,
+    "buildEntry": null,
+    "buildProbes": [
+      {
+        "kind": "local-source-search",
+        "result": "NO_FORBRIC_BUILD_SOURCE_BY_PATH",
+        "roots": [
+          "D:\\modgraph",
+          "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+          "C:\\Users\\Administrator\\.gradle",
+          "C:\\Users\\Administrator\\Downloads",
+          "C:\\Users\\Administrator\\Desktop",
+          "C:\\Users\\Administrator\\Documents",
+          "C:\\Users\\Administrator\\source",
+          "C:\\Users\\Administrator\\Projects"
+        ],
+        "text": "NO_FORBRIC_DIRECTORY_IN_USER_WORKSPACES; NO_FORBRIC_FILE_IN_USER_WORKSPACES"
+      },
+      {
+        "kind": "local-artifact-search",
+        "result": "NO_LOCAL_FORBRIC_ARTIFACT",
+        "roots": [
+          "D:\\modgraph",
+          "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+          "C:\\Users\\Administrator\\.gradle"
+        ],
+        "text": "NO_LOCAL_FORBRIC_ARTIFACT"
+      }
+    ],
+    "buildProducts": [],
+    "commandTemplate": null,
+    "exactBlockers": [
+      {
+        "code": "FORBRIC_LOCAL_CHECKOUT_MISSING",
+        "detail": "No local directory or file matching Forbric was found under the searched workspace, user-work, temp, or Gradle-cache roots."
+      },
+      {
+        "code": "FORBRIC_BUILD_ENTRY_UNVERIFIED",
+        "detail": "Without the local source checkout, the forbric-kernel build entry, exact Gradle task and expected product path were not guessed."
+      },
+      {
+        "code": "FORBRIC_BUILD_PRODUCT_MISSING",
+        "detail": "No local forbric-kernel jar was found in the searched roots."
+      },
+      {
+        "code": "MINECRAFT_26_2_BINARY_MISSING",
+        "detail": "No local Minecraft 26.2 version directory or client jar was found in the two standard launcher roots."
+      }
+    ],
+    "minecraftBinaryProbes": [
+      {
+        "command": "Get-ChildItem D:\\Minecraft\\.minecraft\\versions -Directory | Where-Object Name -match '^26\\.2($|[- ])'",
+        "rawOutput": "NO_26_2_VERSION_IN_D_MINECRAFT"
+      },
+      {
+        "command": "Get-ChildItem C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions -Directory | Where-Object Name -match '^26\\.2($|[- ])'",
+        "rawOutput": "NO_26_2_VERSION_DIRECTORY"
+      },
+      {
+        "command": "Get-ChildItem C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-6,C:\\Users\\Administrator\\AppData\\Roaming\\.minecraft\\versions\\26.1-snapshot-7 -File -Recurse",
+        "rawOutput": "Only 26.1-snapshot-6.json and 26.1-snapshot-7.json were observed; no client jar was observed."
+      }
+    ],
+    "processStarted": false,
+    "reason": "exact Forbric build and Minecraft 26.2 binary unavailable"
+  },
+  "producedBy": "oracle/run_original.py",
+  "schemaRevision": 1,
+  "selection": {
+    "count": 5,
+    "rule": "first five records in frozen cohort order",
+    "sha256": [
+      "03d07db47d21fc148d2c3348a9c2f2cf385d216ef34276f77abbfced3a18e35f",
+      "05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9",
+      "07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090",
+      "0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141",
+      "0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4"
+    ]
+  }
+}

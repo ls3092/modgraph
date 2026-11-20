@@ -18,7 +18,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="license"/></a>
   <a href="https://openjdk.org/"><img src="https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
   <a href="https://gradle.org/"><img src="https://img.shields.io/badge/build-gradle-orange?style=for-the-badge&logo=gradle&logoColor=white" alt="build"/></a>
-  <a href="./SPEC.md"><img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20%2F%20M1%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 / M1 completed"/></a>
+  <img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20%2F%20M1%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 / M1 completed"/>
   <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft-1.21.1-52a447?style=for-the-badge" alt="Minecraft"/></a>
 </p>
 
@@ -66,7 +66,7 @@ syntax and load-time behaviour.
 conflict arbitration on top of that model — so that the question "can these mods be installed together, and if
 not, why not" finally has an answer that is **deterministic, reproducible and verifiable**.
 
-The core type of the unified model is `ModCandidate` (see [`SPEC.md`](./SPEC.md) §1).
+The core type of the unified model is `ModCandidate` (see 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §1).
 It flattens the metadata differences between Fabric and NeoForge into a neutral structure while
 **preserving every original field** — no lossy conversion.
 
@@ -98,8 +98,8 @@ This matters more than "what it is", because every existing project draws the li
 | **Forbric** | Custom loader claiming not to be a translation layer | Source of inspiration, see below |
 | **modgraph** | Unified metadata and dependency arbitration | Metadata-layer unification |
 
-`modgraph` **is not currently a mod loader**. It does not start Minecraft, does not load classes, does not
-rewrite bytecode.
+In the `STATIC_ANALYSIS` operating mode, `modgraph` **is not currently a mod loader**. It does not start Minecraft,
+does not load classes, does not rewrite bytecode.
 
 On the question "is this a translation layer", our position is candid:
 **unification stops at metadata and dependencies; below that (events, registries, energy/fluid/item interop,
@@ -262,7 +262,7 @@ M0 records version-range strings verbatim and never evaluates them. M0.5 evaluat
 dependency it answers exactly one question — **"does a mod in this set satisfy what this declaration asks for?"**
 — and writes the answer to `dependencies.csv`. An ID counts as present if it is a dataset `modId`, an environment
 fact, or an alias declared in some mod's `provides`; an alias resolves to the version of the mod that declares it
-(`SPEC.md` §3.5.5). M0.5 does not sort, does not solve, does not choose a version and does not download. M0's own
+(规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5). M0.5 does not sort, does not solve, does not choose a version and does not download. M0's own
 numbers are untouched (the three M0 output files are byte-identical after M0.5 was added; `dependencies.csv` is a
 separate file).
 
@@ -281,13 +281,13 @@ startup (the first INFO line above), and can therefore be audited:
 
 `fabricloader` and `neoforge` are the **highest lower bounds required anywhere in this dataset**;
 `quilt_loader` and `forge` are currently referenced by no dependency at all and are declared only so that the
-IDs from `SPEC.md` §3.5.2 can never fall through to `MISSING_ID`.
+IDs from 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.2 can never fall through to `MISSING_ID`.
 
-**Resolution order** (`SPEC.md` §3.5.5): a real `modId` wins, an environment fact comes next, and a `provides`
+**Resolution order** (规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5): a real `modId` wins, an environment fact comes next, and a `provides`
 alias is only a fallback. **A real `modId` is never made ambiguous by another mod declaring the same string as an
 alias.** The only collision that stays a conflict is an alias squatting on an environment ID.
 
-**Six outcomes** (`SPEC.md` §3.5.5, exactly one per dependency):
+**Six outcomes** (规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5, exactly one per dependency):
 
 | Outcome | Meaning |
 | --- | --- |
@@ -335,7 +335,7 @@ DependencyResolver   evaluate each declared version range against the mods prese
 ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / dependencies.csv / INFO summary
 ```
 
-The unified data contract is `ModCandidate` — see [`SPEC.md`](./SPEC.md) §1.
+The unified data contract is `ModCandidate` — see 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §1.
 
 **Depends on**: Gson (JSON), night-config (TOML), SLF4J + Log4j2 (logging), JUnit 5 + AssertJ (tests).
 
@@ -355,7 +355,8 @@ invasive mods before launch.
 | `MIXIN` | Injects behaviour at runtime |
 | `API` | Consumes API contracts only |
 
-Scanning is **descriptor-level (L1) only**: it reads zip entry names and metadata text, never class content.
+In the `STATIC_ANALYSIS` operating mode, scanning is **descriptor-level (L1) only**: it reads zip entry names and
+metadata text, never class content.
 Constant-pool-level scanning (L2) belongs to a later stage.
 
 The `RENDER` and `CORE` tiers, plus cheat clients and OptiFine, are all marked `EXCLUDED` with
@@ -388,7 +389,7 @@ Each one maps directly to an upstream problem this project exists to correct.
 6. **Never skip an input file.**
 7. **Never implement features the spec has not defined, never leave "extensibility" hooks.**
 
-Log-level rules are in [`SPEC.md`](./SPEC.md) §5.
+Log-level rules are in 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §5.
 
 ---
 
@@ -469,14 +470,14 @@ judgements**. The spec, the dataset and the verification system are already in p
   report only; the four earlier artifacts stay byte-identical
 - Manual metadata sampling: `modId` / `version` / `depends` — **10/10 consistent**, 0 mismatches across 47
   dependency declarations; 10-dependency spot check against raw metadata — **10/10 consistent**
-- All ten M0 acceptance criteria of [`SPEC.md`](./SPEC.md) §7 (v1.1) met, the eight M0.5 criteria of §3.5.7, the
+- All ten M0 acceptance criteria of 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §7 (v1.1) met, the eight M0.5 criteria of §3.5.7, the
   ten M1 criteria of §3.6.7 and the seven M1.5 criteria of §3.7.5
 - 148 tests, 0 failures, 0 errors, **0 skipped**
 - Pre-launch conflict warning: 331 HIGH pairs (4.96%)
 
 **What I bring**
 
-- A complete spec: [`SPEC.md`](./SPEC.md) v1.1 — fields, decision signals, tiering rules, version-range syntax,
+- A complete spec: 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 v1.1 — fields, decision signals, tiering rules, version-range syntax,
   output formats and acceptance criteria are all written down, not agreed verbally
 - A real dataset collection pipeline: generate a list from the public Modrinth API, download, auto-sort by
   in-jar metadata, verify one by one — fully scripted
@@ -497,7 +498,7 @@ injections conflict" or "which constant-pool entry in a class file proves the ta
 works through tickets.
 
 If you want to get involved, please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) and
-[`SPEC.md`](./SPEC.md) first, then open an issue describing which part you want to own and why.
+规范与禁令以 AOCI-CODE MCP 当前生效内容为准 first, then open an issue describing which part you want to own and why.
 
 ---
 
@@ -510,7 +511,7 @@ Before opening a PR, confirm:
 
 - [ ] `gradle build` passes
 - [ ] Skipped test count is **0**
-- [ ] The new behaviour is already defined in `SPEC.md`
+- [ ] The new behaviour is already defined in 规范与禁令以 AOCI-CODE MCP 当前生效内容为准
 - [ ] No Minecraft / loader-related dependency was introduced
 - [ ] No `assumeTrue` / `assumeFalse`
 - [ ] No empty catch block, no `System.out.println`

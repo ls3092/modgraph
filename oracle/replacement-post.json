@@ -1,0 +1,1897 @@
+{
+  "cohortId": "a6ee5d7b1ab073ddb5ad90a749a3fac6e41dca5c2ad6a8383f7c0882d4212b22",
+  "implementation": {
+    "adapterId": "oracle/post_slice.py@1",
+    "buildSha256": null,
+    "implementationId": "REPLACEMENT_POST",
+    "normalizerId": "oracle/schema.py@1",
+    "runnerId": "oracle.post_slice.v1",
+    "sourceRevision": "c0ba3a83e0c3eb042e7e6d067ed9b48582ad878577438304a9b93238ad1969d7"
+  },
+  "items": [
+    {
+      "actualDependencyKeys": [
+        "[\"03d07db47d21fc148d2c3348a9c2f2cf385d216ef34276f77abbfced3a18e35f\",\"META-INF/neoforge.mods.toml\",\"appleskin\",\"depends\",\"neoforge\",\"[21.0.0-beta,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "03d07db47d21fc148d2c3348a9c2f2cf385d216ef34276f77abbfced3a18e35f",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 1,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "appleskin",
+      "normalizedOutputSha256": "6d1e5c93a00711c1a537b4df85558f76e72c9ec11f3c47481aa0602d7b8d2f8c",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e70923679a38f7ad251ff736a2e2b0e15c74809acc17c962703d3bd14815b86f",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "appleskin-neoforge-mc26.2-3.0.10.jar",
+      "version": "${file.jarVersion}"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9\",\"META-INF/neoforge.mods.toml\",\"timechanger\",\"depends\",\"minecraft\",\"[26.2]\",true,\"NONE\",\"BOTH\",1]",
+        "[\"05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9\",\"META-INF/neoforge.mods.toml\",\"timechanger\",\"depends\",\"neoforge\",\"[4,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 2,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "timechanger",
+      "normalizedOutputSha256": "29f1b72e21c888a9f880d06d16f815d0edaa25d7313718eeba470970f300e279",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "f1c50b3643e9252f6a2edadf7d5fdfa614d6436709957410f5f22879df78a2c9",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "Time & Weather Changer-neoforge-26.2-1.2.0.jar",
+      "version": "1.2.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090\",\"fabric.mod.json\",\"itemglintrelight\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090\",\"fabric.mod.json\",\"itemglintrelight\",\"depends\",\"fabricloader\",\">=0.19.5\",true,\"NONE\",\"BOTH\",1]",
+        "[\"07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090\",\"fabric.mod.json\",\"itemglintrelight\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090\",\"fabric.mod.json\",\"itemglintrelight\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 3,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "itemglintrelight",
+      "normalizedOutputSha256": "bedffd9e3480608e0f161d5210e2417d5109ced2cc7aefc4faeb4f31745a61df",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "035b5c86cf96d1c8d7eac16aa67809a5811d372f849332658f53ed10b981a2f8",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "itemglintrelight-fabric-26.2-0.3.0+26.2.jar",
+      "version": "0.3.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141\",\"META-INF/neoforge.mods.toml\",\"particle_core\",\"depends\",\"fzzy_config\",\"[0.7.6,)\",true,\"AFTER\",\"BOTH\",1]",
+        "[\"0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141\",\"META-INF/neoforge.mods.toml\",\"particle_core\",\"depends\",\"minecraft\",\"[26.1,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141\",\"META-INF/neoforge.mods.toml\",\"particle_core\",\"depends\",\"neoforge\",\"[26.1.0.1-beta,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 4,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "particle_core",
+      "normalizedOutputSha256": "d11302976a32165ceffe89d6ab2e9b20e4843adff29b6723052b29d87d96747a",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e24d75f025f4989bc38bc651a91d6c4f351e2c20921a481adbca5ab73cb1704e",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "particle_core-0.3.3+26.2+neoforge.jar",
+      "version": "0.3.3+26.2+neoforge"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4\",\"META-INF/neoforge.mods.toml\",\"coroutil\",\"depends\",\"minecraft\",\"[26.2]\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4\",\"META-INF/neoforge.mods.toml\",\"coroutil\",\"depends\",\"neoforge\",\"[26.2.0.0,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 5,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "coroutil",
+      "normalizedOutputSha256": "9dd6884b297bd8a1e0420daa5c89d2308a7dd8e3cf014e6b2e82de04c9ee5280",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "09dd8805f96a79725dc4a55885768984903ddb4b007215ed60908670c17d3057",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "coroutil-neoforge-26.2-1.3.8.jar",
+      "version": "26.2-1.3.8"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"0c1064db82b16c607e171e4694bd9f4a7e3d81891e5bc20430b56292caf77530\",\"META-INF/neoforge.mods.toml\",\"entity_model_features\",\"depends\",\"entity_texture_features\",\"[7.0.0,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"0c1064db82b16c607e171e4694bd9f4a7e3d81891e5bc20430b56292caf77530\",\"META-INF/neoforge.mods.toml\",\"entity_model_features\",\"depends\",\"minecraft\",\"[1,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"0c1064db82b16c607e171e4694bd9f4a7e3d81891e5bc20430b56292caf77530\",\"META-INF/neoforge.mods.toml\",\"entity_model_features\",\"depends\",\"neoforge\",\"[1,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "0c1064db82b16c607e171e4694bd9f4a7e3d81891e5bc20430b56292caf77530",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 6,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "entity_model_features",
+      "normalizedOutputSha256": "f1b30b9a3b29da67615af3dadb13ff834ce2a6b3f86701606a437f29c08d8ac1",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "cdbc536b1127eac35eaaae119fdc953059bd04223f69699c346ba68c4b300879",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "entity_model_features-3.2.5-26.2-neoforge.jar",
+      "version": "3.2.5"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"0ef6945b807c7604197474187067d99fea7f1b20ce3e97420d7190c00725afff\",\"fabric.mod.json\",\"mcmc\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0ef6945b807c7604197474187067d99fea7f1b20ce3e97420d7190c00725afff\",\"fabric.mod.json\",\"mcmc\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "0ef6945b807c7604197474187067d99fea7f1b20ce3e97420d7190c00725afff",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 7,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "mcmc",
+      "normalizedOutputSha256": "d00a89e7b94594fda6bdea69baca0357badc23e60b27cef9ef95365d45754fde",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "ae081e934bd87dbfc032f7d5f5f7e34a2a06ce7ffe92f1abb74628791a82683e",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "MyConnectionMyChoice-1.6.1.jar",
+      "version": "1.6.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"depends\",\"fabric-lifecycle-events-v1\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"depends\",\"fabric-resource-loader-v0\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"depends\",\"fabricloader\",\">=0.18.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"depends\",\"minecraft\",\">=26.2.0-\",true,\"NONE\",\"BOTH\",1]",
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"recommends\",\"cloth-config\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10\",\"fabric.mod.json\",\"dynamic_fps\",\"recommends\",\"modmenu\",\"*\",false,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 8,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "dynamic_fps",
+      "normalizedOutputSha256": "cc150604967c0d3dd60a3bf816d3d701529b1245ecf5302da38b1c189fb67f30",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "01e7e6b6ad7635aea78c290c55cdee732b098e1a7c254eb9d8ef2f4ada55f372",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "dynamic-fps-3.11.8+minecraft-26.2.0-fabric.jar",
+      "version": "3.11.8"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"1083ce79231f9d358d7b172dd43553234e2f3834993a3ae42a1ec976af5ce418\",\"fabric.mod.json\",\"fabric-api\",\"depends\",\"fabricloader\",\">=0.18.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1083ce79231f9d358d7b172dd43553234e2f3834993a3ae42a1ec976af5ce418\",\"fabric.mod.json\",\"fabric-api\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1083ce79231f9d358d7b172dd43553234e2f3834993a3ae42a1ec976af5ce418\",\"fabric.mod.json\",\"fabric-api\",\"depends\",\"minecraft\",\"~26.2-\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "1083ce79231f9d358d7b172dd43553234e2f3834993a3ae42a1ec976af5ce418",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 9,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fabric-api",
+      "normalizedOutputSha256": "3d4e3e8e6dca4876b37a0044adb7422ab640507b347dac658392b73a25205656",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "ebf0e62c925d67da81974193218e659b545f54ca119f47a78aa0664cc23ced1f",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fabric-api-0.152.1+26.2.jar",
+      "version": "0.152.1+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"breaks\",\"wover\",\"<26.201.5\",false,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"breaks\",\"wunderlib\",\"<26.201.2\",false,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"fabric-api\",\">=0.155.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"fabricloader\",\">=0.19.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"minecraft\",[\"26.2\"],true,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"wover\",\"26.201.x\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40\",\"fabric.mod.json\",\"bclib\",\"depends\",\"wunderlib\",\"26.201.x\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 10,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "bclib",
+      "normalizedOutputSha256": "6d76aefb6ef0612ffd25597a654066f562857b7139e43b7bd37bda0d5b2c43d1",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "a5ae7b6f4f5510d38d305574fd0d1427ecb053d1f4ce7c64acb4be540a5be543",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "bclib-26.201.5.jar",
+      "version": "26.201.5"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78\",\"fabric.mod.json\",\"betteradvancements\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78\",\"fabric.mod.json\",\"betteradvancements\",\"depends\",\"fabricloader\",\">=0.19\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78\",\"fabric.mod.json\",\"betteradvancements\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78\",\"fabric.mod.json\",\"betteradvancements\",\"depends\",\"minecraft\",\"26.2.x\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 11,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "betteradvancements",
+      "normalizedOutputSha256": "88ede827d926f1aec73a12cd7f252a7c7840cdfe4afbfd82220ed41cceae51d7",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "14d6cc951a335659e2e2e69c5403a4a0e5d94de7acf6a9af0baf0836021b69a0",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "BetterAdvancements-Fabric-26.2-0.5.1.65.jar",
+      "version": "0.5.1.65"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"2094a52b98e247f664ef2ecdbb41d7dcad7779cc7a8fb87f0ed8a4f8196c0446\",\"fabric.mod.json\",\"continuity\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"2094a52b98e247f664ef2ecdbb41d7dcad7779cc7a8fb87f0ed8a4f8196c0446\",\"fabric.mod.json\",\"continuity\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "2094a52b98e247f664ef2ecdbb41d7dcad7779cc7a8fb87f0ed8a4f8196c0446",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 12,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "continuity",
+      "normalizedOutputSha256": "b2a91f4e970e19ae5cbb5d0c5cb73dfdba24f96ad6d1f891a22b19da5d80a855",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "1911fa98d0314dd40043a547709cdb3f547f7938c3bc2eaf06b780208d8db929",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "continuity-3.0.1+26.2.jar",
+      "version": "3.0.1+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"25db49898876554cb1ef5f2e6c514890fa2a82d1c0fbccfe41b7f08b0b65a19c\",\"fabric.mod.json\",\"fastipping\",\"depends\",\"fabricloader\",\">=0.11.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"25db49898876554cb1ef5f2e6c514890fa2a82d1c0fbccfe41b7f08b0b65a19c\",\"fabric.mod.json\",\"fastipping\",\"depends\",\"minecraft\",\">=26.1\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "25db49898876554cb1ef5f2e6c514890fa2a82d1c0fbccfe41b7f08b0b65a19c",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 13,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fastipping",
+      "normalizedOutputSha256": "9bc1c8c359ac1b368e90f92024e3f9e193af942a76a76fc7d6e4a8f9e38e264e",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e068e53c08dcc8c68de6ef6fdd0e5b44796616dd0427d91349c9d2abb23ed107",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fast-ip-ping-v1.0.11-mc26.1.2.jar",
+      "version": "1.0.11"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"breaks\",\"controllable\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"breaks\",\"do_a_barrel_roll\",\"<=3.5.8\",false,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"breaks\",\"midnightcontrols\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"breaks\",\"zoomify\",\"<=2.13.4\",false,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"depends\",\"fabricloader\",\">=0.19.1\",true,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76\",\"fabric.mod.json\",\"controlify\",\"depends\",\"yet_another_config_lib_v3\",\">=3.8.0\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 14,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "controlify",
+      "normalizedOutputSha256": "233d29c22f44c2b622ff43912f83df3979d863cd489c5e967559329a9b7e15fe",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "a4e5ed16cfe63b79ab3551ba102afb5692f7cfd5c345584bea3eabdef0610f1f",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "controlify-3.0.2+26.2-fabric.jar",
+      "version": "3.0.2+26.2-fabric"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"batchedentityrendering\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"bedrockwaters\",\"<=1.6.0\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"canvas\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"colormatic\",\"<=3.0.0\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"distanthorizons\",\"<=2.1.99\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"embeddium\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"immersive_portals\",\"<=1.4.2\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"iris-explorer\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"optifabric\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"originsenhanced\",\"<=1.3.2\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"physicsmod\",\"<=3.0.13\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"breaks\",\"worldeditcui\",\"<1.18.1\",false,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"depends\",\"fabricloader\",\">=0.12.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a\",\"fabric.mod.json\",\"iris\",\"depends\",\"sodium\",[\"0.9.x\"],true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 15,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "iris",
+      "normalizedOutputSha256": "4ca2ae40f08cf12e768dc13892d4a58f258547cdd57afd81ae1a41164fec03a3",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "4282edee135c684ea2faada61b2d486feb02e4a8bd88518d67c3d6043000c74c",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "iris-fabric-1.11.0+mc26.2.jar",
+      "version": "1.11.0+mc26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9\",\"fabric.mod.json\",\"collective\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9\",\"fabric.mod.json\",\"collective\",\"depends\",\"fabricloader\",\">=0.18.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9\",\"fabric.mod.json\",\"collective\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9\",\"fabric.mod.json\",\"collective\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 16,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "collective",
+      "normalizedOutputSha256": "0299ee2284ae94c9bca78bd647e3dac106b5d1df95ed411e86bb694f890ec751",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e5036590177fa093d3076a6563bdccb71543d6fc5a73f591b78e030d63d2f150",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "collective-26.2.0-8.28.jar",
+      "version": "8.28"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"36c5dd8b728e3470d2882ae63119b93a20500fc0ea6f5c945c12bf65b5ab1832\",\"fabric.mod.json\",\"fabric-language-kotlin\",\"depends\",\"fabricloader\",\">=0.16.9\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "36c5dd8b728e3470d2882ae63119b93a20500fc0ea6f5c945c12bf65b5ab1832",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 17,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fabric-language-kotlin",
+      "normalizedOutputSha256": "1e3d866c51914abd9d24405ced6ec5d3d28d5bdce56bedd6b511e372f5cb9d67",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "493c1dfd48bda424e8c5955acfb97d924763a6adc2412648c81903932c4a04c6",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fabric-language-kotlin-1.13.12+kotlin.2.4.0.jar",
+      "version": "1.13.12+kotlin.2.4.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"3a9d1b1fb9b1dde7bb2d0716e9dd40e421e7a663cf5e9ae63cb013edbcb42baa\",\"fabric.mod.json\",\"macebot\",\"depends\",\"fabricloader\",\">=0.18.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3a9d1b1fb9b1dde7bb2d0716e9dd40e421e7a663cf5e9ae63cb013edbcb42baa\",\"fabric.mod.json\",\"macebot\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "3a9d1b1fb9b1dde7bb2d0716e9dd40e421e7a663cf5e9ae63cb013edbcb42baa",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 18,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "macebot",
+      "normalizedOutputSha256": "a8155f75b6198274d73883ad14277d60acc08c17af9ecd9c71469d02e7101e36",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "2143e282c37c1370c55fa3d29b27b3718cf03dce071c8f8036cc893a496b15d8",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "macebot-1.3.0+26.2.jar",
+      "version": "1.3.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5\",\"fabric.mod.json\",\"leavesbegone\",\"depends\",\"fabric-api\",\">=0.152.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5\",\"fabric.mod.json\",\"leavesbegone\",\"depends\",\"fabricloader\",\">=0.19.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5\",\"fabric.mod.json\",\"leavesbegone\",\"depends\",\"forgeconfigapiport\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5\",\"fabric.mod.json\",\"leavesbegone\",\"depends\",\"minecraft\",\"~26.2-\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5\",\"fabric.mod.json\",\"leavesbegone\",\"depends\",\"puzzleslib\",\">=26.2.0\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 19,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "leavesbegone",
+      "normalizedOutputSha256": "a45087551892e3248df06162f125307b0f17ad097440d6d8561547ead7a24990",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "884eac68508f8330728a038c62acdf71fe1bb218c8a4504962350f0820597388",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar",
+      "version": "26.2.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"fabric-api\",\">=0.153.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"fancymenu\",\">=3.9.1\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"konkrete\",\">=1.10.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7\",\"fabric.mod.json\",\"drippyloadingscreen\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 20,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "drippyloadingscreen",
+      "normalizedOutputSha256": "ff11a4263796ec7c8e921d27279b2abc29a177b6308878b6105cafecc8f34b03",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "4d81d083b3a2096b61783d05222b5b8cdf2ac154f1418d4b6910445bb4d5bb2c",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "drippyloadingscreen_fabric_3.1.4_MC_26.2.jar",
+      "version": "3.1.4"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"44e3060ad3408a32977ee9e495b584d4fe8970f80ee96b0c8e87db2ae6095019\",\"fabric.mod.json\",\"simpleguiapi\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"44e3060ad3408a32977ee9e495b584d4fe8970f80ee96b0c8e87db2ae6095019\",\"fabric.mod.json\",\"simpleguiapi\",\"depends\",\"java\",\">=21\",true,\"NONE\",\"BOTH\",1]",
+        "[\"44e3060ad3408a32977ee9e495b584d4fe8970f80ee96b0c8e87db2ae6095019\",\"fabric.mod.json\",\"simpleguiapi\",\"depends\",\"minecraft\",[\"1.21.x\",\"26.1.x\",\"26.2.x\"],true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "44e3060ad3408a32977ee9e495b584d4fe8970f80ee96b0c8e87db2ae6095019",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 21,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "simpleguiapi",
+      "normalizedOutputSha256": "d02d2fc2d07167c56e9bd967fd81bf486e5b7818d775f3b6cb9f9f031570be28",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e023bb1b3c6e0a4d5bb9df437778e9b1af7b5cac8b57e6b093e10c856c77595b",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "SimpleGUI-API-Fabric-1.5.1+1.21.x+26.1.x+26.2.x.jar",
+      "version": "1.5.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"496ef7662f736678647864ed2a367f30f4e07e1f64bdc3fa9cea1cbff536918b\",\"META-INF/neoforge.mods.toml\",\"sodium\",\"depends\",\"neoforge\",\"[26.1.2.10-beta,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "496ef7662f736678647864ed2a367f30f4e07e1f64bdc3fa9cea1cbff536918b",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 22,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "sodium",
+      "normalizedOutputSha256": "ebc9ed7fabf7a4e16be803599868f86639dd749966f402cd28a2ac6bc5bdc181",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "d8224084dd2958a677528cfae40e563f5d8cbb6969039ecedaa1329741767cb4",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "sodium-neoforge-0.9.0+mc26.2.jar",
+      "version": "0.9.0+mc26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3\",\"fabric.mod.json\",\"easymagic\",\"depends\",\"fabric-api\",\">=0.152.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3\",\"fabric.mod.json\",\"easymagic\",\"depends\",\"fabricloader\",\">=0.19.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3\",\"fabric.mod.json\",\"easymagic\",\"depends\",\"forgeconfigapiport\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3\",\"fabric.mod.json\",\"easymagic\",\"depends\",\"minecraft\",\"~26.2-\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3\",\"fabric.mod.json\",\"easymagic\",\"depends\",\"puzzleslib\",\">=26.2.0\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 23,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "easymagic",
+      "normalizedOutputSha256": "a54a7bfa04daa2751ac67548141596abab4d52da67ae6c5f55937724a37ac1c8",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "020655d2a9ade8f53cb65bac9207bbae59d9c06ac8c9744ecfff731da218d6f4",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "EasyMagic-v26.2.0-mc26.2.x-Fabric.jar",
+      "version": "26.2.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f\",\"fabric.mod.json\",\"tuanzis-server-mod\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f\",\"fabric.mod.json\",\"tuanzis-server-mod\",\"depends\",\"fabricloader\",\">=0.18.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f\",\"fabric.mod.json\",\"tuanzis-server-mod\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f\",\"fabric.mod.json\",\"tuanzis-server-mod\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 24,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "tuanzis-server-mod",
+      "normalizedOutputSha256": "b4dc64c5f005326574604b39e6d00f1e73e4590800a3d82c8683086438da608a",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "7c827d95aaff1e0937ae457998db0b65020b62408afc8976982325360dcba8f6",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "tuanzis_server_mod-1.0.6.jar",
+      "version": "1.0.6"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072\",\"fabric.mod.json\",\"player_animation_library\",\"depends\",\"fabric-command-api-v2\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072\",\"fabric.mod.json\",\"player_animation_library\",\"depends\",\"fabric-resource-loader-v1\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072\",\"fabric.mod.json\",\"player_animation_library\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072\",\"fabric.mod.json\",\"player_animation_library\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 25,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "player_animation_library",
+      "normalizedOutputSha256": "b04559708e191e8a78ce7bab332ce52b36242d819b694f0f69d2e25694e557cb",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "b18686de1c009c7b7ffdc6b1f60523a59cb64bfe96e9bb1e8beae6a436696aeb",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "PlayerAnimationLibMerged-1.2.4+mc.26.2.jar",
+      "version": "1.2.4+mc.26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378\",\"fabric.mod.json\",\"balm\",\"depends\",\"fabric-api\",\">=0.152.1+26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378\",\"fabric.mod.json\",\"balm\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378\",\"fabric.mod.json\",\"balm\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378\",\"fabric.mod.json\",\"balm\",\"depends\",\"minecraft\",\"~26.2-\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 26,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "balm",
+      "normalizedOutputSha256": "617f9338d191f08eb91530ad8083221c8fe266328e0edf6290e5ab08e290afac",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "bd25a28121cfa7efa6689f0d9b1a7f5b984a27340786d223d7a92e46796a89f6",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "balm-fabric-26.2-26.2.0.1.jar",
+      "version": "26.2.0.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"54c5fab1aacac365f94ec8c3a2f98e4c59c821fd7413990f759396b5b4295042\",\"META-INF/neoforge.mods.toml\",\"creativecore\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"54c5fab1aacac365f94ec8c3a2f98e4c59c821fd7413990f759396b5b4295042\",\"META-INF/neoforge.mods.toml\",\"creativecore\",\"depends\",\"neoforge\",\"[26.2.0.6-beta,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "54c5fab1aacac365f94ec8c3a2f98e4c59c821fd7413990f759396b5b4295042",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 27,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "creativecore",
+      "normalizedOutputSha256": "afb55ef152e1ead15789c4be68fbe92b64029a68664ec7691c29be0701cf4f19",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "9af390c414eb7f2381bf0e0e661b3f972d7010e767f30bbd26c3b4eada1bc65c",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "CreativeCore_NEOFORGE_v2.14.16_mc26.2.jar",
+      "version": "2.14.16"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"558c1739ae6e0f7d8783adfea0ace7bfb8f7f38addb0cde5017745ed5afdd001\",\"META-INF/neoforge.mods.toml\",\"controlling\",\"depends\",\"minecraft\",\"[26.2]\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"558c1739ae6e0f7d8783adfea0ace7bfb8f7f38addb0cde5017745ed5afdd001\",\"META-INF/neoforge.mods.toml\",\"controlling\",\"depends\",\"neoforge\",\"[26.2.0.1-beta,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"558c1739ae6e0f7d8783adfea0ace7bfb8f7f38addb0cde5017745ed5afdd001\",\"META-INF/neoforge.mods.toml\",\"controlling\",\"depends\",\"searchables\",\"[1.0.1,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "558c1739ae6e0f7d8783adfea0ace7bfb8f7f38addb0cde5017745ed5afdd001",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 28,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "controlling",
+      "normalizedOutputSha256": "65b194b371b242b26a6056e466a22b1227626d84eb66b07dcb820f6c31884109",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "b829b993639b37170e6e7d0b2b34feb0c87f785283deac7afbc8ad1d81efb917",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "Controlling-neoforge-26.2-26.2.1.jar",
+      "version": "26.2.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"58ea2b92e36ef2edfa4581fe38d66ae21faf2b4855c1dca3a791ef3bfcb495bd\",\"META-INF/neoforge.mods.toml\",\"animated_loading_overlay\",\"depends\",\"minecraft\",\"[26.2, 26.3)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"58ea2b92e36ef2edfa4581fe38d66ae21faf2b4855c1dca3a791ef3bfcb495bd\",\"META-INF/neoforge.mods.toml\",\"animated_loading_overlay\",\"depends\",\"neoforge\",\"[26.2.0.8-beta,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "58ea2b92e36ef2edfa4581fe38d66ae21faf2b4855c1dca3a791ef3bfcb495bd",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 29,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "animated_loading_overlay",
+      "normalizedOutputSha256": "a780f93911849d962747821967aa48331d750ca068974c6fc7fd01782388f8f7",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "9c2bb45049db34a5bfac3cc6c656a77a2685cf1c23864f95ef743aa0196256af",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "animated-loading-overlay-1.0.0+26.2-neoforge.jar",
+      "version": "1.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"5bf67e77bd7a2bc0b0864d50e95320b834699e217f19aa2da411e4feeca14f9c\",\"META-INF/neoforge.mods.toml\",\"fzzy_config\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"5bf67e77bd7a2bc0b0864d50e95320b834699e217f19aa2da411e4feeca14f9c\",\"META-INF/neoforge.mods.toml\",\"fzzy_config\",\"depends\",\"neoforge\",\"[26.2.0.1-beta,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"5bf67e77bd7a2bc0b0864d50e95320b834699e217f19aa2da411e4feeca14f9c\",\"META-INF/neoforge.mods.toml\",\"fzzy_config\",\"recommends\",\"klf\",\"[2.12.1,)\",false,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "5bf67e77bd7a2bc0b0864d50e95320b834699e217f19aa2da411e4feeca14f9c",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 30,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fzzy_config",
+      "normalizedOutputSha256": "a6d57a2ee50895ceff0b367912b729ff6c367781ec14cbe98e2a0f6366000fee",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "a97e9181b145a9da29639e0de01757e6caac00f29fb7936660b5e6c5e3375ad2",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fzzy_config-0.7.6+26.2+neoforge.jar",
+      "version": "0.7.6+26.2+neoforge"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"5cb4a8b45301c5c32279ad80c24d4da8ebcd9879b140ffdb3057fc7c331b8500\",\"META-INF/neoforge.mods.toml\",\"curios\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"5cb4a8b45301c5c32279ad80c24d4da8ebcd9879b140ffdb3057fc7c331b8500\",\"META-INF/neoforge.mods.toml\",\"curios\",\"depends\",\"neoforge\",\"[26.2,27)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "5cb4a8b45301c5c32279ad80c24d4da8ebcd9879b140ffdb3057fc7c331b8500",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 31,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "curios",
+      "normalizedOutputSha256": "535e7d807ced4e293dda31307474535f034596c89c951268a0056c9209e29d00",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "56a490c0e9c5a0fb32b9fc9011919522b35e45fc0b3f20f0c020a85205af7a7b",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "curios-neoforge-16.0.0+26.2.jar",
+      "version": "16.0.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b\",\"fabric.mod.json\",\"cherishedworlds\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b\",\"fabric.mod.json\",\"cherishedworlds\",\"depends\",\"fabricloader\",\">=0.15\",true,\"NONE\",\"BOTH\",1]",
+        "[\"645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b\",\"fabric.mod.json\",\"cherishedworlds\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b\",\"fabric.mod.json\",\"cherishedworlds\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 32,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "cherishedworlds",
+      "normalizedOutputSha256": "7bf550fe718006c2ebde2b468ed58210e0730b02562cd9a2710be2d0aad703ce",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "6ea63fb0abd650f10db9f7fff83de2ef36c4282e6c33371a403eabaa04c51c9c",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "cherishedworlds-fabric-17.0.0+26.2.jar",
+      "version": "17.0.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98\",\"META-INF/neoforge.mods.toml\",\"bclib\",\"depends\",\"minecraft\",\"[26.2,26.3)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98\",\"META-INF/neoforge.mods.toml\",\"bclib\",\"depends\",\"neoforge\",\"[26.2,26.3)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98\",\"META-INF/neoforge.mods.toml\",\"bclib\",\"depends\",\"wover\",\"[26.2.0,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98\",\"META-INF/neoforge.mods.toml\",\"bclib\",\"depends\",\"wunderlib\",\"[26.2.0,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 33,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "bclib",
+      "normalizedOutputSha256": "5e01c178a107cf8df2fc5e35fd2e8df5e64d6baf561469f6d16568f0dd9d1d87",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "b0fa3e5f0d35d64e5da1b39b3fc6ccbde9c5ff9dbaf1942dbfeb2b01cdaec0fa",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "bclib-26.2.1.jar",
+      "version": "26.2.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885\",\"fabric.mod.json\",\"pigeonchat\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885\",\"fabric.mod.json\",\"pigeonchat\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885\",\"fabric.mod.json\",\"pigeonchat\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885\",\"fabric.mod.json\",\"pigeonchat\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 34,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "pigeonchat",
+      "normalizedOutputSha256": "7a50e47b32270efd57511f4685c46ec824de86e27acf83a72698ca3250a9d8f1",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "fcab701923b87e0ca7c19781f509292540f196556ff70149fa649e0e28711dad",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "pigeonchat-fabric-26.2-0.1.0.jar",
+      "version": "0.1.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"734a0b78474cf0f772999ed27a17ae3eb3d08dc040b16caec9ad0f6478c6f025\",\"META-INF/neoforge.mods.toml\",\"particledrawing\",\"depends\",\"minecraft\",\"[26.2]\",true,\"NONE\",\"BOTH\",1]",
+        "[\"734a0b78474cf0f772999ed27a17ae3eb3d08dc040b16caec9ad0f6478c6f025\",\"META-INF/neoforge.mods.toml\",\"particledrawing\",\"depends\",\"neoforge\",\"[26.2.0.59,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "734a0b78474cf0f772999ed27a17ae3eb3d08dc040b16caec9ad0f6478c6f025",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 35,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "particledrawing",
+      "normalizedOutputSha256": "299d57f1cd4bfe0add1fbf9dd695156d0a9d1f624ce2c89699e66528ffadff94",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e46e48e2363155f19a2c39d765bc3d5c81f75c3085f97fb5d145aa132e420def",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "particledrawing-1.0.22-ALPHA.jar",
+      "version": "1.0.22-ALPHA"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"7662d9631ffe8cac23880e40694edeabd5dc3bbca634c2cedfb14f893b1963d6\",\"META-INF/neoforge.mods.toml\",\"sodium_extra\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"7662d9631ffe8cac23880e40694edeabd5dc3bbca634c2cedfb14f893b1963d6\",\"META-INF/neoforge.mods.toml\",\"sodium_extra\",\"depends\",\"sodium\",\"[0.9.0,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "7662d9631ffe8cac23880e40694edeabd5dc3bbca634c2cedfb14f893b1963d6",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 36,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "sodium_extra",
+      "normalizedOutputSha256": "f1f092f25a6afdcdfccee28bbcd238e11803e4919e8d712be644bae191b9d5b8",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "6b386e0d71a0ac7a5374a2a38684ebbd9714a65021be4b660f704cfb2a7b3b38",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "sodium-extra-neoforge-0.8.8+mc26.2.jar",
+      "version": "0.8.8+mc26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"fabric-api\",\">=0.155.2+26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"fabric-language-kotlin\",\">=1.13.13+kotlin.2.4.10\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd\",\"fabric.mod.json\",\"entitycrosshair\",\"depends\",\"oneconfig\",\">=1.0.3\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 37,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "entitycrosshair",
+      "normalizedOutputSha256": "98fb73eaa84c7b2f4672b5c5dc1b018f20d1792132896da0c6cdcd6026301825",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "a894aac27a9e15c820c1016de9d2d8e205a0779e800be87820b10bc08011daee",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "EntityCrosshair-2.0.0-26.2+_fabric.jar",
+      "version": "2.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"fabricloader\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"glitchcore\",\">=26.2.0.0.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"java\",\">=17\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e\",\"fabric.mod.json\",\"biomesoplenty\",\"depends\",\"terrablender\",\">=26.2.0.0.1\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 38,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "biomesoplenty",
+      "normalizedOutputSha256": "489f0e7eeeac7a169dfe5b4d2a95e5b2703f14d67ed6c46a9163055de1d26d4a",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "b08bebc52b45975c983ae1677bb75298b634474fbd1a25dd069576bbb4dc966b",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "BiomesOPlenty-fabric-26.2-26.1.2.0.40.jar",
+      "version": "26.1.2.0.40"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"breaks\",\"iris\",\"<1.11.2\",false,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"breaks\",\"vertigo\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"fabric-api-base\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"fabric-lifecycle-events-v1\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"fabric-resource-loader-v0\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"fabricloader\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d\",\"fabric.mod.json\",\"distanthorizons\",\"depends\",\"minecraft\",[\"26.2.0\"],true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 39,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "distanthorizons",
+      "normalizedOutputSha256": "4ef6c00bd2ec1c9b8c000df3dbf91c12a04111c099944c2ce81d5d860d2f67e7",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "93a4aae47819199daefeda980ab4b64be1f93ebf5eebab9f7b8570eb24e84d6a",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "DistantHorizons-3.3.0-26.2-fabric-neoforge.jar",
+      "version": "3.3.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5\",\"fabric.mod.json\",\"lplm\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5\",\"fabric.mod.json\",\"lplm\",\"depends\",\"fabricloader\",\">=0.19.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5\",\"fabric.mod.json\",\"lplm\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5\",\"fabric.mod.json\",\"lplm\",\"depends\",\"minecraft\",\">=26.1\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 40,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "lplm",
+      "normalizedOutputSha256": "f6129db378a47eb53daa99152a1e434661393741ba8afff435140fac483298d9",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "82d36abcffdbbc2e8f7c166bf98185829941231b09b3e49fbc2158cb37ff0076",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "lplm-1.0.1+mc26.1.x.jar",
+      "version": "1.0.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"91933d3f94566a61cf056d917212689864fd120ff1d38f7964bb2aaffa7ab7a1\",\"META-INF/neoforge.mods.toml\",\"entity_texture_features\",\"depends\",\"minecraft\",\"[1,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "91933d3f94566a61cf056d917212689864fd120ff1d38f7964bb2aaffa7ab7a1",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 41,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "entity_texture_features",
+      "normalizedOutputSha256": "728f52d36df5a0f9a5602ba986b460d52b24032e31a37323bd2a6c9651f684c3",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "953b52221d25caf6aa04ea1852b6c47fbf261b5b8b1f063a74591bb45c27436f",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "entity_texture_features-7.1.1-26.2-neoforge.jar",
+      "version": "7.1.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"drippyloadingscreen\",\"<3.0.0\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"fmextension_audio\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"fmextension_video\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"rrls\",\"<4.0.1\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"watermedia\",\"<3.0.0.19\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"breaks\",\"wm_binaries\",\"<3.0.0-rc.1\",false,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"fabric-api\",\">=0.153.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"konkrete\",\">=1.10.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"melody\",\">=1.0.16\",true,\"NONE\",\"BOTH\",1]",
+        "[\"952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe\",\"fabric.mod.json\",\"fancymenu\",\"depends\",\"minecraft\",\">=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 42,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fancymenu",
+      "normalizedOutputSha256": "d948ae3f6833e6531666f4ddfe1e1fcf4ed9d7603b71676527c28060db66dd13",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "e880ba83cd2f2d27a6eb23f12bffce839246b19101e592686c939b49829da1f9",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fancymenu_fabric_3.9.4_MC_26.2.jar",
+      "version": "3.9.4"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd\",\"fabric.mod.json\",\"oneconfigbootstrap\",\"depends\",\"compose-multiplatform\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd\",\"fabric.mod.json\",\"oneconfigbootstrap\",\"depends\",\"fabric-language-kotlin\",\">=1.13.8+kotlin.2.3.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd\",\"fabric.mod.json\",\"oneconfigbootstrap\",\"depends\",\"fabricloader\",\">=0.12.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd\",\"fabric.mod.json\",\"oneconfigbootstrap\",\"depends\",\"minecraft\",\"26.2.x\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 43,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "oneconfigbootstrap",
+      "normalizedOutputSha256": "76115e0c8d26ad52e6f95550358661cb623a6813dbe59b004ccfeb7afcc2f74f",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "5d6b7deadaba2f319a91e1bc361051cf132cdffd167593b586a00c49b3348e27",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "OneConfig-26.2-fabric-1.0.0.jar",
+      "version": "1.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"breaks\",\"iris\",\"<1.7.0\",false,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"breaks\",\"reeses-sodium-options\",\"<1.4.2\",false,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"depends\",\"anvianslib\",\">=1.4\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"depends\",\"fabricloader\",\">=0.18.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"depends\",\"minecraft\",\">=1.21.11\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"depends\",\"sodium\",\">=0.8.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"depends\",\"sodium-extra\",\">=0.8.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412\",\"fabric.mod.json\",\"sodiumextrainformation\",\"recommends\",\"reeses-sodium-options\",\">=1.4.2\",false,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 44,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "sodiumextrainformation",
+      "normalizedOutputSha256": "d632baec5c636dbe2679c7a8bec927961efa29ad659f98770b7face793c79d20",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "cdcac6befefe8a409a5db931111c93a3cae5e280342405769c23af281b4a1de8",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "SodiumExtraInformation-fabric-2.9.0.jar",
+      "version": "2.9.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"breaks\",\"optifabric\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"breaks\",\"ryoamiclights\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"breaks\",\"sodiumdynamiclights\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"fabric-lifecycle-events-v1\",\">=4.1.3+4575b05f9c\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"fabric-resource-conditions-api-v1\",\">=6.1.0+10e9a28b9c\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"fabric-resource-loader-v1\",\">=2.0.13+9edec1269c\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"lambdynlights_api\",\">=4.12.0+26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"minecraft\",\"~26.2-\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"spruceui\",\">=11.0.0+26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"depends\",\"yumi_mc_core\",\">=1.1.1+26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f\",\"fabric.mod.json\",\"lambdynlights\",\"recommends\",\"modmenu\",\">=18.0.0-beta.1\",false,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 45,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "lambdynlights",
+      "normalizedOutputSha256": "33e09dadebf2cafc36a460f900cd07ca6e868c7c48d55c4b84d0cba34c2a22eb",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "67f25e24612a2e27f8463f9de91e5a22f3729e4df3a5468ef1010e3b8b68733d",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "lambdynamiclights-4.12.0+26.2.jar",
+      "version": "4.12.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"9dc40fe94d918b5ef353ea87a030b0859f251e029eb2a33d42d15d788c79cc31\",\"META-INF/neoforge.mods.toml\",\"badoptimizations\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "9dc40fe94d918b5ef353ea87a030b0859f251e029eb2a33d42d15d788c79cc31",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 46,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "badoptimizations",
+      "normalizedOutputSha256": "5c1bfe4a6a9ea5efa6728286842263af8cc4662a7420ca235204bb851bfa6b12",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "eff71a54023b800f844e0a63770f2cba2a0c7b8a0271c8aa1e9eee9a5a9cdb2d",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "BadOptimizations-2.4.1-26.2-forge.jar",
+      "version": "2.4.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d\",\"META-INF/neoforge.mods.toml\",\"bettercombat\",\"depends\",\"cloth_config\",\"[26.2.0,)\",true,\"AFTER\",\"BOTH\",1]",
+        "[\"a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d\",\"META-INF/neoforge.mods.toml\",\"bettercombat\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d\",\"META-INF/neoforge.mods.toml\",\"bettercombat\",\"depends\",\"neoforge\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d\",\"META-INF/neoforge.mods.toml\",\"bettercombat\",\"depends\",\"player_animation_library\",\"[1.2.5,)\",true,\"AFTER\",\"BOTH\",1]"
+      ],
+      "artifactKey": "a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 47,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "bettercombat",
+      "normalizedOutputSha256": "3bb8191cbf079b536ee606b85927c91779cf2542d4060e81d3c572e04faa1f9d",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "363f70e5b9df586717258c1b97c624c64e12111c1b21778f411945ea75af0d0d",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "bettercombat-neoforge-3.2.1+26.2.jar",
+      "version": "3.2.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"breaks\",\"optifabric\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"breaks\",\"tic_tacs\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"depends\",\"c2me-base\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"depends\",\"fabricloader\",\">=0.18.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0\",\"fabric.mod.json\",\"c2me\",\"depends\",\"minecraft\",\">1.21.11\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 48,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "c2me",
+      "normalizedOutputSha256": "bc1f6107eb2d1f3a6e21e802b838ead3c2085d0ed9b03bdafc481bd6a1007812",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "2173868819a739bce19ecff52c078bf0378f1985d03e16332c8e549061e47392",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "c2me-fabric-mc26.2-0.4.1-beta.1.0.jar",
+      "version": "0.4.1-beta.1.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e\",\"fabric.mod.json\",\"extended-drawers-polymer-patch\",\"depends\",\"extended_drawers\",\">=5.1.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e\",\"fabric.mod.json\",\"extended-drawers-polymer-patch\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e\",\"fabric.mod.json\",\"extended-drawers-polymer-patch\",\"depends\",\"fabricloader\",\">=0.15.10\",true,\"NONE\",\"BOTH\",1]",
+        "[\"abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e\",\"fabric.mod.json\",\"extended-drawers-polymer-patch\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e\",\"fabric.mod.json\",\"extended-drawers-polymer-patch\",\"depends\",\"minecraft\",\">=26.2-\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 49,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "extended-drawers-polymer-patch",
+      "normalizedOutputSha256": "7c3d822a2a54b320d6961541a29869e9000653d9b01eb865b1398bbc08074950",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "66ba17407f5034a37c901cdad94660ed69857c21c9da23706f6ae69265883d17",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "extended-drawers-polymer-patch-5.1.0.0+26.2.jar",
+      "version": "5.1.0.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"b2249509bb1ce8c0d242930ad2e259ee0465c7077371da98bd28cc69b27972e4\",\"META-INF/neoforge.mods.toml\",\"betterf3\",\"depends\",\"cloth_config\",\"[26.2.0,)\",true,null,null,1]",
+        "[\"b2249509bb1ce8c0d242930ad2e259ee0465c7077371da98bd28cc69b27972e4\",\"META-INF/neoforge.mods.toml\",\"betterf3\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "b2249509bb1ce8c0d242930ad2e259ee0465c7077371da98bd28cc69b27972e4",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 50,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "betterf3",
+      "normalizedOutputSha256": "a6f4d0445e7f327a366a7f40abbbc582e48101ec047af7b1944f622a8cf505ef",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "40ddc6d6e516007ebc86c65a7f4543a9c90cb870ae2aec374d41730e1aae3d23",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "BetterF3-19.0.0-NeoForge-26.2.jar",
+      "version": "19.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"b67b512c57184ae21c9f485d4ec3544b3c92f31e3e55d4f5877af5a5d20e4049\",\"META-INF/neoforge.mods.toml\",\"chat_heads\",\"depends\",\"minecraft\",\"[26.1,)\",true,\"NONE\",\"CLIENT\",1]",
+        "[\"b67b512c57184ae21c9f485d4ec3544b3c92f31e3e55d4f5877af5a5d20e4049\",\"META-INF/neoforge.mods.toml\",\"chat_heads\",\"depends\",\"neoforge\",\"[21.0.110-beta,)\",true,\"NONE\",\"CLIENT\",1]"
+      ],
+      "artifactKey": "b67b512c57184ae21c9f485d4ec3544b3c92f31e3e55d4f5877af5a5d20e4049",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 51,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "chat_heads",
+      "normalizedOutputSha256": "aad9ce6216aadf618528a9e11a208d3ac362ca4ee5935eb2966447ebbc8f247b",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "9502746d27621cc99d8f79696c47f92815e0a9bb2aa6d90b70f7fe38d75b08dc",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "chat_heads-1.2.4-neoforge-26.1.jar",
+      "version": "1.2.4"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"bb5c88bf50d583b8457c06b1cc3b1931932482d0df812420f042088dec0052b0\",\"fabric.mod.json\",\"e4mc\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"bb5c88bf50d583b8457c06b1cc3b1931932482d0df812420f042088dec0052b0\",\"fabric.mod.json\",\"e4mc\",\"depends\",\"minecraft\",\">=26.1-\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "bb5c88bf50d583b8457c06b1cc3b1931932482d0df812420f042088dec0052b0",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 52,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "e4mc",
+      "normalizedOutputSha256": "8a81f864f29e154d699cd8c5dcd3e3057f0cac007b9519aeb6711f9c161c16eb",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "6267bbff3be9222f98ebcb8ff57bd05eb14049dd984e5c22f5ac0076191583fd",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "e4mc-fabric-6.2.0-modern.jar",
+      "version": "6.2.0+modern"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"cb466993a7e246a3e2a22ec0c22035efeac0fba312bb1e5efbedd78bec77bc90\",\"fabric.mod.json\",\"entityculling\",\"breaks\",\"tlskincape\",\"*\",false,\"NONE\",\"BOTH\",1]",
+        "[\"cb466993a7e246a3e2a22ec0c22035efeac0fba312bb1e5efbedd78bec77bc90\",\"fabric.mod.json\",\"entityculling\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cb466993a7e246a3e2a22ec0c22035efeac0fba312bb1e5efbedd78bec77bc90\",\"fabric.mod.json\",\"entityculling\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "cb466993a7e246a3e2a22ec0c22035efeac0fba312bb1e5efbedd78bec77bc90",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 53,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "entityculling",
+      "normalizedOutputSha256": "0d2ef6474f9c5ce97224e9d9b026b5a5f7525ad482f98e85cb806f598fcf5955",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "9dfcbc149b36e57d28605c14a0bb0efc626ad48e6d93a3ffae4ef10462759afb",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "entityculling-fabric-1.10.3-mc26.2.jar",
+      "version": "1.10.3"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3\",\"fabric.mod.json\",\"amup\",\"depends\",\"codxlib\",\">=1.3.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3\",\"fabric.mod.json\",\"amup\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3\",\"fabric.mod.json\",\"amup\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3\",\"fabric.mod.json\",\"amup\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3\",\"fabric.mod.json\",\"amup\",\"depends\",\"minecraft\",\">=26.2 <=26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 54,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "amup",
+      "normalizedOutputSha256": "ffb978b668cb93ce62e339f39df3566a383cb305e8b5c4ab7ef44fec13aa218e",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "dbc1556ada767bcd40c45b57c87cbc94c0abf2bf505fc700c168494fa9385daa",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "amup-fabric-26.2-1.0.0.jar",
+      "version": "1.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"cf80cc11c57518c8ebf7a245dfd8e7b87caf149f486f94093a69656bfaffbe5e\",\"META-INF/mods.toml\",\"carryon\",\"depends\",\"forge\",\"[65,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"cf80cc11c57518c8ebf7a245dfd8e7b87caf149f486f94093a69656bfaffbe5e\",\"META-INF/mods.toml\",\"carryon\",\"depends\",\"minecraft\",\"[26.2, 27)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "cf80cc11c57518c8ebf7a245dfd8e7b87caf149f486f94093a69656bfaffbe5e",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FORGE",
+      "manifestOrder": 55,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "carryon",
+      "normalizedOutputSha256": "9024980f9068dfea013fe8f2baece0b9d9b253bb25183d7430803880a4e1483a",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "0eaf31132e2d3a336f5a9b15de400c324b9c04ed99f3b7e8e27e9aaba61e9024",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "carryon-forge-26.2-2.11.0.jar",
+      "version": "2.11.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0\",\"fabric.mod.json\",\"ambientsounds\",\"depends\",\"creativecore\",\">=2.14.14\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0\",\"fabric.mod.json\",\"ambientsounds\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0\",\"fabric.mod.json\",\"ambientsounds\",\"depends\",\"fabricloader\",\">=0.19.1\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0\",\"fabric.mod.json\",\"ambientsounds\",\"depends\",\"minecraft\",\">=26.1.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 56,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "ambientsounds",
+      "normalizedOutputSha256": "2487ee5652824c2e239cb43dc6157b9c40c5cffae65aade734363c3148960c0f",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "00c2d24060187f78d9bc0af24e85f2f8bc34d568e88598f8cb482b3483467a90",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "AmbientSounds_NEOFORGE_v6.3.6_mc26.2.jar",
+      "version": "6.3.6"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2\",\"fabric.mod.json\",\"clientcarts\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2\",\"fabric.mod.json\",\"clientcarts\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2\",\"fabric.mod.json\",\"clientcarts\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2\",\"fabric.mod.json\",\"clientcarts\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]",
+        "[\"d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2\",\"fabric.mod.json\",\"clientcarts\",\"depends\",\"yet_another_config_lib_v3\",\">=3.8.1\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 57,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "clientcarts",
+      "normalizedOutputSha256": "03d4e87867da597017d93239d9507d0bba31d6a55e28aeb2dbf4e7e879fc91c0",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "c1cd7ca0bd20b394d5677eb9447ac5058c9290c71235a2b37860a9f0bfa50821",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "ClientCarts-1.1+26.2.jar",
+      "version": "1.1+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177\",\"fabric.mod.json\",\"fallingleaves\",\"depends\",\"cloth-config\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177\",\"fabric.mod.json\",\"fallingleaves\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177\",\"fabric.mod.json\",\"fallingleaves\",\"depends\",\"fabricloader\",\">=0.18.5\",true,\"NONE\",\"BOTH\",1]",
+        "[\"db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177\",\"fabric.mod.json\",\"fallingleaves\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177\",\"fabric.mod.json\",\"fallingleaves\",\"depends\",\"minecraft\",\">=26.1\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 58,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "fallingleaves",
+      "normalizedOutputSha256": "40db57611955ad921f9084e524281103b05a306457790b7a7f5ab457a0daa40f",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "cf9f36dd8f03d5b6f5d7711c8863bdb28bdeb0bd23fac5b73b5a0a6d966dd8c0",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "fallingleaves-2.0.7+26.1.jar",
+      "version": "2.0.7"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"dc9544190abfb65a3c9ddc5dad1523c9dfc5a732344f528d908b950894398e8c\",\"fabric.mod.json\",\"clumps\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"dc9544190abfb65a3c9ddc5dad1523c9dfc5a732344f528d908b950894398e8c\",\"fabric.mod.json\",\"clumps\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"dc9544190abfb65a3c9ddc5dad1523c9dfc5a732344f528d908b950894398e8c\",\"fabric.mod.json\",\"clumps\",\"depends\",\"minecraft\",\"26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "dc9544190abfb65a3c9ddc5dad1523c9dfc5a732344f528d908b950894398e8c",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 59,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "clumps",
+      "normalizedOutputSha256": "635a20dba17f99586cc07d16719754937ac5f9270c7d99909fb3441603f6192e",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "976876c40f6da8d2effe13cd90ea34db0f86a9e7531e51eb994a90f28de0e256",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "Clumps-fabric-26.2-26.2.1.jar",
+      "version": "26.2.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6\",\"fabric.mod.json\",\"emotesounds\",\"depends\",\"fabric-api\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6\",\"fabric.mod.json\",\"emotesounds\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6\",\"fabric.mod.json\",\"emotesounds\",\"depends\",\"java\",\">=25\",true,\"NONE\",\"BOTH\",1]",
+        "[\"de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6\",\"fabric.mod.json\",\"emotesounds\",\"depends\",\"melody\",\"1.0.17\",true,\"NONE\",\"BOTH\",1]",
+        "[\"de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6\",\"fabric.mod.json\",\"emotesounds\",\"depends\",\"minecraft\",\"~26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 60,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "emotesounds",
+      "normalizedOutputSha256": "56299905f93f31528e32d358e455f42063f88844c2703402f34a927b53d06f45",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "1ad04732744775a24a73057fd59b07a7f7ea00aa39e6263e037cf9c464cc4fdf",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "emotesounds-1.0.0.jar",
+      "version": "1.0.0"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349\",\"fabric.mod.json\",\"cloth-config\",\"depends\",\"fabricloader\",\">=0.14.0\",true,\"NONE\",\"BOTH\",1]",
+        "[\"def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349\",\"fabric.mod.json\",\"cloth-config\",\"depends\",\"minecraft\",\">=26.2-\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 61,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "cloth-config",
+      "normalizedOutputSha256": "f855dd345f88286ec1905c8a4fa45c86d61f22e32e21e7d6fb41634a49b2de8c",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "40c7f242adeda9eb96a271bdcfee59a750e83e728a3e80de74c547b1de66f78c",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "cloth-config-26.2.155.jar",
+      "version": "26.2.155"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c\",\"fabric.mod.json\",\"ukulib\",\"depends\",\"fabric-command-api-v2\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c\",\"fabric.mod.json\",\"ukulib\",\"depends\",\"fabric-key-mapping-api-v1\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c\",\"fabric.mod.json\",\"ukulib\",\"depends\",\"fabric-resource-loader-v1\",\"*\",true,\"NONE\",\"BOTH\",1]",
+        "[\"e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c\",\"fabric.mod.json\",\"ukulib\",\"depends\",\"fabricloader\",\">=0.19\",true,\"NONE\",\"BOTH\",1]",
+        "[\"e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c\",\"fabric.mod.json\",\"ukulib\",\"depends\",\"minecraft\",\"^26.2\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 62,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "ukulib",
+      "normalizedOutputSha256": "7359cb05966897d1bbfc0eb7536f2960781b93603cf2326fcac8f45f8ee1f73c",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "63a05e9b9d67d5d8826490485e1b91c75e9211931eb6313e0cfbebbc3037860a",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "ukulib-fabric-2.1.0+26.2.jar",
+      "version": "2.1.0+26.2"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4\",\"fabric.mod.json\",\"autoeat\",\"depends\",\"fabricloader\",\">=0.19.3\",true,\"NONE\",\"BOTH\",1]",
+        "[\"ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4\",\"fabric.mod.json\",\"autoeat\",\"depends\",\"java\",\">=21\",true,\"NONE\",\"BOTH\",1]",
+        "[\"ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4\",\"fabric.mod.json\",\"autoeat\",\"depends\",\"minecraft\",[\"1.21.x\",\"26.1.x\",\"26.2.x\"],true,\"NONE\",\"BOTH\",1]",
+        "[\"ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4\",\"fabric.mod.json\",\"autoeat\",\"depends\",\"simpleguiapi\",\"*\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:fabric.mod.json"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "FABRIC",
+      "manifestOrder": 63,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "autoeat",
+      "normalizedOutputSha256": "6db3477d869963c8ebf51e8121f00eec342859e0c1b836df610f78e885e23990",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "314b0032079c114465470aa859633885a332deb97558f497a97dad8903bf4a45",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "AutoEat-Fabric-1.6.1+1.21.x+26.1.x+26.2.x.jar",
+      "version": "1.6.1"
+    },
+    {
+      "actualDependencyKeys": [
+        "[\"f94c23599aa80993c4a550d9c2ed8608c7b9a40c998de1a7a8bbefc3697a52e1\",\"META-INF/neoforge.mods.toml\",\"crash_assistant\",\"depends\",\"minecraft\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]",
+        "[\"f94c23599aa80993c4a550d9c2ed8608c7b9a40c998de1a7a8bbefc3697a52e1\",\"META-INF/neoforge.mods.toml\",\"crash_assistant\",\"depends\",\"neoforge\",\"[26.2,)\",true,\"NONE\",\"BOTH\",1]"
+      ],
+      "artifactKey": "f94c23599aa80993c4a550d9c2ed8608c7b9a40c998de1a7a8bbefc3697a52e1",
+      "capabilityState": "SUPPORTED",
+      "dependencies": [],
+      "discoveryAnswer": "FOUND",
+      "evidenceRefs": [
+        "zip:META-INF/neoforge.mods.toml"
+      ],
+      "executionOutcome": "COMPLETED",
+      "expectedDependencyKeys": [],
+      "loaderFamily": "NEOFORGE",
+      "manifestOrder": 64,
+      "measurementState": "ORACLE_MISSING",
+      "modId": "crash_assistant",
+      "normalizedOutputSha256": "205e616d403ca3ec58fa75416013836ee0a92776c8b9569b39c5825d659e2132",
+      "oracleItemId": null,
+      "outputState": "PARSEABLE",
+      "rawOutputSha256": "d49b3a6d2e2d9674bb203788a5e50136385716e57bd7251fa9bd632dbd16cca5",
+      "reasonCode": "METADATA_PARSED",
+      "semanticResult": "UNASSESSED",
+      "sourceFileName": "CrashAssistant-neoforge-26.2-1.11.10.jar",
+      "version": "1.11.10"
+    }
+  ],
+  "operatingMode": "STATIC_ANALYSIS",
+  "run": {
+    "cohortId": "a6ee5d7b1ab073ddb5ad90a749a3fac6e41dca5c2ad6a8383f7c0882d4212b22",
+    "commandSha256": "7b905e72239be82d1762823bae7771f13cbc80f80d74e47662d5ac3c10d7db4a",
+    "endedAt": "2026-11-13T14:49:56.510749+00:00",
+    "environmentDigest": "02f8d84558a1bcd040211c8c4deeb6ee1e72a19c5a08a92afe1ed8a9a1f06a3a",
+    "implementation": {
+      "adapterId": "oracle/post_slice.py@1",
+      "buildSha256": null,
+      "implementationId": "REPLACEMENT_POST",
+      "normalizerId": "oracle/schema.py@1",
+      "runnerId": "oracle.post_slice.v1",
+      "sourceRevision": "c0ba3a83e0c3eb042e7e6d067ed9b48582ad878577438304a9b93238ad1969d7"
+    },
+    "normalizedOutputSha256": null,
+    "processExitCode": null,
+    "rawOutputSha256": null,
+    "runId": "replacement-post-7b905e72239be82d",
+    "runOutcome": "COMPLETED",
+    "startedAt": "2026-11-13T14:49:56.395965+00:00",
+    "stderrSha256": null,
+    "stdoutSha256": null
+  },
+  "schemaRevision": 1
+}

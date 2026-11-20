@@ -18,7 +18,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge" alt="license"/></a>
   <a href="https://openjdk.org/"><img src="https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/></a>
   <a href="https://gradle.org/"><img src="https://img.shields.io/badge/build-gradle-orange?style=for-the-badge&logo=gradle&logoColor=white" alt="build"/></a>
-  <a href="./SPEC.zh-CN.md"><img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20%2F%20M1%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 / M1 completed"/></a>
+  <img src="https://img.shields.io/badge/status-M0%20%2F%20M0.5%20%2F%20M1%20completed-brightgreen?style=for-the-badge" alt="M0 / M0.5 / M1 completed"/>
   <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft-1.21.1-52a447?style=for-the-badge" alt="Minecraft"/></a>
 </p>
 
@@ -64,7 +64,7 @@ Minecraft Java 版有两大互不兼容的模组生态：**Fabric** 与 **NeoFor
 `modgraph` 的目标是把双方**元数据层**统一到一套模型里，然后在这套模型之上做依赖求解与冲突仲裁——
 让"这个模组组合能不能一起装、为什么不能"这个问题，第一次有一个**确定、可复现、可验证**的答案。
 
-统一模型的核心类型是 `ModCandidate`（见 [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) §1）。
+统一模型的核心类型是 `ModCandidate`（见 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §1）。
 它把 Fabric 与 NeoForge 的元数据差异抹平成一个中立结构，同时**保留全部原始字段**，不做有损转换。
 
 在此之上，M0 额外产出一项**侵入深度评级**：在不解析字节码的前提下，依据 zip 内的描述符与元数据，识别哪些模组属于渲染管线级、字节码级或纯 API 级改造，并在启动前给出冲突风险预警。
@@ -92,7 +92,7 @@ Minecraft Java 版有两大互不兼容的模组生态：**Fabric** 与 **NeoFor
 | **Forbric** | 自研加载器，声称不是翻译层 | 启发来源，见下 |
 | **modgraph** | 统一元数据与依赖仲裁 | 元数据层统一 |
 
-`modgraph` **当前不是模组加载器**。它不启动 Minecraft，不加载类，不改写字节码。
+在 `STATIC_ANALYSIS` 模式下，`modgraph` **当前不是模组加载器**。它不启动 Minecraft，不加载类，不改写字节码。
 
 关于"是不是翻译层"这个问题，我们的立场是坦诚的：
 **统一的边界止于元数据与依赖；再往下（事件、注册表、能量/流体/物品互操作、对同一处 MC 代码的补丁冲突）本质上躲不掉桥接。**
@@ -237,7 +237,7 @@ OK 数 + FAILED 数 == 输入文件数
 
 ### 依赖可满足性判定（M0.5）
 
-M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：对每一条依赖声明只回答一个问题——**「本集合里有没有满足这条声明的模组」**——并把答案写进 `dependencies.csv`。一个 ID 只要满足以下任一条就算存在：数据集里的 `modId`、环境事实、或某个模组 `provides` 里声明的别名；别名解析到**声明它的那个模组**的版本（`SPEC.zh-CN.md` §3.5.5）。它不排序、不求解、不选版本、不下载。M0 自己的数字完全没变（M0 的三个输出文件在加上 M0.5 前后逐字节相同，`dependencies.csv` 是独立文件）。
+M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：对每一条依赖声明只回答一个问题——**「本集合里有没有满足这条声明的模组」**——并把答案写进 `dependencies.csv`。一个 ID 只要满足以下任一条就算存在：数据集里的 `modId`、环境事实、或某个模组 `provides` 里声明的别名；别名解析到**声明它的那个模组**的版本（规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5）。它不排序、不求解、不选版本、不下载。M0 自己的数字完全没变（M0 的三个输出文件在加上 M0.5 前后逐字节相同，`dependencies.csv` 是独立文件）。
 
 **环境事实。** 加载器与平台 ID 不是数据集里的模组，它们由运行环境提供，**永远不会**被判成 `MISSING_ID`。下面的值只在一处声明、启动时打印一行（就是上面第一行 INFO），因此可审计：
 
@@ -250,12 +250,12 @@ M0 只把版本区间字符串原样登记，从不求值。M0.5 对它求值：
 | `forge` | 52.0.0 |
 | `java` | 21 |
 
-`fabricloader` 与 `neoforge` 取的是**本数据集内所有依赖要求的最高下界**；`quilt_loader` 与 `forge` 当前没有任何依赖引用，声明它们只是为了不让 `SPEC.zh-CN.md` §3.5.2 里的 ID 掉进 `MISSING_ID`。
+`fabricloader` 与 `neoforge` 取的是**本数据集内所有依赖要求的最高下界**；`quilt_loader` 与 `forge` 当前没有任何依赖引用，声明它们只是为了不让 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.2 里的 ID 掉进 `MISSING_ID`。
 
-**解析优先级**（`SPEC.zh-CN.md` §3.5.5）：真实 `modId` 优先，环境事实其次，`provides` 别名只是替补。
+**解析优先级**（规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5）：真实 `modId` 优先，环境事实其次，`provides` 别名只是替补。
 **真实 `modId` 不会被别的模组把同一字符串写成别名而变成歧义。** 唯一仍算冲突的，是别名占用了环境 ID。
 
-**六种 outcome**（`SPEC.zh-CN.md` §3.5.5，每条依赖恰好一个）：
+**六种 outcome**（规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.5，每条依赖恰好一个）：
 
 | Outcome | 含义 |
 | --- | --- |
@@ -296,7 +296,7 @@ DependencyResolver   对每条版本区间按集合实际存在的模组求值�
 ReportWriter         candidates.jsonl / summary.csv / conflicts.csv / dependencies.csv / INFO 摘要
 ```
 
-统一数据契约是 `ModCandidate`，见 [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) §1。
+统一数据契约是 `ModCandidate`，见 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §1。
 
 **依赖**：Gson（JSON）、night-config（TOML）、SLF4J + Log4j2（日志）、JUnit 5 + AssertJ（测试）。
 
@@ -314,7 +314,7 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 | `MIXIN` | 运行时注入行为 |
 | `API` | 仅使用 API 契约 |
 
-扫描仅限**描述符级**：读取 zip 内文件名与元数据文本，不解析 class 内容。class 常量池级扫描属于后续阶段。
+在 `STATIC_ANALYSIS` 模式下，扫描仅限**描述符级**：读取 zip 内文件名与元数据文本，不解析 class 内容。class 常量池级扫描属于后续阶段。
 
 `RENDER` 与 `CORE` 两档、以及外挂类模组与 OptiFine，一律标记为 `EXCLUDED`，**不做任何兼容性承诺**——这是产品决策，不是技术失败：M0 只能预测声明性冲突，深度侵入模组的行为性冲突超出静态观测能力。
 
@@ -335,7 +335,7 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
 6. **不得跳过任何输入文件。**
 7. **不得提前实现 SPEC 未定义的功能，不得预留"扩展性"接口。**
 
-日志等级规范见 [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) §5。
+日志等级规范见 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §5。
 
 ---
 
@@ -373,7 +373,7 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
   只有 18 行属于这种情况，全部是 `fabric` 别名，因为 `fabric` 不是真实 `modId`，而 `fabric-api` 与
   Sinytra 的 forgified `fabric_api` 都声明了它
 - voicechat 的连字符复合版本（`1.21.1-2.6.27` 对 `[1.21-2.4.11,)`）造成 1 条假 `VERSION_MISMATCH`
-  与 1 条假 `BREAKS_VIOLATED`。这是 `SPEC.zh-CN.md` §3.5.4 字面切分规则导致的已知误报：**方向保守，只会高估冲突、
+  与 1 条假 `BREAKS_VIOLATED`。这是 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 §3.5.4 字面切分规则导致的已知误报：**方向保守，只会高估冲突、
   不会漏报真问题**，影响面是 **2/716 行**，**没有掩盖**
 
 ---
@@ -405,13 +405,13 @@ Fabric 模组期待「原版 MC + Mixin 注入」，NeoForge 模组期待「MC �
   `duplicateIds` = 4 个同宇宙重复组 / 4 对（版本相同 2 对、版本不同 2 对），只报告；四个已有产物逐字节不变
 - 元数据人工抽检：`modId` / `version` / `depends` 三项 **10/10 一致**，47 条依赖声明 0 条不一致；
   依赖人工抽检 10 条对照原始元数据，**10/10 一致**
-- [`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.1 §7 的 M0 十条验收、§3.5.7 的 M0.5 八条验收、§3.6.7 的 M1 十条验收、§3.7.5 的 M1.5 七条验收全部达成
+- 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 v1.1 §7 的 M0 十条验收、§3.5.7 的 M0.5 八条验收、§3.6.7 的 M1 十条验收、§3.7.5 的 M1.5 七条验收全部达成
 - 148 个测试，失败 0、错误 0、**跳过 0**
 - 启动前冲突预警：HIGH 331 组（4.96%）
 
 **我能提供什么**
 
-- 完整规格：[`SPEC.zh-CN.md`](./SPEC.zh-CN.md) v1.1——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
+- 完整规格：规范与禁令以 AOCI-CODE MCP 当前生效内容为准 v1.1——字段、判定信号、分级规则、版本区间语法、输出格式、验收标准都写死了，不靠口头约定
 - 真实数据集采集流程：从 Modrinth 公开 API 生成清单、手动下载、按 jar 内元数据自动归位、逐个校验，全程脚本化
 - 一套强制的工程纪律：禁止空 catch、禁止 `assumeTrue`、禁止把失败降级为警告、测试跳过数必须为 0
 - 全部决策记录：[`PROGRESS.md`](./PROGRESS.md)，111 条工作记录 + 70 条踩过的坑，每一次数字变化与判断失误都在册
@@ -422,7 +422,7 @@ M2（统一引导与 transform 编排）需要 JVM 底层能力：类加载机�
 
 缺的是一个能回答"Mixin 注入冲突到底怎么判定""class 文件里哪个常量池条目能证明目标类"这类问题的人，而不是一个执行工单的人。
 
-如果你愿意参与，请先读 [`CONTRIBUTING.md`](./CONTRIBUTING.md) 和 [`SPEC.zh-CN.md`](./SPEC.zh-CN.md)，然后开一个 issue 说明你想负责的部分与判断依据。
+如果你愿意参与，请先读 [`CONTRIBUTING.md`](./CONTRIBUTING.md) 和 规范与禁令以 AOCI-CODE MCP 当前生效内容为准，然后开一个 issue 说明你想负责的部分与判断依据。
 
 ---
 
@@ -434,7 +434,7 @@ M2（统一引导与 transform 编排）需要 JVM 底层能力：类加载机�
 
 - [ ] `gradle build` 通过
 - [ ] 测试跳过数为 **0**
-- [ ] 新增功能已在 `SPEC.zh-CN.md` 中定义
+- [ ] 新增功能已在 规范与禁令以 AOCI-CODE MCP 当前生效内容为准 中定义
 - [ ] 未引入 Minecraft / 加载器相关依赖
 - [ ] 未使用 `assumeTrue` / `assumeFalse`
 - [ ] 无空 catch 块，无 `System.out.println`

@@ -1,0 +1,676 @@
+{
+  "artifacts": [
+    {
+      "fileName": "appleskin-neoforge-mc26.2-3.0.10.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/EsAfCjCV/versions/slnk1Qah/appleskin-neoforge-mc26.2-3.0.10.jar",
+      "loader": "neoforge",
+      "sha256": "03d07db47d21fc148d2c3348a9c2f2cf385d216ef34276f77abbfced3a18e35f",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "Unlicense"
+    },
+    {
+      "fileName": "Time & Weather Changer-neoforge-26.2-1.2.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/R1xYzY0M/versions/v4CdRmAQ/Time%20%26%20Weather%20Changer-neoforge-26.2-1.2.0.jar",
+      "loader": "neoforge",
+      "sha256": "05b900559534222166682934f328e8b52493508bac6f0507e54597305e549ef9",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "BSD-2-Clause"
+    },
+    {
+      "fileName": "itemglintrelight-fabric-26.2-0.3.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/iJh1tTky/versions/sml2zkqS/itemglintrelight-fabric-26.2-0.3.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "07ece8afb18c2a89c6c3664f6f4cfc2295a9ee771b02c47c41f86334a1fcd090",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "particle_core-0.3.3+26.2+neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/RSeLon5O/versions/Z4o2owWN/particle_core-0.3.3%2B26.2%2Bneoforge.jar",
+      "loader": "neoforge",
+      "sha256": "0965180f2bf32e4ff9d596740a6f5a14359f5a664649e4ff23fcd22bc095f141",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "coroutil-neoforge-26.2-1.3.8.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/rLLJ1OZM/versions/t7mMAOEr/coroutil-neoforge-26.2-1.3.8.jar",
+      "loader": "neoforge",
+      "sha256": "0a35c84f6de828cc0a993ea4a20d230e93cdf07a207190e575e3bd5d6c113fd4",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "entity_model_features-3.2.5-26.2-neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/4I1XuqiY/versions/QxbPFvdn/entity_model_features-3.2.5-26.2-neoforge.jar",
+      "loader": "neoforge",
+      "sha256": "0c1064db82b16c607e171e4694bd9f4a7e3d81891e5bc20430b56292caf77530",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "MyConnectionMyChoice-1.6.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/usz0zY5p/versions/yaHQVlhm/MyConnectionMyChoice-1.6.1.jar",
+      "loader": "fabric",
+      "sha256": "0ef6945b807c7604197474187067d99fea7f1b20ce3e97420d7190c00725afff",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "GPL-3.0-or-later"
+    },
+    {
+      "fileName": "dynamic-fps-3.11.8+minecraft-26.2.0-fabric.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/LQ3K71Q1/versions/tDptM9tq/dynamic-fps-3.11.8%2Bminecraft-26.2.0-fabric.jar",
+      "loader": "fabric",
+      "sha256": "0f5968541f4ed403c066f77043e8470b78e8a0a3791e75a77ffbf675a397af10",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "fabric-api-0.152.1+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/P7dR8mSH/versions/3kB7XVBv/fabric-api-0.152.1%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "1083ce79231f9d358d7b172dd43553234e2f3834993a3ae42a1ec976af5ce418",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "Apache-2.0"
+    },
+    {
+      "fileName": "bclib-26.201.5.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/BgNRHReB/versions/xbg8FWlS/bclib-26.201.5.jar",
+      "loader": "fabric",
+      "sha256": "1d4b826de2a99f210190e932e881c7d9604c0077c6c9534f6b708643d6fdfd40",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "BetterAdvancements-Fabric-26.2-0.5.1.65.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Q2OqKxDG/versions/6ELXNRCy/BetterAdvancements-Fabric-26.2-0.5.1.65.jar",
+      "loader": "fabric",
+      "sha256": "1fdac32be823d13a7ec89da63349d0f013ba2331260db1c3d8c890aafc9bfd78",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LicenseRef-Dont-Be-a-Jerk"
+    },
+    {
+      "fileName": "continuity-3.0.1+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/1IjD5062/versions/mgUN5Xz2/continuity-3.0.1%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "2094a52b98e247f664ef2ecdbb41d7dcad7779cc7a8fb87f0ed8a4f8196c0446",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "fast-ip-ping-v1.0.11-mc26.1.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/9mtu0sUO/versions/H7KycYXE/fast-ip-ping-v1.0.11-mc26.1.2.jar",
+      "loader": "fabric",
+      "sha256": "25db49898876554cb1ef5f2e6c514890fa2a82d1c0fbccfe41b7f08b0b65a19c",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "controlify-3.0.2+26.2-fabric.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/DOUdJVEm/versions/mHrCu1mZ/controlify-3.0.2%2B26.2-fabric.jar",
+      "loader": "fabric",
+      "sha256": "294b547ae6efadbdd004f6ce917d5bc10d1246c83e4383eff0e82cbde0386d76",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-or-later"
+    },
+    {
+      "fileName": "iris-fabric-1.11.0+mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/YL57xq9U/versions/1y9HMMC6/iris-fabric-1.11.0%2Bmc26.2.jar",
+      "loader": "fabric",
+      "sha256": "29da8ceb5cf43ec2e57b0d6e416f4c81427c730e6bdd17919230bb5dd71f2d1a",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "collective-26.2.0-8.28.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/e0M1UDsY/versions/vGP3Ir3X/collective-26.2.0-8.28.jar",
+      "loader": "fabric",
+      "sha256": "3118c1df30f669fc32052b3a7c3293cfae22bb6e3443f20435f43de5a25cc6e9",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "fabric-language-kotlin-1.13.12+kotlin.2.4.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Ha28R6CL/versions/Pd0xrHCw/fabric-language-kotlin-1.13.12%2Bkotlin.2.4.0.jar",
+      "loader": "fabric",
+      "sha256": "36c5dd8b728e3470d2882ae63119b93a20500fc0ea6f5c945c12bf65b5ab1832",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "Apache-2.0"
+    },
+    {
+      "fileName": "macebot-1.3.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/SIG65WOL/versions/bGuaO9c3/macebot-1.3.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "3a9d1b1fb9b1dde7bb2d0716e9dd40e421e7a663cf5e9ae63cb013edbcb42baa",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/AVq17PqV/versions/5vBSTK0b/LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar",
+      "loader": "fabric",
+      "sha256": "3bce4715249a52e2f7ab75bc14a7e24a6bc5f8f4f0ff4a17e0e3b007ae3bc2e5",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MPL-2.0"
+    },
+    {
+      "fileName": "drippyloadingscreen_fabric_3.1.4_MC_26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/v3CYg2V9/versions/VaX0kK2p/drippyloadingscreen_fabric_3.1.4_MC_26.2.jar",
+      "loader": "fabric",
+      "sha256": "3c6901ebb3b955f8b69479b7bccf724b953cd8c5e3e2a8d231b017cd26e593d7",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-DSMSLv3"
+    },
+    {
+      "fileName": "SimpleGUI-API-Fabric-1.5.1+1.21.x+26.1.x+26.2.x.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/DqmuJlhl/versions/OP3UtNnE/SimpleGUI-API-Fabric-1.5.1%2B1.21.x%2B26.1.x%2B26.2.x.jar",
+      "loader": "fabric",
+      "sha256": "44e3060ad3408a32977ee9e495b584d4fe8970f80ee96b0c8e87db2ae6095019",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-2026-ProjectMichi"
+    },
+    {
+      "fileName": "sodium-neoforge-0.9.0+mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/AANobbMI/versions/5dWEDeL4/sodium-neoforge-0.9.0%2Bmc26.2.jar",
+      "loader": "neoforge",
+      "sha256": "496ef7662f736678647864ed2a367f30f4e07e1f64bdc3fa9cea1cbff536918b",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-Polyform-Shield-1.0.0"
+    },
+    {
+      "fileName": "EasyMagic-v26.2.0-mc26.2.x-Fabric.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/9hx3AbJM/versions/5CL4B48Y/EasyMagic-v26.2.0-mc26.2.x-Fabric.jar",
+      "loader": "fabric",
+      "sha256": "4a71bae0c5665ebcca1228aa2945a8bbcdd9ad819e6e708b24be4250ac26f0b3",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MPL-2.0"
+    },
+    {
+      "fileName": "tuanzis_server_mod-1.0.6.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/RDMGNOTc/versions/o2htMSIe/tuanzis_server_mod-1.0.6.jar",
+      "loader": "fabric",
+      "sha256": "4c52213de2c9d62103a7f386c22dc0cf4c1199656deba67bb9026b0757b27d5f",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "PlayerAnimationLibMerged-1.2.4+mc.26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/ha1mEyJS/versions/g8XDqDTi/PlayerAnimationLibMerged-1.2.4%2Bmc.26.2.jar",
+      "loader": "fabric",
+      "sha256": "4dd34180a982eab8f26ba200cf57b0d5ce8360b63400d23c7afc1c40a17b6072",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "balm-fabric-26.2-26.2.0.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/MBAkmtvl/versions/GgdgLPVd/balm-fabric-26.2-26.2.0.1.jar",
+      "loader": "fabric",
+      "sha256": "4e57e4f2a1931d902b72060486f7b23eb9d69d8003efb7a333f3323f1f9f7378",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "CreativeCore_NEOFORGE_v2.14.16_mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/OsZiaDHq/versions/Mwk5iw3d/CreativeCore_NEOFORGE_v2.14.16_mc26.2.jar",
+      "loader": "neoforge",
+      "sha256": "54c5fab1aacac365f94ec8c3a2f98e4c59c821fd7413990f759396b5b4295042",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "Controlling-neoforge-26.2-26.2.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/xv94TkTM/versions/AyPGHR7l/Controlling-neoforge-26.2-26.2.1.jar",
+      "loader": "neoforge",
+      "sha256": "558c1739ae6e0f7d8783adfea0ace7bfb8f7f38addb0cde5017745ed5afdd001",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "animated-loading-overlay-1.0.0+26.2-neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/yDTp6cAo/versions/eqj5bW52/animated-loading-overlay-1.0.0%2B26.2-neoforge.jar",
+      "loader": "neoforge",
+      "sha256": "58ea2b92e36ef2edfa4581fe38d66ae21faf2b4855c1dca3a791ef3bfcb495bd",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "fzzy_config-0.7.6+26.2+neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/hYykXjDp/versions/lGlPvgBc/fzzy_config-0.7.6%2B26.2%2Bneoforge.jar",
+      "loader": "neoforge",
+      "sha256": "5bf67e77bd7a2bc0b0864d50e95320b834699e217f19aa2da411e4feeca14f9c",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-TDL-M"
+    },
+    {
+      "fileName": "curios-neoforge-16.0.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/vvuO3ImH/versions/BI7D0sbK/curios-neoforge-16.0.0%2B26.2.jar",
+      "loader": "neoforge",
+      "sha256": "5cb4a8b45301c5c32279ad80c24d4da8ebcd9879b140ffdb3057fc7c331b8500",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-or-later"
+    },
+    {
+      "fileName": "cherishedworlds-fabric-17.0.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/3azQ6p0W/versions/VhoXPFdC/cherishedworlds-fabric-17.0.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "645b07d5c4d22242dcea2fcac16dee560c6e9636a8e4eed97208baab7b36738b",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-or-later"
+    },
+    {
+      "fileName": "bclib-26.2.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/7bdKEtKC/versions/Dmz9D0Aj/bclib-26.2.1.jar",
+      "loader": "neoforge",
+      "sha256": "6750ef9e6b5cee5982b073b5eaf25a57b57548f725e0c73979f2f0cb6c59ca98",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "pigeonchat-fabric-26.2-0.1.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/t76OI5IO/versions/3BDTuUSz/pigeonchat-fabric-26.2-0.1.0.jar",
+      "loader": "fabric",
+      "sha256": "68aa64a4739016dd287b525f620bbe2b4c9aca2a83c27c5652d2fc323b605885",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "particledrawing-1.0.22-ALPHA.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/bHnfm1ou/versions/tfcRIC6w/particledrawing-1.0.22-ALPHA.jar",
+      "loader": "neoforge",
+      "sha256": "734a0b78474cf0f772999ed27a17ae3eb3d08dc040b16caec9ad0f6478c6f025",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "Apache-2.0"
+    },
+    {
+      "fileName": "sodium-extra-neoforge-0.8.8+mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/PtjYWJkn/versions/yAgfZ6To/sodium-extra-neoforge-0.8.8%2Bmc26.2.jar",
+      "loader": "neoforge",
+      "sha256": "7662d9631ffe8cac23880e40694edeabd5dc3bbca634c2cedfb14f893b1963d6",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "EntityCrosshair-2.0.0-26.2+_fabric.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/HBz1jJcy/versions/HmuqCogX/EntityCrosshair-2.0.0-26.2%2B_fabric.jar",
+      "loader": "fabric",
+      "sha256": "7873437c8450337c8c7c3ba9f03475b4539d35200a65b8087cde215a546674bd",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "GPL-3.0-or-later"
+    },
+    {
+      "fileName": "BiomesOPlenty-fabric-26.2-26.1.2.0.40.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/HXF82T3G/versions/Wh39Z5IZ/BiomesOPlenty-fabric-26.2-26.1.2.0.40.jar",
+      "loader": "fabric",
+      "sha256": "7d31d4a33976cf6beb2ac178a3cdc412fd334261d918545bb5b825fe412c220e",
+      "sourceBatches": [
+        "segment_2",
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "DistantHorizons-3.3.0-26.2-fabric-neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/uCdwusMi/versions/3CtFgbnO/DistantHorizons-3.3.0-26.2-fabric-neoforge.jar",
+      "loader": "fabric",
+      "sha256": "8cd6c5926766962cf817609b91e01a616ce5b639ef95cc5856c1dfcbdd9f3f9d",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "lplm-1.0.1+mc26.1.x.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/wuafGT7W/versions/NLT8NZz3/lplm-1.0.1%2Bmc26.1.x.jar",
+      "loader": "fabric",
+      "sha256": "8d1e350b1413e2b7ec3ba753992a3df9bdaff1f37258eef79103f8d2dc5becc5",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "fileName": "entity_texture_features-7.1.1-26.2-neoforge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/BVzZfTc1/versions/NrV7O0NJ/entity_texture_features-7.1.1-26.2-neoforge.jar",
+      "loader": "neoforge",
+      "sha256": "91933d3f94566a61cf056d917212689864fd120ff1d38f7964bb2aaffa7ab7a1",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "fancymenu_fabric_3.9.4_MC_26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Wq5SjeWM/versions/TiJqlVLt/fancymenu_fabric_3.9.4_MC_26.2.jar",
+      "loader": "fabric",
+      "sha256": "952f0f3e1f85011e41bb28b8bba6c5c3c3dffff33740c8c3c0f54910e28d7dfe",
+      "sourceBatches": [
+        "segment_2",
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-DSMSLv3.1"
+    },
+    {
+      "fileName": "OneConfig-26.2-fabric-1.0.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/AibBIVmj/versions/xPuA3fEf/OneConfig-26.2-fabric-1.0.0.jar",
+      "loader": "fabric",
+      "sha256": "9821206c870754c31269cad5bd6eea6fe7f4be97cb1a2c6783b1a778e7cf0fcd",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-LGPL-3.0-with-Additional-Terms-Applicable-to-OneConfig"
+    },
+    {
+      "fileName": "SodiumExtraInformation-fabric-2.9.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/696WgnvT/versions/EeaNsxEd/SodiumExtraInformation-fabric-2.9.0.jar",
+      "loader": "fabric",
+      "sha256": "9a108b5eb8f6742cc99847ed63abb015a4c2d2978c02f0da1cd5b2ae5d9c4412",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "GPL-3.0-or-later"
+    },
+    {
+      "fileName": "lambdynamiclights-4.12.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/yBW8D80W/versions/ZSDGIboY/lambdynamiclights-4.12.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "9d500d28a395552889ccb51ddec058d1567843d187e35e59f603bc978e287a5f",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-Lambda-License"
+    },
+    {
+      "fileName": "BadOptimizations-2.4.1-26.2-forge.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/g96Z4WVZ/versions/IDYkXahy/BadOptimizations-2.4.1-26.2-forge.jar",
+      "loader": "neoforge",
+      "sha256": "9dc40fe94d918b5ef353ea87a030b0859f251e029eb2a33d42d15d788c79cc31",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "bettercombat-neoforge-3.2.1+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/5sy6g3kz/versions/6jjWGra3/bettercombat-neoforge-3.2.1%2B26.2.jar",
+      "loader": "neoforge",
+      "sha256": "a79cbcf6287a855f541f326957a21bf3f632c3b9dd1471b8cb19d5b009a5931d",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "c2me-fabric-mc26.2-0.4.1-beta.1.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/VSNURh3q/versions/hfq4dPFH/c2me-fabric-mc26.2-0.4.1-beta.1.0.jar",
+      "loader": "fabric",
+      "sha256": "aaa2d1c54126de073df5413e8ffe329d0cd5d67c3c4fe1647032c294d0e46fb0",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "extended-drawers-polymer-patch-5.1.0.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/TIgnE8wT/versions/av82h6Wd/extended-drawers-polymer-patch-5.1.0.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "abeab2fed2431c5c74544c54aea154f2f5ec3d73a1f027ebee914fcb343bde6e",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "BetterF3-19.0.0-NeoForge-26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/8shC1gFX/versions/GKmHNRiK/BetterF3-19.0.0-NeoForge-26.2.jar",
+      "loader": "neoforge",
+      "sha256": "b2249509bb1ce8c0d242930ad2e259ee0465c7077371da98bd28cc69b27972e4",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "chat_heads-1.2.4-neoforge-26.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/FxowAdi8/chat_heads-1.2.4-neoforge-26.1.jar",
+      "loader": "neoforge",
+      "sha256": "b67b512c57184ae21c9f485d4ec3544b3c92f31e3e55d4f5877af5a5d20e4049",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MPL-2.0"
+    },
+    {
+      "fileName": "e4mc-fabric-6.2.0-modern.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/qANg5Jrr/versions/7xT2gfm2/e4mc-fabric-6.2.0-modern.jar",
+      "loader": "fabric",
+      "sha256": "bb5c88bf50d583b8457c06b1cc3b1931932482d0df812420f042088dec0052b0",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "entityculling-fabric-1.10.3-mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/NNAgCjsB/versions/mvAeSjFX/entityculling-fabric-1.10.3-mc26.2.jar",
+      "loader": "fabric",
+      "sha256": "cb466993a7e246a3e2a22ec0c22035efeac0fba312bb1e5efbedd78bec77bc90",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LicenseRef-tr7zw-Protective-License"
+    },
+    {
+      "fileName": "amup-fabric-26.2-1.0.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/kYIaHHfw/versions/TsD3rRHb/amup-fabric-26.2-1.0.0.jar",
+      "loader": "fabric",
+      "sha256": "cbb5da656cec6061c689fa78611a3b563f00295c0721d8a09b02b6e352c83be3",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "GPL-3.0-only"
+    },
+    {
+      "fileName": "carryon-forge-26.2-2.11.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/joEfVgkn/versions/YsNOgQEu/carryon-forge-26.2-2.11.0.jar",
+      "loader": "neoforge",
+      "sha256": "cf80cc11c57518c8ebf7a245dfd8e7b87caf149f486f94093a69656bfaffbe5e",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "AmbientSounds_NEOFORGE_v6.3.6_mc26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/fM515JnW/versions/odflTtI0/AmbientSounds_NEOFORGE_v6.3.6_mc26.2.jar",
+      "loader": "fabric",
+      "sha256": "d33a6425f18fd3445db96a16a924b90c24c707bb0f9e360d073eab6cea1a0bc0",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "ClientCarts-1.1+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/arTGZ6tX/versions/7vCiT4rO/ClientCarts-1.1%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "d99c5ab2e5b22f992a687ee4d286e4532f1bcd0de64a95d5ed580c9e8b57e5f2",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "BSD-3-Clause"
+    },
+    {
+      "fileName": "fallingleaves-2.0.7+26.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/WhbRG4iK/versions/JYRSvzQW/fallingleaves-2.0.7%2B26.1.jar",
+      "loader": "fabric",
+      "sha256": "db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "Clumps-fabric-26.2-26.2.1.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Wnxd13zP/versions/dEMopoOJ/Clumps-fabric-26.2-26.2.1.jar",
+      "loader": "fabric",
+      "sha256": "dc9544190abfb65a3c9ddc5dad1523c9dfc5a732344f528d908b950894398e8c",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "emotesounds-1.0.0.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/ggYHhqqJ/versions/4vm9YTht/emotesounds-1.0.0.jar",
+      "loader": "fabric",
+      "sha256": "de075b66cb86571eec4cd07fd1a1944516d9f92aeea3e0f85fb79ec759914fd6",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MIT"
+    },
+    {
+      "fileName": "cloth-config-26.2.155.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/9s6osm5g/versions/Nv3xnWXd/cloth-config-26.2.155.jar",
+      "loader": "fabric",
+      "sha256": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "sourceBatches": [
+        "segment_2"
+      ],
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "fileName": "ukulib-fabric-2.1.0+26.2.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/Y8uFrUil/versions/ZNmjxBpi/ukulib-fabric-2.1.0%2B26.2.jar",
+      "loader": "fabric",
+      "sha256": "e2c53c1c07a7be68bd5fe6a6089e7b146bf7d8cd6b0819e19e96ed22a420052c",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "MPL-2.0"
+    },
+    {
+      "fileName": "AutoEat-Fabric-1.6.1+1.21.x+26.1.x+26.2.x.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/mEGPcHSO/versions/89fI2aMS/AutoEat-Fabric-1.6.1%2B1.21.x%2B26.1.x%2B26.2.x.jar",
+      "loader": "fabric",
+      "sha256": "ea540ccd948a07497d10ed7b9ec67aa24273ea6f5b345881c5f3f4ea8dfda0e4",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-All-Rights-Reserved"
+    },
+    {
+      "fileName": "CrashAssistant-neoforge-26.2-1.11.10.jar",
+      "fileUrl": "https://cdn.modrinth.com/data/ix1qq8Ux/versions/S4tJ6bt2/CrashAssistant-neoforge-26.2-1.11.10.jar",
+      "loader": "neoforge",
+      "sha256": "f94c23599aa80993c4a550d9c2ed8608c7b9a40c998de1a7a8bbefc3697a52e1",
+      "sourceBatches": [
+        "segment_4"
+      ],
+      "spdx": "LicenseRef-LicenseRef-KostromDan-MML-1.1.3"
+    }
+  ],
+  "assertions": {
+    "batch2CountIs30": true,
+    "batch4DownloadedCountIs36": true,
+    "everySha256Is64Hex": true,
+    "noSha256MetadataConflicts": true,
+    "noWithinBatchDuplicateSha256": true,
+    "unionFormula": true
+  },
+  "cohortId": "a6ee5d7b1ab073ddb5ad90a749a3fac6e41dca5c2ad6a8383f7c0882d4212b22",
+  "counts": {
+    "overlap": 2,
+    "segment_2": 30,
+    "segment_4": 36,
+    "sha256Conflicts": 0,
+    "union": 64,
+    "withinBatchDuplicates": 0
+  },
+  "manifestInputs": [
+    {
+      "path": "dataset-262/download-manifest.json",
+      "sha256": "5bd33bdaab9b081d679e549d5aed5d0f2bb1f563a3f0bb3dec9a3afbf867fb24"
+    },
+    {
+      "path": "dataset-262/forbric/download-manifest.json",
+      "sha256": "8885885184096b13b755ed89433fb4814e0d3176aef533348dc8aedd5d06b06f"
+    }
+  ],
+  "operatingMode": "STATIC_ANALYSIS",
+  "schemaRevision": 1,
+  "targetGameVersion": "26.2"
+}
